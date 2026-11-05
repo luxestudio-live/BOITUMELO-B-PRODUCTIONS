@@ -1,8 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, Compass, Clapperboard, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function BehindTheFrame() {
   return (

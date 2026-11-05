@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone, MessageSquare, Clapperboard } from "lucide-react";
+import { ArrowUpRight, Mail, MessageSquare } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
-import ViewfinderHUD from "./ViewfinderHUD";
 
 export default function FinalFrameCTA() {
   return (

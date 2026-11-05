@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 interface ViewfinderHUDProps {
   timecode?: string;
@@ -23,21 +23,60 @@ export default function ViewfinderHUD({
   showCenterCrosshair = true,
   paddedForNav = false,
 }: ViewfinderHUDProps) {
-  const [liveTimecode, setLiveTimecode] = useState(timecode);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const timecodeRef = useRef<HTMLSpanElement>(null);
 
-  // Subtle real-time frame tick simulation
+  // Performance-optimized direct DOM frame tick: zero React re-renders, pauses when off-screen
   useEffect(() => {
     let frame = 9;
-    const interval = setInterval(() => {
-      frame = (frame + 1) % 24;
-      const pad = frame.toString().padStart(2, "0");
-      setLiveTimecode(`00:14:28:${pad}`);
-    }, 1000 / 24);
-    return () => clearInterval(interval);
+    let intervalId: NodeJS.Timeout | null = null;
+
+    const startTick = () => {
+      if (intervalId) return;
+      intervalId = setInterval(() => {
+        frame = (frame + 1) % 24;
+        const pad = frame.toString().padStart(2, "0");
+        if (timecodeRef.current) {
+          timecodeRef.current.textContent = `00:14:28:${pad}`;
+        }
+      }, 1000 / 24);
+    };
+
+    const stopTick = () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
+    };
+
+    const currentContainer = containerRef.current;
+    if (!currentContainer || typeof IntersectionObserver === "undefined") {
+      startTick();
+      return () => stopTick();
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startTick();
+        } else {
+          stopTick();
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(currentContainer);
+
+    return () => {
+      stopTick();
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <div
+      ref={containerRef}
       aria-hidden="true"
       className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-xs text-brand-white select-none ${className}`}
     >
@@ -54,7 +93,13 @@ export default function ViewfinderHUD({
             <span className="w-2 h-2 rounded-full bg-[#FF4D4D]" />
             <span>REC</span>
           </span>
-          <span suppressHydrationWarning className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">{liveTimecode}</span>
+          <span
+            ref={timecodeRef}
+            suppressHydrationWarning
+            className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm"
+          >
+            {timecode}
+          </span>
         </div>
 
         <div className="hidden sm:flex items-center space-x-6 text-brand-white bg-black/80 px-3 py-1 rounded-sm tracking-wider">

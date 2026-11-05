@@ -45,6 +45,7 @@ export default function HeroShowreel() {
         loop
         muted
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover object-center"
         aria-hidden="true"
       />
