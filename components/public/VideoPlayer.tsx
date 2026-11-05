@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Volume2, VolumeX, Maximize, RotateCcw } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize, RotateCcw, Scan, Crosshair } from "lucide-react";
 
 interface VideoPlayerProps {
   src: string;
@@ -12,6 +12,8 @@ interface VideoPlayerProps {
   loop?: boolean;
   muted?: boolean;
 }
+
+type FramingMode = "2.39" | "1.85" | "16:9";
 
 export default function VideoPlayer({
   src,
@@ -31,7 +33,14 @@ export default function VideoPlayer({
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showControls, setShowControls] = useState(true);
+  const [framingMode, setFramingMode] = useState<FramingMode>("2.39");
+  const [showCrosshairs, setShowCrosshairs] = useState(false);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cycle through optical framing formats
+  const cycleFraming = () => {
+    setFramingMode((prev) => (prev === "2.39" ? "1.85" : prev === "1.85" ? "16:9" : "2.39"));
+  };
 
   // Sync state with HTML video element
   const togglePlay = () => {
@@ -99,6 +108,12 @@ export default function VideoPlayer({
     } else if (e.key === "f") {
       e.preventDefault();
       toggleFullscreen();
+    } else if (e.key === "c") {
+      e.preventDefault();
+      setShowCrosshairs((prev) => !prev);
+    } else if (e.key === "a") {
+      e.preventDefault();
+      cycleFraming();
     } else if (e.key === "ArrowRight") {
       e.preventDefault();
       if (videoRef.current && duration > 0) {
@@ -152,6 +167,27 @@ export default function VideoPlayer({
         aria-label={title}
       />
 
+      {/* Dynamic Optical Matte Bars (Scope 2.39:1 / Flat 1.85:1 / Broadcast 16:9) */}
+      <div
+        className={`absolute top-0 left-0 right-0 bg-brand-black z-20 pointer-events-none transition-all duration-500 ease-cinematic ${
+          framingMode === "2.39" ? "h-[10%]" : framingMode === "1.85" ? "h-[4%]" : "h-0"
+        }`}
+      />
+      <div
+        className={`absolute bottom-0 left-0 right-0 bg-brand-black z-20 pointer-events-none transition-all duration-500 ease-cinematic ${
+          framingMode === "2.39" ? "h-[10%]" : framingMode === "1.85" ? "h-[4%]" : "h-0"
+        }`}
+      />
+
+      {/* Optional Optical Viewfinder Center Reticle */}
+      {showCrosshairs && (
+        <div className="absolute inset-0 m-auto w-16 h-16 pointer-events-none z-20 flex items-center justify-center opacity-40">
+          <div className="w-full h-[1px] bg-brand-white" />
+          <div className="absolute h-full w-[1px] bg-brand-white" />
+          <div className="absolute w-3 h-3 rounded-full border border-brand-gold" />
+        </div>
+      )}
+
       {/* Cinematic Vignette Overlay */}
       <div
         onClick={togglePlay}
@@ -160,7 +196,7 @@ export default function VideoPlayer({
 
       {/* Fallback state when media stream is restricted or fails */}
       {hasError && (
-        <div className="absolute top-4 left-4 right-4 z-20 bg-brand-black/90 border border-brand-teal/60 p-3 rounded-sm flex items-center justify-between text-xs font-mono text-brand-gray-light backdrop-blur-md">
+        <div className="absolute top-4 left-4 right-4 z-30 bg-brand-black/90 border border-brand-teal/60 p-3 rounded-sm flex items-center justify-between text-xs font-mono text-brand-gray-light backdrop-blur-md">
           <span>Stream paused. Presenting high-resolution archival still.</span>
           <button
             type="button"
@@ -183,7 +219,7 @@ export default function VideoPlayer({
         <button
           type="button"
           onClick={togglePlay}
-          className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-brand-teal/80 border border-brand-gold/60 text-brand-gold flex items-center justify-center hover:scale-105 hover:bg-brand-gold hover:text-brand-black transition-all duration-300 shadow-2xl backdrop-blur-sm group/btn"
+          className="absolute inset-0 m-auto w-20 h-20 rounded-full bg-brand-teal/80 border border-brand-gold/60 text-brand-gold flex items-center justify-center hover:scale-105 hover:bg-brand-gold hover:text-brand-black transition-all duration-300 shadow-2xl backdrop-blur-sm group/btn z-20"
           aria-label="Play video"
         >
           <Play className="w-8 h-8 fill-current translate-x-0.5" />
@@ -192,7 +228,7 @@ export default function VideoPlayer({
 
       {/* Bottom Controls Bar */}
       <div
-        className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-brand-black via-brand-black/70 to-transparent transition-opacity duration-300 ${
+        className={`absolute bottom-0 left-0 right-0 p-4 z-30 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent transition-opacity duration-300 ${
           showControls || !isPlaying ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -230,15 +266,55 @@ export default function VideoPlayer({
               {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
             </button>
 
+            {/* Micro Optical Audio VU Visualiser when sound is active */}
+            {!isMuted && isPlaying && (
+              <div
+                className="hidden sm:flex items-end space-x-0.5 h-3.5 px-1 py-0.5 rounded bg-brand-black/60 border border-brand-teal/40"
+                title="Spatial Audio Stream Active"
+              >
+                <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
+                <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
+                <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
+                <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_1s_ease-in-out_infinite_0.1s] h-2.5" />
+              </div>
+            )}
+
             <span className="font-mono text-xs text-brand-gray-light">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="text-xs uppercase tracking-wider font-mono text-brand-gold hidden sm:inline">
-              HD 2.39:1
-            </span>
+            {/* Interactive Optical Aspect Ratio Switcher */}
+            <button
+              type="button"
+              onClick={cycleFraming}
+              className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-sm bg-brand-black/80 border border-brand-teal/50 hover:border-brand-gold text-brand-gold transition-all duration-200 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold group/optic"
+              title="Click to Switch Optical Aspect Ratio (Scope 2.39:1 / Flat 1.85:1 / Broadcast 16:9)"
+              aria-label={`Optical Framing: ${framingMode === "2.39" ? "2.39:1 Scope" : framingMode === "1.85" ? "1.85:1 Flat" : "16:9 Broadcast"}. Click to cycle.`}
+            >
+              <Scan className="w-3.5 h-3.5 text-brand-gold group-hover/optic:scale-110 transition-transform" />
+              <span className="text-[11px] font-mono font-medium tracking-wider uppercase">
+                {framingMode === "2.39" ? "2.39:1 SCOPE" : framingMode === "1.85" ? "1.85:1 FLAT" : "16:9 FULL"}
+              </span>
+            </button>
+
+            {/* Crosshairs Viewfinder Reticle Toggle */}
+            <button
+              type="button"
+              onClick={() => setShowCrosshairs((prev) => !prev)}
+              className={`p-1.5 rounded transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
+                showCrosshairs
+                  ? "text-brand-gold bg-brand-teal/50 border border-brand-gold/40"
+                  : "text-brand-gray-light hover:text-brand-white"
+              }`}
+              title="Toggle Viewfinder Crosshairs (Key: C)"
+              aria-label="Toggle camera framing crosshairs"
+              aria-pressed={showCrosshairs}
+            >
+              <Crosshair className="w-4 h-4" />
+            </button>
+
             <button
               type="button"
               onClick={toggleFullscreen}

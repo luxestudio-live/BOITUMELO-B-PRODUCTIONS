@@ -17,6 +17,9 @@ import {
   AlertCircle,
   Send,
   Loader2,
+  Copy,
+  Check,
+  Clapperboard,
 } from "lucide-react";
 
 interface WizardState {
@@ -68,6 +71,33 @@ export default function BookingBriefWizard() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [hasCopied, setHasCopied] = useState(false);
+
+  const handleCopySlate = () => {
+    const slateText = `========================================================
+BOITUMELO B PRODUCTIONS — PRODUCTION BRIEF SLATE
+========================================================
+REFERENCE NO  : #BB-BRIEF-2026-X9
+DATE & TIME   : ${formData.selectedDate} at ${formData.selectedTimeSlot}
+DISCIPLINE    : ${formData.discipline}
+COLLABORATOR  : ${formData.name}${formData.company ? ` (${formData.company})` : ""}
+CONTACT EMAIL : ${formData.email}
+LOCATION      : ${formData.location}
+TIMELINE      : ${formData.timeline}
+BUDGET TIER   : ${formData.budget}
+STORY CONCEPT : ${formData.description}
+========================================================
+STATUS        : Slated for Creative Director Review
+STUDIO        : Melbourne & Sydney • Australia
+========================================================`;
+
+    if (navigator?.clipboard) {
+      navigator.clipboard.writeText(slateText).then(() => {
+        setHasCopied(true);
+        setTimeout(() => setHasCopied(false), 3000);
+      }).catch(() => {});
+    }
+  };
 
   const totalSteps = 5;
 
@@ -137,29 +167,97 @@ export default function BookingBriefWizard() {
           </p>
         </div>
 
-        {/* Brief Summary Receipt Card */}
-        <div className="bg-brand-black/80 border border-brand-teal/40 p-6 rounded-sm text-left max-w-xl mx-auto space-y-3 font-mono text-xs">
-          <div className="flex justify-between border-b border-brand-teal/30 pb-2">
-            <span className="text-brand-gray">DISCIPLINE:</span>
-            <span className="text-brand-white">{formData.discipline}</span>
+        {/* Authentic 35mm Production Clapperboard Slate */}
+        <div className="bg-brand-black border-2 border-brand-teal/60 rounded-sm overflow-hidden text-left max-w-xl mx-auto shadow-2xl">
+          {/* Top Diagonal Clapper Arm */}
+          <div className="h-8 bg-brand-black border-b-2 border-brand-teal/60 flex items-stretch overflow-hidden">
+            {[...Array(12)].map((_, i) => (
+              <div
+                key={i}
+                className={`flex-1 transform -skew-x-12 ${
+                  i % 2 === 0 ? "bg-brand-gold" : "bg-brand-black"
+                }`}
+              />
+            ))}
           </div>
-          <div className="flex justify-between border-b border-brand-teal/30 pb-2">
-            <span className="text-brand-gray">ESTIMATED TIMELINE:</span>
-            <span className="text-brand-white">{formData.timeline}</span>
+
+          {/* Slate Telemetry Header */}
+          <div className="grid grid-cols-4 border-b border-brand-teal/40 bg-brand-teal-deep/90 text-center font-mono text-[11px] py-2 text-brand-gray-light divide-x divide-brand-teal/40">
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">PROD NO.</span>
+              <span className="font-semibold text-brand-gold">#BB-2026-X9</span>
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">SCENE</span>
+              <span className="font-semibold text-brand-white">BRIEF</span>
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">TAKE</span>
+              <span className="font-semibold text-brand-white">01</span>
+            </div>
+            <div>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">SOUND</span>
+              <span className="font-semibold text-brand-gold">SYNC</span>
+            </div>
           </div>
-          <div className="flex justify-between border-b border-brand-teal/30 pb-2">
-            <span className="text-brand-gray">BUDGET TIER:</span>
-            <span className="text-brand-white">{formData.budget}</span>
+
+          {/* Slate Body Fields */}
+          <div className="p-6 space-y-3 font-mono text-xs bg-brand-black/90 divide-y divide-brand-teal/20">
+            <div className="flex justify-between items-baseline pt-1">
+              <span className="text-brand-gray uppercase tracking-wider text-[11px]">PRODUCTION:</span>
+              <span className="text-brand-white font-medium text-right">{formData.discipline}</span>
+            </div>
+            <div className="flex justify-between items-baseline pt-2">
+              <span className="text-brand-gray uppercase tracking-wider text-[11px]">COLLABORATOR:</span>
+              <span className="text-brand-white font-medium text-right">
+                {formData.name} {formData.company ? `• ${formData.company}` : ""}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline pt-2">
+              <span className="text-brand-gray uppercase tracking-wider text-[11px]">DISCOVERY SESSION:</span>
+              <span className="text-brand-gold font-semibold text-right">
+                {formData.selectedDate} at {formData.selectedTimeSlot}
+              </span>
+            </div>
+            <div className="flex justify-between items-baseline pt-2">
+              <span className="text-brand-gray uppercase tracking-wider text-[11px]">LOCATION / BASE:</span>
+              <span className="text-brand-gray-light text-right">{formData.location}</span>
+            </div>
+            <div className="flex justify-between items-baseline pt-2">
+              <span className="text-brand-gray uppercase tracking-wider text-[11px]">BUDGET TIER:</span>
+              <span className="text-brand-gray-light text-right">{formData.budget}</span>
+            </div>
+            <div className="flex justify-between items-baseline pt-2">
+              <span className="text-brand-gray uppercase tracking-wider text-[11px]">STATUS:</span>
+              <span className="text-brand-gold font-bold text-right tracking-wider uppercase">SLATED FOR REVIEW</span>
+            </div>
           </div>
-          <div className="flex justify-between border-b border-brand-teal/30 pb-2">
-            <span className="text-brand-gray">DISCOVERY SESSION HOLD:</span>
-            <span className="text-brand-gold">
-              {formData.selectedDate} at {formData.selectedTimeSlot}
-            </span>
-          </div>
-          <div className="flex justify-between pt-1">
-            <span className="text-brand-gray">ENQUIRY REFERENCE:</span>
-            <span className="text-brand-gray-light">#BB-BRIEF-2026-X9</span>
+
+          {/* Action Ribbon inside Slate */}
+          <div className="p-3 bg-brand-teal-deep/90 border-t border-brand-teal/40 flex items-center justify-between text-xs font-mono">
+            <span className="text-[11px] text-brand-gray">Save this slate to your records:</span>
+            <button
+              type="button"
+              onClick={handleCopySlate}
+              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
+                hasCopied
+                  ? "bg-brand-gold text-brand-black"
+                  : "bg-brand-teal/60 text-brand-gold hover:bg-brand-gold hover:text-brand-black border border-brand-teal"
+              }`}
+              aria-label="Copy production brief slate to clipboard"
+            >
+              {hasCopied ? (
+                <>
+                  <Check className="w-3.5 h-3.5 stroke-[2.5]" />
+                  <span>Slate Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-3.5 h-3.5" />
+                  <span>Copy Slate Summary</span>
+                </>
+              )}
+            </button>
           </div>
         </div>
 

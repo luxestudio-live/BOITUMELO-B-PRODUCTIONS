@@ -106,7 +106,19 @@ export default function HeroShowreel() {
             className="flex items-center space-x-2.5 py-1.5 px-3 rounded bg-brand-black/50 backdrop-blur-md border border-brand-teal/40 hover:border-brand-gold hover:text-brand-gold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
             aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
           >
-            {isMuted ? <VolumeX className="w-4 h-4 text-brand-gray" /> : <Volume2 className="w-4 h-4 text-brand-gold" />}
+            {isMuted ? (
+              <VolumeX className="w-4 h-4 text-brand-gray" />
+            ) : (
+              <div className="flex items-center space-x-1.5">
+                <Volume2 className="w-4 h-4 text-brand-gold" />
+                <span className="flex items-end space-x-0.5 h-3 px-0.5" aria-hidden="true">
+                  <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
+                  <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
+                  <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
+                  <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_1s_ease-in-out_infinite_0.1s] h-2.5" />
+                </span>
+              </div>
+            )}
             <span className="uppercase tracking-[0.2em] text-[10px]">
               {isMuted ? "Audio: Muted" : "Audio: Active"}
             </span>
