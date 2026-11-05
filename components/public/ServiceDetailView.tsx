@@ -4,9 +4,10 @@ import EditorialHeading from "@/components/public/EditorialHeading";
 import ProjectCard from "@/components/public/ProjectCard";
 import VideoPlayer from "@/components/public/VideoPlayer";
 import ViewfinderHUD from "@/components/cinematic/ViewfinderHUD";
+import CinematicInquiries from "@/components/cinematic/CinematicInquiries";
 import { ServiceDetail } from "@/data/services";
 import { sampleProjects } from "@/data/projects";
-import { ArrowUpRight, ArrowRight, CheckCircle2, HelpCircle, Film, Clapperboard, Sparkles } from "lucide-react";
+import { ArrowUpRight, ArrowRight, CheckCircle2, Film, Clapperboard, Sparkles } from "lucide-react";
 
 interface ServiceDetailViewProps {
   service: ServiceDetail;
@@ -198,34 +199,20 @@ export default function ServiceDetailView({
         </section>
       )}
 
-      {/* 05: Frequently Asked Questions */}
-      <section className="bg-brand-teal-deep py-20 sm:py-28 border-y border-brand-teal/40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <EditorialHeading
-            align="center"
-            eyebrow="Clarity & Standards"
-            title="Service FAQs."
-            serifAccent="Everything Explained."
-          />
-
-          <div className="mt-14 space-y-6">
-            {service.faqs.map((faq) => (
-              <div
-                key={faq.question}
-                className="bg-brand-black/70 border border-brand-teal/40 p-6 sm:p-8 rounded-sm shadow-md"
-              >
-                <h3 className="text-base sm:text-lg font-display font-medium text-brand-white flex items-start space-x-3">
-                  <HelpCircle className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
-                  <span>{faq.question}</span>
-                </h3>
-                <p className="mt-3 text-sm text-brand-gray-light leading-relaxed pl-8 font-light">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 05: Frequently Asked Questions Terminal */}
+      <CinematicInquiries
+        title={`${service.shortTitle} Inquiries.`}
+        serifAccent="Everything You Need to Know."
+        lead={`Specific technical standards, delivery formats, and production protocols for ${service.title.toLowerCase()} commissions.`}
+        eyebrow={`${service.shortTitle} Specifications`}
+        enableCategories={false}
+        inquiries={service.faqs.map((faq) => ({
+          q: faq.question,
+          a: faq.answer,
+          category: service.shortTitle,
+          specs: "Format: 4K / 8K Cinema Master • Audio: 24-bit 48kHz • Delivery: Master ProRes / Web Streams",
+        }))}
+      />
 
       {/* 06: Service Page Final CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">

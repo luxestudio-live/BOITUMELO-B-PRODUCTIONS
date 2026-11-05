@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import EditorialHeading from "@/components/public/EditorialHeading";
+import CinematicInquiries from "@/components/cinematic/CinematicInquiries";
 import { servicesData } from "@/data/services";
-import { ArrowUpRight, ArrowRight, CheckCircle2, HelpCircle } from "lucide-react";
+import { ArrowUpRight, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
   title: "Production Services | Film, Music Video, Corporate & Commercial",
@@ -122,52 +123,8 @@ export default function ServicesPage() {
         })}
       </section>
 
-      {/* 03: Common Production FAQs */}
-      <section className="bg-brand-teal-deep py-20 sm:py-28 border-y border-brand-teal/40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <EditorialHeading
-            align="center"
-            eyebrow="Questions & Clarity"
-            title="Common Inquiries."
-            serifAccent="Everything You Need to Know."
-            lead="Transparent answers regarding licensing, timelines, crew configurations, and remote logistics."
-          />
-
-          <div className="mt-16 space-y-6">
-            {[
-              {
-                q: "What camera systems and formats do you shoot on?",
-                a: "We shoot primarily on high-end cinema packages: ARRI Alexa Mini LF / Alexa 35, RED V-Raptor 8K, and Sony FX9 / FX6 paired with premium anamorphic (Cooke, Atlas) or spherical cinema glass (Leica, ARRI Master Primes).",
-              },
-              {
-                q: "Do you supply all project master files and RAW footage?",
-                a: "Every project includes full commercial exhibition deliverables (ProRes 4444 / 422 HQ masters, web-optimised H.264/H.265 files, social cuts). RAW camera negative archive hard drives are available as an optional deliverable.",
-              },
-              {
-                q: "How does payment scheduling work?",
-                a: "Our standard commercial terms operate on a three-tranche model: 50% mobilization deposit upon contract signing to secure crew and dates, 25% upon completion of principal photography, and 25% upon final color and audio master sign-off.",
-              },
-              {
-                q: "Do you have public liability and aviation insurance?",
-                a: "Yes. BOITUMELO B PRODUCTIONS carries comprehensive $20M Public & Products Liability coverage, full equipment floater policies, and CASA certified drone flight permissions across Australia.",
-              },
-            ].map((faq) => (
-              <div
-                key={faq.q}
-                className="bg-brand-black/70 border border-brand-teal/40 p-6 sm:p-8 rounded-sm"
-              >
-                <h3 className="text-base sm:text-lg font-display font-medium text-brand-white flex items-start space-x-3">
-                  <HelpCircle className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="mt-3 text-sm text-brand-gray-light leading-relaxed pl-8 font-light">
-                  {faq.a}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 03: Common Production Inquiries Terminal */}
+      <CinematicInquiries />
 
       {/* 04: Closing CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
