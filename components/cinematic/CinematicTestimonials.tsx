@@ -61,7 +61,7 @@ export default function CinematicTestimonials() {
         </div>
 
         {/* Master Editorial Quotation Theatre */}
-        <div className="space-y-8 animate-fade-in key={current.id}">
+        <div key={current.id} className="space-y-8 animate-fade-in">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-brand-black/50 backdrop-blur-sm rounded-sm text-xs font-mono uppercase tracking-widest text-brand-gold border border-brand-teal-light">
             <span>Project: {current.projectTitle} // {current.serviceCategory}</span>
           </div>

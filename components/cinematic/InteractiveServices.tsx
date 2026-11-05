@@ -109,7 +109,10 @@ export default function InteractiveServices() {
 
           {/* Right: Live Cinema Monitor */}
           <div className="lg:col-span-6">
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl bg-brand-black-surface">
+            <div
+              key={activeService.slug}
+              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl bg-brand-black-surface animate-fade-in"
+            >
               {/* Dynamic Image / Footage */}
               <Image
                 key={activeService.slug}

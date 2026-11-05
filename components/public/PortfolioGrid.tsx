@@ -79,7 +79,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
           </div>
         </div>
       ) : (
-        <div className="space-y-8">
+        <div key={activeFilter} className="space-y-8 animate-fade-in">
           {/* If "All Projects" is selected, highlight the first item as a dramatic wide banner */}
           {activeFilter === "all" && filteredProjects.length > 0 && (
             <div className="mb-8">

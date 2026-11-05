@@ -54,7 +54,7 @@ export default function BehindTheFrame() {
             </div>
 
             {/* Overlapping Floating Secondary Frame */}
-            <div className="hidden sm:block absolute -bottom-10 -right-8 w-60 aspect-[16/10] rounded-sm overflow-hidden border-2 border-brand-gold shadow-2xl bg-brand-black">
+            <div className="hidden sm:block absolute -bottom-10 -right-8 w-60 aspect-[16/10] rounded-sm overflow-hidden border-2 border-brand-gold shadow-2xl bg-brand-black hover:scale-[1.03] transition-transform duration-500 ease-cinematic">
               <Image
                 src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
                 alt="Lighting synchronization testing"

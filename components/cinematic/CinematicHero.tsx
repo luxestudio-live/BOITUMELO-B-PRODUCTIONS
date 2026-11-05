@@ -164,7 +164,7 @@ export default function CinematicHero() {
           </div>
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
-          <div ref={titleRef} className="space-y-6 max-w-5xl">
+          <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in">
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
               BOITUMELO B{" "}
               <span className="text-brand-gold block sm:inline font-normal">

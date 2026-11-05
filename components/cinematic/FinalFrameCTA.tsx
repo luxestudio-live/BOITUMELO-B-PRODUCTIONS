@@ -39,10 +39,10 @@ export default function FinalFrameCTA() {
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link
               href="/book"
-              className="inline-flex items-center space-x-3 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-9 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl hover:shadow-brand-gold/30"
+              className="inline-flex items-center space-x-3 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-9 py-4 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl hover:shadow-brand-gold/30 group"
             >
               <span>Start a Project Brief</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 ease-cinematic group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
             <Link
