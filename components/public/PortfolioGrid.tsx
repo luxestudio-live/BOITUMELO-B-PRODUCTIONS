@@ -1,0 +1,108 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import ProjectCard from "@/components/public/ProjectCard";
+import { ProjectItem, ProjectCategory } from "@/data/projects";
+import { Film, Filter } from "lucide-react";
+
+interface PortfolioGridProps {
+  initialProjects: ProjectItem[];
+}
+
+type FilterOption = "all" | ProjectCategory;
+
+const filterTabs: { label: string; value: FilterOption }[] = [
+  { label: "All Projects", value: "all" },
+  { label: "Documentary & Film", value: "documentary-film" },
+  { label: "Music Videos", value: "music-videos" },
+  { label: "Corporate", value: "corporate-video" },
+  { label: "Commercial", value: "brand-commercials" },
+];
+
+export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
+  const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === "all") return initialProjects;
+    return initialProjects.filter((p) => p.category === activeFilter);
+  }, [activeFilter, initialProjects]);
+
+  return (
+    <div className="space-y-12">
+      {/* Category Filter Controls */}
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/30 pb-6">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3" role="tablist" aria-label="Project Categories">
+          {filterTabs.map((tab) => {
+            const isSelected = activeFilter === tab.value;
+            return (
+              <button
+                key={tab.value}
+                role="tab"
+                aria-selected={isSelected}
+                onClick={() => setActiveFilter(tab.value)}
+                className={`text-xs uppercase font-mono tracking-[0.2em] px-4 py-2 rounded-sm transition-all duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
+                  isSelected
+                    ? "bg-brand-gold text-brand-black font-semibold shadow-sm"
+                    : "text-brand-gray-light bg-brand-black-elevated border border-brand-teal/40 hover:border-brand-gold/50 hover:text-brand-white"
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+
+        <span className="text-xs font-mono text-brand-gray hidden sm:inline">
+          Showing {filteredProjects.length} of {initialProjects.length} Works
+        </span>
+      </div>
+
+      {/* Dynamic Projects Grid with Uneven Editorial Rhythm */}
+      {filteredProjects.length === 0 ? (
+        <div className="py-24 text-center border border-dashed border-brand-teal/40 rounded-sm p-8 space-y-4">
+          <Film className="w-10 h-10 text-brand-gold/50 mx-auto" />
+          <h3 className="text-xl font-display font-medium text-brand-white">
+            No projects found in this category.
+          </h3>
+          <p className="text-sm text-brand-gray font-light">
+            Try switching to another category tab to view available demonstration films.
+          </p>
+          <button
+            type="button"
+            onClick={() => setActiveFilter("all")}
+            className="text-xs uppercase font-mono tracking-widest text-brand-gold hover:underline mt-2 inline-block"
+          >
+            Reset Filters
+          </button>
+        </div>
+      ) : (
+        <div className="space-y-8">
+          {/* If "All Projects" is selected, highlight the first item as a dramatic wide banner */}
+          {activeFilter === "all" && filteredProjects.length > 0 && (
+            <div className="mb-8">
+              <ProjectCard project={filteredProjects[0]} layoutVariant="featured-wide" priority />
+            </div>
+          )}
+
+          {/* Staggered Grid for remaining projects */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {(activeFilter === "all" ? filteredProjects.slice(1) : filteredProjects).map(
+              (project, idx) => {
+                const variant =
+                  idx % 5 === 0 ? "tall" : idx % 3 === 0 ? "editorial" : "standard";
+                return (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    layoutVariant={variant}
+                  />
+                );
+              }
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
