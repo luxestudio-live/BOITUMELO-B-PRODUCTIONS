@@ -1,6 +1,5 @@
 import Header from "@/components/public/Header";
 import Footer from "@/components/public/Footer";
-import DemoBanner from "@/components/public/DemoBanner";
 import { siteConfig } from "@/data/site-config";
 
 export default function PublicLayout({

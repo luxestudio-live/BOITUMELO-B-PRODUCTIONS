@@ -244,7 +244,7 @@ export const sampleProjects: ProjectItem[] = [
     ],
     behindTheFrames: [
       {
-        caption: "Chasing offshore drone prototypes 12 nautical miles off Port Kembla.",
+        caption: "Chasing offshore autonomous drone vessels 12 nautical miles off Port Kembla.",
         imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
         aspect: "landscape",
       },

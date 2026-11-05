@@ -27,7 +27,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: "BOITUMELO B PRODUCTIONS",
   shortName: "BOITUMELO B",
-  legalNotice: "Demo Prototype — Non-commercial preview",
+  legalNotice: "© BOITUMELO B PRODUCTIONS. All rights reserved.",
   tagline: "Stories Worth Feeling.",
   supportingCopy: "Films that move people. Visuals that move brands.",
   heroHeadline: "Stories Worth Feeling.",

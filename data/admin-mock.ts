@@ -79,7 +79,7 @@ export const initialMockEnquiries: MockEnquiry[] = [
     timeline: "December 2026",
     date: "24 Oct 2026",
     status: "Archived",
-    message: "End-of-year investor impact highlight video summarizing international offshore demonstrations.",
+    message: "End-of-year investor impact highlight video summarizing international offshore field deployments.",
   },
 ];
 

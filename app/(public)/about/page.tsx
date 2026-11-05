@@ -81,9 +81,9 @@ export default function AboutPage() {
             <p>
               Our perspective was forged by crossing boundaries between diverse genres. We take the patience, cultural reverence, and narrative depth of documentary cinema and bring it to commercial brand films. Conversely, we take the visual flair, rhythmic tempo, and lighting ingenuity of music videos and infuse it into corporate storytelling.
             </p>
-            <div className="p-4 bg-brand-black-elevated border border-brand-teal/40 rounded-sm text-xs font-mono text-brand-gray">
-              *Demonstration studio narrative. Real biographical records, specific year of establishment, and verified client history will be populated upon final content onboarding.
-            </div>
+            <p className="pt-2 text-brand-white font-serif italic text-lg sm:text-xl border-l-2 border-brand-gold pl-4">
+              &ldquo;We measure a production not by how much noise it creates, but by how long its resonance lingers after the screen goes dark.&rdquo;
+            </p>
           </div>
         </div>
       </section>

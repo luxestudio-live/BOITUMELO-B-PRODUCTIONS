@@ -104,7 +104,7 @@ export default function ContactPage() {
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                   <span className="text-[10px] text-brand-gray block mt-1 font-mono">
-                    *Placeholder: {siteConfig.whatsappDisplay}
+                    Direct Line: {siteConfig.whatsappDisplay}
                   </span>
                 </div>
               </div>

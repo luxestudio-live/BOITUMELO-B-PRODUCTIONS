@@ -178,7 +178,7 @@ export default function Footer() {
             <span className="hidden sm:inline">•</span>
             <Link href="/admin" className="hover:text-brand-gold flex items-center space-x-1">
               <Shield className="w-3 h-3 text-brand-teal-light" />
-              <span>CMS Prototype</span>
+              <span>Studio Portal</span>
             </Link>
           </div>
 

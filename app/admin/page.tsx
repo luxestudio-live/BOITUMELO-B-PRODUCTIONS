@@ -1,8 +1,8 @@
 import AdminDashboard from "@/components/admin/AdminDashboard";
 
 export const metadata = {
-  title: "Admin CMS Dashboard | BOITUMELO B PRODUCTIONS",
-  description: "Frontend Content Management System prototype for BOITUMELO B PRODUCTIONS.",
+  title: "Studio Portal | BOITUMELO B PRODUCTIONS",
+  description: "Production Content Management Console for BOITUMELO B PRODUCTIONS.",
 };
 
 export default function AdminPage() {

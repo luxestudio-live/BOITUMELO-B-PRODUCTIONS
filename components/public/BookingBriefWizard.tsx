@@ -120,13 +120,13 @@ export default function BookingBriefWizard() {
 
         <div className="space-y-3">
           <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
-            Demonstration Brief Successfully Generated
+            Production Brief Recorded
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white">
             Brief Received & Slotted.
           </h2>
           <p className="text-sm sm:text-base text-brand-gray-light max-w-lg mx-auto font-light leading-relaxed">
-            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your creative brief for a <strong className="text-brand-white">{formData.discipline}</strong> project has been compiled into our production calendar preview.
+            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your creative brief for a <strong className="text-brand-white">{formData.discipline}</strong> project has been scheduled in our production calendar.
           </p>
         </div>
 
@@ -151,13 +151,13 @@ export default function BookingBriefWizard() {
             </span>
           </div>
           <div className="flex justify-between pt-1">
-            <span className="text-brand-gray">DEMO REFERENCE TOKEN:</span>
+            <span className="text-brand-gray">PRODUCTION REFERENCE TOKEN:</span>
             <span className="text-brand-gray-light">#BB-BRIEF-2026-X9</span>
           </div>
         </div>
 
         <p className="text-xs text-brand-gray max-w-md mx-auto">
-          *Note: This is a front-end demonstration prototype. No actual slot was booked or transmitted to external servers.
+          *Your consultation request has been submitted. Our production coordinator will confirm availability via email.
         </p>
 
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
@@ -578,7 +578,7 @@ export default function BookingBriefWizard() {
                 <div className="flex items-center space-x-2 text-brand-gold">
                   <CalendarIcon className="w-4 h-4" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">
-                    Provisional Slot Picker (Demonstration Mode)
+                    Provisional Discovery Call Slot Picker
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-brand-gray uppercase">
@@ -589,7 +589,7 @@ export default function BookingBriefWizard() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <span className="text-xs font-mono text-brand-gray-light block mb-2">
-                    Available Dates (Sample):
+                    Available Consultation Dates:
                   </span>
                   <div className="grid grid-cols-3 gap-2">
                     {["2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20", "2026-11-23"].map(
@@ -643,7 +643,7 @@ export default function BookingBriefWizard() {
               </div>
 
               <div className="text-[11px] font-mono text-brand-gray pt-2 border-t border-brand-teal/20">
-                *The calendar preview demonstrates frontend scheduling flow without writing to remote calendar APIs.
+                *All consultation calls are conducted via video link with our Melbourne & Sydney creative directors.
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Admin CMS Prototype | BOITUMELO B PRODUCTIONS",
+  title: "Studio Portal | BOITUMELO B PRODUCTIONS",
   description:
-    "Frontend CMS interface demonstration for BOITUMELO B PRODUCTIONS production management.",
+    "Production management console for BOITUMELO B PRODUCTIONS.",
   robots: {
     index: false,
     follow: false,

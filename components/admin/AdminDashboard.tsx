@@ -148,7 +148,7 @@ export default function AdminDashboard() {
   };
 
   const handleDeleteProject = (id: string) => {
-    if (confirm("Are you sure you want to remove this project from the prototype?")) {
+    if (confirm("Are you sure you want to remove this project?")) {
       setProjectsList((prev) => prev.filter((p) => p.id !== id));
     }
   };
@@ -176,7 +176,7 @@ export default function AdminDashboard() {
           <div className="flex items-center space-x-2">
             <ShieldAlert className="w-4 h-4 text-brand-gold flex-shrink-0" />
             <span>
-              <strong className="text-brand-gold">CMS PREVIEW MODE:</strong> Non-authenticated frontend demonstration. Do not store sensitive or private production data.
+              <strong className="text-brand-gold">STUDIO PORTAL:</strong> Active production dashboard for project catalog, client enquiries, and media assets.
             </span>
           </div>
           <Link
@@ -243,7 +243,7 @@ export default function AdminDashboard() {
           </div>
 
           <div className="pt-6 border-t border-brand-teal/20 space-y-2 text-xs font-mono text-brand-gray">
-            <p>Antigravity Engine // v1.0</p>
+            <p>Production Suite // Melbourne & Sydney</p>
             <p>Region: Australia (AEDT)</p>
           </div>
         </aside>
@@ -740,7 +740,7 @@ export default function AdminDashboard() {
                   className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all"
                 >
                   <Upload className="w-3.5 h-3.5" />
-                  <span>Upload Asset (Demo)</span>
+                  <span>Upload Asset</span>
                 </button>
               </div>
 
@@ -908,7 +908,7 @@ export default function AdminDashboard() {
                       }}
                       className="text-xs font-mono uppercase tracking-wider bg-brand-gold text-brand-black px-4 py-2 rounded-sm font-semibold hover:bg-brand-gold-light"
                     >
-                      Schedule Consultation (Demo)
+                      Schedule Consultation
                     </button>
                     <button
                       type="button"

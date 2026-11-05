@@ -65,7 +65,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
             No projects found in this category.
           </h3>
           <p className="text-sm text-brand-gray font-light">
-            Try switching to another category tab to view available demonstration films.
+            Try switching to another category tab to view available films in our catalog.
           </p>
           <button
             type="button"

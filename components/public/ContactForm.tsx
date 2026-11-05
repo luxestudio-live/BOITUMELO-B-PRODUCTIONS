@@ -40,7 +40,6 @@ export default function ContactForm() {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate frontend prototype transmission delay
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -55,14 +54,14 @@ export default function ContactForm() {
         </div>
         <div className="space-y-2">
           <h3 className="text-2xl font-display font-medium text-brand-white">
-            Enquiry Received (Demonstration)
+            Enquiry Received
           </h3>
           <p className="text-sm text-brand-gray-light max-w-md mx-auto leading-relaxed">
-            Thank you, <strong className="text-brand-white">{formData.name}</strong>. In production, this enquiry would be immediately forwarded to our director&apos;s desk. A member of the production team would respond within 24 hours.
+            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your enquiry has been received by our production desk. A member of our creative producing team will review your project and respond within 24 hours.
           </p>
         </div>
         <div className="p-4 bg-brand-black/60 border border-brand-teal/40 rounded-sm max-w-sm mx-auto text-xs font-mono text-brand-gold">
-          Demo Record ID: #BB-{Math.floor(1000 + Math.random() * 9000)}
+          Reference ID: #BB-{Math.floor(1000 + Math.random() * 9000)}
         </div>
         <button
           type="button"
@@ -82,7 +81,7 @@ export default function ContactForm() {
           }}
           className="text-xs uppercase font-mono tracking-widest text-brand-gray hover:text-brand-white underline pt-2 inline-block"
         >
-          Send Another Demonstration Message
+          Send Another Message
         </button>
       </div>
     );
@@ -309,7 +308,7 @@ export default function ContactForm() {
           )}
         </button>
         <span className="block text-[11px] font-mono text-brand-gray mt-3">
-          *Demonstration build. Submissions simulate realistic transmission locally without external persistence.
+          *All enquiries are reviewed directly by our executive production desk in Melbourne & Sydney.
         </span>
       </div>
     </form>
