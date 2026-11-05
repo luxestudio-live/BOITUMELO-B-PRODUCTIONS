@@ -23,7 +23,7 @@ export default function AboutPage() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
+          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             BOITUMELO B PRODUCTIONS was founded on a singular belief: filmmaking is not an exercise in operating equipment—it is the art of giving emotional weight to human truth.
           </p>
         </div>

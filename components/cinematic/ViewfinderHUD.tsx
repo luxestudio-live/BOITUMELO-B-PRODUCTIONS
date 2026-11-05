@@ -57,7 +57,7 @@ export default function ViewfinderHUD({
           <span suppressHydrationWarning className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">{liveTimecode}</span>
         </div>
 
-        <div className="hidden sm:flex items-center space-x-6 text-slate-100 bg-black/80 px-3 py-1 rounded-sm tracking-wider">
+        <div className="hidden sm:flex items-center space-x-6 text-brand-white bg-black/80 px-3 py-1 rounded-sm tracking-wider">
           <span>{fps}</span>
           <span className="text-brand-gold">•</span>
           <span>{iso}</span>
@@ -81,12 +81,12 @@ export default function ViewfinderHUD({
           <span className="px-2.5 py-1 bg-brand-black/80 border border-brand-gold/40 text-brand-gold rounded-sm text-xs">
             {aspectRatioLabel}
           </span>
-          <span className="hidden md:inline text-slate-200 bg-brand-black/70 px-2.5 py-1 rounded-sm text-xs">
+          <span className="hidden md:inline text-brand-gray-light bg-brand-black/70 px-2.5 py-1 rounded-sm text-xs">
             {lensLabel}
           </span>
         </div>
 
-        <div className="flex items-center space-x-3 text-xs text-slate-200 bg-brand-black/70 px-2.5 py-1 rounded-sm">
+        <div className="flex items-center space-x-3 text-xs text-brand-gray-light bg-brand-black/70 px-2.5 py-1 rounded-sm">
           <span className="hidden sm:inline">BAT 14.8V</span>
           <span className="text-brand-gold font-medium">CALIBRATED</span>
         </div>

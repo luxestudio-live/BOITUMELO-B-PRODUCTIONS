@@ -28,7 +28,7 @@ export default function InteractiveServices() {
               Production Disciplines
             </h2>
           </div>
-          <span className="text-xs font-mono text-slate-300 hidden sm:inline">
+          <span className="text-xs font-mono text-brand-gray-light hidden sm:inline">
             Interactive Vertical Index
           </span>
         </div>
@@ -84,7 +84,7 @@ export default function InteractiveServices() {
                         {service.visualDirection.aestheticTokens.slice(0, 3).map((token) => (
                           <span
                             key={token}
-                            className="text-xs font-mono uppercase tracking-widest px-2.5 py-1 bg-brand-teal/40 text-slate-200 rounded border border-brand-teal/50"
+                            className="text-xs font-mono uppercase tracking-widest px-2.5 py-1 bg-brand-teal/40 text-brand-gray-light rounded border border-brand-teal/50"
                           >
                             {token}
                           </span>

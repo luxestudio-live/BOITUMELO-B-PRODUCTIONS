@@ -155,7 +155,7 @@ export default function StudioStatement() {
         {/* Supporting Narrative */}
         <p
           ref={subtextRef}
-          className="max-w-2xl mx-auto text-base sm:text-xl text-slate-100 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
+          className="max-w-2xl mx-auto text-base sm:text-xl text-brand-white font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
           In an era of disposable video feeds, true cinema demands reverence. We pair large format anamorphic glass with deep cultural listening to craft films that endure.
         </p>
@@ -163,7 +163,7 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-slate-200 tracking-widest uppercase"
+          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-brand-gray-light tracking-widest uppercase"
         >
           <span>MELBOURNE</span>
           <span className="text-brand-gold">•</span>

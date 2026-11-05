@@ -29,7 +29,7 @@ export default function EditorialHeading({
       </h2>
 
       {lead && (
-        <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl font-light [text-wrap:pretty]">
+        <p className="text-sm sm:text-base text-brand-gray-light leading-relaxed max-w-2xl font-light [text-wrap:pretty]">
           {lead}
         </p>
       )}

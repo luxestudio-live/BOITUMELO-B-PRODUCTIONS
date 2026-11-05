@@ -93,7 +93,7 @@ export default function ProjectTakeover() {
             Featured Production
           </h2>
         </div>
-        <span className="text-xs font-mono text-slate-300 hidden sm:inline">
+        <span className="text-xs font-mono text-brand-gray-light hidden sm:inline">
           {project.location} • {project.year}
         </span>
       </div>

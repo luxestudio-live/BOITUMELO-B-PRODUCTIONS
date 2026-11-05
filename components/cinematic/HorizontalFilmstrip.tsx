@@ -89,7 +89,7 @@ export default function HorizontalFilmstrip() {
         </h2>
       </div>
 
-      <div className="hidden md:flex absolute top-8 right-12 z-10 items-center space-x-2 text-xs font-mono uppercase tracking-widest text-slate-300 pointer-events-none">
+      <div className="hidden md:flex absolute top-8 right-12 z-10 items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-gray-light pointer-events-none">
         <SlidersHorizontal className="w-3.5 h-3.5 text-brand-gold" />
         <span>Scroll Down to Pan Left ◄►</span>
       </div>
@@ -123,7 +123,7 @@ export default function HorizontalFilmstrip() {
                 onMouseLeave={() => handleMouseLeave(p.slug)}
               >
                 {/* Physical 35mm Perforation Style Bar Above Frame */}
-                <div className="flex items-center justify-between pb-2 px-1 text-xs font-mono text-slate-300">
+                <div className="flex items-center justify-between pb-2 px-1 text-xs font-mono text-brand-gray-light">
                   <span className="text-brand-gold font-semibold uppercase tracking-wider">
                     REEL 0{idx + 1} // {p.categoryLabel}
                   </span>
@@ -183,11 +183,11 @@ export default function HorizontalFilmstrip() {
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-200 font-light line-clamp-1">
+                    <p className="text-xs text-brand-gray-light font-light line-clamp-1">
                       {p.subtitle}
                     </p>
 
-                    <div className="pt-2 flex items-center justify-between text-xs font-mono text-slate-300">
+                    <div className="pt-2 flex items-center justify-between text-xs font-mono text-brand-gray-light">
                       <span>{p.location}</span>
                       <span>{p.cameraFormat}</span>
                     </div>

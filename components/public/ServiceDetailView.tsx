@@ -31,7 +31,7 @@ export default function ServiceDetailView({
             {service.heroHeadline}
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
+          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             {service.tagline}
           </p>
 

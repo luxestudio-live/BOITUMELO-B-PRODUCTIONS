@@ -65,7 +65,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
           <h3 className="text-xl font-display font-medium text-brand-white">
             No projects found in this category.
           </h3>
-          <p className="text-sm text-slate-300 font-light max-w-md mx-auto">
+          <p className="text-sm text-brand-gray-light font-light max-w-md mx-auto">
             Try switching to another category tab to view available films in our catalogue.
           </p>
           <div className="pt-2">

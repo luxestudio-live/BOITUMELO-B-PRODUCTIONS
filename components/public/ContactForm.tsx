@@ -312,7 +312,7 @@ export default function ContactForm() {
             </>
           )}
         </button>
-        <span className="block text-xs font-mono text-slate-300 mt-3">
+        <span className="block text-xs font-mono text-brand-gray-light mt-3">
           *Every enquiry is reviewed directly by our directors in Melbourne & Sydney. We never share your details.
         </span>
       </div>

@@ -579,7 +579,7 @@ export default function BookingBriefWizard() {
                   <span className="text-xs font-mono uppercase tracking-wider text-brand-white block">
                     {opt.label}
                   </span>
-                  <p className="text-xs text-slate-300 mt-1">{opt.desc}</p>
+                  <p className="text-xs text-brand-gray-light mt-1">{opt.desc}</p>
                 </button>
               ))}
             </div>
@@ -593,7 +593,7 @@ export default function BookingBriefWizard() {
                     Select a Discovery Call Slot
                   </span>
                 </div>
-                <span className="text-xs font-mono text-slate-300 uppercase">
+                <span className="text-xs font-mono text-brand-gray-light uppercase">
                   Times in AEDT (Melbourne / Sydney)
                 </span>
               </div>
@@ -654,7 +654,7 @@ export default function BookingBriefWizard() {
                 </div>
               </div>
 
-              <div className="text-xs font-mono text-slate-300 pt-2 border-t border-brand-teal/20">
+              <div className="text-xs font-mono text-brand-gray-light pt-2 border-t border-brand-teal/20">
                 *Discovery sessions are 30-minute introductory conversations held via Google Meet or phone. There is no fee or commitment required.
               </div>
             </div>

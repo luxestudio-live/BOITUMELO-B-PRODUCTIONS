@@ -160,7 +160,7 @@ export default function VideoPlayer({
 
       {/* Fallback state when media stream is restricted or fails */}
       {hasError && (
-        <div className="absolute top-4 left-4 right-4 z-20 bg-brand-black/90 border border-brand-teal/60 p-3 rounded-sm flex items-center justify-between text-xs font-mono text-slate-300 backdrop-blur-md">
+        <div className="absolute top-4 left-4 right-4 z-20 bg-brand-black/90 border border-brand-teal/60 p-3 rounded-sm flex items-center justify-between text-xs font-mono text-brand-gray-light backdrop-blur-md">
           <span>Stream paused. Presenting high-resolution archival still.</span>
           <button
             type="button"
@@ -230,7 +230,7 @@ export default function VideoPlayer({
               {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
             </button>
 
-            <span className="font-mono text-xs text-slate-300">
+            <span className="font-mono text-xs text-brand-gray-light">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           </div>

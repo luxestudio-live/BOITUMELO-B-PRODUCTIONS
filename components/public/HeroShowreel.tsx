@@ -116,7 +116,7 @@ export default function HeroShowreel() {
           <button
             type="button"
             onClick={scrollToNext}
-            className="hidden sm:flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-slate-300 hover:text-brand-white transition-colors"
+            className="hidden sm:flex items-center space-x-2 text-xs uppercase tracking-[0.2em] text-brand-gray-light hover:text-brand-white transition-colors"
           >
             <span>Scroll to Discover</span>
             <ArrowDown className="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-y-0.5" />

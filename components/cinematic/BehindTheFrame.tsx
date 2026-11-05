@@ -47,7 +47,7 @@ export default function BehindTheFrame() {
                 <span className="text-xs font-mono uppercase tracking-widest text-brand-gold block">
                   Field Archive • Dawn Call Wilpena Pound
                 </span>
-                <p className="text-xs text-slate-200 mt-1 font-light [text-wrap:pretty]">
+                <p className="text-xs text-brand-gray-light mt-1 font-light [text-wrap:pretty]">
                   Capturing atmospheric low-light gradients on large format sensors.
                 </p>
               </div>

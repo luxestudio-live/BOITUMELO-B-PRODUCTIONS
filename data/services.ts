@@ -119,7 +119,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     tagline: "Bold visual poetry, visceral rhythm, and boundary-pushing artistic collaboration.",
     heroHeadline: "Visuals That Magnify the Soul of the Sound.",
     introNarrative:
-      "A great music video does not merely visualize lyrics; it expands an artist's conceptual mythology. We collaborate closely with solo acts, bands, and record labels to translate sonic frequency into arresting visual metaphors. Combining inventive optical camera effects, precision choreography, dynamic lighting installations, and editorial rhythm, our music films are engineered to capture cultural attention and live forever in the audience's mind.",
+      "A great music video does not merely visualise lyrics; it expands an artist's conceptual mythology. We collaborate closely with solo acts, bands, and record labels to translate sonic frequency into arresting visual metaphors. Combining inventive optical camera effects, precision choreography, dynamic lighting installations, and editorial rhythm, our music films are engineered to capture cultural attention and live forever in the audience's mind.",
     visualDirection: {
       title: "Kinetic, Expressive & Tactile",
       description:
@@ -153,7 +153,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       {
         step: "02",
         title: "Visual Architecture",
-        description: "Location scouting, set construction, DMX pre-visualization, styling, and choreography rehearsals.",
+        description: "Location scouting, set construction, DMX pre-visualisation, styling, and choreography rehearsals.",
       },
       {
         step: "03",

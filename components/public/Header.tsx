@@ -48,7 +48,7 @@ export default function Header() {
             <span className="font-display font-bold tracking-[0.22em] text-base sm:text-lg text-brand-white group-hover:text-brand-gold transition-colors duration-300">
               BOITUMELO B
             </span>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-slate-300 group-hover:text-brand-white transition-colors duration-300">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-brand-gray-light group-hover:text-brand-white transition-colors duration-300">
               Productions • Australia
             </span>
           </Link>
@@ -90,7 +90,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="md:hidden p-2 text-brand-white hover:text-brand-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded"
+              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-white hover:text-brand-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded"
               aria-label="Open mobile navigation menu"
               aria-expanded={mobileMenuOpen}
             >

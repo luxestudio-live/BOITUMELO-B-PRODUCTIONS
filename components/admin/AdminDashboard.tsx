@@ -233,7 +233,7 @@ export default function AdminDashboard() {
                       <span>{tab.label}</span>
                     </span>
                     {tab.count !== undefined && (
-                      <span className="text-xs px-2.5 py-1 rounded bg-brand-black/60 text-slate-300 font-mono">
+                      <span className="text-xs px-2.5 py-1 rounded bg-brand-black/60 text-brand-gray-light font-mono">
                         {tab.count}
                       </span>
                     )}
@@ -316,7 +316,7 @@ export default function AdminDashboard() {
                     <span className="text-3xl sm:text-4xl font-display font-bold text-brand-white mt-2 block">
                       {stat.val}
                     </span>
-                    <span className="text-xs font-mono text-slate-300 mt-1 block">
+                    <span className="text-xs font-mono text-brand-gray-light mt-1 block">
                       {stat.note}
                     </span>
                   </div>
@@ -479,10 +479,10 @@ export default function AdminDashboard() {
                     <tbody className="divide-y divide-brand-teal/20 text-brand-gray-light">
                       {filteredProjects.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="p-12 text-center text-slate-300">
+                          <td colSpan={6} className="p-12 text-center text-brand-gray-light">
                             <Film className="w-8 h-8 text-brand-gold/60 mx-auto mb-3" />
                             <p className="text-sm font-sans text-brand-white">No film projects matched your current search or filter.</p>
-                            <p className="text-xs font-mono text-slate-400 mt-1">Try resetting the category filter or adding a new production record.</p>
+                            <p className="text-xs font-mono text-brand-gray mt-1">Try resetting the category filter or adding a new production record.</p>
                           </td>
                         </tr>
                       ) : (
@@ -756,7 +756,7 @@ export default function AdminDashboard() {
                   <div className="col-span-full py-16 text-center border border-dashed border-brand-teal/40 rounded-sm p-8 space-y-3">
                     <FolderArchive className="w-8 h-8 text-brand-gold/60 mx-auto" />
                     <p className="text-sm font-sans text-brand-white">No media assets in library.</p>
-                    <p className="text-xs font-mono text-slate-400">Upload film stills, DCI masters, or promotional posters to populate the vault.</p>
+                    <p className="text-xs font-mono text-brand-gray">Upload film stills, DCI masters, or promotional posters to populate the vault.</p>
                   </div>
                 ) : (
                   mediaList.map((m) => (
@@ -810,10 +810,10 @@ export default function AdminDashboard() {
               <div className="bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden">
                 <div className="divide-y divide-brand-teal/20">
                   {enquiriesList.length === 0 ? (
-                    <div className="p-12 text-center text-slate-300 space-y-3">
+                    <div className="p-12 text-center text-brand-gray-light space-y-3">
                       <Inbox className="w-8 h-8 text-brand-gold/60 mx-auto" />
                       <p className="text-sm font-sans text-brand-white">No production enquiries logged yet.</p>
-                      <p className="text-xs font-mono text-slate-400">Inbound project briefs submitted via /contact or /book will appear in this registry.</p>
+                      <p className="text-xs font-mono text-brand-gray">Inbound project briefs submitted via /contact or /book will appear in this registry.</p>
                     </div>
                   ) : (
                     enquiriesList.map((enq) => (

@@ -57,11 +57,11 @@ export default function ProjectCard({
         aria-label={`View film project: ${project.title}`}
       >
         {/* Physical 35mm Perforation Header Strip */}
-        <div className="flex items-center justify-between px-3 py-1.5 bg-brand-teal-deep text-xs font-mono text-slate-300 border-b border-brand-teal/40">
+        <div className="flex items-center justify-between px-3 py-1.5 bg-brand-teal-deep text-xs font-mono text-brand-gray-light border-b border-brand-teal/40">
           <span className="text-brand-gold font-semibold uppercase tracking-wider">
             {project.categoryLabel}
           </span>
-          <span className="text-slate-300">{project.aspectRatio}</span>
+          <span className="text-brand-gray-light">{project.aspectRatio}</span>
         </div>
 
         <div className={`relative w-full ${aspectClass} overflow-hidden bg-brand-black-surface`}>
@@ -123,12 +123,12 @@ export default function ProjectCard({
               <ArrowUpRight className="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-1" />
             </div>
 
-            <p className="mt-2 text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-light [text-wrap:pretty]">
+            <p className="mt-2 text-xs sm:text-sm text-brand-gray-light line-clamp-2 leading-relaxed font-light [text-wrap:pretty]">
               {project.subtitle}
             </p>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-xs font-mono text-slate-300 gap-2">
+          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-xs font-mono text-brand-gray-light gap-2">
             <span className="truncate max-w-[65%]">{project.location}</span>
             <span className="text-brand-gold flex-shrink-0">{project.duration}</span>
           </div>

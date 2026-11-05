@@ -133,7 +133,7 @@ export default function CinematicInquiries({
                   {serifAccent}
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-light pt-2 [text-wrap:pretty]">
+              <p className="text-sm sm:text-base text-brand-gray-light leading-relaxed font-light pt-2 [text-wrap:pretty]">
                 {lead}
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function CinematicInquiries({
             {/* Category Filter Pills (when enabled) */}
             {enableCategories && categories.length > 2 && (
               <div className="pt-2 space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-300 block">
+                <span className="text-xs font-mono uppercase tracking-widest text-brand-gray-light block">
                   Filter by Topic
                 </span>
                 <div className="flex flex-wrap gap-2.5">
@@ -163,7 +163,7 @@ export default function CinematicInquiries({
                         className={`min-h-[44px] text-xs font-mono uppercase tracking-wider px-4 py-2.5 rounded-sm border transition-all duration-300 flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
                           isSelected
                             ? "bg-brand-gold text-brand-black border-brand-gold font-medium shadow-md shadow-brand-gold/15"
-                            : "bg-brand-black/60 text-slate-200 border-brand-teal/50 hover:border-brand-gold/60 hover:text-brand-white"
+                            : "bg-brand-black/60 text-brand-gray-light border-brand-teal/50 hover:border-brand-gold/60 hover:text-brand-white"
                         }`}
                       >
                         <span>{cat}</span>
@@ -255,7 +255,7 @@ export default function CinematicInquiries({
                           [ 0{idx + 1} ]
                         </span>
                         {item.category && (
-                          <span className="inline-flex items-center space-x-1.5 text-slate-200 bg-brand-teal/40 px-2.5 py-1 rounded-sm border border-brand-teal/50">
+                          <span className="inline-flex items-center space-x-1.5 text-brand-gray-light bg-brand-teal/40 px-2.5 py-1 rounded-sm border border-brand-teal/50">
                             {getCategoryIcon(item.category)}
                             <span className="uppercase tracking-wider text-xs font-mono font-medium">
                               {item.category}
@@ -303,7 +303,7 @@ export default function CinematicInquiries({
 
                       {/* Technical Specs Footer Ribbon */}
                       {item.specs && (
-                        <div className="p-3 bg-brand-teal-deep/80 border border-brand-teal/40 rounded-sm flex items-center space-x-2 text-xs font-mono text-slate-300">
+                        <div className="p-3 bg-brand-teal-deep/80 border border-brand-teal/40 rounded-sm flex items-center space-x-2 text-xs font-mono text-brand-gray-light">
                           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold flex-shrink-0" />
                           <span className="truncate">
                             <strong className="text-brand-gold font-semibold uppercase tracking-wider mr-1">

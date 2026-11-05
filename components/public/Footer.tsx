@@ -176,7 +176,7 @@ export default function Footer() {
             <span className="hidden sm:inline">•</span>
             <span>Australian Production House</span>
             <span className="hidden sm:inline">•</span>
-            <Link href="/admin" className="hover:text-brand-gold flex items-center space-x-1 min-h-[44px] items-center">
+            <Link href="/admin" className="hover:text-brand-gold flex items-center space-x-1 min-h-[44px]">
               <Shield className="w-3 h-3 text-brand-teal-light" />
               <span>Studio Portal</span>
             </Link>
