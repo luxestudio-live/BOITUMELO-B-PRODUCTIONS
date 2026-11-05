@@ -32,11 +32,11 @@ export default function GlobalError({
         <h1 className="text-3xl sm:text-5xl font-display font-medium text-brand-white leading-tight">
           Visual Stream Paused.
         </h1>
-        <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed [text-wrap:pretty]">
+        <p className="text-sm sm:text-base text-brand-gray-light font-light leading-relaxed [text-wrap:pretty]">
           An unexpected interruption occurred while rendering this frame. You can reload the cinematic experience or return to the studio home page.
         </p>
         {error.digest && (
-          <p className="text-[11px] font-mono text-slate-400 pt-1">
+          <p className="text-[11px] font-mono text-brand-gray pt-1">
             Reference Digest: #{error.digest}
           </p>
         )}
