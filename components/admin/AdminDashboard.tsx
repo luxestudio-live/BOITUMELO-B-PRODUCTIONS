@@ -800,7 +800,7 @@ export default function AdminDashboard() {
                       key={enq.id}
                       onClick={() => setSelectedEnquiry(enq)}
                       className={`p-6 cursor-pointer hover:bg-brand-teal/15 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
-                        selectedEnquiry?.id === enq.id ? "bg-brand-teal/25 border-l-4 border-l-brand-gold" : ""
+                        selectedEnquiry?.id === enq.id ? "bg-brand-teal/30 ring-1 ring-inset ring-brand-gold/60" : ""
                       }`}
                     >
                       <div className="space-y-1">

@@ -27,22 +27,17 @@ export default function ServiceDetailView({
       {/* 01: Distinct Cinematic Hero with HUD */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse-subtle" />
-              <span>Production Vertical // {service.number}</span>
-            </span>
-            <span className="text-brand-teal text-xs">•</span>
-            <span className="text-[11px] font-mono text-brand-gray uppercase tracking-widest">
-              {service.shortTitle}
-            </span>
+          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-slate-300">
+            <span className="text-brand-gold font-semibold">{service.shortTitle}</span>
+            <span>•</span>
+            <span>Australian Production Standard</span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             {service.heroHeadline}
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl">
+          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             {service.tagline}
           </p>
 
@@ -145,7 +140,6 @@ export default function ServiceDetailView({
       <section className="bg-brand-black-elevated py-20 sm:py-28 border-y border-brand-teal/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
-            eyebrow="Phase Execution"
             title="The Creative Journey."
             serifAccent={`Crafted for ${service.shortTitle}.`}
             lead="How we navigate from the opening brainstorming conversation to final exhibition masters."
@@ -177,7 +171,6 @@ export default function ServiceDetailView({
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <EditorialHeading
-              eyebrow="Portfolio Case Studies"
               title="Related Productions."
               serifAccent="Evidence of Craft."
               lead={`Examine completed films produced under our ${service.shortTitle} discipline.`}

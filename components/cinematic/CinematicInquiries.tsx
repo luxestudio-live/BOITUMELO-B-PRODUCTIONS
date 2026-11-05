@@ -125,14 +125,6 @@ export default function CinematicInquiries({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Editorial Header, Categories & Producer Card */}
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
-            {/* HUD Badge */}
-            <div className="inline-flex items-center space-x-2.5 px-3 py-1.5 bg-brand-black/70 border border-brand-teal/60 rounded-sm">
-              <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse-subtle" />
-              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-brand-gold font-medium">
-                {eyebrow}
-              </span>
-            </div>
-
             {/* Architectural Heading */}
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-white leading-[1.05] tracking-tight">
@@ -141,18 +133,18 @@ export default function CinematicInquiries({
                   {serifAccent}
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-brand-gray-light leading-relaxed font-light pt-2">
+              <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-light pt-2 [text-wrap:pretty]">
                 {lead}
               </p>
             </div>
 
             {/* Category Filter Pills (when enabled) */}
             {enableCategories && categories.length > 2 && (
-              <div className="pt-2 space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gray block">
-                  Filter by Discipline // Topic
+              <div className="pt-2 space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-slate-300 block">
+                  Filter by Topic
                 </span>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {categories.map((cat) => {
                     const isSelected = selectedCategory === cat;
                     const count =
@@ -168,15 +160,15 @@ export default function CinematicInquiries({
                           setSelectedCategory(cat);
                           setOpenIndex(0);
                         }}
-                        className={`text-xs font-mono uppercase tracking-wider px-3.5 py-1.5 rounded-sm border transition-all duration-300 flex items-center space-x-1.5 ${
+                        className={`min-h-[44px] text-xs font-mono uppercase tracking-wider px-4 py-2.5 rounded-sm border transition-all duration-300 flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
                           isSelected
                             ? "bg-brand-gold text-brand-black border-brand-gold font-medium shadow-md shadow-brand-gold/15"
-                            : "bg-brand-black/60 text-brand-gray-light border-brand-teal/50 hover:border-brand-gold/60 hover:text-brand-white"
+                            : "bg-brand-black/60 text-slate-200 border-brand-teal/50 hover:border-brand-gold/60 hover:text-brand-white"
                         }`}
                       >
                         <span>{cat}</span>
                         <span
-                          className={`text-[10px] ml-1 opacity-70 ${
+                          className={`text-xs ml-1 font-semibold ${
                             isSelected ? "text-brand-black" : "text-brand-gold"
                           }`}
                         >

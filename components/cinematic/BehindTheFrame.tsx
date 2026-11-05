@@ -14,10 +14,6 @@ export default function BehindTheFrame() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-brand-teal/30">
           <div className="space-y-3">
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-              <span>Scene 07 // Production Philosophy</span>
-            </span>
             <h2 className="text-3xl sm:text-5xl font-display font-medium text-brand-white leading-tight">
               Behind the Frame.{" "}
               <span className="font-serif italic font-normal text-brand-gold block sm:inline">
@@ -48,10 +44,10 @@ export default function BehindTheFrame() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gold block">
+                <span className="text-xs font-mono uppercase tracking-widest text-brand-gold block">
                   Field Archive // Dawn Call Wilpena Pound
                 </span>
-                <p className="text-xs text-brand-gray-light mt-1 font-light">
+                <p className="text-xs text-slate-200 mt-1 font-light [text-wrap:pretty]">
                   Capturing atmospheric low-light gradients on large format sensors.
                 </p>
               </div>

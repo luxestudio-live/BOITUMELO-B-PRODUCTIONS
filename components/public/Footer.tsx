@@ -18,12 +18,9 @@ export default function Footer() {
         {/* Top Editorial Invitation */}
         <div className="border-b border-brand-teal/30 pb-16 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-2xl">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-3">
-              Stories Worth Feeling
-            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium tracking-tight text-brand-white leading-tight">
               Have a story in mind?{" "}
-              <span className="text-brand-gray-light block font-serif italic font-normal mt-1">
+              <span className="text-slate-200 block font-serif italic font-normal mt-1">
                 Let&apos;s make something worth remembering.
               </span>
             </h2>

@@ -17,13 +17,6 @@ export default function TestimonialsPage() {
       {/* 01: Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <div className="inline-flex items-center space-x-2.5 px-3 py-1 bg-brand-teal/40 border border-brand-teal/60 rounded-sm">
-            <Film className="w-3.5 h-3.5 text-brand-gold animate-pulse-subtle" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
-              Collaborator Archive // Verified Reflections
-            </span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             Stories Beyond{" "}
             <span className="font-serif italic font-normal text-brand-gold block sm:inline">
@@ -31,7 +24,7 @@ export default function TestimonialsPage() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl">
+          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             The relationships behind the work matter as much as the work itself. We measure our success not solely by festival selections or commercial views, but by the trust and integrity sustained with our creative partners.
           </p>
         </div>

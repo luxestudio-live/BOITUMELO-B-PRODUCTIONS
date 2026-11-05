@@ -20,16 +20,16 @@ export default function InteractiveServices() {
       className="relative bg-brand-teal-deep py-24 sm:py-36 border-y border-brand-teal/40 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-        {/* Section Identifier */}
+        {/* Section Heading */}
         <div className="flex items-center justify-between pb-8 mb-12 border-b border-brand-teal/30">
           <div className="flex items-center space-x-3">
-            <Layers className="w-4 h-4 text-brand-gold animate-pulse-subtle" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
-              Scene 06 // Services in Motion
-            </span>
+            <Layers className="w-4 h-4 text-brand-gold" />
+            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-white">
+              Production Disciplines
+            </h2>
           </div>
-          <span className="text-xs font-mono text-brand-gray hidden sm:inline">
-            Interactive Editorial Vertical Index
+          <span className="text-xs font-mono text-slate-300 hidden sm:inline">
+            Interactive Vertical Index
           </span>
         </div>
 
@@ -55,27 +55,23 @@ export default function InteractiveServices() {
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono text-brand-gold tracking-widest uppercase">
-                      DISCIPLINE // {service.number}
-                    </span>
+                    <h3
+                      className={`text-2xl sm:text-3xl font-display font-medium transition-colors ${
+                        isSelected
+                          ? "text-brand-white"
+                          : "text-brand-gray-light group-hover:text-brand-white"
+                      }`}
+                    >
+                      {service.title}
+                    </h3>
                     <ArrowUpRight
-                      className={`w-4 h-4 transition-transform duration-300 ${
+                      className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-300 ${
                         isSelected
                           ? "text-brand-gold translate-x-0.5 -translate-y-0.5"
                           : "text-brand-gray opacity-40 group-hover:opacity-100"
                       }`}
                     />
                   </div>
-
-                  <h3
-                    className={`text-2xl sm:text-3xl font-display font-medium mt-3 transition-colors ${
-                      isSelected
-                        ? "text-brand-white"
-                        : "text-brand-gray-light group-hover:text-brand-white"
-                    }`}
-                  >
-                    {service.title}
-                  </h3>
 
                   {/* Expandable Info for active state */}
                   {isSelected && (
@@ -88,7 +84,7 @@ export default function InteractiveServices() {
                         {service.visualDirection.aestheticTokens.slice(0, 3).map((token) => (
                           <span
                             key={token}
-                            className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 bg-brand-teal/40 text-brand-gray-light rounded border border-brand-teal/50"
+                            className="text-xs font-mono uppercase tracking-widest px-2.5 py-1 bg-brand-teal/40 text-slate-200 rounded border border-brand-teal/50"
                           >
                             {token}
                           </span>

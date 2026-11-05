@@ -48,7 +48,7 @@ export default function Header() {
             <span className="font-display font-bold tracking-[0.22em] text-base sm:text-lg text-brand-white group-hover:text-brand-gold transition-colors duration-300">
               BOITUMELO B
             </span>
-            <span className="text-[9px] uppercase tracking-[0.35em] text-brand-gray group-hover:text-brand-white transition-colors duration-300">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-slate-300 group-hover:text-brand-white transition-colors duration-300">
               Productions • Australia
             </span>
           </Link>

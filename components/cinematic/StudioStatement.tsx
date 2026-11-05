@@ -118,14 +118,6 @@ export default function StudioStatement() {
       <div className="absolute inset-0 film-grain opacity-40 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-8 sm:space-y-10">
-        {/* Scene HUD Identifier */}
-        <div className="inline-flex items-center space-x-2.5 px-3 py-1.5 bg-brand-black/70 border border-brand-teal/60 rounded-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse-subtle" />
-          <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
-            Scene 04 // Studio Philosophy
-          </span>
-        </div>
-
         {/* Master Scaled Cinematic Manifesto */}
         <h2
           ref={titleRef}
@@ -152,8 +144,8 @@ export default function StudioStatement() {
         {/* Supporting Narrative */}
         <p
           ref={subtextRef}
-          style={{ opacity: 0.45 }}
-          className="max-w-2xl mx-auto text-base sm:text-xl text-brand-gray-light font-light leading-relaxed pt-2 sm:pt-4"
+          style={{ opacity: 0.8 }}
+          className="max-w-2xl mx-auto text-base sm:text-xl text-slate-200 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
           In an era of disposable video feeds, true cinema demands reverence. We pair large format anamorphic glass with deep cultural listening to craft films that endure.
         </p>
@@ -161,8 +153,8 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          style={{ opacity: 0.5 }}
-          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-brand-gray tracking-widest uppercase"
+          style={{ opacity: 0.8 }}
+          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-slate-300 tracking-widest uppercase"
         >
           <span>MELBOURNE</span>
           <span className="text-brand-gold">•</span>

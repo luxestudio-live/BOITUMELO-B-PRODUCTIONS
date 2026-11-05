@@ -139,9 +139,9 @@ export default function CinematicHero() {
         <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-between pt-32 pb-16 sm:pt-36 sm:pb-20 pointer-events-none">
           {/* Top Identifier */}
           <div className="flex items-center justify-between pointer-events-auto">
-            <div className="inline-flex items-center space-x-2.5 px-3 py-1.5 bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 rounded-sm">
-              <Clapperboard className="w-3.5 h-3.5 text-brand-gold animate-pulse-subtle" />
-              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-brand-gold font-medium">
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-2 bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 rounded-sm">
+              <Clapperboard className="w-3.5 h-3.5 text-brand-gold" />
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
                 Live Frame // Showreel 2024–2025
               </span>
             </div>
@@ -150,13 +150,13 @@ export default function CinematicHero() {
             <button
               type="button"
               onClick={toggleSound}
-              className="flex items-center space-x-2 py-1.5 px-3 rounded-sm bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 hover:border-brand-gold hover:text-brand-gold text-brand-white transition-all text-[10px] font-mono uppercase tracking-wider focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold"
+              className="min-h-[44px] flex items-center space-x-2.5 py-2 px-3.5 rounded-sm bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 hover:border-brand-gold hover:text-brand-gold text-brand-white transition-all text-xs font-mono uppercase tracking-wider focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
             >
               {isMuted ? (
-                <VolumeX className="w-3.5 h-3.5 text-brand-gray" />
+                <VolumeX className="w-4 h-4 text-brand-gray-light" />
               ) : (
-                <Volume2 className="w-3.5 h-3.5 text-brand-gold" />
+                <Volume2 className="w-4 h-4 text-brand-gold" />
               )}
               <span>{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
             </button>
@@ -164,17 +164,12 @@ export default function CinematicHero() {
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
           <div ref={titleRef} className="space-y-6 max-w-4xl">
-            <div className="space-y-2">
-              <span className="text-xs font-mono uppercase tracking-[0.35em] text-brand-gold block font-medium">
-                Australian Creative Film Studio
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-brand-white tracking-tight leading-[0.92]">
+              BOITUMELO B{" "}
+              <span className="font-serif italic font-normal text-brand-gold block sm:inline">
+                PRODUCTIONS
               </span>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-brand-white tracking-tight leading-[0.92]">
-                BOITUMELO B{" "}
-                <span className="font-serif italic font-normal text-brand-gold block sm:inline">
-                  PRODUCTIONS
-                </span>
-              </h1>
-            </div>
+            </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-brand-gray-light font-light max-w-xl leading-relaxed">
               Films that move people. Visuals that move brands. An Australian production house specializing in documentary cinema, music videos, and commercial film.
@@ -196,7 +191,7 @@ export default function CinematicHero() {
                 className="inline-flex items-center space-x-2.5 text-xs uppercase font-mono tracking-[0.2em] text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors bg-brand-black/40 backdrop-blur-sm"
               >
                 <span>Roll Film</span>
-                <ArrowDown className="w-3.5 h-3.5 text-brand-gold animate-bounce" />
+                <ArrowDown className="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-y-0.5" />
               </button>
             </div>
           </div>
@@ -209,10 +204,10 @@ export default function CinematicHero() {
         aria-hidden="true"
         className="absolute inset-x-0 bottom-6 z-10 pointer-events-none flex items-center justify-between px-4 sm:px-12 opacity-0"
       >
-        <div className="text-[10px] font-mono uppercase tracking-widest text-brand-gold/80 bg-brand-black/80 px-3 py-1 rounded border border-brand-teal/50">
+        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold/80 bg-brand-black/80 px-3 py-1 rounded border border-brand-teal/50">
           ◄ Reel 01: The Last Echo
         </div>
-        <div className="text-[10px] font-mono uppercase tracking-widest text-brand-gold/80 bg-brand-black/80 px-3 py-1 rounded border border-brand-teal/50">
+        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold/80 bg-brand-black/80 px-3 py-1 rounded border border-brand-teal/50">
           Reel 02: Neon Solitude ►
         </div>
       </div>

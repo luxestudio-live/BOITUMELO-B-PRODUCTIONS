@@ -80,15 +80,15 @@ export default function HorizontalFilmstrip() {
       aria-label="Scene 03: The Cinematic Filmstrip"
       className="relative bg-brand-black-elevated overflow-hidden border-y border-brand-teal/40 py-16 md:py-0 md:h-screen md:flex md:flex-col md:justify-center"
     >
-      {/* Background Ambience & Viewfinder HUD Watermark */}
+      {/* Section Heading & Viewfinder Cue */}
       <div className="absolute top-8 left-8 sm:left-12 z-10 flex items-center space-x-3 pointer-events-none">
-        <Film className="w-4 h-4 text-brand-gold animate-pulse-subtle" />
-        <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold">
-          Scene 03 // Horizontal Film Archive (06 Works)
-        </span>
+        <Film className="w-4 h-4 text-brand-gold" />
+        <h2 className="text-sm sm:text-base font-display font-medium text-brand-white uppercase tracking-[0.2em]">
+          Selected Works <span className="text-brand-gold font-normal">/ 35mm & Large Format</span>
+        </h2>
       </div>
 
-      <div className="hidden md:flex absolute top-8 right-12 z-10 items-center space-x-2 text-[10px] font-mono uppercase tracking-widest text-brand-gray pointer-events-none">
+      <div className="hidden md:flex absolute top-8 right-12 z-10 items-center space-x-2 text-xs font-mono uppercase tracking-widest text-slate-300 pointer-events-none">
         <SlidersHorizontal className="w-3.5 h-3.5 text-brand-gold" />
         <span>Scroll Down to Pan Left ◄►</span>
       </div>
@@ -122,7 +122,7 @@ export default function HorizontalFilmstrip() {
                 onMouseLeave={() => handleMouseLeave(p.slug)}
               >
                 {/* Physical 35mm Perforation Style Bar Above Frame */}
-                <div className="flex items-center justify-between pb-2 px-1 text-[10px] font-mono text-brand-gray">
+                <div className="flex items-center justify-between pb-2 px-1 text-xs font-mono text-slate-300">
                   <span className="text-brand-gold font-semibold uppercase tracking-wider">
                     REEL 0{idx + 1} // {p.categoryLabel}
                   </span>

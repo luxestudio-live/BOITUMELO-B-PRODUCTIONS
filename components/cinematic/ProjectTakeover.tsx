@@ -84,15 +84,15 @@ export default function ProjectTakeover() {
       aria-label="Scene 05: Featured Project Takeover"
       className="relative bg-brand-black overflow-hidden py-16 sm:py-24 flex flex-col items-center"
     >
-      {/* Intro Label */}
+      {/* Intro Heading */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mb-8 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <Film className="w-4 h-4 text-brand-gold animate-pulse-subtle" />
-          <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold">
-            Scene 05 // Featured Production Takeover
-          </span>
+          <Film className="w-4 h-4 text-brand-gold" />
+          <h2 className="text-base sm:text-lg font-display font-medium text-brand-white uppercase tracking-[0.2em]">
+            Featured Production
+          </h2>
         </div>
-        <span className="text-xs font-mono text-brand-gray hidden sm:inline">
+        <span className="text-xs font-mono text-slate-300 hidden sm:inline">
           {project.location} • {project.year}
         </span>
       </div>

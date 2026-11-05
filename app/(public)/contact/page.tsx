@@ -15,11 +15,6 @@ export default function ContactPage() {
       {/* 01: Hero Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-            <span>Direct Studio Dialogue</span>
-          </span>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             Let&apos;s Make{" "}
             <span className="font-serif italic font-normal text-brand-gold block sm:inline">
@@ -27,7 +22,7 @@ export default function ContactPage() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl">
+          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             Whether you are commissioning a national documentary, planning a music video, or repositioning an iconic brand, we invite you to begin the conversation.
           </p>
         </div>

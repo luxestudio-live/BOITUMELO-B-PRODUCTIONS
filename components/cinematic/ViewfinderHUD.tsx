@@ -37,7 +37,7 @@ export default function ViewfinderHUD({
   return (
     <div
       aria-hidden="true"
-      className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-[10px] sm:text-xs text-brand-white/70 select-none ${className}`}
+      className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-xs text-brand-white select-none ${className}`}
     >
       {/* 4 Corner Frameline Brackets */}
       <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-6 h-6 border-t-2 border-l-2 border-brand-gold/60" />
@@ -48,14 +48,14 @@ export default function ViewfinderHUD({
       {/* Top HUD Bar */}
       <div className="pt-20 sm:pt-24 flex items-center justify-between tracking-widest uppercase">
         <div className="flex items-center space-x-3">
-          <span className="flex items-center space-x-1.5 text-red-500 font-bold">
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+          <span className="flex items-center space-x-1.5 text-red-400 font-bold tracking-wider">
+            <span className="w-2 h-2 rounded-full bg-red-500" />
             <span>REC</span>
           </span>
-          <span className="text-brand-gold font-semibold">{liveTimecode}</span>
+          <span suppressHydrationWarning className="text-brand-gold font-semibold tracking-wider">{liveTimecode}</span>
         </div>
 
-        <div className="hidden sm:flex items-center space-x-6 text-brand-gray-light">
+        <div className="hidden sm:flex items-center space-x-6 text-slate-200 tracking-wider">
           <span>{fps}</span>
           <span className="text-brand-teal">•</span>
           <span>{iso}</span>
@@ -76,17 +76,17 @@ export default function ViewfinderHUD({
       {/* Bottom HUD Bar */}
       <div className="flex items-center justify-between tracking-widest uppercase">
         <div className="flex items-center space-x-2">
-          <span className="px-2 py-0.5 bg-brand-black/60 border border-brand-gold/40 text-brand-gold rounded-sm text-[9px] sm:text-[10px]">
+          <span className="px-2.5 py-1 bg-brand-black/80 border border-brand-gold/40 text-brand-gold rounded-sm text-xs">
             {aspectRatioLabel}
           </span>
-          <span className="hidden md:inline text-brand-gray-light text-[10px]">
+          <span className="hidden md:inline text-slate-200 bg-brand-black/70 px-2.5 py-1 rounded-sm text-xs">
             {lensLabel}
           </span>
         </div>
 
-        <div className="flex items-center space-x-3 text-[10px] text-brand-gray-light">
+        <div className="flex items-center space-x-3 text-xs text-slate-200 bg-brand-black/70 px-2.5 py-1 rounded-sm">
           <span className="hidden sm:inline">BAT 14.8V</span>
-          <span className="text-brand-gold">CALIBRATED</span>
+          <span className="text-brand-gold font-medium">CALIBRATED</span>
         </div>
       </div>
     </div>

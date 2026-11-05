@@ -31,20 +31,20 @@ export default function CinematicTestimonials() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 space-y-12">
-        {/* Header Tag */}
+        {/* Header Heading */}
         <div className="flex items-center justify-between pb-6 border-b border-brand-teal-light/50">
           <div className="flex items-center space-x-3">
-            <Film className="w-4 h-4 text-brand-gold animate-pulse-subtle" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
-              Scene 08 // Client Reflections (0{activeIndex + 1} of 0{sampleTestimonials.length})
-            </span>
+            <Quote className="w-4 h-4 text-brand-gold" />
+            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-white">
+              Client Perspectives
+            </h2>
           </div>
 
           <div className="flex items-center space-x-2">
             <button
               type="button"
               onClick={handlePrev}
-              className="p-2.5 rounded-sm bg-brand-black/40 border border-brand-teal-light hover:border-brand-gold text-brand-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-sm bg-brand-black/40 border border-brand-teal-light hover:border-brand-gold text-brand-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               aria-label="Previous client testimonial"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -52,7 +52,7 @@ export default function CinematicTestimonials() {
             <button
               type="button"
               onClick={handleNext}
-              className="p-2.5 rounded-sm bg-brand-black/40 border border-brand-teal-light hover:border-brand-gold text-brand-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-sm bg-brand-black/40 border border-brand-teal-light hover:border-brand-gold text-brand-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               aria-label="Next client testimonial"
             >
               <ArrowRight className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function CinematicTestimonials() {
 
         {/* Master Editorial Quotation Theatre */}
         <div className="space-y-8 animate-fade-in key={current.id}">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-brand-black/50 backdrop-blur-sm rounded-sm text-[11px] font-mono uppercase tracking-widest text-brand-gold border border-brand-teal-light">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-brand-black/50 backdrop-blur-sm rounded-sm text-xs font-mono uppercase tracking-widest text-brand-gold border border-brand-teal-light">
             <span>Project: {current.projectTitle} // {current.serviceCategory}</span>
           </div>
 

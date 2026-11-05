@@ -215,9 +215,6 @@ export default function BookingBriefWizard() {
         {currentStep === 1 && (
           <div className="space-y-8 animate-fade-in">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
-                Phase 01 // Vision
-              </span>
               <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
                 What are we creating together?
               </h2>
@@ -294,9 +291,6 @@ export default function BookingBriefWizard() {
         {currentStep === 2 && (
           <div className="space-y-6 animate-fade-in">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
-                Phase 02 // Narrative
-              </span>
               <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
                 Tell us your story.
               </h2>
@@ -372,9 +366,6 @@ export default function BookingBriefWizard() {
         {currentStep === 3 && (
           <div className="space-y-6 animate-fade-in">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
-                Phase 03 // Logistics
-              </span>
               <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
                 Project details & practical parameters.
               </h2>
@@ -453,9 +444,6 @@ export default function BookingBriefWizard() {
         {currentStep === 4 && (
           <div className="space-y-6 animate-fade-in">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
-                Phase 04 // Contact
-              </span>
               <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
                 Who are we speaking with?
               </h2>
@@ -534,9 +522,6 @@ export default function BookingBriefWizard() {
         {currentStep === 5 && (
           <div className="space-y-8 animate-fade-in">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
-                Phase 05 // Discovery Session
-              </span>
               <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
                 Schedule a Creative Discovery Session.
               </h2>

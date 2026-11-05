@@ -16,13 +16,6 @@ export default function AboutPage() {
       {/* 01: Immersive Opening Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <div className="inline-flex items-center space-x-2.5 px-3 py-1 bg-brand-teal/40 border border-brand-teal/60 rounded-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse-subtle" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
-              Studio Manifesto // The Living Frame
-            </span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             Behind Every Frame,{" "}
             <span className="font-serif italic font-normal text-brand-gold block sm:inline">
@@ -30,7 +23,7 @@ export default function AboutPage() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl">
+          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             BOITUMELO B PRODUCTIONS was founded on a singular belief: filmmaking is not an exercise in operating equipment—it is the art of giving emotional weight to human truth.
           </p>
         </div>

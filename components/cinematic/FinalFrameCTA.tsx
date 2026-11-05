@@ -24,13 +24,6 @@ export default function FinalFrameCTA() {
           <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-brand-gold" />
           <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-brand-gold" />
 
-          <div className="inline-flex items-center space-x-2.5 px-3 py-1 bg-brand-teal/40 border border-brand-teal/60 rounded-sm">
-            <Clapperboard className="w-3.5 h-3.5 text-brand-gold animate-pulse-subtle" />
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
-              Scene 09 // Final Cut
-            </span>
-          </div>
-
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[0.98]">
             YOUR STORY.{" "}
             <span className="font-serif italic font-normal text-brand-gold block sm:inline">
@@ -38,7 +31,7 @@ export default function FinalFrameCTA() {
             </span>
           </h2>
 
-          <p className="max-w-xl mx-auto text-base sm:text-lg text-brand-gray-light font-light leading-relaxed">
+          <p className="max-w-xl mx-auto text-base sm:text-lg text-slate-200 font-light leading-relaxed [text-wrap:pretty]">
             From the opening creative brainstorm to the final color grade, let&apos;s build an extraordinary piece of cinema that moves people and endures.
           </p>
 

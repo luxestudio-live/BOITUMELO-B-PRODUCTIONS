@@ -57,11 +57,11 @@ export default function ProjectCard({
         aria-label={`View film project: ${project.title}`}
       >
         {/* Physical 35mm Perforation Header Strip */}
-        <div className="flex items-center justify-between px-3 py-1.5 bg-brand-teal-deep text-[10px] font-mono text-brand-gray border-b border-brand-teal/40">
+        <div className="flex items-center justify-between px-3 py-1.5 bg-brand-teal-deep text-xs font-mono text-slate-300 border-b border-brand-teal/40">
           <span className="text-brand-gold font-semibold uppercase tracking-wider">
             {project.categoryLabel}
           </span>
-          <span className="text-brand-gray-light">{project.aspectRatio}</span>
+          <span className="text-slate-300">{project.aspectRatio}</span>
         </div>
 
         <div className={`relative w-full ${aspectClass} overflow-hidden bg-brand-black-surface`}>
@@ -102,7 +102,7 @@ export default function ProjectCard({
 
           {/* Year Badge */}
           <div className="absolute top-4 left-4 z-10 flex items-center space-x-2">
-            <span className="px-2 py-0.5 bg-brand-black/80 backdrop-blur-md text-[10px] font-mono text-brand-gold border border-brand-teal/50 rounded-sm">
+            <span className="px-2.5 py-1 bg-brand-black/80 backdrop-blur-md text-xs font-mono text-brand-gold border border-brand-teal/50 rounded-sm">
               {project.year}
             </span>
           </div>
@@ -123,12 +123,12 @@ export default function ProjectCard({
               <ArrowUpRight className="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-1" />
             </div>
 
-            <p className="mt-2 text-xs sm:text-sm text-brand-gray line-clamp-2 leading-relaxed font-light">
+            <p className="mt-2 text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed font-light [text-wrap:pretty]">
               {project.subtitle}
             </p>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-[11px] font-mono text-brand-gray-light">
+          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-xs font-mono text-slate-300">
             <span>{project.location}</span>
             <span className="text-brand-gold">{project.duration}</span>
           </div>
