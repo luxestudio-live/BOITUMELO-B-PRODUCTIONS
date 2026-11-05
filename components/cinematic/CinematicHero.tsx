@@ -38,10 +38,11 @@ export default function CinematicHero() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=120%",
-          scrub: 1,
+          end: "+=85%",
+          scrub: 0.8,
           pin: true,
           anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
 

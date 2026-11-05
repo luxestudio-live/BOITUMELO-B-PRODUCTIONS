@@ -52,7 +52,8 @@ export default function ProjectTakeover() {
             trigger: containerRef.current,
             start: "top 65%",
             end: "top 15%",
-            scrub: 1,
+            scrub: 0.8,
+            invalidateOnRefresh: true,
           },
         }
       );
