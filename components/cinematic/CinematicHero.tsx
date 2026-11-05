@@ -134,38 +134,21 @@ export default function CinematicHero() {
 
         {/* Viewfinder Camera HUD */}
         <div ref={hudRef} className="absolute inset-0 pointer-events-none">
-          <ViewfinderHUD showTopBar={false} showBottomBar={false} />
+          <ViewfinderHUD paddedForNav showTopBar={true} showBottomBar={true} />
         </div>
 
         {/* Asymmetrical Hero Content Composition */}
-        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-between pt-24 pb-16 sm:pt-28 sm:pb-20 pointer-events-none">
-          {/* Top Identifier */}
-          <div className="flex items-center justify-between gap-3 pointer-events-auto">
-            <div className="inline-flex items-center space-x-2 sm:space-x-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 rounded-sm shrink-0">
+        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-end pb-16 sm:pb-24 pointer-events-none">
+          {/* Lower Hero Section: Oversized Architectural Typography */}
+          <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
+            {/* Live Reel Eyebrow Badge */}
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 bg-brand-black/80 backdrop-blur-md border border-brand-teal/60 rounded-sm">
               <Clapperboard className="w-3.5 h-3.5 text-brand-gold shrink-0" />
-              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-brand-gold font-medium whitespace-nowrap">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
                 Live Showreel • 2024–2026
               </span>
             </div>
 
-            {/* Sound Toggle */}
-            <button
-              type="button"
-              onClick={toggleSound}
-              className="min-h-[44px] inline-flex items-center space-x-2 sm:space-x-2.5 py-1.5 sm:py-2 px-3 sm:px-3.5 rounded-sm bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 hover:border-brand-gold hover:text-brand-gold text-brand-white transition-all text-[11px] sm:text-xs font-mono uppercase tracking-wider focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold whitespace-nowrap shrink-0"
-              aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
-            >
-              {isMuted ? (
-                <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gray-light shrink-0" />
-              ) : (
-                <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gold shrink-0" />
-              )}
-              <span className="whitespace-nowrap">{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
-            </button>
-          </div>
-
-          {/* Lower Hero Section: Oversized Architectural Typography */}
-          <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in">
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
               BOITUMELO B{" "}
               <span className="text-brand-gold block sm:inline font-normal">
@@ -178,7 +161,7 @@ export default function CinematicHero() {
             </p>
 
             {/* Action Triggers */}
-            <div className="pt-2 flex flex-wrap items-center gap-4 pointer-events-auto">
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/work"
                 className="inline-flex items-center space-x-3 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl hover:shadow-brand-gold/30"
@@ -194,6 +177,28 @@ export default function CinematicHero() {
               >
                 <span>Roll Film</span>
                 <ArrowDown className="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-y-0.5" />
+              </button>
+
+              {/* Sound Toggle */}
+              <button
+                type="button"
+                onClick={toggleSound}
+                className="min-h-[44px] inline-flex items-center space-x-2.5 text-xs uppercase font-mono tracking-[0.2em] text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal/80 hover:border-brand-gold transition-all bg-brand-black/50 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold group"
+                aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
+              >
+                {isMuted ? (
+                  <VolumeX className="w-4 h-4 text-brand-gray-light group-hover:text-brand-gold transition-colors" />
+                ) : (
+                  <div className="flex items-center space-x-1.5">
+                    <Volume2 className="w-4 h-4 text-brand-gold" />
+                    <span className="flex items-end space-x-0.5 h-3 px-0.5" aria-hidden="true">
+                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
+                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
+                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
+                    </span>
+                  </div>
+                )}
+                <span>{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
               </button>
             </div>
           </div>
