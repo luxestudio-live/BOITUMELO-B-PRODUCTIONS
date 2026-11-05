@@ -1,6 +1,7 @@
 import EditorialHeading from "@/components/public/EditorialHeading";
 import PortfolioGrid from "@/components/public/PortfolioGrid";
 import { sampleProjects } from "@/data/projects";
+import { Film } from "lucide-react";
 
 export const metadata = {
   title: "Our Work | Film & Video Production Portfolio",
@@ -14,10 +15,12 @@ export default function WorkPage() {
       {/* Editorial Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-            <span>Curated Film Archive</span>
-          </span>
+          <div className="inline-flex items-center space-x-2.5 px-3 py-1 bg-brand-teal/40 border border-brand-teal/60 rounded-sm">
+            <Film className="w-3.5 h-3.5 text-brand-gold animate-pulse-subtle" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
+              Curated Production Archive // 35mm & Large Format
+            </span>
+          </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             The Work Speaks.{" "}
@@ -39,4 +42,3 @@ export default function WorkPage() {
     </div>
   );
 }
-

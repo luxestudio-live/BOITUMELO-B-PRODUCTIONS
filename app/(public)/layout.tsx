@@ -36,7 +36,6 @@ export default function PublicLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <DemoBanner />
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />

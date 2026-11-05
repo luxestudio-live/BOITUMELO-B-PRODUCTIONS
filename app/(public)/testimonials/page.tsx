@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import EditorialHeading from "@/components/public/EditorialHeading";
+import CinematicTestimonials from "@/components/cinematic/CinematicTestimonials";
 import { sampleTestimonials } from "@/data/testimonials";
 import { ArrowUpRight, ArrowRight, Quote, Film } from "lucide-react";
 
@@ -11,18 +12,17 @@ export const metadata = {
 };
 
 export default function TestimonialsPage() {
-  const featuredTestimonial = sampleTestimonials[0];
-  const remainingTestimonials = sampleTestimonials.slice(1);
-
   return (
     <div className="pt-32 pb-24 space-y-24 sm:space-y-36">
       {/* 01: Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-            <span>Client & Collaborator Voices</span>
-          </span>
+          <div className="inline-flex items-center space-x-2.5 px-3 py-1 bg-brand-teal/40 border border-brand-teal/60 rounded-sm">
+            <Film className="w-3.5 h-3.5 text-brand-gold animate-pulse-subtle" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
+              Collaborator Archive // Verified Reflections
+            </span>
+          </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             Stories Beyond{" "}
@@ -37,73 +37,32 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* 02: Large Featured Quotation Hero Block */}
+      {/* 02: Interactive Quotation Theatre */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-brand-teal p-8 sm:p-14 lg:p-20 rounded-sm border border-brand-teal-light shadow-2xl overflow-hidden">
-          <div className="absolute top-6 right-8 text-brand-gold/15 select-none pointer-events-none">
-            <Quote className="w-36 h-36" />
-          </div>
-
-          <div className="relative z-10 max-w-4xl space-y-8">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-brand-black/40 backdrop-blur-sm rounded-sm text-[11px] font-mono uppercase tracking-widest text-brand-gold border border-brand-teal/50">
-              <Film className="w-3 h-3" />
-              <span>Featured Reflection // {featuredTestimonial.projectTitle}</span>
-            </div>
-
-            <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-serif italic text-brand-white font-light leading-snug">
-              &ldquo;{featuredTestimonial.quote}&rdquo;
-            </blockquote>
-
-            <div className="pt-6 border-t border-brand-teal-light/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div className="flex items-center space-x-4">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-brand-gold flex-shrink-0">
-                  <Image
-                    src={featuredTestimonial.portraitUrl}
-                    alt={featuredTestimonial.author}
-                    fill
-                    sizes="56px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-display font-medium text-lg text-brand-white">
-                    {featuredTestimonial.author}
-                  </h3>
-                  <p className="text-xs font-mono text-brand-gray-light">
-                    {featuredTestimonial.role} • {featuredTestimonial.company}
-                  </p>
-                </div>
-              </div>
-
-              <div className="text-xs font-mono text-brand-gray-light">
-                <span>Production Year: {featuredTestimonial.year}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <CinematicTestimonials />
       </section>
 
-      {/* 03: Alternating Editorial Quote Roster */}
+      {/* 03: Full Roster of Editorial Quotes */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <EditorialHeading
-          eyebrow="Collaborative History"
+          eyebrow="Complete Collaborator Log"
           title="Reflections Across Disciplines."
           serifAccent="Documentary, Music & Commerce."
           lead="Insights from cultural institutions, independent recording artists, and corporate innovators across Australia."
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {remainingTestimonials.map((t, idx) => (
+          {sampleTestimonials.map((t) => (
             <div
               key={t.id}
-              className="bg-brand-black-elevated border border-brand-teal/40 hover:border-brand-gold/50 p-8 sm:p-10 rounded-sm flex flex-col justify-between transition-colors space-y-8"
+              className="bg-brand-black-elevated border border-brand-teal/40 hover:border-brand-gold/60 p-8 sm:p-10 rounded-sm flex flex-col justify-between transition-colors space-y-8 shadow-xl"
             >
               <div>
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-brand-teal/20 text-xs font-mono">
-                  <span className="text-brand-gold uppercase tracking-wider">
+                  <span className="text-brand-gold uppercase tracking-wider font-semibold">
                     {t.serviceCategory}
                   </span>
-                  <span className="text-brand-gray">Project: {t.projectTitle}</span>
+                  <span className="text-brand-gray">Film: {t.projectTitle}</span>
                 </div>
 
                 <Quote className="w-6 h-6 text-brand-gold/40 mb-4" />
@@ -127,7 +86,7 @@ export default function TestimonialsPage() {
                     {t.author}
                   </h4>
                   <p className="text-xs font-mono text-brand-gray">
-                    {t.role} • {t.company}
+                    {t.role} • {t.company} ({t.year})
                   </p>
                 </div>
               </div>
@@ -147,14 +106,14 @@ export default function TestimonialsPage() {
         <div className="pt-4 flex items-center justify-center space-x-4">
           <Link
             href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
           >
             <span>Start a Project Brief</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors"
           >
             <span>Explore All Work</span>
           </Link>
@@ -163,4 +122,3 @@ export default function TestimonialsPage() {
     </div>
   );
 }
-

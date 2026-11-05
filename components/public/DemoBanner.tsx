@@ -4,15 +4,24 @@ import { useState } from "react";
 import Link from "next/link";
 import { Info, X, Shield } from "lucide-react";
 
-export default function DemoBanner() {
+interface DemoBannerProps {
+  onDismiss?: () => void;
+}
+
+export default function DemoBanner({ onDismiss }: DemoBannerProps) {
   const [dismissed, setDismissed] = useState(false);
+
+  const handleDismiss = () => {
+    setDismissed(true);
+    if (onDismiss) onDismiss();
+  };
 
   if (dismissed) return null;
 
   return (
     <aside
       aria-label="Demonstration Notice"
-      className="bg-brand-teal-dark border-b border-brand-teal/60 text-brand-gray-light py-2 px-4 text-xs font-mono relative z-50 transition-all"
+      className="bg-brand-teal-dark border-b border-brand-teal/60 text-brand-gray-light py-1.5 px-4 text-[11px] sm:text-xs font-mono relative z-50 transition-all"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center space-x-2">
@@ -35,7 +44,7 @@ export default function DemoBanner() {
           </Link>
           <button
             type="button"
-            onClick={() => setDismissed(true)}
+            onClick={handleDismiss}
             className="text-brand-gray hover:text-brand-white p-0.5 rounded focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold"
             aria-label="Dismiss demo banner"
           >

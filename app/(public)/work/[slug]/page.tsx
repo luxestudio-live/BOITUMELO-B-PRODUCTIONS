@@ -2,9 +2,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import VideoPlayer from "@/components/public/VideoPlayer";
+import ViewfinderHUD from "@/components/cinematic/ViewfinderHUD";
 import EditorialHeading from "@/components/public/EditorialHeading";
 import { sampleProjects } from "@/data/projects";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Film, MapPin, Calendar, Clock, Award, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Film, MapPin, Calendar, Clock, Award, Quote, Clapperboard } from "lucide-react";
 
 interface ProjectPageProps {
   params: {
@@ -61,7 +62,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               {project.categoryLabel}
             </span>
             <span className="text-xs font-mono text-brand-gray">
-              Release Year: {project.year}
+              Year: {project.year}
             </span>
             {project.awardNote && (
               <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-brand-gold/15 border border-brand-gold/40 text-[11px] font-mono text-brand-gold rounded-sm">
@@ -81,25 +82,27 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      {/* 02: Full-Width Cinematic Video Player Feature */}
+      {/* 02: Full-Width Cinematic Video Player Feature with Viewfinder Overlay */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-3">
-          <VideoPlayer
-            src={project.fullVideoUrl}
-            poster={project.heroPoster}
-            title={project.title}
-            aspectRatio="aspect-[16/9] lg:aspect-[2.39/1]"
-          />
+          <div className="relative rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
+            <VideoPlayer
+              src={project.fullVideoUrl}
+              poster={project.heroPoster}
+              title={project.title}
+              aspectRatio="aspect-[16/9] lg:aspect-[2.39/1]"
+            />
+          </div>
           <div className="flex items-center justify-between text-[11px] font-mono text-brand-gray px-1">
-            <span>Official Exhibition Cut</span>
-            <span>Master Audio 5.1 Ambisonic</span>
+            <span>DCI 4K Exhibition Master</span>
+            <span>Ambisonic 5.1 Surround Mastering</span>
           </div>
         </div>
       </section>
 
       {/* 03: Structured Production Overview & Metadata Matrix */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-brand-black-elevated border border-brand-teal/40 rounded-sm">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-brand-black-elevated border border-brand-teal/50 rounded-sm shadow-xl">
           <div>
             <span className="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">
               Client / Commissioner
@@ -139,9 +142,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-4 space-y-8">
-            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light">
+            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-2xl">
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold block mb-2">
-                Production Credits
+                Production Slate & Credits
               </span>
               <ul className="space-y-3 pt-2">
                 {project.credits.map((c) => (
@@ -158,7 +161,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
 
             {project.quote && (
-              <div className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm">
+              <div className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm shadow-lg">
                 <Quote className="w-6 h-6 text-brand-gold mb-3" />
                 <p className="text-xs sm:text-sm text-brand-gray-light italic leading-relaxed">
                   &ldquo;{project.quote.text}&rdquo;
@@ -240,7 +243,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             {project.behindTheFrames.map((frame, idx) => (
               <figure
                 key={idx}
-                className="group relative bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden"
+                className="group relative bg-brand-black-elevated border border-brand-teal/50 rounded-sm overflow-hidden shadow-xl"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -265,9 +268,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href={`/work/${nextProject.slug}`}
-          className="group block relative bg-brand-black-elevated border border-brand-teal/40 hover:border-brand-gold rounded-sm overflow-hidden p-8 sm:p-14 transition-all duration-500"
+          className="group block relative bg-brand-black-elevated border border-brand-teal/50 hover:border-brand-gold rounded-sm overflow-hidden p-8 sm:p-14 transition-all duration-500 shadow-2xl"
         >
-          <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+          <div className="absolute inset-0 opacity-20 group-hover:opacity-35 transition-opacity">
             <Image
               src={nextProject.heroPoster}
               alt={nextProject.title}
@@ -301,7 +304,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       {/* 07: Project Contact CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white">
-          Inspired by this project?
+          Inspired by this production?
         </h2>
         <p className="text-brand-gray max-w-xl mx-auto text-sm sm:text-base font-light">
           Let&apos;s explore how a similar cinematic approach can amplify your documentary, artist vision, or brand campaign.
@@ -309,7 +312,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="pt-2 flex items-center justify-center space-x-4">
           <Link
             href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
           >
             <span>Start a Project Brief</span>
             <ArrowRight className="w-4 h-4" />
@@ -319,4 +322,3 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
     </article>
   );
 }
-

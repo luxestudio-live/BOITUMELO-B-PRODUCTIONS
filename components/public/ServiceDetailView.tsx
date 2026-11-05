@@ -3,9 +3,10 @@ import Image from "next/image";
 import EditorialHeading from "@/components/public/EditorialHeading";
 import ProjectCard from "@/components/public/ProjectCard";
 import VideoPlayer from "@/components/public/VideoPlayer";
+import ViewfinderHUD from "@/components/cinematic/ViewfinderHUD";
 import { ServiceDetail } from "@/data/services";
 import { sampleProjects } from "@/data/projects";
-import { ArrowUpRight, ArrowRight, CheckCircle2, Clapperboard, HelpCircle, Film, Sparkles } from "lucide-react";
+import { ArrowUpRight, ArrowRight, CheckCircle2, HelpCircle, Film, Clapperboard, Sparkles } from "lucide-react";
 
 interface ServiceDetailViewProps {
   service: ServiceDetail;
@@ -22,13 +23,13 @@ export default function ServiceDetailView({
 
   return (
     <div className="pt-32 pb-24 space-y-24 sm:space-y-36">
-      {/* 01: Distinct Cinematic Hero */}
+      {/* 01: Distinct Cinematic Hero with HUD */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <div className="flex items-center space-x-3">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-              <span>Production Discipline // {service.number}</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse-subtle" />
+              <span>Production Vertical // {service.number}</span>
             </span>
             <span className="text-brand-teal text-xs">•</span>
             <span className="text-[11px] font-mono text-brand-gray uppercase tracking-widest">
@@ -48,7 +49,7 @@ export default function ServiceDetailView({
             {service.visualDirection.aestheticTokens.map((token) => (
               <span
                 key={token}
-                className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 bg-brand-teal/30 border border-brand-teal/60 text-brand-gold rounded-sm"
+                className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 bg-brand-teal/40 border border-brand-teal/60 text-brand-gold rounded-sm shadow-sm"
               >
                 {token}
               </span>
@@ -56,8 +57,8 @@ export default function ServiceDetailView({
           </div>
         </div>
 
-        {/* Hero Video Preview / Poster */}
-        <div className="mt-12">
+        {/* Hero Video Preview / Poster with Viewfinder Overlay */}
+        <div className="mt-12 relative rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
           <VideoPlayer
             src={service.videoPreviewUrl}
             poster={service.heroImage}
@@ -71,9 +72,9 @@ export default function ServiceDetailView({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 bg-brand-black-elevated border border-brand-teal/40 rounded-sm">
+            <div className="p-8 bg-brand-black-elevated border border-brand-teal/50 rounded-sm shadow-xl">
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold block mb-2">
-                Visual Philosophy
+                Cinematic Art Direction
               </span>
               <h2 className="text-2xl font-display font-medium text-brand-white">
                 {service.visualDirection.title}
@@ -83,19 +84,19 @@ export default function ServiceDetailView({
               </p>
             </div>
 
-            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light">
+            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-2xl">
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold block mb-2">
-                Booking Inquiries
+                Production Engagement
               </span>
               <h3 className="text-xl font-display font-medium text-brand-white">
-                Ready to Commission?
+                Commission a Production
               </h3>
               <p className="mt-2 text-xs text-brand-gray-light leading-relaxed">
-                We accept a limited number of production commissions per quarter to ensure uncompromising focus.
+                We accept a limited number of production commissions per season to ensure singular directorial focus.
               </p>
               <Link
                 href="/book"
-                className="mt-6 inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3 rounded-sm hover:bg-brand-gold-light transition-all"
+                className="mt-6 inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
               >
                 <span>Initiate Brief</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -113,16 +114,16 @@ export default function ServiceDetailView({
 
             {/* Scope Deliverables */}
             <div className="pt-6 border-t border-brand-teal/30 space-y-4">
-              <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-brand-white">
-                Core Deliverables & Capabilities:
+              <h3 className="text-xs font-mono uppercase tracking-[0.25em] text-brand-white">
+                Core Deliverables & Technical Specs:
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.capabilities.map((cap) => (
                   <div
                     key={cap.name}
-                    className="p-4 bg-brand-black-elevated border border-brand-teal/30 rounded-sm"
+                    className="p-5 bg-brand-black-elevated border border-brand-teal/40 rounded-sm"
                   >
-                    <div className="flex items-center space-x-2 text-brand-gold mb-1.5">
+                    <div className="flex items-center space-x-2 text-brand-gold mb-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
                       <span className="text-xs font-mono font-medium uppercase tracking-wider text-brand-white">
                         {cap.name}
@@ -153,7 +154,7 @@ export default function ServiceDetailView({
             {service.process.map((p) => (
               <div
                 key={p.step}
-                className="bg-brand-black/70 border border-brand-teal/30 p-8 rounded-sm hover:border-brand-gold/60 transition-colors"
+                className="bg-brand-black/70 border border-brand-teal/40 p-8 rounded-sm hover:border-brand-gold/60 transition-colors shadow-lg"
               >
                 <span className="text-3xl font-display font-bold text-brand-teal-light">
                   {p.step}
@@ -182,7 +183,7 @@ export default function ServiceDetailView({
             />
             <Link
               href="/work"
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium text-brand-gold hover:text-brand-gold-light py-2"
+              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-gold hover:text-brand-gold-light py-2"
             >
               <span>Explore Full Archive</span>
               <ArrowRight className="w-4 h-4" />
@@ -211,7 +212,7 @@ export default function ServiceDetailView({
             {service.faqs.map((faq) => (
               <div
                 key={faq.question}
-                className="bg-brand-black/70 border border-brand-teal/40 p-6 sm:p-8 rounded-sm"
+                className="bg-brand-black/70 border border-brand-teal/40 p-6 sm:p-8 rounded-sm shadow-md"
               >
                 <h3 className="text-base sm:text-lg font-display font-medium text-brand-white flex items-start space-x-3">
                   <HelpCircle className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5" />
@@ -237,14 +238,14 @@ export default function ServiceDetailView({
         <div className="pt-4 flex items-center justify-center space-x-4">
           <Link
             href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
           >
             <span>Start a Project Brief</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors"
           >
             <span>View All Work</span>
           </Link>
@@ -253,4 +254,3 @@ export default function ServiceDetailView({
     </div>
   );
 }
-

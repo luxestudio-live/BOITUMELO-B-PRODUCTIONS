@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import EditorialHeading from "@/components/public/EditorialHeading";
-import { ArrowUpRight, ArrowRight, Film, Camera, Compass, Clapperboard, HeartHandshake } from "lucide-react";
+import ViewfinderHUD from "@/components/cinematic/ViewfinderHUD";
+import { ArrowUpRight, ArrowRight, Film, Camera, Compass, Clapperboard, HeartHandshake, ShieldCheck } from "lucide-react";
 
 export const metadata = {
   title: "About Our Studio | Our Story & Philosophy",
@@ -15,10 +16,12 @@ export default function AboutPage() {
       {/* 01: Immersive Opening Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold flex items-center space-x-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold" />
-            <span>Studio Ethos & Origin</span>
-          </span>
+          <div className="inline-flex items-center space-x-2.5 px-3 py-1 bg-brand-teal/40 border border-brand-teal/60 rounded-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse-subtle" />
+            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-brand-gold font-medium">
+              Studio Manifesto // The Living Frame
+            </span>
+          </div>
 
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             Behind Every Frame,{" "}
@@ -32,8 +35,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Cinematic Wide Still */}
-        <div className="mt-12 relative aspect-[21/9] sm:aspect-[2.39/1] rounded-sm overflow-hidden border border-brand-teal/40">
+        {/* Cinematic Wide Still with Viewfinder HUD */}
+        <div className="mt-12 relative aspect-[21/9] sm:aspect-[2.39/1] rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
           <Image
             src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85"
             alt="Director framing a cinema shot on Australian location"
@@ -42,8 +45,13 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 sm:left-8">
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black/85 via-transparent to-brand-black/40" />
+          <ViewfinderHUD
+            timecode="00:08:14:02"
+            aspectRatioLabel="ARCHIVAL 2.39:1"
+            lensLabel="Leica Summicron-C 40mm"
+          />
+          <div className="absolute bottom-6 left-6 sm:left-8 z-30">
             <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-brand-gold block">
               Director Field Frame // Location Archive
             </span>
@@ -56,7 +64,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-4">
             <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
-              01 // Identity
+              01 // Identity & Reach
             </span>
             <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white leading-tight">
               An Australian Studio with a{" "}
@@ -68,14 +76,14 @@ export default function AboutPage() {
 
           <div className="lg:col-span-7 space-y-6 text-brand-gray-light text-base sm:text-lg leading-relaxed font-light">
             <p>
-              Based in Australia, <strong className="text-brand-white font-medium">BOITUMELO B PRODUCTIONS</strong> is an independent creative film and video production house. We work across the country—from the coastal cities of Melbourne and Sydney to the remote ochre desert ranges of central Australia.
+              Based in Australia, <strong className="text-brand-white font-medium">BOITUMELO B PRODUCTIONS</strong> is an independent creative film and video production house. We work across the country—from the coastal metropolises of Melbourne and Sydney to the remote ochre desert ranges of central Australia.
             </p>
             <p>
               Our perspective was forged by crossing boundaries between diverse genres. We take the patience, cultural reverence, and narrative depth of documentary cinema and bring it to commercial brand films. Conversely, we take the visual flair, rhythmic tempo, and lighting ingenuity of music videos and infuse it into corporate storytelling.
             </p>
-            <p className="text-sm text-brand-gray">
-              *Note: Demonstration studio narrative. Real biographical records, specific year of establishment, and verified client history will be populated upon final content onboarding.
-            </p>
+            <div className="p-4 bg-brand-black-elevated border border-brand-teal/40 rounded-sm text-xs font-mono text-brand-gray">
+              *Demonstration studio narrative. Real biographical records, specific year of establishment, and verified client history will be populated upon final content onboarding.
+            </div>
           </div>
         </div>
       </section>
@@ -112,10 +120,10 @@ export default function AboutPage() {
                 title: "Commercial Rigor",
                 desc: "Artistic brilliance must deliver real-world outcomes. Our productions respect milestones, budgets, and clear commercial briefs.",
               },
-            ].map((p, idx) => (
+            ].map((p) => (
               <div
                 key={p.title}
-                className="bg-brand-black/60 border border-brand-teal/30 p-8 rounded-sm hover:border-brand-gold/60 transition-colors"
+                className="bg-brand-black/60 border border-brand-teal/40 p-8 rounded-sm hover:border-brand-gold/60 transition-colors shadow-lg"
               >
                 <p.icon className="w-8 h-8 text-brand-gold mb-5" />
                 <h3 className="text-xl font-display font-medium text-brand-white">
@@ -136,50 +144,50 @@ export default function AboutPage() {
           <EditorialHeading
             eyebrow="On Location Archive"
             title="Behind the Frames."
-            serifAccent="The Reality of Production."
+            serifAccent="The Physical Craft."
             lead="Unvarnished glimpses from dawn calls, remote rigs, and midnight filming across Australia."
           />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/30">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/40 shadow-xl group">
             <Image
               src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80"
               alt="Rigging camera kit in the desert"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-xs font-mono text-brand-gray-light">
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/85 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-xs font-mono text-brand-gold">
               01 // Field Sound Archiving
             </span>
           </div>
 
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/30">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/40 shadow-xl group">
             <Image
               src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80"
               alt="Subterranean music video lighting setup"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-xs font-mono text-brand-gray-light">
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/85 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-xs font-mono text-brand-gold">
               02 // DMX Lighting Array Prep
             </span>
           </div>
 
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/30">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/40 shadow-xl group">
             <Image
               src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=80"
               alt="Cellar macro lens filming session"
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-cover hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-xs font-mono text-brand-gray-light">
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/85 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 text-xs font-mono text-brand-gold">
               03 // Macro Soil & Texture Study
             </span>
           </div>
@@ -191,7 +199,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/5] relative rounded-sm overflow-hidden border border-brand-teal/60">
+              <div className="aspect-[4/5] relative rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=85"
                   alt="Creative Director portrait on set"
@@ -233,14 +241,14 @@ export default function AboutPage() {
               <div className="pt-4 flex items-center space-x-6">
                 <Link
                   href="/work"
-                  className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
                 >
                   <span>Explore Selected Work</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/book"
-                  className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold transition-colors"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold transition-colors"
                 >
                   <span>Start a Project</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -253,4 +261,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
