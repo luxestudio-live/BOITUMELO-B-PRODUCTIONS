@@ -65,16 +65,18 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
           <h3 className="text-xl font-display font-medium text-brand-white">
             No projects found in this category.
           </h3>
-          <p className="text-sm text-brand-gray font-light">
-            Try switching to another category tab to view available films in our catalog.
+          <p className="text-sm text-slate-300 font-light max-w-md mx-auto">
+            Try switching to another category tab to view available films in our catalogue.
           </p>
-          <button
-            type="button"
-            onClick={() => setActiveFilter("all")}
-            className="text-xs uppercase font-mono tracking-widest text-brand-gold hover:underline mt-2 inline-block"
-          >
-            Reset Filters
-          </button>
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={() => setActiveFilter("all")}
+              className="min-h-[44px] px-6 py-2.5 text-xs uppercase font-mono tracking-widest text-brand-black bg-brand-gold hover:bg-brand-gold-light rounded-sm transition-colors inline-flex items-center"
+            >
+              Reset Filters
+            </button>
+          </div>
         </div>
       ) : (
         <div className="space-y-8">

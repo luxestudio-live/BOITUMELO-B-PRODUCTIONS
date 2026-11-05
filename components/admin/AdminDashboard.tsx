@@ -27,6 +27,7 @@ import {
   Clock,
   ExternalLink,
   ShieldAlert,
+  FolderArchive,
 } from "lucide-react";
 import { sampleProjects, ProjectItem } from "@/data/projects";
 import { servicesData } from "@/data/services";
@@ -476,7 +477,16 @@ export default function AdminDashboard() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-brand-teal/20 text-brand-gray-light">
-                      {filteredProjects.map((p) => (
+                      {filteredProjects.length === 0 ? (
+                        <tr>
+                          <td colSpan={6} className="p-12 text-center text-slate-300">
+                            <Film className="w-8 h-8 text-brand-gold/60 mx-auto mb-3" />
+                            <p className="text-sm font-sans text-brand-white">No film projects matched your current search or filter.</p>
+                            <p className="text-xs font-mono text-slate-400 mt-1">Try resetting the category filter or adding a new production record.</p>
+                          </td>
+                        </tr>
+                      ) : (
+                        filteredProjects.map((p) => (
                         <tr key={p.id} className="hover:bg-brand-teal/15 transition-colors">
                           <td className="p-4 w-20">
                             <div className="relative w-16 h-10 rounded overflow-hidden border border-brand-teal/40">
@@ -544,7 +554,7 @@ export default function AdminDashboard() {
                             </button>
                           </td>
                         </tr>
-                      ))}
+                      )))}
                     </tbody>
                   </table>
                 </div>
@@ -742,7 +752,14 @@ export default function AdminDashboard() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {mediaList.map((m) => (
+                {mediaList.length === 0 ? (
+                  <div className="col-span-full py-16 text-center border border-dashed border-brand-teal/40 rounded-sm p-8 space-y-3">
+                    <FolderArchive className="w-8 h-8 text-brand-gold/60 mx-auto" />
+                    <p className="text-sm font-sans text-brand-white">No media assets in library.</p>
+                    <p className="text-xs font-mono text-slate-400">Upload film stills, DCI masters, or promotional posters to populate the vault.</p>
+                  </div>
+                ) : (
+                  mediaList.map((m) => (
                   <div
                     key={m.id}
                     className="group bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden flex flex-col justify-between"
@@ -770,7 +787,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                   </div>
-                ))}
+                )))}
               </div>
             </div>
           )}
@@ -792,7 +809,14 @@ export default function AdminDashboard() {
 
               <div className="bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden">
                 <div className="divide-y divide-brand-teal/20">
-                  {enquiriesList.map((enq) => (
+                  {enquiriesList.length === 0 ? (
+                    <div className="p-12 text-center text-slate-300 space-y-3">
+                      <Inbox className="w-8 h-8 text-brand-gold/60 mx-auto" />
+                      <p className="text-sm font-sans text-brand-white">No production enquiries logged yet.</p>
+                      <p className="text-xs font-mono text-slate-400">Inbound project briefs submitted via /contact or /book will appear in this registry.</p>
+                    </div>
+                  ) : (
+                    enquiriesList.map((enq) => (
                     <div
                       key={enq.id}
                       onClick={() => setSelectedEnquiry(enq)}
@@ -834,7 +858,7 @@ export default function AdminDashboard() {
                         </span>
                       </div>
                     </div>
-                  ))}
+                  )))}
                 </div>
               </div>
 

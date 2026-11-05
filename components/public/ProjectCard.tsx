@@ -117,7 +117,7 @@ export default function ProjectCard({
         <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
           <div>
             <div className="flex items-start justify-between gap-4">
-              <h3 className="font-display font-medium text-lg sm:text-xl text-brand-white group-hover:text-brand-gold transition-colors duration-300 tracking-wide">
+              <h3 className="font-display font-medium text-lg sm:text-xl text-brand-white group-hover:text-brand-gold transition-colors duration-300 tracking-wide break-words line-clamp-2">
                 {project.title}
               </h3>
               <ArrowUpRight className="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-1" />
@@ -128,9 +128,9 @@ export default function ProjectCard({
             </p>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-xs font-mono text-slate-300">
-            <span>{project.location}</span>
-            <span className="text-brand-gold">{project.duration}</span>
+          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-xs font-mono text-slate-300 gap-2">
+            <span className="truncate max-w-[65%]">{project.location}</span>
+            <span className="text-brand-gold flex-shrink-0">{project.duration}</span>
           </div>
         </div>
       </Link>

@@ -99,13 +99,14 @@ export default function ContactForm() {
             id="name"
             type="text"
             required
+            maxLength={120}
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="e.g. Marcus Thorne"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
           {errors.name && (
-            <p className="text-xs text-red-400 flex items-center space-x-1 font-mono">
+            <p role="alert" aria-live="polite" className="text-xs text-red-400 flex items-center space-x-1 font-mono">
               <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
               <span>{errors.name}</span>
             </p>
@@ -121,13 +122,14 @@ export default function ContactForm() {
             id="email"
             type="email"
             required
+            maxLength={160}
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="m.thorne@example.com.au"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
           {errors.email && (
-            <p className="text-xs text-red-400 flex items-center space-x-1 font-mono">
+            <p role="alert" aria-live="polite" className="text-xs text-red-400 flex items-center space-x-1 font-mono">
               <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
               <span>{errors.email}</span>
             </p>
@@ -144,10 +146,11 @@ export default function ContactForm() {
           <input
             id="company"
             type="text"
+            maxLength={150}
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             placeholder="e.g. Melbourne Contemporary Arts"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
         </div>
 
@@ -159,10 +162,11 @@ export default function ContactForm() {
           <input
             id="phone"
             type="tel"
+            maxLength={40}
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+61 400 000 000"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -177,7 +181,7 @@ export default function ContactForm() {
             id="service"
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-sm text-brand-white focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none transition-colors"
           >
             <option value="documentary-film">Documentary & Film</option>
             <option value="music-videos">Music Video Production</option>
@@ -196,7 +200,7 @@ export default function ContactForm() {
             id="timeline"
             value={formData.timeline}
             onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-sm text-brand-white focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none transition-colors"
           >
             <option value="immediate">Immediate (1-4 weeks)</option>
             <option value="within-3-months">Within 1-3 months</option>
@@ -214,7 +218,7 @@ export default function ContactForm() {
             id="budget"
             value={formData.budget}
             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-sm text-brand-white focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none transition-colors"
           >
             <option value="$15k-$25k">$15,000 – $25,000 AUD</option>
             <option value="$25k-$50k">$25,000 – $50,000 AUD</option>
@@ -233,13 +237,14 @@ export default function ContactForm() {
           id="description"
           rows={5}
           required
+          maxLength={2500}
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           placeholder="Describe your story, intended audience, references, or key deliverables..."
-          className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+          className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
         />
         {errors.description && (
-          <p className="text-xs text-red-400 flex items-center space-x-1 font-mono">
+          <p role="alert" aria-live="polite" className="text-xs text-red-400 flex items-center space-x-1 font-mono">
             <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
             <span>{errors.description}</span>
           </p>

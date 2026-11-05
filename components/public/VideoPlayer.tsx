@@ -26,6 +26,7 @@ export default function VideoPlayer({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [isMuted, setIsMuted] = useState(muted);
+  const [hasError, setHasError] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -81,7 +82,7 @@ export default function VideoPlayer({
   };
 
   const formatTime = (seconds: number) => {
-    if (isNaN(seconds)) return "00:00";
+    if (isNaN(seconds) || !isFinite(seconds) || seconds < 0) return "00:00";
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
@@ -98,6 +99,16 @@ export default function VideoPlayer({
     } else if (e.key === "f") {
       e.preventDefault();
       toggleFullscreen();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      if (videoRef.current && duration > 0) {
+        videoRef.current.currentTime = Math.min(videoRef.current.currentTime + 5, duration);
+      }
+    } else if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      if (videoRef.current && duration > 0) {
+        videoRef.current.currentTime = Math.max(videoRef.current.currentTime - 5, 0);
+      }
     }
   };
 
@@ -132,6 +143,10 @@ export default function VideoPlayer({
         onTimeUpdate={handleTimeUpdate}
         onLoadedMetadata={handleLoadedMetadata}
         onEnded={() => setIsPlaying(false)}
+        onError={() => {
+          setHasError(true);
+          setIsPlaying(false);
+        }}
         onClick={togglePlay}
         className="w-full h-full object-cover cursor-pointer"
         aria-label={title}
@@ -143,8 +158,28 @@ export default function VideoPlayer({
         className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-brand-black/40 pointer-events-none opacity-80"
       />
 
+      {/* Fallback state when media stream is restricted or fails */}
+      {hasError && (
+        <div className="absolute top-4 left-4 right-4 z-20 bg-brand-black/90 border border-brand-teal/60 p-3 rounded-sm flex items-center justify-between text-xs font-mono text-slate-300 backdrop-blur-md">
+          <span>Stream paused. Presenting high-resolution archival still.</span>
+          <button
+            type="button"
+            onClick={() => {
+              setHasError(false);
+              if (videoRef.current) {
+                videoRef.current.load();
+                videoRef.current.play().then(() => setIsPlaying(true)).catch(() => setHasError(true));
+              }
+            }}
+            className="text-brand-gold hover:text-brand-gold-light underline uppercase ml-3 flex-shrink-0"
+          >
+            Retry Stream
+          </button>
+        </div>
+      )}
+
       {/* Big Center Play Button when paused */}
-      {!isPlaying && (
+      {!isPlaying && !hasError && (
         <button
           type="button"
           onClick={togglePlay}

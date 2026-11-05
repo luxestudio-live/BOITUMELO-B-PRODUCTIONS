@@ -16,6 +16,7 @@ import {
   HelpCircle,
   AlertCircle,
   Send,
+  Loader2,
 } from "lucide-react";
 
 interface WizardState {
@@ -65,6 +66,7 @@ export default function BookingBriefWizard() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<WizardState>(initialWizardState);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const totalSteps = 5;
@@ -105,9 +107,14 @@ export default function BookingBriefWizard() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     if (validateStep(currentStep)) {
-      setIsCompleted(true);
-      window.scrollTo({ top: 180, behavior: "smooth" });
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsCompleted(true);
+        window.scrollTo({ top: 180, behavior: "smooth" });
+      }, 750);
     }
   };
 
@@ -306,13 +313,16 @@ export default function BookingBriefWizard() {
               <textarea
                 id="description"
                 rows={4}
+                maxLength={2000}
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="What is the story, subject matter, or song about? What makes it unique?"
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
               />
               {errors.description && (
-                <p className="text-xs text-red-400 font-mono">{errors.description}</p>
+                <p role="alert" aria-live="polite" className="text-xs text-red-400 font-mono">
+                  {errors.description}
+                </p>
               )}
             </div>
 
@@ -324,10 +334,11 @@ export default function BookingBriefWizard() {
                 <input
                   id="goals"
                   type="text"
+                  maxLength={300}
                   value={formData.creativeGoals}
                   onChange={(e) => setFormData({ ...formData, creativeGoals: e.target.value })}
                   placeholder="e.g. Festival premiere, viral music release, Series-B fundraise"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
                 />
               </div>
 
@@ -338,10 +349,11 @@ export default function BookingBriefWizard() {
                 <input
                   id="audience"
                   type="text"
+                  maxLength={200}
                   value={formData.audience}
                   onChange={(e) => setFormData({ ...formData, audience: e.target.value })}
                   placeholder="e.g. Australian music fans, enterprise buyers, cultural patrons"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
                 />
               </div>
             </div>
@@ -353,10 +365,11 @@ export default function BookingBriefWizard() {
               <input
                 id="refs"
                 type="text"
+                maxLength={500}
                 value={formData.referenceLinks}
                 onChange={(e) => setFormData({ ...formData, referenceLinks: e.target.value })}
                 placeholder="Vimeo, YouTube, or Pinterest links that evoke the mood you envision..."
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
               />
             </div>
           </div>
@@ -383,7 +396,7 @@ export default function BookingBriefWizard() {
                   id="timeline"
                   value={formData.timeline}
                   onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
                 >
                   <option value="1-4 weeks">Urgent / Within 1 month</option>
                   <option value="1-3 months">Within 1–3 months</option>
@@ -399,10 +412,11 @@ export default function BookingBriefWizard() {
                 <input
                   id="location"
                   type="text"
+                  maxLength={150}
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                   placeholder="e.g. Melbourne VIC, Sydney NSW, Remote Outback, Studio"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
                 />
               </div>
             </div>
@@ -415,7 +429,7 @@ export default function BookingBriefWizard() {
                 id="budget"
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
               >
                 <option value="$15,000 – $25,000 AUD">$15,000 – $25,000 AUD (Focused Boutique Shoot)</option>
                 <option value="$25,000 – $50,000 AUD">$25,000 – $50,000 AUD (Standard Cinema Package)</option>
@@ -431,10 +445,11 @@ export default function BookingBriefWizard() {
               <textarea
                 id="special"
                 rows={3}
+                maxLength={1500}
                 value={formData.specialRequirements}
                 onChange={(e) => setFormData({ ...formData, specialRequirements: e.target.value })}
                 placeholder="Any technical stunts, night shoots, licensed talent, or remote permits needed..."
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
               />
             </div>
           </div>
@@ -461,12 +476,17 @@ export default function BookingBriefWizard() {
                   id="step4-name"
                   type="text"
                   required
+                  maxLength={120}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Harrison Vance"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
                 />
-                {errors.name && <p className="text-xs text-red-400 font-mono">{errors.name}</p>}
+                {errors.name && (
+                  <p role="alert" aria-live="polite" className="text-xs text-red-400 font-mono">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -477,12 +497,17 @@ export default function BookingBriefWizard() {
                   id="step4-email"
                   type="email"
                   required
+                  maxLength={160}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="h.vance@company.com.au"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
                 />
-                {errors.email && <p className="text-xs text-red-400 font-mono">{errors.email}</p>}
+                {errors.email && (
+                  <p role="alert" aria-live="polite" className="text-xs text-red-400 font-mono">
+                    {errors.email}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -494,10 +519,11 @@ export default function BookingBriefWizard() {
                 <input
                   id="step4-company"
                   type="text"
+                  maxLength={150}
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="e.g. Modular Sound / Independent"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
                 />
               </div>
 
@@ -508,10 +534,11 @@ export default function BookingBriefWizard() {
                 <input
                   id="step4-phone"
                   type="tel"
+                  maxLength={40}
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+61 400 000 000"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
                 />
               </div>
             </div>
@@ -661,11 +688,21 @@ export default function BookingBriefWizard() {
           ) : (
             <button
               type="button"
+              disabled={isSubmitting}
               onClick={handleSubmit}
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-8 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-8 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl disabled:opacity-60"
             >
-              <span>Submit Creative Brief</span>
-              <Send className="w-4 h-4" />
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Logging Brief...</span>
+                </>
+              ) : (
+                <>
+                  <span>Submit Creative Brief</span>
+                  <Send className="w-4 h-4" />
+                </>
+              )}
             </button>
           )}
         </div>
