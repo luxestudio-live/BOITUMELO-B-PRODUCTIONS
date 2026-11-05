@@ -163,15 +163,15 @@ export default function CinematicHero() {
           </div>
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
-          <div ref={titleRef} className="space-y-6 max-w-4xl">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-brand-white tracking-tight leading-[0.92]">
+          <div ref={titleRef} className="space-y-6 max-w-5xl">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94]">
               BOITUMELO B{" "}
-              <span className="font-serif italic font-normal text-brand-gold block sm:inline">
+              <span className="text-brand-gold block sm:inline font-normal">
                 PRODUCTIONS
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-brand-gray-light font-light max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-slate-200 font-light max-w-xl leading-relaxed [text-wrap:pretty]">
               Films that move people. Visuals that move brands. An Australian production house specializing in documentary cinema, music videos, and commercial film.
             </p>
 

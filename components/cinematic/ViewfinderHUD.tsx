@@ -48,18 +48,18 @@ export default function ViewfinderHUD({
       {/* Top HUD Bar */}
       <div className="pt-20 sm:pt-24 flex items-center justify-between tracking-widest uppercase">
         <div className="flex items-center space-x-3">
-          <span className="flex items-center space-x-1.5 text-red-400 font-bold tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-red-500" />
+          <span className="flex items-center space-x-1.5 text-[#FF6B6B] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">
+            <span className="w-2 h-2 rounded-full bg-[#FF4D4D]" />
             <span>REC</span>
           </span>
-          <span suppressHydrationWarning className="text-brand-gold font-semibold tracking-wider">{liveTimecode}</span>
+          <span suppressHydrationWarning className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">{liveTimecode}</span>
         </div>
 
-        <div className="hidden sm:flex items-center space-x-6 text-slate-200 tracking-wider">
+        <div className="hidden sm:flex items-center space-x-6 text-slate-100 bg-black/80 px-3 py-1 rounded-sm tracking-wider">
           <span>{fps}</span>
-          <span className="text-brand-teal">•</span>
+          <span className="text-brand-gold">•</span>
           <span>{iso}</span>
-          <span className="text-brand-teal">•</span>
+          <span className="text-brand-gold">•</span>
           <span>SHUTTER 180.0°</span>
         </div>
       </div>

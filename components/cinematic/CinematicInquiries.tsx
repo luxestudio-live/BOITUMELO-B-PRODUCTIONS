@@ -127,9 +127,9 @@ export default function CinematicInquiries({
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
             {/* Architectural Heading */}
             <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-white leading-[1.05] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-white leading-[1.05] tracking-[0.02em]">
                 {title}{" "}
-                <span className="block font-serif italic text-brand-gold font-normal mt-1">
+                <span className="block text-brand-gold font-normal mt-1">
                   {serifAccent}
                 </span>
               </h2>
@@ -246,7 +246,7 @@ export default function CinematicInquiries({
                   >
                     <div className="space-y-2 flex-grow pr-2">
                       {/* Numbering & Category Pill */}
-                      <div className="flex items-center space-x-3 text-[11px] font-mono">
+                      <div className="flex items-center space-x-3 text-xs font-mono">
                         <span
                           className={`font-semibold tracking-wider transition-colors duration-300 ${
                             isOpen ? "text-brand-gold" : "text-brand-gray"
@@ -303,7 +303,7 @@ export default function CinematicInquiries({
 
                       {/* Technical Specs Footer Ribbon */}
                       {item.specs && (
-                        <div className="p-3 bg-brand-teal-deep/80 border border-brand-teal/40 rounded-sm flex items-center space-x-2 text-[11px] font-mono text-brand-gray">
+                        <div className="p-3 bg-brand-teal-deep/80 border border-brand-teal/40 rounded-sm flex items-center space-x-2 text-xs font-mono text-slate-300">
                           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold flex-shrink-0" />
                           <span className="truncate">
                             <strong className="text-brand-gold font-semibold uppercase tracking-wider mr-1">

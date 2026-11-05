@@ -136,7 +136,7 @@ export default function InteractiveServices() {
                 </span>
                 <Link
                   href={`/services/${activeService.slug}`}
-                  className="bg-brand-gold text-brand-black font-semibold px-3 py-1 rounded hover:bg-brand-gold-light transition-colors uppercase tracking-wider text-[11px]"
+                  className="bg-brand-gold text-brand-black font-semibold px-3 py-1 rounded hover:bg-brand-gold-light transition-colors uppercase tracking-wider text-xs"
                 >
                   View Vertical Specs
                 </Link>

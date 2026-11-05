@@ -129,10 +129,10 @@ export default function StudioStatement() {
               ref={(el) => {
                 if (el) wordsRef.current[idx] = el;
               }}
-              style={{ opacity: 0.45 }}
+              style={{ opacity: 0.6 }}
               className={`inline-block transition-colors duration-300 ${
                 item.gold
-                  ? "text-brand-gold font-serif italic font-normal"
+                  ? "text-brand-gold font-semibold"
                   : "text-brand-white"
               }`}
             >

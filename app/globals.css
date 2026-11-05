@@ -23,6 +23,7 @@
     font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -30,6 +31,16 @@
     color: #FFFFFF;
     overflow-x: hidden;
     min-height: 100vh;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Progressive typographic line-wrapping & hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   /* Accessible focus indicators */
@@ -63,14 +74,14 @@
   }
 }
 
-/* Reduced motion honoring */
+/* Reduced motion honoring: preserve state feedback while eliminating large translations */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
   ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.1s !important;
     scroll-behavior: auto !important;
   }
 }

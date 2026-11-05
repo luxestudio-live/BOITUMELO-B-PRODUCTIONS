@@ -16,7 +16,7 @@ export default function BehindTheFrame() {
           <div className="space-y-3">
             <h2 className="text-3xl sm:text-5xl font-display font-medium text-brand-white leading-tight">
               Behind the Frame.{" "}
-              <span className="font-serif italic font-normal text-brand-gold block sm:inline">
+              <span className="text-brand-gold block sm:inline font-normal">
                 The Living Craft.
               </span>
             </h2>

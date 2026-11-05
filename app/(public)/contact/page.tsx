@@ -15,9 +15,9 @@ export default function ContactPage() {
       {/* 01: Hero Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.02em] leading-[1.02]">
             Let&apos;s Make{" "}
-            <span className="font-serif italic font-normal text-brand-gold block sm:inline">
+            <span className="text-brand-gold block sm:inline font-normal">
               Something Happen.
             </span>
           </h1>

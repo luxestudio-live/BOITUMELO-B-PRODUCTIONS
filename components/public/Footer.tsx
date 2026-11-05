@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium tracking-tight text-brand-white leading-tight">
               Have a story in mind?{" "}
-              <span className="text-slate-200 block font-serif italic font-normal mt-1">
+              <span className="text-brand-gold block font-normal mt-1">
                 Let&apos;s make something worth remembering.
               </span>
             </h2>

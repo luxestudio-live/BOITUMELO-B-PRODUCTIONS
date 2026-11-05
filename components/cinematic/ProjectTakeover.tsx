@@ -176,7 +176,7 @@ export default function ProjectTakeover() {
           className="absolute inset-x-0 bottom-0 z-20 p-6 sm:p-10 lg:p-14 max-w-4xl space-y-3 pointer-events-none"
         >
           {project.awardNote && (
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-brand-black/80 backdrop-blur-md border border-brand-gold/50 rounded-sm text-[11px] font-mono text-brand-gold pointer-events-auto">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-brand-black/80 backdrop-blur-md border border-brand-gold/50 rounded-sm text-xs font-mono text-brand-gold pointer-events-auto">
               <Award className="w-3.5 h-3.5" />
               <span>{project.awardNote}</span>
             </div>

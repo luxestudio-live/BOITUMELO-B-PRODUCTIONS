@@ -24,9 +24,9 @@ export default function FinalFrameCTA() {
           <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-brand-gold" />
           <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-brand-gold" />
 
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[0.98]">
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.04em] uppercase leading-[0.98]">
             YOUR STORY.{" "}
-            <span className="font-serif italic font-normal text-brand-gold block sm:inline">
+            <span className="text-brand-gold block sm:inline font-normal">
               OUR NEXT FRAME.
             </span>
           </h2>

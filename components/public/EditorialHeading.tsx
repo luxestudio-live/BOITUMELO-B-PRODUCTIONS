@@ -30,17 +30,17 @@ export default function EditorialHeading({
         </div>
       )}
 
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-tight text-brand-white leading-[1.1]">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-[0.02em] text-brand-white leading-[1.1]">
         {title}{" "}
         {serifAccent && (
-          <span className="font-serif italic font-normal text-brand-gray-light block sm:inline mt-1 sm:mt-0">
+          <span className="text-brand-gold block sm:inline font-normal mt-1 sm:mt-0">
             {serifAccent}
           </span>
         )}
       </h2>
 
       {lead && (
-        <p className="text-sm sm:text-base text-brand-gray leading-relaxed max-w-2xl font-light">
+        <p className="text-sm sm:text-base text-slate-200 leading-relaxed max-w-2xl font-light [text-wrap:pretty]">
           {lead}
         </p>
       )}

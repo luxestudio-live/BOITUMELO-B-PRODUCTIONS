@@ -16,9 +16,9 @@ export default function AboutPage() {
       {/* 01: Immersive Opening Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.02em] leading-[1.02]">
             Behind Every Frame,{" "}
-            <span className="font-serif italic font-normal text-brand-gold block sm:inline">
+            <span className="text-brand-gold block sm:inline font-normal">
               There&apos;s a Story.
             </span>
           </h1>

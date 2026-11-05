@@ -186,7 +186,7 @@ export default function HorizontalFilmstrip() {
                       {p.subtitle}
                     </p>
 
-                    <div className="pt-2 flex items-center justify-between text-[10px] font-mono text-brand-gray">
+                    <div className="pt-2 flex items-center justify-between text-xs font-mono text-slate-300">
                       <span>{p.location}</span>
                       <span>{p.cameraFormat}</span>
                     </div>
@@ -199,7 +199,7 @@ export default function HorizontalFilmstrip() {
       </div>
 
       {/* Mobile Swipe Hint */}
-      <div className="md:hidden flex items-center justify-center space-x-2 pt-4 pb-2 text-[11px] font-mono text-brand-gold uppercase tracking-widest pointer-events-none">
+      <div className="md:hidden flex items-center justify-center space-x-2 pt-4 pb-2 text-xs font-mono text-brand-gold uppercase tracking-widest pointer-events-none">
         <span>◄ Swipe Films Horizontally ►</span>
       </div>
     </section>
