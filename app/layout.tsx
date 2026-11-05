@@ -16,7 +16,7 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://boitumelobproductions.com.au"),
+  metadataBase: new URL("https://boitumelo-b-productions.theluxestudio.in"),
   title: {
     default: "BOITUMELO B PRODUCTIONS | Film & Video Production Australia",
     template: "%s | BOITUMELO B PRODUCTIONS",
