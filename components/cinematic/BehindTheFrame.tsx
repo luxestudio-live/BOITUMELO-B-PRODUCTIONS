@@ -7,7 +7,7 @@ import { Camera, Compass, Clapperboard, ArrowRight } from "lucide-react";
 export default function BehindTheFrame() {
   return (
     <section
-      aria-label="Scene 07: Behind the Frame"
+      aria-label="Behind the Frame"
       className="relative bg-brand-black py-24 sm:py-36 border-b border-brand-teal/40 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
@@ -45,7 +45,7 @@ export default function BehindTheFrame() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80" />
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="text-xs font-mono uppercase tracking-widest text-brand-gold block">
-                  Field Archive // Dawn Call Wilpena Pound
+                  Field Archive • Dawn Call Wilpena Pound
                 </span>
                 <p className="text-xs text-slate-200 mt-1 font-light [text-wrap:pretty]">
                   Capturing atmospheric low-light gradients on large format sensors.
@@ -75,7 +75,7 @@ export default function BehindTheFrame() {
               Cinematography is not the accumulation of gear—it is the deliberate stewardship of light, acoustic frequency, and human intimacy. From two-week cultural immersion projects in remote Australian desert homelands to high-precision automotive commercials on coastal highways, our methodology remains identical:
             </p>
 
-            <blockquote className="border-l-2 border-brand-gold pl-5 py-1 text-base sm:text-lg text-brand-white font-serif italic">
+            <blockquote className="border-l-2 border-brand-gold pl-5 py-1 text-base sm:text-lg text-brand-white font-display tracking-wide">
               &ldquo;No camera angle is accidental. No cut is arbitrary. If a frame does not carry emotional or strategic weight, it does not survive the edit.&rdquo;
             </blockquote>
 

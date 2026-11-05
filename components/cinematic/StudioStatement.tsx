@@ -44,25 +44,30 @@ export default function StudioStatement() {
     }
 
     const ctx = gsap.context(() => {
-      // Trigger directly on the headline itself.
-      // Starts as headline enters lower viewport (82%), completes as it reaches upper center (38%).
-      // This ensures 100% of all words are radiant, bright, and legible while in full center view.
+      // Starts as headline enters lower viewport (88%) and completes BEFORE reaching center (58%).
+      // This guarantees that 100% of all words—especially the golden climax "MAKE THEM FELT."—
+      // are fully illuminated, radiant, and perfectly readable while in the center of the screen.
+      // It stays 100% bright as the user reads and scrolls through the section.
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 82%",
-          end: "top 38%",
-          scrub: 0.4,
+          start: "top 88%",
+          end: "top 58%",
+          scrub: 0.25,
+          refreshPriority: 1,
           invalidateOnRefresh: true,
         },
       });
 
-      // 1. Sequentially illuminate words with clean contrast
-      tl.to(
-        wordsRef.current,
+      // 1. Sequentially illuminate white words with clean contrast (starts at 0.65 for WCAG AA compliance)
+      const whiteElements = wordsRef.current.slice(0, 6);
+      tl.fromTo(
+        whiteElements,
+        { opacity: 0.65 },
         {
           opacity: 1,
-          stagger: 0.05,
+          stagger: 0.025,
+          duration: 0.2,
           ease: "power2.out",
         },
         0
@@ -70,25 +75,32 @@ export default function StudioStatement() {
 
       // 2. Extra warm amber bloom for the golden climax words "MAKE THEM FELT."
       const goldElements = wordsRef.current.slice(6);
-      tl.to(
+      tl.fromTo(
         goldElements,
         {
           color: "#E2A65F",
+          opacity: 0.75,
+          textShadow: "0 0 0px rgba(203, 141, 68, 0)",
+        },
+        {
+          color: "#E2A65F",
+          opacity: 1,
           textShadow:
-            "0 0 35px rgba(203, 141, 68, 0.75), 0 0 15px rgba(203, 141, 68, 0.45)",
-          stagger: 0.05,
+            "0 0 35px rgba(203, 141, 68, 0.8), 0 0 14px rgba(203, 141, 68, 0.45)",
+          stagger: 0.025,
+          duration: 0.2,
           ease: "power1.out",
         },
-        0.22
+        0.08
       );
 
       // 3. Supporting subtext illuminates in parallel
       if (subtextRef.current) {
         tl.fromTo(
           subtextRef.current,
-          { opacity: 0.85, y: 8 },
-          { opacity: 1, y: 0, ease: "power2.out", duration: 0.3 },
-          0.32
+          { opacity: 0.5, y: 10 },
+          { opacity: 1, y: 0, ease: "power2.out", duration: 0.2 },
+          0.14
         );
       }
 
@@ -96,9 +108,9 @@ export default function StudioStatement() {
       if (footerRef.current) {
         tl.fromTo(
           footerRef.current,
-          { opacity: 0.85 },
-          { opacity: 1, ease: "power1.out", duration: 0.25 },
-          0.42
+          { opacity: 0.5 },
+          { opacity: 1, ease: "power1.out", duration: 0.18 },
+          0.18
         );
       }
     }, containerRef);
@@ -129,10 +141,9 @@ export default function StudioStatement() {
               ref={(el) => {
                 if (el) wordsRef.current[idx] = el;
               }}
-              style={{ opacity: 0.6 }}
-              className={`inline-block transition-colors duration-300 ${
+              className={`inline-block ${
                 item.gold
-                  ? "text-brand-gold font-semibold"
+                  ? "text-[#E2A65F] font-semibold"
                   : "text-brand-white"
               }`}
             >

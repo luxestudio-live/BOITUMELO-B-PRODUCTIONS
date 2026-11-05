@@ -232,7 +232,7 @@ export default function AdminDashboard() {
                       <span>{tab.label}</span>
                     </span>
                     {tab.count !== undefined && (
-                      <span className="text-xs px-2 py-0.5 rounded bg-brand-black/60 text-slate-300 font-mono">
+                      <span className="text-xs px-2.5 py-1 rounded bg-brand-black/60 text-slate-300 font-mono">
                         {tab.count}
                       </span>
                     )}
@@ -357,7 +357,7 @@ export default function AdminDashboard() {
                           </p>
                         </div>
                         <span
-                          className={`text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded ${
+                          className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
                               ? "bg-brand-gold/20 text-brand-gold border border-brand-gold/40"
                               : "bg-brand-teal/40 text-brand-gray-light"
@@ -505,7 +505,7 @@ export default function AdminDashboard() {
                             <button
                               type="button"
                               onClick={() => handleToggleFeatured(p.id)}
-                              className={`text-[10px] uppercase font-mono tracking-wider px-2 py-0.5 rounded border transition-colors ${
+                              className={`text-xs uppercase font-mono tracking-wider px-2.5 py-1 rounded border transition-colors ${
                                 p.featured
                                   ? "bg-brand-gold text-brand-black border-brand-gold font-semibold"
                                   : "bg-brand-black/60 border-brand-teal/40 text-brand-gray"
@@ -755,7 +755,7 @@ export default function AdminDashboard() {
                         sizes="(max-width: 768px) 100vw, 25vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <span className="absolute top-2 left-2 px-1.5 py-0.5 bg-brand-black/80 backdrop-blur-sm text-[9px] font-mono uppercase text-brand-gold rounded border border-brand-teal/40">
+                      <span className="absolute top-2 left-2 px-2.5 py-1 bg-brand-black/80 backdrop-blur-sm text-[11px] font-mono uppercase text-brand-gold rounded border border-brand-teal/40">
                         {m.category}
                       </span>
                     </div>
@@ -819,7 +819,7 @@ export default function AdminDashboard() {
 
                       <div className="flex sm:flex-col items-center sm:items-end justify-between gap-2">
                         <span
-                          className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded ${
+                          className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
                               ? "bg-brand-gold text-brand-black font-semibold"
                               : enq.status === "In Review"

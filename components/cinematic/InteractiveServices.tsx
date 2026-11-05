@@ -16,7 +16,7 @@ export default function InteractiveServices() {
 
   return (
     <section
-      aria-label="Scene 06: Services in Motion"
+      aria-label="Production Disciplines in Motion"
       className="relative bg-brand-teal-deep py-24 sm:py-36 border-y border-brand-teal/40 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">

@@ -42,6 +42,7 @@ export default function CinematicHero() {
           scrub: 0.8,
           pin: true,
           anticipatePin: 1,
+          refreshPriority: 3,
           invalidateOnRefresh: true,
         },
       });
@@ -104,8 +105,8 @@ export default function CinematicHero() {
   return (
     <section
       ref={containerRef}
-      aria-label="Scene 01: The Living Frame"
-      className="relative w-full h-[100svh] min-h-[700px] overflow-hidden bg-brand-black flex items-center justify-center"
+      aria-label="Flagship Cinematic Showreel"
+      className="relative w-full h-[100svh] min-h-[600px] sm:min-h-[680px] overflow-hidden bg-brand-black flex items-center justify-center"
     >
       {/* Contractable Hero Film Frame */}
       <div
@@ -125,14 +126,14 @@ export default function CinematicHero() {
           aria-hidden="true"
         />
 
-        {/* Cinematic Lighting Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/30 to-brand-black/70 pointer-events-none" />
+        {/* Cinematic Lighting Overlays with Strong Text Scrim */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/95 via-brand-black/55 to-brand-black/75 pointer-events-none" />
         <div className="absolute inset-0 bg-brand-teal/20 mix-blend-color-burn pointer-events-none" />
         <div className="absolute inset-0 film-grain pointer-events-none" />
 
         {/* Viewfinder Camera HUD */}
         <div ref={hudRef} className="absolute inset-0 pointer-events-none">
-          <ViewfinderHUD />
+          <ViewfinderHUD paddedForNav />
         </div>
 
         {/* Asymmetrical Hero Content Composition */}
@@ -142,7 +143,7 @@ export default function CinematicHero() {
             <div className="inline-flex items-center space-x-2.5 px-3.5 py-2 bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 rounded-sm">
               <Clapperboard className="w-3.5 h-3.5 text-brand-gold" />
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
-                Live Frame // Showreel 2024–2025
+                Live Showreel • 2024–2026
               </span>
             </div>
 
@@ -164,7 +165,7 @@ export default function CinematicHero() {
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
           <div ref={titleRef} className="space-y-6 max-w-5xl">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
               BOITUMELO B{" "}
               <span className="text-brand-gold block sm:inline font-normal">
                 PRODUCTIONS

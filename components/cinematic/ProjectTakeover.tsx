@@ -50,9 +50,10 @@ export default function ProjectTakeover() {
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 65%",
-            end: "top 15%",
-            scrub: 0.8,
+            start: "top 72%",
+            end: "top 30%",
+            scrub: 0.6,
+            refreshPriority: 1,
             invalidateOnRefresh: true,
           },
         }
@@ -81,7 +82,7 @@ export default function ProjectTakeover() {
   return (
     <section
       ref={containerRef}
-      aria-label="Scene 05: Featured Project Takeover"
+      aria-label="Featured Production Showcase"
       className="relative bg-brand-black overflow-hidden py-16 sm:py-24 flex flex-col items-center"
     >
       {/* Intro Heading */}
@@ -100,7 +101,7 @@ export default function ProjectTakeover() {
       {/* Expanding Takeover Media Frame */}
       <div
         ref={mediaContainerRef}
-        className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[480px] max-h-[85vh] overflow-hidden border border-brand-teal/50 shadow-2xl bg-brand-black-surface"
+        className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[320px] sm:min-h-[480px] max-h-[85vh] overflow-hidden border border-brand-teal/50 shadow-2xl bg-brand-black-surface"
       >
         {/* Poster Image */}
         <Image

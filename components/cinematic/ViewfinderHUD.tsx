@@ -10,6 +10,7 @@ interface ViewfinderHUDProps {
   iso?: string;
   className?: string;
   showCenterCrosshair?: boolean;
+  paddedForNav?: boolean;
 }
 
 export default function ViewfinderHUD({
@@ -20,6 +21,7 @@ export default function ViewfinderHUD({
   iso = "ISO 800",
   className = "",
   showCenterCrosshair = true,
+  paddedForNav = false,
 }: ViewfinderHUDProps) {
   const [liveTimecode, setLiveTimecode] = useState(timecode);
 
@@ -46,7 +48,7 @@ export default function ViewfinderHUD({
       <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 border-b-2 border-r-2 border-brand-gold/60" />
 
       {/* Top HUD Bar */}
-      <div className="pt-20 sm:pt-24 flex items-center justify-between tracking-widest uppercase">
+      <div className={`${paddedForNav ? "pt-20 sm:pt-24" : "pt-0 sm:pt-1"} flex items-center justify-between tracking-widest uppercase`}>
         <div className="flex items-center space-x-3">
           <span className="flex items-center space-x-1.5 text-[#FF6B6B] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">
             <span className="w-2 h-2 rounded-full bg-[#FF4D4D]" />

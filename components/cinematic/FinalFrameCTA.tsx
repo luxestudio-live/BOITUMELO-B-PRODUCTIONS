@@ -8,7 +8,7 @@ import ViewfinderHUD from "./ViewfinderHUD";
 export default function FinalFrameCTA() {
   return (
     <section
-      aria-label="Scene 09: The Final Frame"
+      aria-label="Final Frame Call to Action"
       className="relative bg-brand-black overflow-hidden py-28 sm:py-44 flex items-center justify-center border-t border-brand-teal/40"
     >
       {/* Background Cinematic Texture & Vignette */}

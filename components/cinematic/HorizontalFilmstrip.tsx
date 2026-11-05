@@ -48,6 +48,7 @@ export default function HorizontalFilmstrip() {
           pin: true,
           scrub: 1,
           anticipatePin: 1,
+          refreshPriority: 2,
           invalidateOnRefresh: true,
         },
       });
@@ -162,8 +163,8 @@ export default function HorizontalFilmstrip() {
                     }`}
                   />
 
-                  {/* Dark Vignette Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/25 to-transparent opacity-85 group-hover:opacity-60 transition-opacity" />
+                  {/* Dark Vignette Overlay for Crisp Legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/75 to-transparent opacity-95 group-hover:opacity-85 transition-opacity" />
 
                   {/* Camera Corner Frameline Markers */}
                   <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-brand-gold/60 pointer-events-none" />
@@ -171,10 +172,10 @@ export default function HorizontalFilmstrip() {
                   <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-brand-gold/60 pointer-events-none" />
                   <div className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-brand-gold/60 pointer-events-none" />
 
-                  {/* Bottom Third Info */}
-                  <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex flex-col justify-end space-y-1 z-10">
+                  {/* Bottom Third Info with Dedicated Scrim */}
+                  <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 flex flex-col justify-end space-y-1 z-10 bg-gradient-to-t from-black via-black/90 to-transparent pt-8 sm:pt-10">
                     <div className="flex items-center justify-between">
-                      <h3 className="font-display font-medium text-xl sm:text-2xl text-brand-white group-hover:text-brand-gold transition-colors tracking-wide">
+                      <h3 className="font-display font-medium text-xl sm:text-2xl text-brand-white group-hover:text-brand-gold transition-colors tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                         {p.title}
                       </h3>
                       <div className="w-8 h-8 rounded-full bg-brand-gold text-brand-black flex items-center justify-center transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
@@ -182,7 +183,7 @@ export default function HorizontalFilmstrip() {
                       </div>
                     </div>
 
-                    <p className="text-xs text-brand-gray-light font-light line-clamp-1">
+                    <p className="text-xs text-slate-200 font-light line-clamp-1">
                       {p.subtitle}
                     </p>
 

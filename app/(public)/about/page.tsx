@@ -29,7 +29,7 @@ export default function AboutPage() {
         </div>
 
         {/* Cinematic Wide Still with Viewfinder HUD */}
-        <div className="mt-12 relative aspect-[21/9] sm:aspect-[2.39/1] rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
+        <div className="mt-12 relative aspect-[16/9] sm:aspect-[2.39/1] rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
           <Image
             src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85"
             alt="Director framing a cinema shot on Australian location"
@@ -42,13 +42,8 @@ export default function AboutPage() {
           <ViewfinderHUD
             timecode="00:08:14:02"
             aspectRatioLabel="ARCHIVAL 2.39:1"
-            lensLabel="Leica Summicron-C 40mm"
+            lensLabel="Wilpena Pound Location Archive"
           />
-          <div className="absolute bottom-6 left-6 sm:left-8 z-30">
-            <span className="text-[10px] uppercase font-mono tracking-[0.25em] text-brand-gold block">
-              Director Field Frame // Location Archive
-            </span>
-          </div>
         </div>
       </section>
 

@@ -14,7 +14,10 @@ export default function Footer() {
       {/* Decorative subtle ambient teal glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-teal/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 relative z-10">
+      <div
+        style={{ paddingBottom: "max(3rem, env(safe-area-inset-bottom, 3rem))" }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 relative z-10"
+      >
         {/* Top Editorial Invitation */}
         <div className="border-b border-brand-teal/30 pb-16 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-2xl">
@@ -125,12 +128,12 @@ export default function Footer() {
               </a>
             </div>
 
-            <div className="pt-2 flex items-center space-x-3 text-brand-gray">
+            <div className="pt-2 flex items-center space-x-1 text-brand-gray">
               <a
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -139,7 +142,7 @@ export default function Footer() {
                 href={siteConfig.vimeo}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
                 aria-label="Vimeo"
               >
                 <Video className="w-4 h-4" />
@@ -148,7 +151,7 @@ export default function Footer() {
                 href={siteConfig.youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -157,7 +160,7 @@ export default function Footer() {
                 href={siteConfig.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
+                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-brand-gold hover:bg-brand-teal/30 transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -173,7 +176,7 @@ export default function Footer() {
             <span className="hidden sm:inline">•</span>
             <span>Australian Production House</span>
             <span className="hidden sm:inline">•</span>
-            <Link href="/admin" className="hover:text-brand-gold flex items-center space-x-1">
+            <Link href="/admin" className="hover:text-brand-gold flex items-center space-x-1 min-h-[44px] items-center">
               <Shield className="w-3 h-3 text-brand-teal-light" />
               <span>Studio Portal</span>
             </Link>
@@ -182,7 +185,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center space-x-2 text-xs uppercase tracking-[0.15em] text-brand-gray-light hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded py-1 px-2"
+            className="min-h-[44px] flex items-center space-x-2 text-xs uppercase tracking-[0.15em] text-brand-gray-light hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded py-1 px-3"
             aria-label="Back to top of page"
           >
             <span>Back to Top</span>
