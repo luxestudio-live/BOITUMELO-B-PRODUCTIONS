@@ -134,16 +134,16 @@ export default function CinematicHero() {
 
         {/* Viewfinder Camera HUD */}
         <div ref={hudRef} className="absolute inset-0 pointer-events-none">
-          <ViewfinderHUD paddedForNav />
+          <ViewfinderHUD showTopBar={false} showBottomBar={false} />
         </div>
 
         {/* Asymmetrical Hero Content Composition */}
-        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-between pt-32 pb-16 sm:pt-36 sm:pb-20 pointer-events-none">
+        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-between pt-24 pb-16 sm:pt-28 sm:pb-20 pointer-events-none">
           {/* Top Identifier */}
-          <div className="flex items-center justify-between pointer-events-auto">
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-2 bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 rounded-sm">
-              <Clapperboard className="w-3.5 h-3.5 text-brand-gold" />
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
+          <div className="flex items-center justify-between gap-3 pointer-events-auto">
+            <div className="inline-flex items-center space-x-2 sm:space-x-2.5 px-3 sm:px-3.5 py-1.5 sm:py-2 bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 rounded-sm shrink-0">
+              <Clapperboard className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-brand-gold font-medium whitespace-nowrap">
                 Live Showreel • 2024–2026
               </span>
             </div>
@@ -152,15 +152,15 @@ export default function CinematicHero() {
             <button
               type="button"
               onClick={toggleSound}
-              className="min-h-[44px] flex items-center space-x-2.5 py-2 px-3.5 rounded-sm bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 hover:border-brand-gold hover:text-brand-gold text-brand-white transition-all text-xs font-mono uppercase tracking-wider focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+              className="min-h-[44px] inline-flex items-center space-x-2 sm:space-x-2.5 py-1.5 sm:py-2 px-3 sm:px-3.5 rounded-sm bg-brand-black/70 backdrop-blur-md border border-brand-teal/60 hover:border-brand-gold hover:text-brand-gold text-brand-white transition-all text-[11px] sm:text-xs font-mono uppercase tracking-wider focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold whitespace-nowrap shrink-0"
               aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
             >
               {isMuted ? (
-                <VolumeX className="w-4 h-4 text-brand-gray-light" />
+                <VolumeX className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gray-light shrink-0" />
               ) : (
-                <Volume2 className="w-4 h-4 text-brand-gold" />
+                <Volume2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-gold shrink-0" />
               )}
-              <span>{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
+              <span className="whitespace-nowrap">{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
             </button>
           </div>
 
