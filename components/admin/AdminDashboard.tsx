@@ -206,7 +206,7 @@ export default function AdminDashboard() {
             </div>
 
             {/* Nav Items */}
-            <nav className="space-y-1.5" aria-label="Admin Navigation">
+            <nav role="tablist" className="space-y-1.5" aria-label="Admin Navigation">
               {[
                 { id: "dashboard", label: "Overview", icon: LayoutDashboard },
                 { id: "projects", label: "Projects", icon: Film, count: projectsList.length },
@@ -221,6 +221,8 @@ export default function AdminDashboard() {
                   <button
                     key={tab.id}
                     type="button"
+                    role="tab"
+                    aria-selected={isActive}
                     onClick={() => setActiveTab(tab.id as AdminTab)}
                     className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-sm text-xs font-mono uppercase tracking-wider transition-all ${
                       isActive
@@ -252,12 +254,14 @@ export default function AdminDashboard() {
         {/* Right Content View Area */}
         <main className="flex-grow p-6 sm:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
           {/* Mobile Tab Selector */}
-          <div className="md:hidden mb-6 flex overflow-x-auto space-x-2 pb-2 border-b border-brand-teal/30">
+          <div role="tablist" aria-label="Mobile Navigation Tabs" className="md:hidden mb-6 flex overflow-x-auto space-x-2 pb-2 border-b border-brand-teal/30">
             {["dashboard", "projects", "services", "testimonials", "media", "enquiries", "settings"].map(
               (tab) => (
                 <button
                   key={tab}
                   type="button"
+                  role="tab"
+                  aria-selected={activeTab === tab}
                   onClick={() => setActiveTab(tab as AdminTab)}
                   className={`px-3 py-1.5 rounded-sm text-xs font-mono uppercase tracking-wider whitespace-nowrap ${
                     activeTab === tab
@@ -515,6 +519,7 @@ export default function AdminDashboard() {
                             <button
                               type="button"
                               onClick={() => handleToggleFeatured(p.id)}
+                              aria-label={p.featured ? `Remove ${p.title} from featured projects` : `Mark ${p.title} as featured project`}
                               className={`text-xs uppercase font-mono tracking-wider px-2.5 py-1 rounded border transition-colors ${
                                 p.featured
                                   ? "bg-brand-gold text-brand-black border-brand-gold font-semibold"
@@ -530,6 +535,7 @@ export default function AdminDashboard() {
                               target="_blank"
                               className="p-1 text-brand-gray hover:text-brand-white inline-block"
                               title="Preview Live Case Study"
+                              aria-label={`Preview live case study for ${p.title}`}
                             >
                               <Eye className="w-4 h-4" />
                             </Link>
@@ -541,6 +547,7 @@ export default function AdminDashboard() {
                               }}
                               className="p-1 text-brand-gray hover:text-brand-gold inline-block"
                               title="Edit Project"
+                              aria-label={`Edit project: ${p.title}`}
                             >
                               <Edit className="w-4 h-4" />
                             </button>
@@ -549,6 +556,7 @@ export default function AdminDashboard() {
                               onClick={() => handleDeleteProject(p.id)}
                               className="p-1 text-brand-gray hover:text-red-400 inline-block"
                               title="Delete Project"
+                              aria-label={`Delete project: ${p.title}`}
                             >
                               <Trash2 className="w-4 h-4" />
                             </button>
@@ -819,8 +827,17 @@ export default function AdminDashboard() {
                     enquiriesList.map((enq) => (
                     <div
                       key={enq.id}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`View enquiry details from ${enq.name} (${enq.company})`}
                       onClick={() => setSelectedEnquiry(enq)}
-                      className={`p-6 cursor-pointer hover:bg-brand-teal/15 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 ${
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setSelectedEnquiry(enq);
+                        }
+                      }}
+                      className={`p-6 cursor-pointer hover:bg-brand-teal/15 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
                         selectedEnquiry?.id === enq.id ? "bg-brand-teal/30 ring-1 ring-inset ring-brand-gold/60" : ""
                       }`}
                     >
@@ -877,7 +894,8 @@ export default function AdminDashboard() {
                     <button
                       type="button"
                       onClick={() => setSelectedEnquiry(null)}
-                      className="p-1 text-brand-gray-light hover:text-brand-white"
+                      className="p-1 text-brand-gray-light hover:text-brand-white focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded"
+                      aria-label="Close enquiry detail drawer"
                     >
                       <X className="w-5 h-5" />
                     </button>

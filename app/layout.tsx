@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    url: "https://boitumelobproductions.com.au",
+    url: "https://boitumelo-b-productions.theluxestudio.in",
     siteName: "BOITUMELO B PRODUCTIONS",
     title: "BOITUMELO B PRODUCTIONS | Stories Worth Feeling.",
     description:
