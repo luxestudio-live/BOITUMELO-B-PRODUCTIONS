@@ -42,7 +42,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     visualDirection: {
       title: "Human-Centred & Contemplative",
       description:
-        "Naturalistic lighting, 2.39:1 anamorphic framing, organic film grain, and patient compositions that honor the subject's environment without invasive production footprints.",
+        "Naturalistic lighting, 2.39:1 anamorphic framing, organic film grain, and patient compositions that honour the subject's environment without invasive production footprints.",
       aestheticTokens: ["Anamorphic Glass", "Natural Light First", "Rich Earthy Ochres", "Intimate Close-ups", "Acoustic Ambience"],
     },
     capabilities: [
@@ -56,7 +56,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
       {
         name: "Impact & Social Advocacy Films",
-        description: "Narratives engineered to provoke empathy, policy discussions, and grassroots community mobilization.",
+        description: "Narratives engineered to provoke empathy, policy discussions, and grassroots community mobilisation.",
       },
       {
         name: "Biographical & Artist Profiles",
@@ -64,7 +64,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
       {
         name: "Festival Master Deliverables",
-        description: "DCP packaging, 5.1 surround sound mastering, HDR color management, and international exhibition deliveries.",
+        description: "DCP packaging, 5.1 surround sound mastering, HDR colour management, and international exhibition deliveries.",
       },
     ],
     process: [
@@ -85,7 +85,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
       {
         step: "04",
-        title: "Sound & Color Alchemy",
+        title: "Sound & Colour Alchemy",
         description: "Bespoke acoustic scores, ambisonic field recordings, and 35mm film emulation grading bring final cinematic majesty.",
       },
     ],
@@ -96,7 +96,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
       {
         question: "How do you handle sensitive cultural or personal topics?",
-        answer: "We adhere strictly to collaborative ethical protocols. Subjects retain narrative dignity, cultural advisory permissions are honored throughout, and rough cuts are reviewed collaboratively before public release.",
+        answer: "We adhere strictly to collaborative ethical protocols. Subjects retain narrative dignity, cultural advisory permissions are honoured throughout, and rough cuts are reviewed collaboratively before public release.",
       },
       {
         question: "Do you travel to remote Australian locations?",
@@ -158,7 +158,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       {
         step: "03",
         title: "High-Energy Shoot",
-        description: "High-intensity multi-camera setups, specialized camera rigs, and high frame rates for butter-smooth slow-motion.",
+        description: "High-intensity multi-camera setups, specialised camera rigs, and high frame rates for butter-smooth slow-motion.",
       },
       {
         step: "04",
@@ -269,7 +269,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     visualDirection: {
       title: "Sculpted Light & Premium Textures",
       description:
-        "High-art direction, rich color palettes, purposeful macro cinematography, and bespoke sound design that elevates products into icons.",
+        "High-art direction, rich colour palettes, purposeful macro cinematography, and bespoke sound design that elevates products into icons.",
       aestheticTokens: ["Sculpted Lighting", "Macro Textures", "Deep Teal & Warm Gold", "Atmospheric Haze", "Dynamic Ratios"],
     },
     capabilities: [
@@ -294,7 +294,7 @@ export const servicesData: Record<string, ServiceDetail> = {
       {
         step: "01",
         title: "Creative Treatment & Mood",
-        description: "We develop visual boards, color studies, and director's treatments outlining the aesthetic world of the campaign.",
+        description: "We develop visual boards, colour studies, and director's treatments outlining the aesthetic world of the campaign.",
       },
       {
         step: "02",
@@ -304,12 +304,12 @@ export const servicesData: Record<string, ServiceDetail> = {
       {
         step: "03",
         title: "Cinematic Principal Shoot",
-        description: "Top-tier cinema cameras (ARRI Alexa 35 / RED V-Raptor), specialized motion rigs, and cinema-grade lighting.",
+        description: "Top-tier cinema cameras (ARRI Alexa 35 / RED V-Raptor), specialised motion rigs, and cinema-grade lighting.",
       },
       {
         step: "04",
-        title: "Finishing & Color Mastery",
-        description: "Feature-film color grading, sound mixing, motion graphics, and broadcast-compliant QA masters.",
+        title: "Finishing & Colour Mastery",
+        description: "Feature-film colour grading, sound mixing, motion graphics, and broadcast-compliant QA masters.",
       },
     ],
     faqs: [

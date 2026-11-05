@@ -12,14 +12,11 @@ export default function NotFound() {
       </div>
 
       <div className="space-y-3 max-w-lg">
-        <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold">
-          Scene Missing // Cut in Post-Production
-        </span>
         <h1 className="text-4xl sm:text-5xl font-display font-medium text-brand-white">
           Frame Not Found.
         </h1>
         <p className="text-sm sm:text-base text-brand-gray font-light leading-relaxed">
-          The sequence or file you were looking for is no longer available in this cut. It may have been archived, renamed, or relocated.
+          The page or project you were looking for doesn&apos;t exist or has moved. Return to the home page or browse our selected films.
         </p>
       </div>
 

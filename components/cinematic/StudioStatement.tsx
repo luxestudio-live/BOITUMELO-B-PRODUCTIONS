@@ -86,7 +86,7 @@ export default function StudioStatement() {
       if (subtextRef.current) {
         tl.fromTo(
           subtextRef.current,
-          { opacity: 0.4, y: 14 },
+          { opacity: 0.85, y: 8 },
           { opacity: 1, y: 0, ease: "power2.out", duration: 0.3 },
           0.32
         );
@@ -96,7 +96,7 @@ export default function StudioStatement() {
       if (footerRef.current) {
         tl.fromTo(
           footerRef.current,
-          { opacity: 0.4 },
+          { opacity: 0.85 },
           { opacity: 1, ease: "power1.out", duration: 0.25 },
           0.42
         );
@@ -109,7 +109,7 @@ export default function StudioStatement() {
   return (
     <section
       ref={containerRef}
-      aria-label="Scene 04: The Studio Statement"
+      aria-label="The Studio Statement"
       className="relative bg-brand-teal-deep py-28 sm:py-44 border-b border-brand-teal/40 overflow-hidden flex items-center justify-center"
     >
       {/* Atmospheric radial spotlight in Deep Teal & Gold */}
@@ -144,8 +144,7 @@ export default function StudioStatement() {
         {/* Supporting Narrative */}
         <p
           ref={subtextRef}
-          style={{ opacity: 0.8 }}
-          className="max-w-2xl mx-auto text-base sm:text-xl text-slate-200 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
+          className="max-w-2xl mx-auto text-base sm:text-xl text-slate-100 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
           In an era of disposable video feeds, true cinema demands reverence. We pair large format anamorphic glass with deep cultural listening to craft films that endure.
         </p>
@@ -153,8 +152,7 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          style={{ opacity: 0.8 }}
-          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-slate-300 tracking-widest uppercase"
+          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-slate-200 tracking-widest uppercase"
         >
           <span>MELBOURNE</span>
           <span className="text-brand-gold">•</span>

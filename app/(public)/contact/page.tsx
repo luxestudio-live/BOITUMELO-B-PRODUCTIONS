@@ -60,7 +60,7 @@ export default function ContactPage() {
                 >
                   <Mail className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <span className="block text-[11px] font-mono text-brand-gray uppercase">
+                    <span className="block text-xs font-mono text-slate-300 uppercase">
                       Email Collaboration Desk
                     </span>
                     <span className="font-mono text-brand-white group-hover:text-brand-gold">
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 >
                   <Phone className="w-5 h-5 text-brand-gold flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <div>
-                    <span className="block text-[11px] font-mono text-brand-gray uppercase">
+                    <span className="block text-xs font-mono text-slate-300 uppercase">
                       Telephone
                     </span>
                     <span className="font-mono text-brand-white group-hover:text-brand-gold">
@@ -98,7 +98,7 @@ export default function ContactPage() {
                     </span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
-                  <span className="text-[10px] text-brand-gray block mt-1 font-mono">
+                  <span className="text-xs text-slate-300 block mt-1 font-mono">
                     Direct Line: {siteConfig.whatsappDisplay}
                   </span>
                 </div>
@@ -107,9 +107,6 @@ export default function ContactPage() {
 
             {/* Australian Service Footprint Card */}
             <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light space-y-4">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block">
-                Operating Footprint
-              </span>
               <h3 className="text-xl font-display font-medium text-brand-white">
                 Australia-Wide Operations
               </h3>

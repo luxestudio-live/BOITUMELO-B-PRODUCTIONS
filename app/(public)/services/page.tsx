@@ -56,8 +56,8 @@ export default function ServicesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent" />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-brand-black/80 backdrop-blur-md text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold rounded-sm border border-brand-teal/40">
-                        VERTICAL // {service.number}
+                      <span className="px-3 py-1.5 bg-brand-black/90 backdrop-blur-md text-xs font-mono uppercase tracking-[0.2em] text-brand-gold rounded-sm border border-brand-teal/60 font-medium">
+                        {service.shortTitle}
                       </span>
                     </div>
                   </div>
@@ -65,10 +65,7 @@ export default function ServicesPage() {
 
                 {/* Service Narrative & Scope Highlights */}
                 <div className={`lg:col-span-6 ${isReversed ? "lg:order-1" : "lg:order-2"} space-y-6`}>
-                  <div className="space-y-2">
-                    <span className="text-xs font-mono text-brand-gold uppercase tracking-[0.25em]">
-                      {service.shortTitle}
-                    </span>
+                  <div>
                     <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white leading-tight">
                       {service.title}
                     </h2>

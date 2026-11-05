@@ -22,14 +22,14 @@ export default function ContactForm() {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = "Full name is required.";
+    if (!formData.name.trim()) newErrors.name = "Please enter your full name.";
     if (!formData.email.trim()) {
-      newErrors.email = "Email address is required.";
+      newErrors.email = "Please enter your email address so our producers can reply.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please provide a valid email address.";
+      newErrors.email = "Please enter a valid email address (e.g. name@organisation.com.au).";
     }
     if (!formData.description.trim()) {
-      newErrors.description = "Please provide a brief description of your project.";
+      newErrors.description = "Please share a few details about your project or story concept.";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -57,7 +57,7 @@ export default function ContactForm() {
             Enquiry Received
           </h3>
           <p className="text-sm text-brand-gray-light max-w-md mx-auto leading-relaxed">
-            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your enquiry has been received by our production desk. A member of our creative producing team will review your project and respond within 24 hours.
+            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your enquiry has been received by our production desk. Our creative producing team reviews all briefs directly and will respond within one business day.
           </p>
         </div>
         <div className="p-4 bg-brand-black/60 border border-brand-teal/40 rounded-sm max-w-sm mx-auto text-xs font-mono text-brand-gold">
@@ -102,7 +102,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="e.g. Marcus Thorne"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
           {errors.name && (
             <p className="text-xs text-red-400 flex items-center space-x-1 font-mono">
@@ -124,7 +124,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="m.thorne@example.com.au"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
           {errors.email && (
             <p className="text-xs text-red-400 flex items-center space-x-1 font-mono">
@@ -147,7 +147,7 @@ export default function ContactForm() {
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             placeholder="e.g. Melbourne Contemporary Arts"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
         </div>
 
@@ -162,7 +162,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+61 400 000 000"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none transition-colors"
+            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -236,7 +236,7 @@ export default function ContactForm() {
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           placeholder="Describe your story, intended audience, references, or key deliverables..."
-          className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none transition-colors"
+          className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
         />
         {errors.description && (
           <p className="text-xs text-red-400 flex items-center space-x-1 font-mono">
@@ -298,7 +298,7 @@ export default function ContactForm() {
           {isSubmitting ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
-              <span>Transmitting Brief...</span>
+              <span>Sending enquiry...</span>
             </>
           ) : (
             <>
@@ -307,8 +307,8 @@ export default function ContactForm() {
             </>
           )}
         </button>
-        <span className="block text-[11px] font-mono text-brand-gray mt-3">
-          *All enquiries are reviewed directly by our executive production desk in Melbourne & Sydney.
+        <span className="block text-xs font-mono text-slate-300 mt-3">
+          *Every enquiry is reviewed directly by our directors in Melbourne & Sydney. We never share your details.
         </span>
       </div>
     </form>

@@ -38,7 +38,6 @@ export default function TestimonialsPage() {
       {/* 03: Full Roster of Editorial Quotes */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <EditorialHeading
-          eyebrow="Complete Collaborator Log"
           title="Reflections Across Disciplines."
           serifAccent="Documentary, Music & Commerce."
           lead="Insights from cultural institutions, independent recording artists, and corporate innovators across Australia."
@@ -75,9 +74,9 @@ export default function TestimonialsPage() {
                   />
                 </div>
                 <div>
-                  <h4 className="font-display font-medium text-base text-brand-white">
+                  <h3 className="font-display font-medium text-base text-brand-white">
                     {t.author}
-                  </h4>
+                  </h3>
                   <p className="text-xs font-mono text-brand-gray">
                     {t.role} • {t.company} ({t.year})
                   </p>

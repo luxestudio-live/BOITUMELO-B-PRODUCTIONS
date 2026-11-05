@@ -137,7 +137,7 @@ export const sampleProjects: ProjectItem[] = [
       { role: "Lead Choreographer", name: "Suki Chen" },
       { role: "Director of Photography", name: "Marcus Thorne" },
       { role: "Gaffer & DMX Programmer", name: "Liam O'Connor" },
-      { role: "Editor & Colorist", name: "Boitumelo B." },
+      { role: "Editor & Colourist", name: "Boitumelo B." },
     ],
     behindTheFrames: [
       {
@@ -177,7 +177,7 @@ export const sampleProjects: ProjectItem[] = [
     videoPreviewUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     fullVideoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     logline: "An ode to generational craft, charting the relationship between micro-climate soil biology, early autumn mist, and the patient hands that cultivate liquid heritage.",
-    synopsis: "Commissioned as the centerpiece for Terra Nova's international brand repositioning, this film abandons standard corporate winery clichés in favour of raw tactile intimacy: macro macro-lens shots of morning dew evaporating off vine shoots, hands turning rich dark loam, and cellar humidity illuminated by amber shaft lighting.",
+    synopsis: "Commissioned as the centrepiece for Terra Nova's international brand repositioning, this film abandons standard corporate winery clichés in favour of raw tactile intimacy: macro macro-lens shots of morning dew evaporating off vine shoots, hands turning rich dark loam, and cellar humidity illuminated by amber shaft lighting.",
     creativeChallenge: "Capturing fleeting dawn atmospheric mist that only manifests for 20 minutes under precise barometric conditions.",
     creativeDirection: "High-contrast naturalism. The visual world is grounded, earthy, and opulent without ever feeling pretentious.",
     productionNotes: [
@@ -367,7 +367,7 @@ export const sampleProjects: ProjectItem[] = [
     creativeChallenge: "Reflecting precise material textures—raw off-form concrete, oxidised copper, and honed travertine—without clipping delicate highlights.",
     creativeDirection: "Meditative and structured. The rhythm matches the calm ocean swells just meters away.",
     productionNotes: [
-      "Shot exclusively with natural lighting and minimal negative fill to honor real architectural lived experience.",
+      "Shot exclusively with natural lighting and minimal negative fill to honour real architectural lived experience.",
     ],
     credits: [
       { role: "Director & Cinematographer", name: "Boitumelo B." },
@@ -416,7 +416,7 @@ export const sampleProjects: ProjectItem[] = [
       { role: "Director", name: "Boitumelo B." },
       { role: "Automotive DP", name: "Jarrah Kelly" },
       { role: "Aerial Director", name: "Luke St. Clair" },
-      { role: "Senior Colorist", name: "Kester Vance" },
+      { role: "Senior Colourist", name: "Kester Vance" },
     ],
     behindTheFrames: [
       {

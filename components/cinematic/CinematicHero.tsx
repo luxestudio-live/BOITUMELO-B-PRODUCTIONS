@@ -172,7 +172,7 @@ export default function CinematicHero() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-slate-200 font-light max-w-xl leading-relaxed [text-wrap:pretty]">
-              Films that move people. Visuals that move brands. An Australian production house specializing in documentary cinema, music videos, and commercial film.
+              Films that move people. Visuals that move brands. An Australian production house specialising in documentary cinema, music videos, and commercial film.
             </p>
 
             {/* Action Triggers */}

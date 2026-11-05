@@ -72,19 +72,19 @@ export default function BookingBriefWizard() {
   const validateStep = (step: number) => {
     const errs: Record<string, string> = {};
     if (step === 1) {
-      if (!formData.discipline) errs.discipline = "Please choose a project discipline.";
+      if (!formData.discipline) errs.discipline = "Please select a production discipline to continue.";
     }
     if (step === 2) {
       if (!formData.description.trim()) {
-        errs.description = "Please tell us briefly about your story or project concept.";
+        errs.description = "Please provide a brief outline of your story, concept, or project goals.";
       }
     }
     if (step === 4) {
-      if (!formData.name.trim()) errs.name = "Full name is required.";
+      if (!formData.name.trim()) errs.name = "Please enter your full name.";
       if (!formData.email.trim()) {
-        errs.email = "Email address is required.";
+        errs.email = "Please enter your email address so our producers can reach you.";
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        errs.email = "Please provide a valid email address.";
+        errs.email = "Please enter a valid email address (e.g. name@organisation.com.au).";
       }
     }
     setErrors(errs);
@@ -123,10 +123,10 @@ export default function BookingBriefWizard() {
             Production Brief Recorded
           </span>
           <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white">
-            Brief Received & Slotted.
+            Brief Received. Discovery Consultation Slated.
           </h2>
           <p className="text-sm sm:text-base text-brand-gray-light max-w-lg mx-auto font-light leading-relaxed">
-            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your creative brief for a <strong className="text-brand-white">{formData.discipline}</strong> project has been scheduled in our production calendar.
+            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your creative brief for <strong className="text-brand-white">{formData.discipline}</strong> has been logged with our Melbourne & Sydney creative team. We will review your materials and confirm your session within 24 business hours.
           </p>
         </div>
 
@@ -145,19 +145,19 @@ export default function BookingBriefWizard() {
             <span className="text-brand-white">{formData.budget}</span>
           </div>
           <div className="flex justify-between border-b border-brand-teal/30 pb-2">
-            <span className="text-brand-gray">PROVISIONAL CONSULTATION:</span>
+            <span className="text-brand-gray">DISCOVERY SESSION HOLD:</span>
             <span className="text-brand-gold">
               {formData.selectedDate} at {formData.selectedTimeSlot}
             </span>
           </div>
           <div className="flex justify-between pt-1">
-            <span className="text-brand-gray">PRODUCTION REFERENCE TOKEN:</span>
+            <span className="text-brand-gray">ENQUIRY REFERENCE:</span>
             <span className="text-brand-gray-light">#BB-BRIEF-2026-X9</span>
           </div>
         </div>
 
         <p className="text-xs text-brand-gray max-w-md mx-auto">
-          *Your consultation request has been submitted. Our production coordinator will confirm availability via email.
+          *Creative discovery calls are complementary and obligation-free. Our production coordinator will email your calendar invite and video link directly.
         </p>
 
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
@@ -309,7 +309,7 @@ export default function BookingBriefWizard() {
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="What is the story, subject matter, or song about? What makes it unique?"
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
               />
               {errors.description && (
                 <p className="text-xs text-red-400 font-mono">{errors.description}</p>
@@ -327,7 +327,7 @@ export default function BookingBriefWizard() {
                   value={formData.creativeGoals}
                   onChange={(e) => setFormData({ ...formData, creativeGoals: e.target.value })}
                   placeholder="e.g. Festival premiere, viral music release, Series-B fundraise"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
                 />
               </div>
 
@@ -341,7 +341,7 @@ export default function BookingBriefWizard() {
                   value={formData.audience}
                   onChange={(e) => setFormData({ ...formData, audience: e.target.value })}
                   placeholder="e.g. Australian music fans, enterprise buyers, cultural patrons"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none"
+                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
                 />
               </div>
             </div>
@@ -356,7 +356,7 @@ export default function BookingBriefWizard() {
                 value={formData.referenceLinks}
                 onChange={(e) => setFormData({ ...formData, referenceLinks: e.target.value })}
                 placeholder="Vimeo, YouTube, or Pinterest links that evoke the mood you envision..."
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
               />
             </div>
           </div>
@@ -434,7 +434,7 @@ export default function BookingBriefWizard() {
                 value={formData.specialRequirements}
                 onChange={(e) => setFormData({ ...formData, specialRequirements: e.target.value })}
                 placeholder="Any technical stunts, night shoots, licensed talent, or remote permits needed..."
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-brand-gray/60 focus:outline-none"
+                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-sm text-brand-white placeholder-slate-400 focus:outline-none"
               />
             </div>
           </div>
@@ -489,7 +489,7 @@ export default function BookingBriefWizard() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label htmlFor="step4-company" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
-                  Company / Record Label / Organization
+                  Organisation / Label / Production Company (Optional)
                 </label>
                 <input
                   id="step4-company"
@@ -552,7 +552,7 @@ export default function BookingBriefWizard() {
                   <span className="text-xs font-mono uppercase tracking-wider text-brand-white block">
                     {opt.label}
                   </span>
-                  <p className="text-[11px] text-brand-gray mt-1">{opt.desc}</p>
+                  <p className="text-xs text-slate-300 mt-1">{opt.desc}</p>
                 </button>
               ))}
             </div>
@@ -563,11 +563,11 @@ export default function BookingBriefWizard() {
                 <div className="flex items-center space-x-2 text-brand-gold">
                   <CalendarIcon className="w-4 h-4" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">
-                    Provisional Discovery Call Slot Picker
+                    Select a Discovery Call Slot
                   </span>
                 </div>
-                <span className="text-[10px] font-mono text-brand-gray uppercase">
-                  Timezone: AEDT (Melbourne / Sydney)
+                <span className="text-xs font-mono text-slate-300 uppercase">
+                  Times in AEDT (Melbourne / Sydney)
                 </span>
               </div>
 
@@ -627,8 +627,8 @@ export default function BookingBriefWizard() {
                 </div>
               </div>
 
-              <div className="text-[11px] font-mono text-brand-gray pt-2 border-t border-brand-teal/20">
-                *All consultation calls are conducted via video link with our Melbourne & Sydney creative directors.
+              <div className="text-xs font-mono text-slate-300 pt-2 border-t border-brand-teal/20">
+                *Discovery sessions are 30-minute introductory conversations held via Google Meet or phone. There is no fee or commitment required.
               </div>
             </div>
           </div>

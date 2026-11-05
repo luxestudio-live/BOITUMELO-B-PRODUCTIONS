@@ -27,12 +27,6 @@ export default function ServiceDetailView({
       {/* 01: Distinct Cinematic Hero with HUD */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-widest text-slate-300">
-            <span className="text-brand-gold font-semibold">{service.shortTitle}</span>
-            <span>•</span>
-            <span>Australian Production Standard</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
             {service.heroHeadline}
           </h1>
@@ -69,9 +63,6 @@ export default function ServiceDetailView({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 bg-brand-black-elevated border border-brand-teal/50 rounded-sm shadow-xl">
-              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold block mb-2">
-                Cinematic Art Direction
-              </span>
               <h2 className="text-2xl font-display font-medium text-brand-white">
                 {service.visualDirection.title}
               </h2>
@@ -81,9 +72,6 @@ export default function ServiceDetailView({
             </div>
 
             <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-2xl">
-              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold block mb-2">
-                Production Engagement
-              </span>
               <h3 className="text-xl font-display font-medium text-brand-white">
                 Commission a Production
               </h3>
@@ -105,7 +93,7 @@ export default function ServiceDetailView({
               {service.introNarrative}
             </p>
             <p>
-              Every production under this vertical benefits from our dedicated cinema camera packages, seasoned lighting technicians, and in-house post-production color science. We collaborate intimately with our clients—maintaining full transparency across every stage of pre-production, principal photography, and master editorial delivery.
+              Every production under this vertical benefits from our dedicated cinema camera packages, seasoned lighting technicians, and in-house post-production colour science. We collaborate intimately with our clients—maintaining full transparency across every stage of pre-production, principal photography, and master editorial delivery.
             </p>
 
             {/* Scope Deliverables */}
@@ -151,7 +139,7 @@ export default function ServiceDetailView({
                 key={p.step}
                 className="bg-brand-black/70 border border-brand-teal/40 p-8 rounded-sm hover:border-brand-gold/60 transition-colors shadow-lg"
               >
-                <span className="text-3xl font-display font-bold text-brand-teal-light">
+                <span className="text-3xl font-display font-semibold text-brand-gold">
                   {p.step}
                 </span>
                 <h3 className="text-lg font-display font-medium text-brand-white mt-4">
@@ -194,10 +182,9 @@ export default function ServiceDetailView({
 
       {/* 05: Frequently Asked Questions Terminal */}
       <CinematicInquiries
-        title={`${service.shortTitle} Inquiries.`}
-        serifAccent="Everything You Need to Know."
+        title={`${service.shortTitle} Enquiries.`}
+        serifAccent="Clear Answers for Every Stage of Production."
         lead={`Specific technical standards, delivery formats, and production protocols for ${service.title.toLowerCase()} commissions.`}
-        eyebrow={`${service.shortTitle} Specifications`}
         enableCategories={false}
         inquiries={service.faqs.map((faq) => ({
           q: faq.question,

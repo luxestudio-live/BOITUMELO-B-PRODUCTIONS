@@ -199,7 +199,7 @@ export default function AdminDashboard() {
               <span className="font-display font-bold tracking-[0.2em] text-base text-brand-white block">
                 BOITUMELO B
               </span>
-              <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-brand-gold block">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
                 Studio CMS Portal
               </span>
             </div>
@@ -232,7 +232,7 @@ export default function AdminDashboard() {
                       <span>{tab.label}</span>
                     </span>
                     {tab.count !== undefined && (
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-brand-black/60 text-brand-gray">
+                      <span className="text-xs px-2 py-0.5 rounded bg-brand-black/60 text-slate-300 font-mono">
                         {tab.count}
                       </span>
                     )}
@@ -275,10 +275,7 @@ export default function AdminDashboard() {
             <div className="space-y-8 animate-fade-in">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/30">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
-                    Operations Center
-                  </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
                     Studio Dashboard Overview
                   </h1>
                 </div>
@@ -312,13 +309,13 @@ export default function AdminDashboard() {
                     key={i}
                     className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm"
                   >
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-brand-gold block">
+                    <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-medium">
                       {stat.label}
                     </span>
                     <span className="text-3xl sm:text-4xl font-display font-bold text-brand-white mt-2 block">
                       {stat.val}
                     </span>
-                    <span className="text-[10px] font-mono text-brand-gray mt-1 block">
+                    <span className="text-xs font-mono text-slate-300 mt-1 block">
                       {stat.note}
                     </span>
                   </div>
@@ -329,9 +326,9 @@ export default function AdminDashboard() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-7 bg-brand-black-elevated border border-brand-teal/40 p-6 rounded-sm space-y-4">
                   <div className="flex items-center justify-between pb-3 border-b border-brand-teal/30">
-                    <h3 className="font-display font-medium text-base text-brand-white">
+                    <h2 className="font-display font-medium text-base text-brand-white">
                       Recent Inbound Enquiries
-                    </h3>
+                    </h2>
                     <button
                       type="button"
                       onClick={() => setActiveTab("enquiries")}
@@ -352,15 +349,15 @@ export default function AdminDashboard() {
                         className="py-3 flex items-center justify-between cursor-pointer hover:bg-brand-teal/20 px-2 rounded transition-colors"
                       >
                         <div>
-                          <h4 className="text-sm font-medium text-brand-white">
+                          <h3 className="text-sm font-medium text-brand-white">
                             {enq.name}
-                          </h4>
+                          </h3>
                           <p className="text-xs font-mono text-brand-gray">
                             {enq.service} • {enq.date}
                           </p>
                         </div>
                         <span
-                          className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded ${
+                          className={`text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded ${
                             enq.status === "New"
                               ? "bg-brand-gold/20 text-brand-gold border border-brand-gold/40"
                               : "bg-brand-teal/40 text-brand-gray-light"
@@ -375,9 +372,9 @@ export default function AdminDashboard() {
 
                 {/* Quick Shortcuts */}
                 <div className="lg:col-span-5 bg-brand-teal/30 border border-brand-teal/50 p-6 rounded-sm space-y-4">
-                  <h3 className="font-display font-medium text-base text-brand-white">
+                  <h2 className="font-display font-medium text-base text-brand-white">
                     Production Shortcuts
-                  </h3>
+                  </h2>
                   <div className="space-y-2 text-xs font-mono">
                     <Link
                       href="/work"
@@ -640,7 +637,7 @@ export default function AdminDashboard() {
                   onClick={() => {
                     const author = prompt("Client Name:");
                     if (!author) return;
-                    const company = prompt("Company/Organization:") || "Arts Agency";
+                    const company = prompt("Organisation / Artist:") || "Arts Agency";
                     const quote = prompt("Quotation:") || "Exceptional craft and storytelling.";
                     const newTestimonial: Testimonial = {
                       id: `test-${Date.now()}`,
@@ -1015,7 +1012,7 @@ export default function AdminDashboard() {
                 {/* Brand Colors Definition */}
                 <div className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm space-y-4">
                   <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block">
-                    Brand Color Tokens
+                    Brand Colour Tokens
                   </span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
                     <div className="p-3 bg-brand-black border border-brand-teal/40 rounded">

@@ -58,14 +58,14 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         <div className="space-y-4 max-w-4xl">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 bg-brand-teal/40 border border-brand-teal text-[11px] font-mono uppercase tracking-[0.2em] text-brand-gold rounded-sm">
+            <span className="px-3 py-1 bg-brand-teal/40 border border-brand-teal text-xs font-mono uppercase tracking-[0.2em] text-brand-gold rounded-sm">
               {project.categoryLabel}
             </span>
             <span className="text-xs font-mono text-brand-gray">
               Year: {project.year}
             </span>
             {project.awardNote && (
-              <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-brand-gold/15 border border-brand-gold/40 text-[11px] font-mono text-brand-gold rounded-sm">
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-brand-gold/15 border border-brand-gold/40 text-xs font-mono text-brand-gold rounded-sm">
                 <Award className="w-3.5 h-3.5" />
                 <span>{project.awardNote}</span>
               </span>
@@ -93,7 +93,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               aspectRatio="aspect-[16/9] lg:aspect-[2.39/1]"
             />
           </div>
-          <div className="flex items-center justify-between text-[11px] font-mono text-brand-gray px-1">
+          <div className="flex items-center justify-between text-xs font-mono text-slate-300 px-1">
             <span>DCI 4K Exhibition Master</span>
             <span>Ambisonic 5.1 Surround Mastering</span>
           </div>
@@ -104,7 +104,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-brand-black-elevated border border-brand-teal/50 rounded-sm shadow-xl">
           <div>
-            <span className="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
               Client / Commissioner
             </span>
             <p className="text-sm font-medium text-brand-white mt-1">
@@ -112,7 +112,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <div>
-            <span className="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
               Filming Location
             </span>
             <p className="text-sm font-medium text-brand-white mt-1">
@@ -120,7 +120,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <div>
-            <span className="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
               Aspect Ratio & Glass
             </span>
             <p className="text-sm font-medium text-brand-white mt-1">
@@ -128,7 +128,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <div>
-            <span className="text-[10px] uppercase font-mono tracking-widest text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
               Camera System
             </span>
             <p className="text-sm font-medium text-brand-white mt-1">
@@ -143,13 +143,13 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-4 space-y-8">
             <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-2xl">
-              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-gold block mb-2">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block mb-2 font-medium">
                 Production Slate & Credits
               </span>
               <ul className="space-y-3 pt-2">
                 {project.credits.map((c) => (
                   <li key={c.role} className="border-b border-brand-teal-light/50 pb-2">
-                    <span className="text-[10px] font-mono text-brand-gray-light uppercase block">
+                    <span className="text-xs font-mono text-slate-300 uppercase block">
                       {c.role}
                     </span>
                     <span className="text-sm font-medium text-brand-white">
@@ -170,7 +170,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                   <span className="text-brand-white font-medium block">
                     {project.quote.author}
                   </span>
-                  <span className="text-brand-gray font-mono text-[10px]">
+                  <span className="text-slate-300 font-mono text-xs">
                     {project.quote.role}
                   </span>
                 </div>
@@ -180,13 +180,10 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
           <div className="lg:col-span-8 space-y-10 text-brand-gray-light font-light leading-relaxed">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
-                The Narrative
-              </span>
               <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white leading-tight mb-4">
                 Synopsis & Context
               </h2>
-              <p className="text-base sm:text-lg leading-relaxed">
+              <p className="text-base sm:text-lg leading-relaxed max-w-2xl [text-wrap:pretty]">
                 {project.synopsis}
               </p>
             </div>
@@ -233,7 +230,6 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       {project.behindTheFrames.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
-            eyebrow="Set Stills & Archival"
             title="Behind the Frames."
             serifAccent="The Physical Craft."
             lead="Location documentation, lighting diagrams, and production moments from principal photography."

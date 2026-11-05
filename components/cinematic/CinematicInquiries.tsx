@@ -34,7 +34,7 @@ interface CinematicInquiriesProps {
 const defaultInquiries: InquiryItem[] = [
   {
     q: "What camera systems, glass, and recording formats do you field across productions?",
-    a: "Our core packages are built on tier-one cinema ecosystems: ARRI Alexa 35 and Alexa Mini LF paired with Cooke Anamorphic/i, Atlas Orion, or Leica Summicron-C spherical glass. For high-speed kinetic and aerial sequences, we deploy RED V-Raptor 8K VV and Sony FX9/FX6 platforms. All projects are captured at native 12-bit / 16-bit color depth with custom on-set LUT monitoring calibrated to DCI-P3 and Rec.709.",
+    a: "Our core packages are built on tier-one cinema ecosystems: ARRI Alexa 35 and Alexa Mini LF paired with Cooke Anamorphic/i, Atlas Orion, or Leica Summicron-C spherical glass. For high-speed kinetic and aerial sequences, we deploy RED V-Raptor 8K VV and Sony FX9/FX6 platforms. All projects are captured at native 12-bit / 16-bit colour depth with custom on-set LUT monitoring calibrated to DCI-P3 and Rec.709.",
     category: "Capture & Optics",
     specs: "Sensor: Large Format / Super 35 • Glass: 2.39:1 Anamorphic & Prime Sets • Monitoring: SmallHD 4K High-Bright",
   },
@@ -45,8 +45,8 @@ const defaultInquiries: InquiryItem[] = [
     specs: "Codecs: ProRes 4444 XQ / Rec.709 / Rec.2020 • Audio: 24-bit 48kHz Stereo & 5.1 Surround • Master Delivery: Aspera / Frame.io",
   },
   {
-    q: "How does project billing, payment scheduling, and deposit mobilization work?",
-    a: "We operate on a transparent three-tranche commercial milestone structure: a 50% mobilization deposit upon contract execution (securing director calendar, camera rental holds, location permits, and crew dates); 25% upon completion of principal photography; and the final 25% balance upon formal client approval and delivery of master color and audio assets.",
+    q: "How does project billing, payment scheduling, and deposit mobilisation work?",
+    a: "We operate on a transparent three-tranche commercial milestone structure: a 50% mobilisation deposit upon contract execution (securing director calendar, camera rental holds, location permits, and crew dates); 25% upon completion of principal photography; and the final 25% balance upon formal client approval and delivery of master colour and audio assets.",
     category: "Commercial Terms",
     specs: "Terms: 50 / 25 / 25 Milestone Model • Currency: AUD (ex GST) • Transparent Invoicing & Production Slates",
   },
@@ -63,16 +63,16 @@ const defaultInquiries: InquiryItem[] = [
     specs: "Logistics: Starlink Field Hub • Off-grid Power: 5kWh Mobile Storage • Transport: 4WD Backcountry Rig",
   },
   {
-    q: "What is your editorial revision cycle, color grading process, and sound mix workflow?",
-    a: "All post-production is managed through calibrated DaVinci Resolve color suites and professional sound stages. We provide clients with interactive Frame.io review links allowing frame-accurate timecode comments. Standard projects include three formal revision rounds (Assembly Cut, Director's Cut, Fine Cut) followed by final theatrical color grade mastering and bespoke sound design.",
+    q: "What is your editorial revision cycle, colour grading process, and sound mix workflow?",
+    a: "All post-production is managed through calibrated DaVinci Resolve colour suites and professional sound stages. We provide clients with interactive Frame.io review links allowing frame-accurate timecode comments. Standard projects include three formal revision rounds (Assembly Cut, Director's Cut, Fine Cut) followed by final theatrical colour grade mastering and bespoke sound design.",
     category: "Deliverables & Rights",
     specs: "Suite: DaVinci Resolve Studio 19 • Review: Frame.io Timecode Sync • Cycles: 3 Formal Editorial Passes",
   },
 ];
 
 export default function CinematicInquiries({
-  title = "Common Inquiries.",
-  serifAccent = "Everything You Need to Know.",
+  title = "Common Enquiries.",
+  serifAccent = "Clear Answers for Every Stage of Production.",
   lead = "Transparent operational standards regarding camera packages, master deliverables, licensing rights, milestone billing, and nationwide expedition logistics.",
   eyebrow = "Production Specifications & Clarity",
   inquiries = defaultInquiries,
@@ -255,9 +255,9 @@ export default function CinematicInquiries({
                           [ 0{idx + 1} ]
                         </span>
                         {item.category && (
-                          <span className="inline-flex items-center space-x-1.5 text-brand-gray-light bg-brand-teal/30 px-2 py-0.5 rounded-sm border border-brand-teal/40">
+                          <span className="inline-flex items-center space-x-1.5 text-slate-200 bg-brand-teal/40 px-2.5 py-1 rounded-sm border border-brand-teal/50">
                             {getCategoryIcon(item.category)}
-                            <span className="uppercase tracking-wider text-[10px]">
+                            <span className="uppercase tracking-wider text-xs font-mono font-medium">
                               {item.category}
                             </span>
                           </span>

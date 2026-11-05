@@ -29,6 +29,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
 
   return (
     <div className="space-y-12">
+      <h2 className="sr-only">Selected Productions Archive</h2>
       {/* Category Filter Controls */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/30 pb-6">
         <div className="flex flex-wrap items-center gap-2 sm:gap-3" role="tablist" aria-label="Project Categories">

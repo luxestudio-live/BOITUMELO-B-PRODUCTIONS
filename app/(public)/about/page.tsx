@@ -56,25 +56,22 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
-              01 // Identity & Reach
-            </span>
             <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white leading-tight">
               An Australian Studio with a{" "}
-              <span className="font-serif italic font-normal text-brand-gray-light">
+              <span className="text-brand-gold font-normal">
                 Global Cinematic Lens.
               </span>
             </h2>
           </div>
 
-          <div className="lg:col-span-7 space-y-6 text-brand-gray-light text-base sm:text-lg leading-relaxed font-light">
+          <div className="lg:col-span-7 space-y-6 text-brand-gray-light text-base sm:text-lg leading-relaxed font-light max-w-[68ch] [text-wrap:pretty]">
             <p>
               Based in Australia, <strong className="text-brand-white font-medium">BOITUMELO B PRODUCTIONS</strong> is an independent creative film and video production house. We work across the country—from the coastal metropolises of Melbourne and Sydney to the remote ochre desert ranges of central Australia.
             </p>
             <p>
               Our perspective was forged by crossing boundaries between diverse genres. We take the patience, cultural reverence, and narrative depth of documentary cinema and bring it to commercial brand films. Conversely, we take the visual flair, rhythmic tempo, and lighting ingenuity of music videos and infuse it into corporate storytelling.
             </p>
-            <p className="pt-2 text-brand-white font-serif italic text-lg sm:text-xl border-l-2 border-brand-gold pl-4">
+            <p className="pt-2 text-brand-white font-display text-base sm:text-lg border-l-2 border-brand-gold pl-4 tracking-wide">
               &ldquo;We measure a production not by how much noise it creates, but by how long its resonance lingers after the screen goes dark.&rdquo;
             </p>
           </div>
@@ -85,7 +82,6 @@ export default function AboutPage() {
       <section className="bg-brand-black-elevated py-20 sm:py-28 border-y border-brand-teal/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
-            eyebrow="Core Convictions"
             title="The Principles That Guide Us."
             serifAccent="Non-Negotiable Standards."
             lead="Four commitments that define how we collaborate, shoot, and deliver every project."
@@ -110,7 +106,7 @@ export default function AboutPage() {
               },
               {
                 icon: Clapperboard,
-                title: "Commercial Rigor",
+                title: "Commercial Rigour",
                 desc: "Artistic brilliance must deliver real-world outcomes. Our productions respect milestones, budgets, and clear commercial briefs.",
               },
             ].map((p) => (
@@ -135,7 +131,6 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <EditorialHeading
-            eyebrow="On Location Archive"
             title="Behind the Frames."
             serifAccent="The Physical Craft."
             lead="Unvarnished glimpses from dawn calls, remote rigs, and midnight filming across Australia."
@@ -202,29 +197,23 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
-                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold">
-                    Creative Leadership
-                  </span>
-                  <h3 className="text-2xl font-display font-medium text-brand-white mt-1">
+                  <h3 className="text-2xl font-display font-medium text-brand-white">
                     Boitumelo B.
                   </h3>
-                  <p className="text-xs text-brand-gray font-mono">
-                    Director & Cinematographer
+                  <p className="text-xs text-brand-gold font-mono uppercase tracking-wider mt-1">
+                    Founder & Creative Director
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-[0.3em] text-brand-gold">
-                Director&apos;s Perspective
-              </span>
               <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white leading-tight">
                 A Collaborative Network of Master Craftspeople.
               </h2>
-              <div className="space-y-4 text-brand-gray-light text-base leading-relaxed font-light">
+              <div className="space-y-4 text-brand-gray-light text-base leading-relaxed font-light max-w-[68ch] [text-wrap:pretty]">
                 <p>
-                  While every film is led with singular creative direction, great cinema is inherently collective. BOITUMELO B PRODUCTIONS scales dynamically around each project&apos;s needs—calling upon an elite network of Australian gaffers, sound recordists, drone pilots, editors, and senior DaVinci colorists.
+                  While every film is led with singular creative direction, great cinema is inherently collective. BOITUMELO B PRODUCTIONS scales dynamically around each project&apos;s needs—calling upon an elite network of Australian gaffers, sound recordists, drone pilots, editors, and senior DaVinci colourists.
                 </p>
                 <p>
                   This model gives our collaborators the creative agility of an intimate boutique studio, paired with the production power and camera equipment of a major commercial production house.

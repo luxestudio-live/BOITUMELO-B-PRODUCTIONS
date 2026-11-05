@@ -32,7 +32,7 @@ export default function FinalFrameCTA() {
           </h2>
 
           <p className="max-w-xl mx-auto text-base sm:text-lg text-slate-200 font-light leading-relaxed [text-wrap:pretty]">
-            From the opening creative brainstorm to the final color grade, let&apos;s build an extraordinary piece of cinema that moves people and endures.
+            From the opening creative brainstorm to the final colour grade, let&apos;s build an extraordinary piece of cinema that moves people and endures.
           </p>
 
           {/* Action CTAs */}

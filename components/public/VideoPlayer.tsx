@@ -195,13 +195,13 @@ export default function VideoPlayer({
               {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
             </button>
 
-            <span className="font-mono text-[11px] text-brand-gray-light">
+            <span className="font-mono text-xs text-slate-300">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           </div>
 
           <div className="flex items-center space-x-2">
-            <span className="text-[10px] uppercase tracking-[0.2em] font-mono text-brand-gold hidden sm:inline">
+            <span className="text-xs uppercase tracking-wider font-mono text-brand-gold hidden sm:inline">
               HD 2.39:1
             </span>
             <button
