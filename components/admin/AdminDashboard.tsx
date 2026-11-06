@@ -28,6 +28,7 @@ import {
   ExternalLink,
   ShieldAlert,
   FolderArchive,
+  Menu,
 } from "lucide-react";
 import { sampleProjects, ProjectItem } from "@/data/projects";
 import { servicesData } from "@/data/services";
@@ -67,6 +68,20 @@ export default function AdminDashboard() {
   // Edit / Add Project Modal State
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const [editingProject, setEditingProject] = useState<Partial<ProjectItem> | null>(null);
+
+  // Mobile Navigation Drawer State
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  // Shared Admin Navigation Items with Live Counts & Icons
+  const adminNavTabs = [
+    { id: "dashboard" as AdminTab, label: "Overview", icon: LayoutDashboard },
+    { id: "projects" as AdminTab, label: "Projects", icon: Film, count: projectsList.length },
+    { id: "services" as AdminTab, label: "Services", icon: Layers },
+    { id: "testimonials" as AdminTab, label: "Testimonials", icon: Quote, count: testimonialsList.length },
+    { id: "media" as AdminTab, label: "Media Library", icon: ImageIcon, count: mediaList.length },
+    { id: "enquiries" as AdminTab, label: "Enquiries", icon: Inbox, count: enquiriesList.length },
+    { id: "settings" as AdminTab, label: "Site Settings", icon: Settings },
+  ];
 
   // Settings State
   const [settingsForm, setSettingsForm] = useState({
@@ -171,7 +186,7 @@ export default function AdminDashboard() {
       {/* Top Security & Demo Disclaimer Warning Bar */}
       <aside
         aria-label="Admin Security Notice"
-        className="bg-brand-teal-deep border-b border-brand-teal/60 py-2.5 px-4 text-xs font-mono text-brand-gray-light"
+        className="bg-brand-teal-deep border-b border-brand-teal/60 py-2 px-3 sm:py-2.5 sm:px-4 text-[11px] sm:text-xs font-mono text-brand-gray-light"
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-2">
@@ -182,13 +197,177 @@ export default function AdminDashboard() {
           </div>
           <Link
             href="/"
-            className="text-[11px] uppercase tracking-wider text-brand-gold hover:underline flex items-center space-x-1"
+            className="hidden sm:flex text-[11px] uppercase tracking-wider text-brand-gold hover:underline items-center space-x-1"
           >
             <span>Exit to Public Site</span>
             <ExternalLink className="w-3 h-3" />
           </Link>
         </div>
       </aside>
+
+      {/* Mobile Top App Bar (Sticky) */}
+      <header className="md:hidden sticky top-0 z-40 bg-brand-black/95 backdrop-blur-md border-b border-brand-teal/40 px-3.5 py-2.5 flex items-center justify-between shadow-lg">
+        {/* Brand identity */}
+        <div className="flex items-center space-x-2.5">
+          <div className="w-7 h-7 rounded bg-brand-teal flex items-center justify-center border border-brand-gold/60 text-brand-gold font-display font-bold text-xs shadow-sm">
+            BB
+          </div>
+          <div>
+            <span className="font-display font-bold tracking-[0.16em] text-xs text-brand-white block leading-tight">
+              BOITUMELO B
+            </span>
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
+              Studio Portal
+            </span>
+          </div>
+        </div>
+
+        {/* Right Action Icons: Public Site Link + Menu Trigger */}
+        <div className="flex items-center space-x-1.5">
+          <Link
+            href="/"
+            className="p-2 text-brand-gray-light hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded min-h-[44px] min-w-[44px] flex items-center justify-center"
+            title="Exit to public website"
+            aria-label="Exit to public site"
+          >
+            <ExternalLink className="w-4 h-4" />
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+            className="min-h-[44px] min-w-[44px] flex items-center space-x-1.5 px-3 py-1.5 rounded-sm bg-brand-teal/40 border border-brand-teal/60 text-brand-white hover:border-brand-gold hover:text-brand-gold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+            aria-label={isMobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileNavOpen}
+          >
+            {isMobileNavOpen ? <X className="w-4 h-4 text-brand-gold" /> : <Menu className="w-4 h-4 text-brand-gold" />}
+            <span className="text-xs font-mono uppercase tracking-wider">Menu</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Sticky Quick Segmented Bar (Horizontal Scroll with Icons and Badges) */}
+      <div
+        role="tablist"
+        aria-label="Mobile Navigation Tabs"
+        className="md:hidden sticky top-[53px] z-30 bg-brand-black-elevated/95 backdrop-blur-md border-b border-brand-teal/30 px-3 py-2 flex items-center space-x-2 overflow-x-auto no-scrollbar"
+      >
+        {adminNavTabs.map((tab) => {
+          const isActive = activeTab === tab.id;
+          const Icon = tab.icon;
+          return (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-sm text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all shrink-0 min-h-[44px] ${
+                isActive
+                  ? "bg-brand-gold text-brand-black font-semibold shadow-sm"
+                  : "bg-brand-black/60 border border-brand-teal/40 text-brand-gray-light hover:text-brand-white hover:border-brand-gold/40"
+              }`}
+            >
+              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-brand-black" : "text-brand-gold"}`} />
+              <span>{tab.label}</span>
+              {tab.count !== undefined && (
+                <span
+                  className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono ${
+                    isActive
+                      ? "bg-brand-black/20 text-brand-black font-bold"
+                      : "bg-brand-teal/60 text-brand-gray-light"
+                  }`}
+                >
+                  {tab.count}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Mobile Full Slide-Down Navigation Sheet / Drawer */}
+      {isMobileNavOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Admin Navigation Menu"
+          className="fixed inset-0 top-[53px] z-50 bg-brand-black/98 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-6 overflow-y-auto animate-fade-in md:hidden"
+        >
+          <div className="space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-brand-teal/30">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
+                Admin Navigation Menu
+              </span>
+              <button
+                type="button"
+                onClick={() => setIsMobileNavOpen(false)}
+                className="text-brand-gray hover:text-brand-white p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                aria-label="Close menu"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <nav className="space-y-2">
+              {adminNavTabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    onClick={() => {
+                      setActiveTab(tab.id);
+                      setIsMobileNavOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-between p-3.5 rounded-sm text-xs font-mono uppercase tracking-wider transition-all min-h-[48px] ${
+                      isActive
+                        ? "bg-brand-teal text-brand-gold font-semibold border border-brand-gold/60 shadow-md"
+                        : "bg-brand-black-elevated/70 border border-brand-teal/30 text-brand-gray-light hover:text-brand-white hover:bg-brand-teal/20"
+                    }`}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className={`p-2 rounded-sm ${isActive ? "bg-brand-black/50 text-brand-gold" : "bg-brand-teal-deep text-brand-gray"}`}>
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <div className="text-left">
+                        <span className="block font-medium text-sm text-brand-white">{tab.label}</span>
+                        <span className="text-[10px] text-brand-gray block tracking-normal lowercase">
+                          Manage studio {tab.label.toLowerCase()}
+                        </span>
+                      </div>
+                    </div>
+                    {tab.count !== undefined ? (
+                      <span className="text-xs px-2.5 py-1 rounded bg-brand-black/60 text-brand-gold font-mono border border-brand-teal/40">
+                        {tab.count}
+                      </span>
+                    ) : (
+                      <ArrowUpRight className="w-4 h-4 text-brand-gray/50" />
+                    )}
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
+
+          <div className="pt-6 mt-6 border-t border-brand-teal/30 space-y-3">
+            <Link
+              href="/"
+              onClick={() => setIsMobileNavOpen(false)}
+              className="w-full min-h-[44px] flex items-center justify-center space-x-2 p-3 bg-brand-gold text-brand-black rounded-sm text-xs font-mono uppercase tracking-wider font-semibold hover:bg-brand-gold-light transition-all"
+            >
+              <span>Exit to Public Website</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </Link>
+
+            <div className="text-center text-[10px] font-mono text-brand-gray space-y-1">
+              <p>Production Suite // Melbourne & Sydney</p>
+              <p>Region: Australia (AEDT) • Secure Session</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Admin Body Shell */}
       <div className="flex flex-grow">
@@ -207,15 +386,7 @@ export default function AdminDashboard() {
 
             {/* Nav Items */}
             <nav role="tablist" className="space-y-1.5" aria-label="Admin Navigation">
-              {[
-                { id: "dashboard", label: "Overview", icon: LayoutDashboard },
-                { id: "projects", label: "Projects", icon: Film, count: projectsList.length },
-                { id: "services", label: "Services", icon: Layers },
-                { id: "testimonials", label: "Testimonials", icon: Quote, count: testimonialsList.length },
-                { id: "media", label: "Media Library", icon: ImageIcon, count: mediaList.length },
-                { id: "enquiries", label: "Enquiries", icon: Inbox, count: enquiriesList.length },
-                { id: "settings", label: "Site Settings", icon: Settings },
-              ].map((tab) => {
+              {adminNavTabs.map((tab) => {
                 const isActive = activeTab === tab.id;
                 return (
                   <button
@@ -253,27 +424,6 @@ export default function AdminDashboard() {
 
         {/* Right Content View Area */}
         <main className="flex-grow p-3.5 sm:p-6 lg:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
-          {/* Mobile Tab Selector */}
-          <div role="tablist" aria-label="Mobile Navigation Tabs" className="md:hidden mb-6 flex overflow-x-auto space-x-2 pb-2 border-b border-brand-teal/30 no-scrollbar">
-            {["dashboard", "projects", "services", "testimonials", "media", "enquiries", "settings"].map(
-              (tab) => (
-                <button
-                  key={tab}
-                  type="button"
-                  role="tab"
-                  aria-selected={activeTab === tab}
-                  onClick={() => setActiveTab(tab as AdminTab)}
-                  className={`px-3 py-1.5 rounded-sm text-xs font-mono uppercase tracking-wider whitespace-nowrap ${
-                    activeTab === tab
-                      ? "bg-brand-gold text-brand-black font-semibold"
-                      : "bg-brand-black-elevated border border-brand-teal/40 text-brand-gray"
-                  }`}
-                >
-                  {tab}
-                </button>
-              )
-            )}
-          </div>
 
           {/* TAB 01: DASHBOARD OVERVIEW */}
           {activeTab === "dashboard" && (
