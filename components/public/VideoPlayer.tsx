@@ -294,8 +294,9 @@ export default function VideoPlayer({
               aria-label={`Optical Framing: ${framingMode === "2.39" ? "2.39:1 Scope" : framingMode === "1.85" ? "1.85:1 Flat" : "16:9 Broadcast"}. Click to cycle.`}
             >
               <Scan className="w-3.5 h-3.5 text-brand-gold group-hover/optic:scale-110 transition-transform" />
-              <span className="text-[11px] font-mono font-medium tracking-wider uppercase">
-                {framingMode === "2.39" ? "2.39:1 SCOPE" : framingMode === "1.85" ? "1.85:1 FLAT" : "16:9 FULL"}
+              <span className="text-[10px] sm:text-[11px] font-mono font-medium tracking-wider uppercase">
+                {framingMode === "2.39" ? "2.39:1" : framingMode === "1.85" ? "1.85:1" : "16:9"}
+                <span className="hidden sm:inline"> {framingMode === "2.39" ? "SCOPE" : framingMode === "1.85" ? "FLAT" : "FULL"}</span>
               </span>
             </button>
 

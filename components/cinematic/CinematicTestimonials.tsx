@@ -62,8 +62,8 @@ export default function CinematicTestimonials() {
 
         {/* Master Editorial Quotation Theatre */}
         <div key={current.id} className="space-y-8 animate-fade-in">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-brand-black/50 backdrop-blur-sm rounded-sm text-xs font-mono uppercase tracking-widest text-brand-gold border border-brand-teal-light">
-            <span>Project: {current.projectTitle} // {current.serviceCategory}</span>
+          <div className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-3.5 bg-brand-black/50 backdrop-blur-sm rounded-sm text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-brand-gold border border-brand-teal-light max-w-full">
+            <span className="truncate">Project: {current.projectTitle} // {current.serviceCategory}</span>
           </div>
 
           <blockquote className="text-2xl sm:text-4xl md:text-5xl font-serif italic text-brand-white font-light leading-snug">

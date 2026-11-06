@@ -48,7 +48,7 @@ export default function InteractiveServices() {
                   tabIndex={0}
                   role="tab"
                   aria-selected={isSelected}
-                  className={`group relative p-6 sm:p-8 rounded-sm border transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
+                  className={`group relative p-4 sm:p-8 rounded-sm border transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
                     isSelected
                       ? "bg-brand-black/80 border-brand-gold/80 shadow-2xl"
                       : "bg-brand-black/40 border-brand-teal/40 hover:border-brand-teal hover:bg-brand-black/60"
@@ -56,7 +56,7 @@ export default function InteractiveServices() {
                 >
                   <div className="flex items-center justify-between">
                     <h3
-                      className={`text-2xl sm:text-3xl font-display font-medium transition-colors ${
+                      className={`text-xl sm:text-2xl md:text-3xl font-display font-medium transition-colors ${
                         isSelected
                           ? "text-brand-white"
                           : "text-brand-gray-light group-hover:text-brand-white"

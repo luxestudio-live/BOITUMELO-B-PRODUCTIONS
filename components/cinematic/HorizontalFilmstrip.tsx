@@ -79,10 +79,10 @@ export default function HorizontalFilmstrip() {
       id="filmstrip-section"
       ref={sectionRef}
       aria-label="Scene 03: The Cinematic Filmstrip"
-      className="relative bg-brand-black-elevated overflow-hidden border-y border-brand-teal/40 py-16 md:py-0 md:h-screen md:flex md:flex-col md:justify-center"
+      className="relative bg-brand-black-elevated overflow-hidden border-y border-brand-teal/40 pt-20 pb-16 md:py-0 md:h-screen md:flex md:flex-col md:justify-center"
     >
       {/* Section Heading & Viewfinder Cue */}
-      <div className="absolute top-8 left-8 sm:left-12 z-10 flex items-center space-x-3 pointer-events-none">
+      <div className="absolute top-6 left-6 sm:top-8 sm:left-12 z-10 flex items-center space-x-3 pointer-events-none">
         <Film className="w-4 h-4 text-brand-gold" />
         <h2 className="text-sm sm:text-base font-display font-medium text-brand-white uppercase tracking-[0.2em]">
           Selected Works <span className="text-brand-gold font-normal">/ 35mm & Large Format</span>

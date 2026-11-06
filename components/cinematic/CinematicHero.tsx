@@ -18,7 +18,22 @@ export default function CinematicHero() {
   const hudRef = useRef<HTMLDivElement>(null);
   const sideFramesRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const timecodeRef = useRef<HTMLSpanElement>(null);
   const [isMuted, setIsMuted] = useState(true);
+
+  // Live ticking timecode for HUD telemetry without re-renders
+  useEffect(() => {
+    let frame = 1;
+    const intervalId = setInterval(() => {
+      frame = (frame + 1) % 24;
+      const pad = frame.toString().padStart(2, "0");
+      if (timecodeRef.current) {
+        timecodeRef.current.textContent = `00:14:28:${pad}`;
+      }
+    }, 1000 / 24);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   useEffect(() => {
     // Check reduced motion preference
@@ -134,21 +149,75 @@ export default function CinematicHero() {
 
         {/* Viewfinder Camera HUD */}
         <div ref={hudRef} className="absolute inset-0 pointer-events-none">
-          <ViewfinderHUD paddedForNav showTopBar={true} showBottomBar={true} />
+          <ViewfinderHUD paddedForNav showTopBar={false} showBottomBar={true} />
         </div>
 
         {/* Asymmetrical Hero Content Composition */}
-        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-end pb-16 sm:pb-24 pointer-events-none">
-          {/* Lower Hero Section: Oversized Architectural Typography */}
-          <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
-            {/* Live Reel Eyebrow Badge */}
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 bg-brand-black/80 backdrop-blur-md border border-brand-teal/60 rounded-sm">
-              <Clapperboard className="w-3.5 h-3.5 text-brand-gold shrink-0" />
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
-                Live Showreel • 2024–2026
-              </span>
+        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col justify-between pt-20 sm:pt-24 pb-16 sm:pb-24 pointer-events-none">
+          {/* Top HUD Bar: Live Reel Eyebrow & Audio Toggle aligned to Viewfinder telemetry */}
+          <div className="flex items-start justify-between w-full pointer-events-auto">
+            {/* Top Left: REC + Timecode on Row 1, Live Showreel indented on Row 2 */}
+            <div className="flex flex-col items-start space-y-2">
+              <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-mono tracking-widest uppercase">
+                <span className="flex items-center space-x-1.5 text-[#FF6B6B] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#FF4D4D] animate-pulse" />
+                  <span>REC</span>
+                </span>
+                <span
+                  ref={timecodeRef}
+                  suppressHydrationWarning
+                  className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm"
+                >
+                  00:14:28:01
+                </span>
+              </div>
+
+              {/* Row 2: Live Showreel Badge indented under timecode on desktop */}
+              <div className="sm:ml-16 inline-flex items-center space-x-2 px-3 py-1 bg-black/90 backdrop-blur-md border border-brand-gold/60 rounded-sm">
+                <Clapperboard className="w-3.5 h-3.5 text-brand-gold shrink-0" />
+                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.18em] text-brand-gold font-medium whitespace-nowrap">
+                  Live Showreel • 2024–2026
+                </span>
+              </div>
             </div>
 
+            {/* Top Right: Telemetry on Row 1, Audio toggle on Row 2 */}
+            <div className="flex flex-col items-end space-y-2">
+              {/* Row 1: Telemetry (hidden on ultra-small mobile to prevent collision) */}
+              <div className="hidden sm:flex items-center space-x-4 md:space-x-6 text-xs font-mono uppercase tracking-wider text-brand-white bg-black/80 px-3 py-1 rounded-sm">
+                <span>24.000 FPS</span>
+                <span className="text-brand-gold">•</span>
+                <span>ISO 800</span>
+                <span className="text-brand-gold">•</span>
+                <span>SHUTTER 180.0°</span>
+              </div>
+
+              {/* Row 2: Interactive Sound Toggle Button aligned to the right under telemetry */}
+              <button
+                type="button"
+                onClick={toggleSound}
+                className="min-h-[36px] sm:min-h-[32px] inline-flex items-center space-x-2 text-[11px] sm:text-xs uppercase font-mono tracking-wider text-brand-white hover:text-brand-gold px-3 py-1 rounded-sm border border-brand-teal/80 hover:border-brand-gold transition-all bg-black/90 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold group shrink-0"
+                aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
+              >
+                {isMuted ? (
+                  <VolumeX className="w-3.5 h-3.5 text-brand-gray-light group-hover:text-brand-gold transition-colors shrink-0" />
+                ) : (
+                  <div className="flex items-center space-x-1 shrink-0">
+                    <Volume2 className="w-3.5 h-3.5 text-brand-gold" />
+                    <span className="flex items-end space-x-0.5 h-3 px-0.5" aria-hidden="true">
+                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
+                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
+                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
+                    </span>
+                  </div>
+                )}
+                <span>{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Lower Hero Section: Oversized Architectural Typography */}
+          <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
               BOITUMELO B{" "}
               <span className="text-brand-gold block sm:inline font-normal">
@@ -177,28 +246,6 @@ export default function CinematicHero() {
               >
                 <span>Roll Film</span>
                 <ArrowDown className="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-y-0.5" />
-              </button>
-
-              {/* Sound Toggle */}
-              <button
-                type="button"
-                onClick={toggleSound}
-                className="min-h-[44px] inline-flex items-center space-x-2.5 text-xs uppercase font-mono tracking-[0.2em] text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal/80 hover:border-brand-gold transition-all bg-brand-black/50 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold group"
-                aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
-              >
-                {isMuted ? (
-                  <VolumeX className="w-4 h-4 text-brand-gray-light group-hover:text-brand-gold transition-colors" />
-                ) : (
-                  <div className="flex items-center space-x-1.5">
-                    <Volume2 className="w-4 h-4 text-brand-gold" />
-                    <span className="flex items-end space-x-0.5 h-3 px-0.5" aria-hidden="true">
-                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
-                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
-                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
-                    </span>
-                  </div>
-                )}
-                <span>{isMuted ? "Audio: Off" : "Audio: 5.1 On"}</span>
               </button>
             </div>
           </div>

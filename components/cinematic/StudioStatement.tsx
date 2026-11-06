@@ -163,7 +163,7 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          className="pt-2 sm:pt-4 flex items-center justify-center space-x-3 text-xs font-mono text-brand-gray-light tracking-widest uppercase"
+          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-brand-gray-light tracking-widest uppercase"
         >
           <span>MELBOURNE</span>
           <span className="text-brand-gold">•</span>

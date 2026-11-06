@@ -315,7 +315,7 @@ STUDIO        : Melbourne & Sydney • Australia
       </div>
 
       {/* Main Form Step Card */}
-      <div className="bg-brand-black-elevated/70 border border-brand-teal/40 p-8 sm:p-12 rounded-sm shadow-2xl relative">
+      <div className="bg-brand-black-elevated/70 border border-brand-teal/40 p-4 sm:p-8 md:p-12 rounded-sm shadow-2xl relative">
         {/* STEP 1: What are we creating? */}
         {currentStep === 1 && (
           <div className="space-y-8 animate-fade-in">
@@ -683,8 +683,8 @@ STUDIO        : Melbourne & Sydney • Australia
             </div>
 
             {/* Frontend Demo Calendar & Slot Picker */}
-            <div className="bg-brand-black border border-brand-teal/50 p-6 rounded-sm space-y-6">
-              <div className="flex items-center justify-between pb-4 border-b border-brand-teal/30">
+            <div className="bg-brand-black border border-brand-teal/50 p-4 sm:p-6 rounded-sm space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-brand-teal/30">
                 <div className="flex items-center space-x-2 text-brand-gold">
                   <CalendarIcon className="w-4 h-4" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">

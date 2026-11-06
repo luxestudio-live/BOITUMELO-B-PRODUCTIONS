@@ -101,7 +101,7 @@ export default function ProjectTakeover() {
       {/* Expanding Takeover Media Frame */}
       <div
         ref={mediaContainerRef}
-        className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[320px] sm:min-h-[480px] max-h-[85vh] overflow-hidden border border-brand-teal/50 shadow-2xl bg-brand-black-surface"
+        className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[380px] sm:min-h-[480px] max-h-[85vh] overflow-hidden border border-brand-teal/50 shadow-2xl bg-brand-black-surface"
       >
         {/* Poster Image */}
         <Image
@@ -174,7 +174,7 @@ export default function ProjectTakeover() {
         {/* Lower Third Narrative & View Action */}
         <div
           ref={textContentRef}
-          className="absolute inset-x-0 bottom-0 z-20 p-6 sm:p-10 lg:p-14 max-w-4xl space-y-3 pointer-events-none"
+          className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-10 lg:p-14 max-w-4xl space-y-2 sm:space-y-3 pointer-events-none"
         >
           {project.awardNote && (
             <div className="inline-flex items-center space-x-2 px-3 py-1 bg-brand-black/80 backdrop-blur-md border border-brand-gold/50 rounded-sm text-xs font-mono text-brand-gold pointer-events-auto">
@@ -183,7 +183,7 @@ export default function ProjectTakeover() {
             </div>
           )}
 
-          <h3 className="text-3xl sm:text-5xl lg:text-6xl font-display font-medium text-brand-white tracking-wide">
+          <h3 className="text-2xl sm:text-5xl lg:text-6xl font-display font-medium text-brand-white tracking-wide">
             {project.title}
           </h3>
 

@@ -14,14 +14,14 @@ export default function FinalFrameCTA() {
 
       {/* Viewfinder Framing Container */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="relative p-8 sm:p-16 lg:p-20 rounded-sm border border-brand-gold/60 bg-brand-black-elevated/90 shadow-2xl text-center space-y-8 backdrop-blur-md">
+        <div className="relative p-6 sm:p-16 lg:p-20 rounded-sm border border-brand-gold/60 bg-brand-black-elevated/90 shadow-2xl text-center space-y-6 sm:space-y-8 backdrop-blur-md">
           {/* Subtle Viewfinder HUD inside final frame */}
           <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-brand-gold" />
           <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-brand-gold" />
           <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-brand-gold" />
           <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-brand-gold" />
 
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.04em] uppercase leading-[0.98]">
+          <h2 className="text-3xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.04em] uppercase leading-[0.98]">
             YOUR STORY.{" "}
             <span className="text-brand-gold block sm:inline font-normal">
               OUR NEXT FRAME.

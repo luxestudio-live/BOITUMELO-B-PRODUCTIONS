@@ -252,9 +252,9 @@ export default function AdminDashboard() {
         </aside>
 
         {/* Right Content View Area */}
-        <main className="flex-grow p-6 sm:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
+        <main className="flex-grow p-3.5 sm:p-6 lg:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
           {/* Mobile Tab Selector */}
-          <div role="tablist" aria-label="Mobile Navigation Tabs" className="md:hidden mb-6 flex overflow-x-auto space-x-2 pb-2 border-b border-brand-teal/30">
+          <div role="tablist" aria-label="Mobile Navigation Tabs" className="md:hidden mb-6 flex overflow-x-auto space-x-2 pb-2 border-b border-brand-teal/30 no-scrollbar">
             {["dashboard", "projects", "services", "testimonials", "media", "enquiries", "settings"].map(
               (tab) => (
                 <button
@@ -312,7 +312,7 @@ export default function AdminDashboard() {
                 ].map((stat, i) => (
                   <div
                     key={i}
-                    className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm"
+                    className="p-4 sm:p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm"
                   >
                     <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-medium">
                       {stat.label}
@@ -469,7 +469,7 @@ export default function AdminDashboard() {
               {/* Projects Table */}
               <div className="bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden">
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left text-xs font-mono">
+                  <table className="w-full min-w-[640px] text-left text-xs font-mono">
                     <thead className="bg-brand-teal-deep text-brand-gold uppercase tracking-wider border-b border-brand-teal/40">
                       <tr>
                         <th className="p-4">Cover</th>
@@ -881,13 +881,13 @@ export default function AdminDashboard() {
 
               {/* Enquiry Detail Drawer */}
               {selectedEnquiry && (
-                <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light space-y-6 animate-fade-in">
+                <div className="p-4 sm:p-8 bg-brand-teal rounded-sm border border-brand-teal-light space-y-6 animate-fade-in">
                   <div className="flex items-center justify-between pb-4 border-b border-brand-teal-light/50">
                     <div>
                       <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gold block">
                         Detail Drawer // ID: {selectedEnquiry.id}
                       </span>
-                      <h3 className="text-xl font-display font-medium text-brand-white mt-1">
+                      <h3 className="text-lg sm:text-xl font-display font-medium text-brand-white mt-1 break-words">
                         {selectedEnquiry.name} — {selectedEnquiry.company}
                       </h3>
                     </div>
@@ -901,7 +901,7 @@ export default function AdminDashboard() {
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono break-all">
                     <div>
                       <span className="text-brand-gray-light block">Email:</span>
                       <span className="text-brand-white">{selectedEnquiry.email}</span>
@@ -1116,7 +1116,7 @@ export default function AdminDashboard() {
           aria-modal="true"
           className="fixed inset-0 z-50 bg-brand-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
         >
-          <div className="bg-brand-black-elevated border border-brand-teal/50 rounded-sm w-full max-w-2xl p-6 sm:p-8 space-y-6 my-auto shadow-2xl">
+          <div className="bg-brand-black-elevated border border-brand-teal/50 rounded-sm w-full max-w-2xl p-4 sm:p-8 space-y-6 my-auto shadow-2xl max-h-[92vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-4 border-b border-brand-teal/30">
               <h3 className="font-display font-medium text-xl text-brand-white">
                 {editingProject?.id ? "Edit Film Project" : "Add New Film Project"}
