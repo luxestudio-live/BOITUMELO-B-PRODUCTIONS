@@ -103,3 +103,13 @@
   background: #CB8D44;
 }
 
+/* Hide scrollbars across modern and legacy browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
