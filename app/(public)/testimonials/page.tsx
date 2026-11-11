@@ -98,14 +98,14 @@ export default function TestimonialsPage() {
         <div className="pt-4 flex items-center justify-center space-x-4">
           <Link
             href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+            className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm"
           >
             <span>Start a Project Brief</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-teal hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal/20 hover:border-brand-gold transition-colors"
+            className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium text-[var(--ink)] hover:text-[var(--gold-deep)] px-6 py-3.5 rounded-[2px] border border-[var(--line)] hover:border-[var(--gold)] transition-all duration-250 ease-out"
           >
             <span>Explore All Work</span>
           </Link>

@@ -83,36 +83,36 @@ export default function ViewfinderHUD({
     <div
       ref={containerRef}
       aria-hidden="true"
-      className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-xs text-brand-white select-none ${className}`}
+      className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-[11px] tracking-[0.1em] text-[var(--white-on-dark)] select-none ${className}`}
     >
       {/* 4 Corner Frameline Brackets */}
-      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-6 h-6 border-t-2 border-l-2 border-brand-gold/60" />
-      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 w-6 h-6 border-t-2 border-r-2 border-brand-gold/60" />
-      <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 w-6 h-6 border-b-2 border-l-2 border-brand-gold/60" />
-      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 border-b-2 border-r-2 border-brand-gold/60" />
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-6 h-6 border-t-2 border-l-2 border-[var(--gold)]/60" />
+      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 w-6 h-6 border-t-2 border-r-2 border-[var(--gold)]/60" />
+      <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 w-6 h-6 border-b-2 border-l-2 border-[var(--gold)]/60" />
+      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 border-b-2 border-r-2 border-[var(--gold)]/60" />
 
       {/* Top HUD Bar */}
       {showTopBar && (
         <div className={`${paddedForNav ? "pt-20 sm:pt-24" : "pt-0 sm:pt-1"} flex items-center justify-between tracking-widest uppercase`}>
           <div className="flex items-center space-x-3">
-            <span className="flex items-center space-x-1.5 text-[#FF6B6B] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">
-              <span className="w-2 h-2 rounded-full bg-[#FF4D4D]" />
+            <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px]">
+              <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse" />
               <span>REC</span>
             </span>
             <span
               ref={timecodeRef}
               suppressHydrationWarning
-              className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm"
+              className="text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px]"
             >
               {timecode}
             </span>
           </div>
 
-          <div className="hidden sm:flex items-center space-x-6 text-brand-white bg-black/80 px-3 py-1 rounded-sm tracking-wider">
+          <div className="hidden sm:flex items-center space-x-6 text-[var(--white-on-dark)] bg-[#0E0E0F]/85 px-3 py-1 rounded-[2px] tracking-wider">
             <span>{fps}</span>
-            <span className="text-brand-gold">•</span>
+            <span className="text-[var(--gold)]">•</span>
             <span>{iso}</span>
-            <span className="text-brand-gold">•</span>
+            <span className="text-[var(--gold)]">•</span>
             <span>SHUTTER 180.0°</span>
           </div>
         </div>
@@ -121,9 +121,9 @@ export default function ViewfinderHUD({
       {/* Center Reticle / Crosshair */}
       {showCenterCrosshair && (
         <div className="absolute inset-0 m-auto w-12 h-12 flex items-center justify-center opacity-30">
-          <div className="w-full h-[1px] bg-brand-white" />
-          <div className="absolute h-full w-[1px] bg-brand-white" />
-          <div className="absolute w-2 h-2 rounded-full border border-brand-gold/80" />
+          <div className="w-full h-[1px] bg-[var(--white-on-dark)]" />
+          <div className="absolute h-full w-[1px] bg-[var(--white-on-dark)]" />
+          <div className="absolute w-2 h-2 rounded-full border border-[var(--gold)]/80" />
         </div>
       )}
 
@@ -131,17 +131,17 @@ export default function ViewfinderHUD({
       {showBottomBar && (
         <div className="mt-auto flex items-center justify-between tracking-widest uppercase">
           <div className="flex items-center space-x-2">
-            <span className="px-2.5 py-1 bg-brand-black/80 border border-brand-gold/40 text-brand-gold rounded-sm text-xs">
+            <span className="px-2.5 py-1 bg-[#0E0E0F]/85 border border-[var(--gold)]/40 text-[var(--gold)] rounded-[2px] text-[11px]">
               {aspectRatioLabel}
             </span>
-            <span className="hidden md:inline text-brand-gray-light bg-brand-black/70 px-2.5 py-1 rounded-sm text-xs">
+            <span className="hidden md:inline text-[var(--text-on-dark)] bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px] text-[11px]">
               {lensLabel}
             </span>
           </div>
 
-          <div className="flex items-center space-x-3 text-xs text-brand-gray-light bg-brand-black/70 px-2.5 py-1 rounded-sm">
+          <div className="flex items-center space-x-3 text-[11px] text-[var(--text-on-dark)] bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px]">
             <span className="hidden sm:inline">BAT 14.8V</span>
-            <span className="text-brand-gold font-medium">CALIBRATED</span>
+            <span className="text-[var(--gold)] font-medium">CALIBRATED</span>
           </div>
         </div>
       )}

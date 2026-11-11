@@ -3,32 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --color-black: #000000;
-  --color-black-elevated: #F8F9FA;
-  --color-teal: #183036;
-  --color-teal-dark: #0E1D21;
-  --color-teal-light: #24434B;
-  --color-gold: #CB8D44;
-  --color-gold-light: #E2A65F;
+  --bg: #FFFFFF;
+  --bg-soft: #F6F2EA;
+  --ink: #0E0E0F;
+  --ink-deep: #0E0E0F;
+  --ink-soft: #5A5750;
+  --gold: #B08D57;
+  --gold-deep: #8A6A2F;
+  --gold-light: #E8DCC3;
+  --line: #E6E1D6;
+  --white-on-dark: #FFFFFF;
+  --text-on-dark: #CFCAC0;
+
+  /* Aliases for brand compatibility */
+  --color-black: #0E0E0F;
+  --color-black-elevated: #F6F2EA;
+  --color-teal: #0E0E0F;
+  --color-teal-dark: #0E0E0F;
+  --color-teal-light: #5A5750;
+  --color-gold: #B08D57;
+  --color-gold-light: #E8DCC3;
+  --color-gold-deep: #8A6A2F;
   --color-white: #FFFFFF;
-  --color-gray: #55747D;
+  --color-gray: #5A5750;
+  --color-line: #E6E1D6;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     color-scheme: light;
-    background-color: #FFFFFF;
-    color: #183036;
-    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans, Inter, system-ui, -apple-system, sans-serif);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #183036;
+    background-color: var(--bg);
+    color: var(--ink);
     overflow-x: hidden;
     min-height: 100vh;
     font-feature-settings: "kern" 1, "liga" 1;
@@ -47,14 +62,14 @@
 
   /* Accessible focus indicators */
   *:focus-visible {
-    outline: 2px solid #CB8D44;
+    outline: 2px solid var(--gold);
     outline-offset: 3px;
   }
 
   /* Selection colors */
   ::selection {
-    background-color: #CB8D44;
-    color: #FFFFFF;
+    background-color: var(--gold);
+    color: var(--ink);
   }
 }
 
@@ -93,14 +108,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F6F6;
+  background: var(--bg-soft);
 }
 ::-webkit-scrollbar-thumb {
-  background: #183036;
-  border-radius: 4px;
+  background: var(--ink-soft);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #CB8D44;
+  background: var(--gold);
 }
 
 /* Hide scrollbars across modern and legacy browsers */

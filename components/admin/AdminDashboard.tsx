@@ -93,8 +93,8 @@ export default function AdminDashboard() {
     whatsapp: siteConfig.whatsappDisplay,
     instagram: siteConfig.instagram,
     vimeo: siteConfig.vimeo,
-    brandGold: "#CB8D44",
-    brandTeal: "#183036",
+    brandGold: "#B08D57",
+    brandTeal: "#0E0E0F",
     seoDescription:
       "Australian creative production studio specialising in cinematic documentary filmmaking, visionary music videos, corporate narratives, and commercial films.",
   });

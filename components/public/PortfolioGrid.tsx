@@ -31,7 +31,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
     <div className="space-y-12">
       <h2 className="sr-only">Selected Productions Archive</h2>
       {/* Category Filter Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/15 pb-6">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--line)] pb-6">
         <div className="flex flex-wrap items-center gap-2 sm:gap-3" role="tablist" aria-label="Project Categories">
           {filterTabs.map((tab) => {
             const isSelected = activeFilter === tab.value;
@@ -41,10 +41,10 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
                 role="tab"
                 aria-selected={isSelected}
                 onClick={() => setActiveFilter(tab.value)}
-                className={`text-xs uppercase font-mono tracking-[0.2em] px-4 py-2 rounded-sm transition-all duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
+                className={`text-[11px] uppercase font-mono tracking-[0.12em] px-4 py-2 rounded-[2px] transition-all duration-250 ease-out focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--gold)] ${
                   isSelected
-                    ? "bg-brand-gold text-white font-semibold shadow-sm"
-                    : "text-brand-teal bg-[#F8F9FA] border border-brand-teal/20 hover:border-brand-gold hover:text-brand-gold"
+                    ? "bg-[var(--gold)] text-[var(--ink)] font-medium shadow-sm"
+                    : "text-[var(--ink)] bg-[var(--bg-soft)] border border-[var(--line)] hover:border-[var(--gold)] hover:text-[var(--gold-deep)]"
                 }`}
               >
                 {tab.label}
@@ -53,7 +53,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
           })}
         </div>
 
-        <span className="text-xs font-mono text-brand-teal/70 hidden sm:inline">
+        <span className="text-xs font-mono text-[var(--ink-soft)] hidden sm:inline">
           Showing {filteredProjects.length} of {initialProjects.length} Works
         </span>
       </div>

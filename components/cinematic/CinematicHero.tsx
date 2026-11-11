@@ -142,9 +142,8 @@ export default function CinematicHero() {
           aria-hidden="true"
         />
 
-        {/* Cinematic Lighting Overlays with Strong Text Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-black/95 via-brand-black/55 to-brand-black/75 pointer-events-none" />
-        <div className="absolute inset-0 bg-brand-teal/20 mix-blend-color-burn pointer-events-none" />
+        {/* Cinematic Lighting Overlays with Specified Dark Overlay */}
+        <div className="absolute inset-0 bg-[#0E0E0F]/45 pointer-events-none" />
         <div className="absolute inset-0 film-grain pointer-events-none" />
 
         {/* Viewfinder Camera HUD */}
@@ -158,24 +157,24 @@ export default function CinematicHero() {
           <div className="flex items-start justify-between w-full pointer-events-auto">
             {/* Top Left: REC + Timecode on Row 1, Live Showreel indented on Row 2 */}
             <div className="flex flex-col items-start space-y-2">
-              <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-mono tracking-widest uppercase">
-                <span className="flex items-center space-x-1.5 text-[#FF6B6B] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#FF4D4D] animate-pulse" />
+              <div className="flex items-center space-x-2 sm:space-x-3 text-[11px] font-mono tracking-[0.1em] uppercase">
+                <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-[0.1em] bg-[#0E0E0F]/80 px-2.5 py-1 rounded-[2px]">
+                  <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse" />
                   <span>REC</span>
                 </span>
                 <span
                   ref={timecodeRef}
                   suppressHydrationWarning
-                  className="text-[#E2A65F] font-bold tracking-wider bg-black/90 px-2.5 py-1 rounded-sm"
+                  className="text-[var(--white-on-dark)] font-medium tracking-[0.1em] bg-[#0E0E0F]/80 px-2.5 py-1 rounded-[2px]"
                 >
                   00:14:28:01
                 </span>
               </div>
 
               {/* Row 2: Live Showreel Badge indented under timecode on desktop */}
-              <div className="sm:ml-16 inline-flex items-center space-x-2 px-3 py-1 bg-black/90 backdrop-blur-md border border-brand-gold/60 rounded-sm">
-                <Clapperboard className="w-3.5 h-3.5 text-brand-gold shrink-0" />
-                <span className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.18em] text-brand-gold font-medium whitespace-nowrap">
+              <div className="sm:ml-16 inline-flex items-center space-x-2 px-3 py-1 bg-[#0E0E0F]/80 backdrop-blur-md border border-[var(--gold)]/40 rounded-[2px]">
+                <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)] shrink-0" />
+                <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] font-medium whitespace-nowrap">
                   Live Showreel • 2024–2026
                 </span>
               </div>
@@ -184,11 +183,11 @@ export default function CinematicHero() {
             {/* Top Right: Telemetry on Row 1, Audio toggle on Row 2 */}
             <div className="flex flex-col items-end space-y-2">
               {/* Row 1: Telemetry (hidden on ultra-small mobile to prevent collision) */}
-              <div className="hidden sm:flex items-center space-x-4 md:space-x-6 text-xs font-mono uppercase tracking-wider text-brand-white bg-black/80 px-3 py-1 rounded-sm">
+              <div className="hidden sm:flex items-center space-x-4 md:space-x-6 text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--white-on-dark)] bg-[#0E0E0F]/80 px-3 py-1 rounded-[2px]">
                 <span>24.000 FPS</span>
-                <span className="text-brand-gold">•</span>
+                <span className="text-[var(--gold)]">•</span>
                 <span>ISO 800</span>
-                <span className="text-brand-gold">•</span>
+                <span className="text-[var(--gold)]">•</span>
                 <span>SHUTTER 180.0°</span>
               </div>
 
@@ -196,18 +195,18 @@ export default function CinematicHero() {
               <button
                 type="button"
                 onClick={toggleSound}
-                className="min-h-[36px] sm:min-h-[32px] inline-flex items-center space-x-2 text-[11px] sm:text-xs uppercase font-mono tracking-wider text-brand-white hover:text-brand-gold px-3 py-1 rounded-sm border border-brand-teal/80 hover:border-brand-gold transition-all bg-black/90 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold group shrink-0"
+                className="min-h-[36px] sm:min-h-[32px] inline-flex items-center space-x-2 text-[11px] uppercase font-mono tracking-[0.1em] text-[var(--white-on-dark)] hover:text-[var(--gold)] px-3 py-1 rounded-[2px] border border-white/20 hover:border-[var(--gold)] transition-colors duration-250 ease-out bg-[#0E0E0F]/80 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] group shrink-0"
                 aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
               >
                 {isMuted ? (
-                  <VolumeX className="w-3.5 h-3.5 text-brand-gray-light group-hover:text-brand-gold transition-colors shrink-0" />
+                  <VolumeX className="w-3.5 h-3.5 text-[var(--text-on-dark)] group-hover:text-[var(--gold)] transition-colors shrink-0" />
                 ) : (
                   <div className="flex items-center space-x-1 shrink-0">
-                    <Volume2 className="w-3.5 h-3.5 text-brand-gold" />
+                    <Volume2 className="w-3.5 h-3.5 text-[var(--gold)]" />
                     <span className="flex items-end space-x-0.5 h-3 px-0.5" aria-hidden="true">
-                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
-                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
-                      <span className="w-0.5 bg-brand-gold rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
+                      <span className="w-0.5 bg-[var(--gold)] rounded-full animate-[pulse_0.6s_ease-in-out_infinite] h-2" />
+                      <span className="w-0.5 bg-[var(--gold)] rounded-full animate-[pulse_0.9s_ease-in-out_infinite_0.15s] h-3" />
+                      <span className="w-0.5 bg-[var(--gold)] rounded-full animate-[pulse_0.75s_ease-in-out_infinite_0.3s] h-1.5" />
                     </span>
                   </div>
                 )}
@@ -218,14 +217,11 @@ export default function CinematicHero() {
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
           <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-semibold text-brand-white tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
-              BOITUMELO B{" "}
-              <span className="text-brand-gold block sm:inline font-normal">
-                PRODUCTIONS
-              </span>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(14,14,15,0.7)]">
+              BOITUMELO B PRODUCTIONS
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-brand-gray-light font-light max-w-xl leading-relaxed [text-wrap:pretty]">
+            <p className="text-base sm:text-lg md:text-xl text-[var(--text-on-dark)] font-light max-w-xl leading-relaxed [text-wrap:pretty]">
               Films that move people. Visuals that move brands. An Australian production house specialising in documentary cinema, music videos, and commercial film.
             </p>
 
@@ -233,7 +229,7 @@ export default function CinematicHero() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/work"
-                className="inline-flex items-center space-x-3 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl hover:shadow-brand-gold/30"
+                className="inline-flex items-center space-x-3 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
               >
                 <span>Explore The Work</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -242,10 +238,10 @@ export default function CinematicHero() {
               <button
                 type="button"
                 onClick={scrollToFilmstrip}
-                className="inline-flex items-center space-x-2.5 text-xs uppercase font-mono tracking-[0.2em] text-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal-light hover:border-brand-gold transition-colors bg-brand-teal/80 backdrop-blur-sm"
+                className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium text-[var(--white-on-dark)] border border-[var(--white-on-dark)] hover:bg-[var(--white-on-dark)] hover:text-[var(--ink)] px-6 py-3.5 rounded-[2px] transition-all duration-250 ease-out backdrop-blur-sm bg-transparent"
               >
                 <span>Roll Film</span>
-                <ArrowDown className="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-y-0.5" />
+                <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
               </button>
             </div>
           </div>
@@ -258,10 +254,10 @@ export default function CinematicHero() {
         aria-hidden="true"
         className="absolute inset-x-0 bottom-6 z-10 pointer-events-none flex items-center justify-between px-4 sm:px-12 opacity-0"
       >
-        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold bg-brand-teal/90 px-3 py-1 rounded border border-brand-gold/40 shadow-md">
+        <div className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] bg-[#0E0E0F]/90 px-3 py-1 rounded-[2px] border border-[var(--gold)]/30 shadow-subtle">
           ◄ Reel 01: The Last Echo
         </div>
-        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold bg-brand-teal/90 px-3 py-1 rounded border border-brand-gold/40 shadow-md">
+        <div className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] bg-[#0E0E0F]/90 px-3 py-1 rounded-[2px] border border-[var(--gold)]/30 shadow-subtle">
           Reel 02: Neon Solitude ►
         </div>
       </div>

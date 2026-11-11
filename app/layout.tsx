@@ -146,6 +146,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className={`${inter.variable} ${cinzel.variable}`}>
       <head>
+        <meta name="theme-color" content="#FFFFFF" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -155,7 +156,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-white text-brand-teal selection:bg-brand-gold selection:text-white antialiased">
+      <body className="bg-[var(--bg)] text-[var(--ink)] selection:bg-[var(--gold)] selection:text-[var(--ink)] antialiased font-sans">
         {children}
       </body>
     </html>

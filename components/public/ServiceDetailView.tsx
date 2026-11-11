@@ -71,16 +71,16 @@ export default function ServiceDetailView({
               </p>
             </div>
 
-            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-xl text-white">
-              <h3 className="text-xl font-display font-medium text-white">
+            <div className="p-8 bg-[var(--ink)] rounded-[2px] border border-[rgba(255,255,255,0.12)] shadow-[0_10px_30px_rgba(14,14,15,0.06)] text-[var(--white-on-dark)]">
+              <h3 className="text-xl font-display font-medium text-[var(--white-on-dark)]">
                 Commission a Production
               </h3>
-              <p className="mt-2 text-xs text-slate-200 leading-relaxed">
+              <p className="mt-2 text-xs text-[var(--text-on-dark)] leading-relaxed font-light">
                 We accept a limited number of production commissions per season to ensure singular directorial focus.
               </p>
               <Link
                 href="/book"
-                className="mt-6 inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+                className="mt-6 inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-6 py-3 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm"
               >
                 <span>Initiate Brief</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -125,7 +125,7 @@ export default function ServiceDetailView({
       </section>
 
       {/* 03: Suggested Creative Workflow */}
-      <section className="bg-[#F8F9FA] py-20 sm:py-28 border-y border-brand-teal/15">
+      <section className="bg-[var(--bg-soft)] py-20 sm:py-28 border-y border-[var(--line)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
             title="The Creative Journey."
@@ -137,15 +137,15 @@ export default function ServiceDetailView({
             {service.process.map((p) => (
               <div
                 key={p.step}
-                className="bg-white border border-brand-teal/15 p-8 rounded-sm hover:border-brand-gold transition-colors shadow-sm"
+                className="bg-[var(--bg)] border border-[var(--line)] p-8 rounded-[2px] hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-sm"
               >
-                <span className="text-3xl font-display font-semibold text-brand-gold">
+                <span className="text-3xl font-display font-medium text-[var(--gold)]">
                   {p.step}
                 </span>
-                <h3 className="text-lg font-display font-medium text-brand-teal mt-4">
+                <h3 className="text-lg font-display font-medium text-[var(--ink)] mt-4">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-brand-teal/75 leading-relaxed font-light">
+                <p className="mt-2 text-xs sm:text-sm text-[var(--ink-soft)] leading-relaxed font-light">
                   {p.description}
                 </p>
               </div>

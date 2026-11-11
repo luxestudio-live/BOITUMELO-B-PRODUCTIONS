@@ -298,7 +298,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-8 py-4 rounded-sm hover:bg-brand-gold-light transition-all disabled:opacity-60 shadow-xl"
+          className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-8 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out disabled:opacity-60 shadow-sm"
         >
           {isSubmitting ? (
             <>
@@ -312,7 +312,7 @@ export default function ContactForm() {
             </>
           )}
         </button>
-        <span className="block text-xs font-mono text-brand-teal/70 mt-3">
+        <span className="block text-xs font-mono text-[var(--ink-soft)] mt-3">
           *Every enquiry is reviewed directly by our directors in Melbourne & Sydney. We never share your details.
         </span>
       </div>

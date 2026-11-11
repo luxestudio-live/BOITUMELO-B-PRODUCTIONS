@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       {/* 03: Four Pillars of Our Philosophy */}
-      <section className="bg-[#F8F9FA] py-20 sm:py-28 border-y border-brand-teal/15">
+      <section className="bg-[var(--bg-soft)] py-20 sm:py-28 border-y border-[var(--line)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
             title="The Principles That Guide Us."
@@ -107,13 +107,13 @@ export default function AboutPage() {
             ].map((p) => (
               <div
                 key={p.title}
-                className="bg-white border border-brand-teal/15 p-8 rounded-sm hover:border-brand-gold transition-colors shadow-sm"
+                className="bg-[var(--bg)] border border-[var(--line)] p-8 rounded-[2px] hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-sm"
               >
-                <p.icon className="w-8 h-8 text-brand-gold mb-5" />
-                <h3 className="text-xl font-display font-medium text-brand-teal">
+                <p.icon className="w-8 h-8 text-[var(--gold)] mb-5" />
+                <h3 className="text-xl font-display font-medium text-[var(--ink)]">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-xs sm:text-sm text-brand-teal/75 leading-relaxed font-light">
+                <p className="mt-3 text-xs sm:text-sm text-[var(--ink-soft)] leading-relaxed font-light">
                   {p.desc}
                 </p>
               </div>
@@ -218,14 +218,14 @@ export default function AboutPage() {
               <div className="pt-4 flex items-center space-x-6">
                 <Link
                   href="/work"
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+                  className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-6 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm"
                 >
                   <span>Explore Selected Work</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/book"
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-white hover:text-brand-gold transition-colors"
+                  className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
                 >
                   <span>Start a Project</span>
                   <ArrowUpRight className="w-4 h-4" />

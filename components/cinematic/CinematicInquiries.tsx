@@ -98,28 +98,23 @@ export default function CinematicInquiries({
   const getCategoryIcon = (category?: string) => {
     switch (category) {
       case "Capture & Optics":
-        return <Camera className="w-3.5 h-3.5 text-brand-gold" />;
+        return <Camera className="w-3.5 h-3.5 text-[var(--gold)]" />;
       case "Deliverables & Rights":
-        return <Film className="w-3.5 h-3.5 text-brand-gold" />;
+        return <Film className="w-3.5 h-3.5 text-[var(--gold)]" />;
       case "Commercial Terms":
-        return <CreditCard className="w-3.5 h-3.5 text-brand-gold" />;
+        return <CreditCard className="w-3.5 h-3.5 text-[var(--gold)]" />;
       case "Expeditions & CASA":
-        return <Compass className="w-3.5 h-3.5 text-brand-gold" />;
+        return <Compass className="w-3.5 h-3.5 text-[var(--gold)]" />;
       default:
-        return <Sparkles className="w-3.5 h-3.5 text-brand-gold" />;
+        return <Sparkles className="w-3.5 h-3.5 text-[var(--gold)]" />;
     }
   };
 
   return (
     <section
       aria-label="Common Inquiries & Production Standards"
-      className="relative bg-white py-24 sm:py-32 border-y border-brand-teal/15 overflow-hidden text-brand-teal"
+      className="relative bg-[var(--bg)] py-24 sm:py-32 border-y border-[var(--line)] overflow-hidden text-[var(--ink)]"
     >
-      {/* Cinematic Ambient Glow & Subtle Film Grain */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-brand-teal/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute inset-0 film-grain opacity-20 pointer-events-none" />
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main 2-Column Asymmetrical Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -127,13 +122,13 @@ export default function CinematicInquiries({
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
             {/* Architectural Heading */}
             <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-teal leading-[1.05] tracking-[0.02em]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-[var(--ink)] leading-[1.05] tracking-[0.02em]">
                 {title}{" "}
-                <span className="block text-brand-gold font-normal mt-1">
+                <span className="block text-[var(--gold)] font-normal mt-1">
                   {serifAccent}
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-brand-teal/80 leading-relaxed font-light pt-2 [text-wrap:pretty]">
+              <p className="text-sm sm:text-base text-[var(--ink-soft)] leading-relaxed font-light pt-2 [text-wrap:pretty]">
                 {lead}
               </p>
             </div>
@@ -141,7 +136,7 @@ export default function CinematicInquiries({
             {/* Category Filter Pills (when enabled) */}
             {enableCategories && categories.length > 2 && (
               <div className="pt-2 space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-brand-teal/70 block font-medium">
+                <span className="text-xs font-mono uppercase tracking-[0.12em] text-[var(--ink-soft)] block font-medium">
                   Filter by Topic
                 </span>
                 <div className="flex flex-wrap gap-2.5">
@@ -160,16 +155,16 @@ export default function CinematicInquiries({
                           setSelectedCategory(cat);
                           setOpenIndex(0);
                         }}
-                        className={`min-h-[44px] text-xs font-mono uppercase tracking-wider px-4 py-2.5 rounded-sm border transition-all duration-300 flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
+                        className={`min-h-[44px] text-[11px] font-mono uppercase tracking-[0.12em] px-4 py-2 rounded-[2px] border transition-all duration-250 ease-out flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] ${
                           isSelected
-                            ? "bg-brand-gold text-white border-brand-gold font-medium shadow-md shadow-brand-gold/15"
-                            : "bg-[#F8F9FA] text-brand-teal border-brand-teal/20 hover:border-brand-gold/60 hover:text-brand-teal"
+                            ? "bg-[var(--gold)] text-[var(--ink)] border-[var(--gold)] font-medium shadow-sm"
+                            : "bg-[var(--bg-soft)] text-[var(--ink)] border-[var(--line)] hover:border-[var(--gold)]/60"
                         }`}
                       >
                         <span>{cat}</span>
                         <span
                           className={`text-xs ml-1 font-semibold ${
-                            isSelected ? "text-white" : "text-brand-gold"
+                            isSelected ? "text-[var(--ink)]" : "text-[var(--gold-deep)]"
                           }`}
                         >
                           ({count})
@@ -182,32 +177,32 @@ export default function CinematicInquiries({
             )}
 
             {/* Executive Producer Contact Hotline Card */}
-            <div className="relative p-6 sm:p-7 bg-brand-teal border border-brand-teal-light rounded-sm space-y-4 shadow-xl text-white">
-              <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-brand-gold/40 pointer-events-none" />
-              <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-brand-gold/40 pointer-events-none" />
+            <div className="relative p-6 sm:p-7 bg-[var(--ink)] border border-[rgba(255,255,255,0.12)] rounded-[2px] space-y-4 shadow-[0_10px_30px_rgba(14,14,15,0.06)] text-[var(--white-on-dark)]">
+              <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-[var(--gold)]/40 pointer-events-none" />
+              <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-[var(--gold)]/40 pointer-events-none" />
 
-              <div className="flex items-center space-x-3 text-brand-gold">
+              <div className="flex items-center space-x-3 text-[var(--gold)]">
                 <MessageSquare className="w-4 h-4" />
-                <span className="text-xs font-mono uppercase tracking-[0.2em] font-semibold">
+                <span className="text-xs font-mono uppercase tracking-[0.15em] font-medium">
                   Direct Producer Desk
                 </span>
               </div>
 
-              <p className="text-xs text-slate-200 font-light leading-relaxed">
+              <p className="text-xs text-[var(--text-on-dark)] font-light leading-relaxed">
                 Have a bespoke brief, sensitive NDA project, or complex aviation requirement not answered here?
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all font-medium shadow-sm"
+                  className="inline-flex items-center justify-center space-x-2 text-[11px] font-mono uppercase tracking-[0.12em] bg-[var(--gold)] text-[var(--ink)] px-4 py-2.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out font-medium shadow-sm"
                 >
                   <span>Direct Message</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   href="/book"
-                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-brand-teal-dark/60 border border-brand-gold/40 text-white hover:border-brand-gold px-4 py-2.5 rounded-sm transition-all"
+                  className="inline-flex items-center justify-center space-x-2 text-[11px] font-mono uppercase tracking-[0.12em] bg-transparent border border-[rgba(255,255,255,0.2)] text-[var(--white-on-dark)] hover:border-[var(--gold)] hover:text-[var(--gold)] px-4 py-2.5 rounded-[2px] transition-all duration-250 ease-out"
                 >
                   <span>Build Brief</span>
                 </Link>
@@ -223,17 +218,17 @@ export default function CinematicInquiries({
               return (
                 <div
                   key={idx}
-                  className={`group relative transition-all duration-300 rounded-sm border ${
+                  className={`group relative transition-all duration-250 ease-out rounded-[2px] border ${
                     isOpen
-                      ? "bg-[#F8F9FA] border-brand-gold shadow-md"
-                      : "bg-white border-brand-teal/15 hover:border-brand-teal/40 hover:bg-[#F8F9FA]/60"
+                      ? "bg-[var(--bg-soft)] border-[var(--gold)] shadow-subtle"
+                      : "bg-[var(--bg)] border-[var(--line)] hover:border-[var(--gold)]/40"
                   }`}
                 >
                   {/* Viewfinder Framelines on Active Item */}
                   {isOpen && (
                     <>
-                      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-brand-gold pointer-events-none" />
-                      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-brand-gold pointer-events-none" />
+                      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[var(--gold)] pointer-events-none" />
+                      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[var(--gold)] pointer-events-none" />
                     </>
                   )}
 
@@ -242,22 +237,22 @@ export default function CinematicInquiries({
                     type="button"
                     onClick={() => toggleInquiry(idx)}
                     aria-expanded={isOpen}
-                    className="w-full text-left p-6 sm:p-7 flex items-start justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-sm"
+                    className="w-full text-left p-6 sm:p-7 flex items-start justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
                   >
                     <div className="space-y-2 flex-grow pr-2">
                       {/* Numbering & Category Pill */}
                       <div className="flex items-center space-x-3 text-xs font-mono">
                         <span
-                          className={`font-semibold tracking-wider transition-colors duration-300 ${
-                            isOpen ? "text-brand-gold" : "text-brand-teal/60"
+                          className={`font-semibold tracking-wider transition-colors duration-250 ease-out ${
+                            isOpen ? "text-[var(--gold-deep)]" : "text-[var(--ink-soft)]"
                           }`}
                         >
                           [ 0{idx + 1} ]
                         </span>
                         {item.category && (
-                          <span className="inline-flex items-center space-x-1.5 text-brand-teal/80 bg-brand-teal/5 px-2.5 py-1 rounded-sm border border-brand-teal/15">
+                          <span className="inline-flex items-center space-x-1.5 text-[var(--ink)] bg-[var(--bg)] px-2.5 py-1 rounded-[2px] border border-[var(--line)]">
                             {getCategoryIcon(item.category)}
-                            <span className="uppercase tracking-wider text-xs font-mono font-medium">
+                            <span className="uppercase tracking-wider text-[11px] font-mono font-medium">
                               {item.category}
                             </span>
                           </span>
@@ -266,10 +261,10 @@ export default function CinematicInquiries({
 
                       {/* Question Text */}
                       <h3
-                        className={`text-base sm:text-lg font-display transition-colors duration-300 tracking-wide leading-snug ${
+                        className={`text-base sm:text-lg font-display transition-colors duration-250 ease-out tracking-wide leading-snug ${
                           isOpen
-                            ? "text-brand-teal font-medium"
-                            : "text-brand-teal group-hover:text-brand-gold"
+                            ? "text-[var(--ink)] font-medium"
+                            : "text-[var(--ink)] group-hover:text-[var(--gold-deep)]"
                         }`}
                       >
                         {item.q}
@@ -278,10 +273,10 @@ export default function CinematicInquiries({
 
                     {/* Expand/Collapse Toggle Indicator */}
                     <div
-                      className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 mt-1 ${
+                      className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-250 ease-out mt-1 ${
                         isOpen
-                          ? "bg-brand-gold text-white border-brand-gold rotate-90"
-                          : "bg-brand-teal/10 text-brand-teal border-brand-teal/30 group-hover:border-brand-gold group-hover:text-brand-gold"
+                          ? "bg-[var(--gold)] text-[var(--ink)] border-[var(--gold)] rotate-90"
+                          : "bg-[var(--bg-soft)] text-[var(--ink)] border-[var(--line)] group-hover:border-[var(--gold)] group-hover:text-[var(--gold-deep)]"
                       }`}
                       aria-hidden="true"
                     >
@@ -295,18 +290,18 @@ export default function CinematicInquiries({
 
                   {/* Expanded Content Drawer */}
                   {isOpen && (
-                    <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 border-t border-brand-teal/15 mt-1 animate-fade-in space-y-4">
+                    <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 border-t border-[var(--line)] mt-1 animate-fade-in space-y-4">
                       {/* Answer Paragraph */}
-                      <p className="text-sm sm:text-base text-brand-teal/85 leading-relaxed font-light pt-4">
+                      <p className="text-sm sm:text-base text-[var(--ink-soft)] leading-relaxed font-light pt-4">
                         {item.a}
                       </p>
 
                       {/* Technical Specs Footer Ribbon */}
                       {item.specs && (
-                        <div className="p-3 bg-brand-teal text-white border border-brand-teal-light rounded-sm flex items-center space-x-2 text-xs font-mono">
-                          <span className="w-1.5 h-1.5 rounded-full bg-brand-gold flex-shrink-0" />
+                        <div className="p-3 bg-[var(--ink)] text-[var(--white-on-dark)] border border-[rgba(255,255,255,0.12)] rounded-[2px] flex items-center space-x-2 text-xs font-mono">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--gold)] flex-shrink-0" />
                           <span className="truncate">
-                            <strong className="text-brand-gold font-semibold uppercase tracking-wider mr-1">
+                            <strong className="text-[var(--gold)] font-medium uppercase tracking-wider mr-1">
                               SPECS:
                             </strong>
                             {item.specs}

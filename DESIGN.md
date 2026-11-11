@@ -2,34 +2,33 @@
 name: Boitumelo B Productions
 description: Elite Australian creative production house specialising in independent documentary depth and commercial visual cinema.
 colors:
-  primary: "#CB8D44"
-  primary-light: "#E2A65F"
-  primary-dark: "#9F6C2E"
-  canvas: "#FFFFFF"
-  canvas-subtle: "#F8F9FA"
-  surface-card: "#FFFFFF"
-  surface-teal: "#183036"
-  border-subtle: "rgba(24, 48, 54, 0.15)"
-  text-display: "#183036"
-  text-body: "#24434B"
-  text-muted: "#55747D"
+  bg: "#FFFFFF"          # main page background (60%)
+  bg-soft: "#F6F2EA"     # alternating sections, cards
+  ink: "#0E0E0F"         # headings, body text, dark sections (30%)
+  ink-soft: "#5A5750"    # secondary / paragraph text
+  gold: "#B08D57"        # accents, lines, icons, large text only (10%)
+  gold-deep: "#8A6A2F"   # gold text links, small gold text (AA contrast >= 4.5:1)
+  gold-light: "#E8DCC3"  # borders, tints, hover backgrounds
+  line: "#E6E1D6"        # hairline dividers (1px)
+  white-on-dark: "#FFFFFF"
+  text-on-dark: "#CFCAC0"
 typography:
   display:
-    fontFamily: "Copperplate, Cinzel, Trajan Pro, Georgia, serif"
+    fontFamily: "Cinzel, Cormorant Garamond, Playfair Display, Georgia, serif"
     fontSize: "clamp(2.25rem, 5vw, 4.5rem)"
-    fontWeight: 700
+    fontWeight: 500
     lineHeight: "1.02"
     letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Copperplate, Cinzel, Trajan Pro, Georgia, serif"
+    fontFamily: "Cinzel, Cormorant Garamond, Playfair Display, Georgia, serif"
     fontSize: "clamp(1.75rem, 3.5vw, 3rem)"
-    fontWeight: 600
+    fontWeight: 500
     lineHeight: "1.1"
     letterSpacing: "-0.02em"
   title:
     fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
     fontSize: "clamp(1.25rem, 2vw, 1.75rem)"
-    fontWeight: 600
+    fontWeight: 500
     lineHeight: "1.25"
     letterSpacing: "-0.01em"
   body:
@@ -38,26 +37,26 @@ typography:
     fontWeight: 400
     lineHeight: "1.6"
     letterSpacing: "0.01em"
-  label:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 600
-    lineHeight: "1"
-    letterSpacing: "0.15em"
-  caption:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+  hud:
+    fontFamily: "JetBrains Mono, monospace"
     fontSize: "11px"
     fontWeight: 500
-    lineHeight: "1.4"
-    letterSpacing: "0.08em"
-  micro:
-    fontFamily: "monospace"
-    fontSize: "10px"
-    fontWeight: 600
-    lineHeight: "1"
+    lineHeight: "1.2"
     letterSpacing: "0.1em"
+  label:
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontSize: "12px"
+    fontWeight: 500
+    lineHeight: "1"
+    letterSpacing: "0.12em"
 rounded:
   sm: "2px"
+  btn: "2px"
+shadow:
+  subtle: "0 10px 30px rgba(14,14,15,.06)"
+transitions:
+  default: "250ms ease"
+---
   md: "4px"
   lg: "8px"
   full: "9999px"

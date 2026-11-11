@@ -22,8 +22,8 @@ export default function StudioStatement() {
     { text: "CAPTURE", gold: false },
     { text: "STORIES.", gold: false },
     { text: "WE", gold: false },
-    { text: "MAKE", gold: true },
-    { text: "THEM", gold: true },
+    { text: "MAKE", gold: false },
+    { text: "THEM", gold: false },
     { text: "FELT.", gold: true },
   ];
 
@@ -44,10 +44,6 @@ export default function StudioStatement() {
     }
 
     const ctx = gsap.context(() => {
-      // Starts as headline enters lower viewport (88%) and completes BEFORE reaching center (58%).
-      // This guarantees that 100% of all words—especially the golden climax "MAKE THEM FELT."—
-      // are fully illuminated, radiant, and perfectly readable while in the center of the screen.
-      // It stays 100% bright as the user reads and scrolls through the section.
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: titleRef.current,
@@ -59,11 +55,11 @@ export default function StudioStatement() {
         },
       });
 
-      // 1. Sequentially illuminate blue words with clean contrast (starts at 0.5 for WCAG AA compliance)
-      const tealElements = wordsRef.current.slice(0, 6);
+      // 1. Sequentially illuminate white words
+      const whiteElements = wordsRef.current.slice(0, 8);
       tl.fromTo(
-        tealElements,
-        { opacity: 0.5 },
+        whiteElements,
+        { opacity: 0.4 },
         {
           opacity: 1,
           stagger: 0.025,
@@ -73,34 +69,30 @@ export default function StudioStatement() {
         0
       );
 
-      // 2. Extra warm amber bloom for the golden climax words "MAKE THEM FELT."
-      const goldElements = wordsRef.current.slice(6);
+      // 2. Accent word "FELT." in gold
+      const goldElement = wordsRef.current.slice(8);
       tl.fromTo(
-        goldElements,
+        goldElement,
         {
-          color: "#CB8D44",
-          opacity: 0.7,
-          textShadow: "0 0 0px rgba(203, 141, 68, 0)",
+          color: "#B08D57",
+          opacity: 0.5,
         },
         {
-          color: "#CB8D44",
+          color: "#B08D57",
           opacity: 1,
-          textShadow:
-            "0 0 35px rgba(203, 141, 68, 0.4), 0 0 14px rgba(203, 141, 68, 0.25)",
-          stagger: 0.025,
           duration: 0.2,
           ease: "power1.out",
         },
-        0.08
+        0.15
       );
 
       // 3. Supporting subtext illuminates in parallel
       if (subtextRef.current) {
         tl.fromTo(
           subtextRef.current,
-          { opacity: 0.5, y: 10 },
+          { opacity: 0.4, y: 8 },
           { opacity: 1, y: 0, ease: "power2.out", duration: 0.2 },
-          0.14
+          0.16
         );
       }
 
@@ -108,7 +100,7 @@ export default function StudioStatement() {
       if (footerRef.current) {
         tl.fromTo(
           footerRef.current,
-          { opacity: 0.5 },
+          { opacity: 0.4 },
           { opacity: 1, ease: "power1.out", duration: 0.18 },
           0.18
         );
@@ -122,18 +114,15 @@ export default function StudioStatement() {
     <section
       ref={containerRef}
       aria-label="The Studio Statement"
-      className="relative bg-white py-28 sm:py-44 border-b border-brand-teal/15 overflow-hidden flex items-center justify-center"
+      className="relative bg-[var(--ink)] py-28 sm:py-44 border-b border-[rgba(255,255,255,0.12)] overflow-hidden flex items-center justify-center text-[var(--white-on-dark)]"
     >
-      {/* Atmospheric radial spotlight in Deep Teal & Gold */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-teal/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-gold/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 film-grain opacity-20 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-8 sm:space-y-10">
         {/* Master Scaled Cinematic Manifesto */}
         <h2
           ref={titleRef}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-medium tracking-tight text-brand-teal leading-[1.04] flex flex-wrap justify-center gap-x-3 sm:gap-x-5 lg:gap-x-6 gap-y-2 sm:gap-y-3 max-w-5xl mx-auto select-none"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-medium tracking-tight text-[var(--white-on-dark)] leading-[1.04] flex flex-wrap justify-center gap-x-3 sm:gap-x-5 lg:gap-x-6 gap-y-2 sm:gap-y-3 max-w-5xl mx-auto select-none"
         >
           {statementWords.map((item, idx) => (
             <span
@@ -143,8 +132,8 @@ export default function StudioStatement() {
               }}
               className={`inline-block ${
                 item.gold
-                  ? "text-brand-gold font-semibold"
-                  : "text-brand-teal"
+                  ? "text-[var(--gold)] font-medium"
+                  : "text-[var(--white-on-dark)]"
               }`}
             >
               {item.text}
@@ -155,7 +144,7 @@ export default function StudioStatement() {
         {/* Supporting Narrative */}
         <p
           ref={subtextRef}
-          className="max-w-2xl mx-auto text-base sm:text-xl text-brand-teal/80 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
+          className="max-w-2xl mx-auto text-base sm:text-xl text-[var(--text-on-dark)] font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
           In an era of disposable video feeds, true cinema demands reverence. We pair large format anamorphic glass with deep cultural listening to craft films that endure.
         </p>
@@ -163,12 +152,12 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-brand-teal/70 tracking-widest uppercase"
+          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-[var(--text-on-dark)] tracking-[0.1em] uppercase"
         >
           <span>MELBOURNE</span>
-          <span className="text-brand-gold">•</span>
+          <span className="text-[var(--gold)]">•</span>
           <span>SYDNEY</span>
-          <span className="text-brand-gold">•</span>
+          <span className="text-[var(--gold)]">•</span>
           <span>REGIONAL AUSTRALIA</span>
         </div>
       </div>

@@ -43,14 +43,14 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Navigation Menu"
-      className="fixed inset-0 z-50 bg-white/98 backdrop-blur-xl flex flex-col justify-between p-6 sm:p-10 animate-fade-in overflow-y-auto text-brand-teal"
+      className="fixed inset-0 z-50 bg-[var(--bg)]/98 backdrop-blur-xl flex flex-col justify-between p-6 sm:p-10 animate-fade-in overflow-y-auto text-[var(--ink)]"
     >
       {/* Top Header inside overlay */}
-      <div className="flex items-center justify-between border-b border-brand-teal/15 pb-5">
+      <div className="flex items-center justify-between border-b border-[var(--line)] pb-5">
         <Link
           href="/"
           onClick={onClose}
-          className="font-display font-bold tracking-[0.2em] text-lg text-brand-teal"
+          className="font-display font-medium tracking-[0.2em] text-lg text-[var(--ink)]"
         >
           BOITUMELO B
         </Link>
@@ -58,7 +58,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           ref={closeButtonRef}
           type="button"
           onClick={onClose}
-          className="p-2 text-brand-teal/70 hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded"
+          className="p-2 text-[var(--ink-soft)] hover:text-[var(--gold)] transition-colors duration-250 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
           aria-label="Close navigation menu"
         >
           <X className="w-7 h-7" />
@@ -74,17 +74,17 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               <Link
                 href={item.href}
                 onClick={onClose}
-                className={`group flex items-center justify-between text-2xl sm:text-3xl font-display uppercase tracking-[0.12em] transition-all duration-300 py-1 ${
+                className={`group flex items-center justify-between text-2xl sm:text-3xl font-display uppercase tracking-[0.12em] transition-all duration-250 ease-out py-1 ${
                   isActive
-                    ? "text-brand-gold font-semibold translate-x-2"
-                    : "text-brand-teal hover:text-brand-gold hover:translate-x-2"
+                    ? "text-[var(--gold)] font-medium translate-x-2"
+                    : "text-[var(--ink)] hover:text-[var(--gold)] hover:translate-x-2"
                 }`}
               >
                 <span>
-                  <span className="text-xs font-mono text-brand-teal/40 mr-3">0{idx + 1}</span>
+                  <span className="text-xs font-mono text-[var(--ink-soft)] mr-3">0{idx + 1}</span>
                   {item.label}
                 </span>
-                <ArrowRight className="w-5 h-5 text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ArrowRight className="w-5 h-5 text-[var(--gold)] opacity-0 group-hover:opacity-100 transition-opacity" />
               </Link>
             </div>
           );
@@ -95,7 +95,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <Link
             href="/book"
             onClick={onClose}
-            className="w-full flex items-center justify-center space-x-2 text-sm uppercase tracking-[0.2em] font-medium bg-brand-gold text-white py-4 px-6 rounded-sm hover:bg-brand-gold-light transition-all shadow-lg"
+            className="w-full flex items-center justify-center space-x-2 text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--ink)] text-[var(--white-on-dark)] hover:bg-[var(--gold)] hover:text-[var(--ink)] py-4 px-6 rounded-[2px] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-4 h-4" />
@@ -104,23 +104,23 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
       </nav>
 
       {/* Footer Info inside Overlay */}
-      <div className="border-t border-brand-teal/15 pt-6 space-y-3">
-        <p className="text-xs uppercase tracking-[0.2em] text-brand-teal/60">
+      <div className="border-t border-[var(--line)] pt-6 space-y-3">
+        <p className="text-xs uppercase tracking-[0.2em] text-[var(--ink-soft)]">
           Australia • Cinematic Production Studio
         </p>
-        <div className="flex items-center space-x-6 text-sm text-brand-teal/80">
+        <div className="flex items-center space-x-6 text-sm text-[var(--ink-soft)]">
           <a
             href={`mailto:${siteConfig.email}`}
-            className="flex items-center space-x-1.5 hover:text-brand-gold transition-colors"
+            className="flex items-center space-x-1.5 hover:text-[var(--gold)] transition-colors duration-250 ease-out"
           >
-            <Mail className="w-4 h-4 text-brand-gold" />
+            <Mail className="w-4 h-4 text-[var(--gold)]" />
             <span className="text-xs font-mono">{siteConfig.email}</span>
           </a>
           <a
             href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
-            className="hidden sm:flex items-center space-x-1.5 hover:text-brand-gold transition-colors"
+            className="hidden sm:flex items-center space-x-1.5 hover:text-[var(--gold)] transition-colors duration-250 ease-out"
           >
-            <Phone className="w-4 h-4 text-brand-gold" />
+            <Phone className="w-4 h-4 text-[var(--gold)]" />
             <span className="text-xs font-mono">{siteConfig.phone}</span>
           </a>
         </div>

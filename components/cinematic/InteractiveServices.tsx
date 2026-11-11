@@ -17,18 +17,18 @@ export default function InteractiveServices() {
   return (
     <section
       aria-label="Production Disciplines in Motion"
-      className="relative bg-[#F8F9FA] py-24 sm:py-36 border-y border-brand-teal/15 overflow-hidden"
+      className="relative bg-[var(--bg)] py-24 sm:py-36 border-y border-[var(--line)] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Heading */}
-        <div className="flex items-center justify-between pb-8 mb-12 border-b border-brand-teal/15">
+        <div className="flex items-center justify-between pb-8 mb-12 border-b border-[var(--line)]">
           <div className="flex items-center space-x-3">
-            <Layers className="w-4 h-4 text-brand-gold" />
-            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-teal">
+            <Layers className="w-4 h-4 text-[var(--gold)]" />
+            <h2 className="text-xl sm:text-2xl font-display font-medium text-[var(--ink)]">
               Production Disciplines
             </h2>
           </div>
-          <span className="text-xs font-mono text-brand-teal/70 hidden sm:inline">
+          <span className="text-xs font-mono uppercase tracking-[0.1em] text-[var(--ink-soft)] hidden sm:inline">
             Interactive Vertical Index
           </span>
         </div>
@@ -39,6 +39,7 @@ export default function InteractiveServices() {
           <div className="lg:col-span-6 space-y-4" role="tablist" aria-label="Production Disciplines">
             {servicesList.map((service, index) => {
               const isSelected = activeSlug === service.slug;
+              const indexStr = `0${index + 1}`;
 
               return (
                 <div
@@ -48,35 +49,41 @@ export default function InteractiveServices() {
                   tabIndex={0}
                   role="tab"
                   aria-selected={isSelected}
-                  className={`group relative p-4 sm:p-8 rounded-sm border transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
+                  className={`group relative p-5 sm:p-7 rounded-[2px] border transition-all duration-250 ease-out cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] ${
                     isSelected
-                      ? "bg-brand-teal border-brand-gold text-white shadow-xl"
-                      : "bg-white border-brand-teal/15 hover:border-brand-teal/40 hover:bg-white/80 text-brand-teal shadow-sm"
+                      ? "bg-[var(--ink)] border-[var(--gold)] text-[var(--white-on-dark)] shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
+                      : "bg-[var(--bg-soft)] border-[var(--line)] hover:border-[var(--gold)]/50 text-[var(--ink-soft)] hover:text-[var(--ink)]"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3
-                      className={`text-xl sm:text-2xl md:text-3xl font-display font-medium transition-colors ${
-                        isSelected
-                          ? "text-white"
-                          : "text-brand-teal group-hover:text-brand-gold"
-                      }`}
-                    >
-                      {service.title}
-                    </h3>
+                    <div className="flex items-center space-x-4">
+                      {/* Gold index number */}
+                      <span className="text-xs font-mono tracking-[0.12em] text-[var(--gold)] font-medium">
+                        {indexStr}
+                      </span>
+                      <h3
+                        className={`text-lg sm:text-xl md:text-2xl font-display font-medium transition-colors duration-250 ease-out ${
+                          isSelected
+                            ? "text-[var(--white-on-dark)]"
+                            : "text-[var(--ink)] group-hover:text-[var(--gold-deep)]"
+                        }`}
+                      >
+                        {service.title}
+                      </h3>
+                    </div>
                     <ArrowUpRight
-                      className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-300 ${
+                      className={`w-4 h-4 flex-shrink-0 ml-4 transition-transform duration-250 ease-out ${
                         isSelected
-                          ? "text-brand-gold translate-x-0.5 -translate-y-0.5"
-                          : "text-brand-teal/60 opacity-60 group-hover:opacity-100"
+                          ? "text-[var(--gold)] translate-x-0.5 -translate-y-0.5"
+                          : "text-[var(--ink-soft)] group-hover:text-[var(--gold-deep)]"
                       }`}
                     />
                   </div>
 
                   {/* Expandable Info for active state */}
                   {isSelected && (
-                    <div className="mt-4 pt-4 border-t border-brand-teal-light/60 space-y-3 animate-fade-in">
-                      <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-light">
+                    <div className="mt-4 pt-4 border-t border-[rgba(255,255,255,0.12)] space-y-3 animate-fade-in">
+                      <p className="text-xs sm:text-sm text-[var(--text-on-dark)] leading-relaxed font-light">
                         {service.tagline}
                       </p>
 
@@ -84,7 +91,7 @@ export default function InteractiveServices() {
                         {service.visualDirection.aestheticTokens.slice(0, 3).map((token) => (
                           <span
                             key={token}
-                            className="text-xs font-mono uppercase tracking-widest px-2.5 py-1 bg-brand-teal-dark text-brand-gold-light rounded border border-brand-gold/30"
+                            className="text-[11px] font-mono uppercase tracking-[0.1em] px-2.5 py-1 bg-[#000000]/40 text-[var(--gold-light)] rounded-[2px] border border-[var(--gold)]/30"
                           >
                             {token}
                           </span>
@@ -94,7 +101,7 @@ export default function InteractiveServices() {
                       <div className="pt-2">
                         <Link
                           href={`/services/${service.slug}`}
-                          className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider text-brand-gold hover:text-brand-gold-light py-1 font-semibold"
+                          className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.12em] text-[var(--gold)] hover:text-[var(--gold-light)] py-1 font-medium transition-colors duration-250 ease-out"
                         >
                           <span>Explore Full Specification</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -111,7 +118,7 @@ export default function InteractiveServices() {
           <div className="lg:col-span-6">
             <div
               key={activeService.slug}
-              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl bg-brand-black-surface animate-fade-in"
+              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(14,14,15,0.06)] bg-[#0E0E0F] animate-fade-in"
             >
               {/* Dynamic Image / Footage */}
               <Image
@@ -124,7 +131,7 @@ export default function InteractiveServices() {
               />
 
               {/* Cinematic Vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E0F]/80 via-transparent to-transparent pointer-events-none" />
 
               {/* Camera Viewfinder Overlay */}
               <ViewfinderHUD
@@ -133,15 +140,15 @@ export default function InteractiveServices() {
               />
 
               {/* Lower Overlay Badge */}
-              <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between text-xs font-mono">
-                <span className="text-brand-white bg-brand-black/80 backdrop-blur-md px-3 py-1 rounded border border-brand-teal/50">
+              <div className="absolute bottom-5 left-5 right-5 z-20 flex items-center justify-between text-xs font-mono">
+                <span className="text-[var(--white-on-dark)] bg-[#0E0E0F]/80 backdrop-blur-md px-3 py-1 rounded-[2px] border border-[var(--line)]/30">
                   {activeService.shortTitle} Cinema Frame
                 </span>
                 <Link
                   href={`/services/${activeService.slug}`}
-                  className="bg-brand-gold text-white font-semibold px-3 py-1 rounded hover:bg-brand-gold-light transition-colors uppercase tracking-wider text-xs shadow-md"
+                  className="bg-[var(--gold)] text-[var(--ink)] font-medium px-3.5 py-1.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out uppercase tracking-[0.12em] text-[11px] shadow-sm"
                 >
-                  View Vertical Specs
+                  View Specs
                 </Link>
               </div>
             </div>
