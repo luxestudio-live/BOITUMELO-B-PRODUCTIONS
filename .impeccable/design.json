@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T02:03:00.000Z",
+  "title": "Design System: Boitumelo B Productions",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Warm Gold",
+        "canonical": "#CB8D44",
+        "tonalRamp": [
+          "#3A230A",
+          "#5C3A13",
+          "#935F24",
+          "#CB8D44",
+          "#DFA764",
+          "#EBC28E",
+          "#F4DCBA",
+          "#FAF3E8"
+        ]
+      },
+      "primary-light": {
+        "role": "primary",
+        "displayName": "Radiant Amber",
+        "canonical": "#E2A65F",
+        "tonalRamp": [
+          "#4A2C0D",
+          "#704417",
+          "#A86927",
+          "#CB8D44",
+          "#E2A65F",
+          "#ECC18E",
+          "#F6DDC0",
+          "#FCF6EE"
+        ]
+      },
+      "primary-dark": {
+        "role": "primary",
+        "displayName": "Deep Bronze",
+        "canonical": "#9F6C2E",
+        "tonalRamp": [
+          "#261706",
+          "#4A2E0E",
+          "#724819",
+          "#9F6C2E",
+          "#BC8340",
+          "#D5A367",
+          "#ECC79B",
+          "#F8EAD9"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Letterbox Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#070C0E",
+          "#0F171A",
+          "#1C2528",
+          "#2D393D",
+          "#4A575B",
+          "#7C8B90",
+          "#B5C0C4"
+        ]
+      },
+      "surface-deep": {
+        "role": "neutral",
+        "displayName": "Atmospheric Deep Teal",
+        "canonical": "#081215",
+        "tonalRamp": [
+          "#04090B",
+          "#081215",
+          "#102127",
+          "#1B343D",
+          "#284E5B",
+          "#3B7285",
+          "#5B9CB4",
+          "#A7D0DF"
+        ]
+      },
+      "surface-card": {
+        "role": "neutral",
+        "displayName": "Card Surface Black",
+        "canonical": "#070C0E",
+        "tonalRamp": [
+          "#030607",
+          "#070C0E",
+          "#111A1D",
+          "#1D2B30",
+          "#2E4148",
+          "#47616A",
+          "#6F8F99",
+          "#B6CBD1"
+        ]
+      },
+      "surface-teal": {
+        "role": "neutral",
+        "displayName": "Grading Suite Teal",
+        "canonical": "#183036",
+        "tonalRamp": [
+          "#081215",
+          "#0E1D21",
+          "#183036",
+          "#24434B",
+          "#37616C",
+          "#548694",
+          "#8EAFB9",
+          "#D8E4E7"
+        ]
+      },
+      "border-subtle": {
+        "role": "neutral",
+        "displayName": "Precision Border Teal",
+        "canonical": "#24434B",
+        "tonalRamp": [
+          "#0D1A1D",
+          "#172D32",
+          "#24434B",
+          "#335D67",
+          "#467B88",
+          "#63A0AF",
+          "#91C4D0",
+          "#D4EAEF"
+        ]
+      },
+      "text-display": {
+        "role": "neutral",
+        "displayName": "Pure White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#1A1D1E",
+          "#3B3E40",
+          "#636769",
+          "#8E9294",
+          "#B8BCBE",
+          "#D8DCDE",
+          "#EEEEF0",
+          "#FFFFFF"
+        ]
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Secondary Body Silver",
+        "canonical": "#C3CDD0",
+        "tonalRamp": [
+          "#1E2426",
+          "#3D474A",
+          "#647377",
+          "#8F9FA3",
+          "#C3CDD0",
+          "#D6DFE1",
+          "#E8EFF0",
+          "#F6FAFA"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Muted Metadata Grey",
+        "canonical": "#8E9DA1",
+        "tonalRamp": [
+          "#161A1B",
+          "#2F3638",
+          "#515C5F",
+          "#738185",
+          "#8E9DA1",
+          "#ADC0C4",
+          "#CFDDE0",
+          "#EFF5F6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display Titles",
+        "purpose": "Hero statements and major cinematic acts set in uppercase with authoritative letter-spacing."
+      },
+      "headline": {
+        "displayName": "Editorial Headlines",
+        "purpose": "Major section divisions and project titles set in balanced roman serif."
+      },
+      "title": {
+        "displayName": "Card & Panel Titles",
+        "purpose": "Crisp medium-weight titles for services, case studies, and structured panels."
+      },
+      "body": {
+        "displayName": "Body & Narrative Prose",
+        "purpose": "Long-form editorial paragraphs, methodology explanations, and narrative descriptions constrained to 65–75ch."
+      },
+      "label": {
+        "displayName": "HUD & Metadata Labels",
+        "purpose": "All-caps tracking for camera telemetry, category chips, timecodes, and interactive button text."
+      },
+      "caption": {
+        "displayName": "Technical Caption",
+        "purpose": "11px tracking for camera settings, status notes, and secondary metadata."
+      },
+      "micro": {
+        "displayName": "Micro Badges & HUD Telemetry",
+        "purpose": "10px monospace figures for live timecodes and camera badges."
+      }
+    },
+    "shadows": [
+      {
+        "name": "glow-amber",
+        "value": "0 0 35px rgba(203, 141, 68, 0.4), 0 0 14px rgba(203, 141, 68, 0.2)",
+        "purpose": "Ambient tungsten halo projecting from focused interactive triggers and play buttons."
+      },
+      {
+        "name": "cinematic-deep",
+        "value": "0 25px 70px -15px rgba(0, 0, 0, 0.9)",
+        "purpose": "Heavy elevation shadow for full-screen video lightbox modals and floating booking drawers."
+      },
+      {
+        "name": "card-lift",
+        "value": "0 8px 30px rgba(0, 0, 0, 0.6)",
+        "purpose": "Subtle surface lift on project card hover."
+      }
+    ],
+    "motion": [
+      {
+        "name": "cinematic-ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Decelerated inertial easing mimicking heavy high-precision cinema camera rigs."
+      },
+      {
+        "name": "cinematic-slow",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Slow deliberate pacing for atmospheric reveal animations and film strip motion."
+      },
+      {
+        "name": "duration-instant",
+        "value": "150ms",
+        "purpose": "Immediate feedback on button and interactive toggle hover states."
+      },
+      {
+        "name": "duration-flow",
+        "value": "400ms",
+        "purpose": "Smooth crossfade transitions between filtered categories and video tabs."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary conversion button with warm gold fill, letterspaced typography, and amber hover bloom.",
+      "html": "<button class=\"ds-btn-primary\"><span class=\"ds-btn-text\">START A CONVERSATION</span><svg class=\"ds-btn-icon\" viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #CB8D44; color: #000000; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #CB8D44; border-radius: 2px; cursor: pointer; text-decoration: none; min-height: 48px; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background-color: #E2A65F; border-color: #E2A65F; transform: translateY(-1px); box-shadow: 0 0 20px rgba(203, 141, 68, 0.4); } .ds-btn-primary:active { transform: translateY(0); background-color: #9F6C2E; } .ds-btn-primary:focus-visible { outline: 2px solid #CB8D44; outline-offset: 3px; } .ds-btn-icon { transition: transform 0.2s ease; } .ds-btn-primary:hover .ds-btn-icon { transform: translateX(3px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost button with precision 1px teal border, pure white text, and grading suite teal fill on hover.",
+      "html": "<button class=\"ds-btn-secondary\">EXPLORE THE ARCHIVE</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; background-color: transparent; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #24434B; border-radius: 2px; cursor: pointer; text-decoration: none; min-height: 48px; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { background-color: #183036; border-color: #CB8D44; color: #E2A65F; } .ds-btn-secondary:active { background-color: #0E1D21; } .ds-btn-secondary:focus-visible { outline: 2px solid #CB8D44; outline-offset: 3px; }"
+    },
+    {
+      "name": "Film Card",
+      "kind": "card",
+      "refersTo": "card-film",
+      "description": "Architectural project card featuring 16:9 media aperture, precision teal border, and hover scale.",
+      "html": "<div class=\"ds-film-card\"><div class=\"ds-card-media\"><div class=\"ds-card-badge\">24 FPS / ANAMORPHIC</div></div><div class=\"ds-card-content\"><div class=\"ds-card-category\">COMMERCIAL CINEMA</div><h3 class=\"ds-card-title\">SOLAR ECLIPSE 4WD ODYSSEY</h3><p class=\"ds-card-desc\">Remote Outback commercial shot across the rugged terrain of the Flinders Ranges.</p></div></div>",
+      "css": ".ds-film-card { background-color: #070C0E; border: 1px solid #24434B; border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; } .ds-film-card:hover { border-color: #CB8D44; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(203, 141, 68, 0.15); } .ds-card-media { position: relative; aspect-ratio: 16/9; background-color: #081215; background-image: radial-gradient(#183036 1px, transparent 0); background-size: 16px 16px; border-bottom: 1px solid #24434B; } .ds-card-badge { position: absolute; top: 12px; left: 12px; background: rgba(0, 0, 0, 0.85); border: 1px solid #24434B; color: #8E9DA1; font-family: monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; padding: 4px 8px; border-radius: 2px; } .ds-card-content { padding: 20px; } .ds-card-category { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #CB8D44; text-transform: uppercase; margin-bottom: 8px; } .ds-card-title { font-family: Copperplate, Cinzel, serif; font-size: 18px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 8px 0; transition: color 0.2s ease; } .ds-film-card:hover .ds-card-title { color: #E2A65F; } .ds-card-desc { font-family: Inter, sans-serif; font-size: 14px; line-height: 1.5; color: #C3CDD0; margin: 0; }"
+    },
+    {
+      "name": "Text Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Dark cinema form input with high contrast text, minimum 48px touch height, and warm gold focus ring.",
+      "html": "<div class=\"ds-input-group\"><label class=\"ds-input-label\" for=\"demo-input\">DIRECTOR NAME</label><input id=\"demo-input\" class=\"ds-input-field\" type=\"text\" placeholder=\"e.g. Boitumelo B\" value=\"\" /></div>",
+      "css": ".ds-input-group { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 400px; } .ds-input-label { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #8E9DA1; text-transform: uppercase; } .ds-input-field { background-color: #070C0E; border: 1px solid #24434B; border-radius: 4px; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 16px; padding: 12px 16px; min-height: 48px; box-sizing: border-box; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input-field::placeholder { color: #8E9DA1; opacity: 0.6; } .ds-input-field:hover { border-color: #3A5C65; } .ds-input-field:focus { border-color: #CB8D44; box-shadow: 0 0 0 1px #CB8D44, 0 0 12px rgba(203, 141, 68, 0.25); }"
+    },
+    {
+      "name": "Viewfinder HUD",
+      "kind": "custom",
+      "refersTo": "signature-viewfinder",
+      "description": "Signature camera monitor framing reticle with corner alignment marks and live camera telemetry.",
+      "html": "<div class=\"ds-viewfinder-hud\"><div class=\"ds-hud-bracket ds-hud-tl\"></div><div class=\"ds-hud-bracket ds-hud-tr\"></div><div class=\"ds-hud-bracket ds-hud-bl\"></div><div class=\"ds-hud-bracket ds-hud-br\"></div><div class=\"ds-hud-header\"><div class=\"ds-hud-rec\"><span class=\"ds-rec-dot\"></span><span class=\"ds-rec-text\">REC</span></div><div class=\"ds-hud-timecode\">01:24:18:04</div></div><div class=\"ds-hud-footer\"><div class=\"ds-hud-spec\">ARRI LogC4</div><div class=\"ds-hud-spec\">2.39:1 SCOPE</div><div class=\"ds-hud-spec\">24.000 FPS</div></div></div>",
+      "css": ".ds-viewfinder-hud { position: relative; width: 100%; max-width: 480px; aspect-ratio: 2.39/1; background-color: #000000; border: 1px solid rgba(36, 67, 75, 0.4); padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; } .ds-hud-bracket { position: absolute; width: 12px; height: 12px; border-color: #CB8D44; border-style: solid; } .ds-hud-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; } .ds-hud-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; } .ds-hud-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; } .ds-hud-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; } .ds-hud-header { display: flex; justify-content: space-between; align-items: center; font-family: monospace; font-size: 11px; } .ds-hud-rec { display: flex; align-items: center; gap: 6px; color: #FFFFFF; font-weight: 700; letter-spacing: 0.1em; } .ds-rec-dot { width: 8px; height: 8px; background-color: #FF4D4D; border-radius: 50%; display: inline-block; } .ds-rec-text { color: #FF4D4D; } .ds-hud-timecode { color: #CB8D44; font-weight: 600; letter-spacing: 0.1em; } .ds-hud-footer { display: flex; justify-content: space-between; font-family: monospace; font-size: 10px; color: #8E9DA1; letter-spacing: 0.08em; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Category archive filter with 2px corner radius and active gold highlight underline.",
+      "html": "<div class=\"ds-chip-group\"><button class=\"ds-filter-chip ds-chip-active\">ALL FILMS</button><button class=\"ds-filter-chip\">DOCUMENTARY</button><button class=\"ds-filter-chip\">COMMERCIAL</button></div>",
+      "css": ".ds-chip-group { display: flex; gap: 8px; align-items: center; } .ds-filter-chip { background-color: #070C0E; border: 1px solid #24434B; color: #C3CDD0; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; border-radius: 2px; cursor: pointer; min-height: 36px; transition: all 0.2s ease; } .ds-filter-chip:hover { border-color: #CB8D44; color: #FFFFFF; } .ds-chip-active { background-color: #183036; border-color: #CB8D44; color: #CB8D44; font-weight: 700; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Anamorphic Archive",
+    "overview": "Boitumelo B Productions exists as an elite digital exhibition space capturing the craft, gravity, and emotional resonance of prestige Australian visual cinema. The design evokes the tactile atmosphere of a private cinema grading suite: unyielding black surfaces, calibrated warm tungsten highlights, physical celluloid textures, and surgical optical precision. Every interaction is paced with cinematic intentionality, prioritising patient revelation and editorial authority over rapid digital noise.\n\nThe interface rejects commoditised video agency tropes—eschewing playful pastels, floating pastel cards, generic software-as-a-service gradients, and excessive bubbly corner radii. Instead, it embraces high-contrast letterboxed frames, 2.39:1 anamorphic ratios, optical lens calibration marks, and measured typography that honours both narrative documentary depth and commercial visual spectacle.",
+    "keyCharacteristics": [
+      "Cinematic Letterboxing: Pure black margins (#000000) and structured 2.39:1 widescreen apertures that elevate video works into genuine theatrical events.",
+      "Tungsten & Teal Contrast: Deep atmospheric ocean-slate surfaces (#183036) illuminated by focused warm gold accents (#CB8D44), mirroring traditional film colour timing.",
+      "Surgical Optical Precision: Micro 2px chamfers, razor-thin borders, and discrete viewfinder HUD framing brackets that evoke high-end ARRI and RED cinema cameras.",
+      "Uncompromising Editorial Rigour: Deliberate typography balancing display roman elegance with high-legibility tabular metadata and zero single-word heading orphans."
+    ],
+    "rules": [
+      {
+        "name": "The Rarity of Gold Rule",
+        "body": "Warm Gold (#CB8D44) must never occupy more than 10% of any given screen surface. Its prestige and directional power depend entirely on its scarcity. When everything glows gold, nothing commands attention.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Floor Rule",
+        "body": "All text elements against dark surfaces must meet or exceed WCAG 2.2 AA contrast standards (minimum 4.5:1 for body copy; pure white #FFFFFF achieves 21:1 against #000000, and #C3CDD0 delivers 11.2:1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Balanced Heading Rule",
+        "body": "All headings (h1 through h6) must enforce text-wrap: balance to prevent awkward typography line breaks and single-word orphans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Monospace Timecode Rule",
+        "body": "All technical metadata, frame rates, lens focal lengths, and video timecodes must render in tabular monospace figures to prevent layout jitter during scrub and playback.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal Depth Rule",
+        "body": "Depth is created through value contrast and light bloom—never through heavy artificial black drop-shadows on flat black surfaces. If an element must lift, illuminate its edge with border luminance (#24434B) or ambient gold bloom (rgba(203, 141, 68, 0.2)).",
+        "section": "elevation"
+      },
+      {
+        "name": "The Lens-Grade Precision Rule",
+        "body": "Corner radii must never exceed 4px on rectangular surfaces. Organic, playful, or bubbly shapes dilute the technical gravitas of the studio and are strictly forbidden.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do use Australian English spelling across all interface copy, metadata, and studio communications (specialising, visualise, colour, organisation, rigour, calibrated).",
+      "Do enforce text-wrap: balance on all headings and text-wrap: pretty on all editorial body paragraphs.",
+      "Do maintain a minimum touch target size of 44×44px (ideally 48px) for all interactive buttons, links, and form elements.",
+      "Do preserve the 10% rarity cap on Warm Gold (#CB8D44), reserving it for moments requiring genuine user focus or conversion.",
+      "Do use tabular monospace figures for timecodes, durations, coordinates, and technical film specifications.",
+      "Do respect user system motion preferences via @media (prefers-reduced-motion: reduce), disabling large transforms while maintaining instant visual state feedback."
+    ],
+    "donts": [
+      "Don't introduce generic SaaS pastel colours (purple, pink, indigo, neon blue) or cheerful rounded bubble cards.",
+      "Don't use decorative drop-shadows on black surfaces; convey depth through subtle lighting gradients and border illumination.",
+      "Don't permit headings to wrap with a single dangling word on the final line (orphans).",
+      "Don't render form inputs with font sizes below 16px on mobile viewports to avoid triggering iOS Safari viewport zooming.",
+      "Don't use animated pulsing status dots for purely decorative reasons; reserve status indicators for actual live camera states or audio playback.",
+      "Don't autoplay audio under any circumstance. All video playback must initialise muted with clear, accessible user audio toggles."
+    ]
+  }
+}
