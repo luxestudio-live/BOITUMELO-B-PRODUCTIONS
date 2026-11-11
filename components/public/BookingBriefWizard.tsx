@@ -150,7 +150,7 @@ STUDIO        : Melbourne & Sydney • Australia
 
   if (isCompleted) {
     return (
-      <div className="bg-brand-black-elevated border border-brand-gold/60 p-8 sm:p-14 rounded-sm text-center space-y-6 max-w-3xl mx-auto animate-fade-in shadow-2xl">
+      <div className="bg-white border border-brand-gold/60 p-8 sm:p-14 rounded-sm text-center space-y-6 max-w-3xl mx-auto animate-fade-in shadow-xl">
         <div className="w-20 h-20 rounded-full bg-brand-teal text-brand-gold flex items-center justify-center mx-auto border border-brand-gold/50">
           <CheckCircle2 className="w-10 h-10" />
         </div>
@@ -159,90 +159,90 @@ STUDIO        : Melbourne & Sydney • Australia
           <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
             Production Brief Recorded
           </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white">
+          <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-teal">
             Brief Received. Discovery Consultation Slated.
           </h2>
-          <p className="text-sm sm:text-base text-brand-gray-light max-w-lg mx-auto font-light leading-relaxed">
-            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your creative brief for <strong className="text-brand-white">{formData.discipline}</strong> has been logged with our Melbourne & Sydney creative team. We will review your materials and confirm your session within 24 business hours.
+          <p className="text-sm sm:text-base text-brand-teal/80 max-w-lg mx-auto font-light leading-relaxed">
+            Thank you, <strong className="text-brand-teal font-semibold">{formData.name}</strong>. Your creative brief for <strong className="text-brand-teal font-semibold">{formData.discipline}</strong> has been logged with our Melbourne & Sydney creative team. We will review your materials and confirm your session within 24 business hours.
           </p>
         </div>
 
         {/* Authentic 35mm Production Clapperboard Slate */}
-        <div className="bg-brand-black border-2 border-brand-teal/60 rounded-sm overflow-hidden text-left max-w-xl mx-auto shadow-2xl">
+        <div className="bg-brand-teal border-2 border-brand-gold rounded-sm overflow-hidden text-left max-w-xl mx-auto shadow-2xl text-white">
           {/* Top Diagonal Clapper Arm */}
-          <div className="h-8 bg-brand-black border-b-2 border-brand-teal/60 flex items-stretch overflow-hidden">
+          <div className="h-8 bg-brand-teal border-b-2 border-brand-gold/60 flex items-stretch overflow-hidden">
             {[...Array(12)].map((_, i) => (
               <div
                 key={i}
                 className={`flex-1 transform -skew-x-12 ${
-                  i % 2 === 0 ? "bg-brand-gold" : "bg-brand-black"
+                  i % 2 === 0 ? "bg-brand-gold" : "bg-brand-teal"
                 }`}
               />
             ))}
           </div>
 
           {/* Slate Telemetry Header */}
-          <div className="grid grid-cols-4 border-b border-brand-teal/40 bg-brand-teal-deep/90 text-center font-mono text-[11px] py-2 text-brand-gray-light divide-x divide-brand-teal/40">
+          <div className="grid grid-cols-4 border-b border-brand-gold/30 bg-brand-teal-deep text-center font-mono text-[11px] py-2 text-brand-teal-light divide-x divide-brand-gold/30">
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">PROD NO.</span>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">PROD NO.</span>
               <span className="font-semibold text-brand-gold">#BB-2026-X9</span>
             </div>
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">SCENE</span>
-              <span className="font-semibold text-brand-white">BRIEF</span>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">SCENE</span>
+              <span className="font-semibold text-white">BRIEF</span>
             </div>
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">TAKE</span>
-              <span className="font-semibold text-brand-white">01</span>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">TAKE</span>
+              <span className="font-semibold text-white">01</span>
             </div>
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-gray">SOUND</span>
+              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">SOUND</span>
               <span className="font-semibold text-brand-gold">SYNC</span>
             </div>
           </div>
 
           {/* Slate Body Fields */}
-          <div className="p-6 space-y-3 font-mono text-xs bg-brand-black/90 divide-y divide-brand-teal/20">
+          <div className="p-6 space-y-3 font-mono text-xs bg-brand-teal divide-y divide-brand-teal-light/20">
             <div className="flex justify-between items-baseline pt-1">
-              <span className="text-brand-gray uppercase tracking-wider text-[11px]">PRODUCTION:</span>
-              <span className="text-brand-white font-medium text-right">{formData.discipline}</span>
+              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">PRODUCTION:</span>
+              <span className="text-white font-medium text-right">{formData.discipline}</span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-gray uppercase tracking-wider text-[11px]">COLLABORATOR:</span>
-              <span className="text-brand-white font-medium text-right">
+              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">COLLABORATOR:</span>
+              <span className="text-white font-medium text-right">
                 {formData.name} {formData.company ? `• ${formData.company}` : ""}
               </span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-gray uppercase tracking-wider text-[11px]">DISCOVERY SESSION:</span>
+              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">DISCOVERY SESSION:</span>
               <span className="text-brand-gold font-semibold text-right">
                 {formData.selectedDate} at {formData.selectedTimeSlot}
               </span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-gray uppercase tracking-wider text-[11px]">LOCATION / BASE:</span>
-              <span className="text-brand-gray-light text-right">{formData.location}</span>
+              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">LOCATION / BASE:</span>
+              <span className="text-white/80 text-right">{formData.location}</span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-gray uppercase tracking-wider text-[11px]">BUDGET TIER:</span>
-              <span className="text-brand-gray-light text-right">{formData.budget}</span>
+              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">BUDGET TIER:</span>
+              <span className="text-white/80 text-right">{formData.budget}</span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-gray uppercase tracking-wider text-[11px]">STATUS:</span>
+              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">STATUS:</span>
               <span className="text-brand-gold font-bold text-right tracking-wider uppercase">SLATED FOR REVIEW</span>
             </div>
           </div>
 
           {/* Action Ribbon inside Slate */}
-          <div className="p-3 bg-brand-teal-deep/90 border-t border-brand-teal/40 flex items-center justify-between text-xs font-mono">
-            <span className="text-[11px] text-brand-gray">Save this slate to your records:</span>
+          <div className="p-3 bg-brand-teal-deep border-t border-brand-gold/30 flex items-center justify-between text-xs font-mono">
+            <span className="text-[11px] text-brand-teal-light/80">Save this slate to your records:</span>
             <button
               type="button"
               onClick={handleCopySlate}
               className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
                 hasCopied
-                  ? "bg-brand-gold text-brand-black"
-                  : "bg-brand-teal/60 text-brand-gold hover:bg-brand-gold hover:text-brand-black border border-brand-teal"
+                  ? "bg-brand-gold text-white"
+                  : "bg-brand-teal text-brand-gold hover:bg-brand-gold hover:text-white border border-brand-gold/40"
               }`}
               aria-label="Copy production brief slate to clipboard"
             >
@@ -261,14 +261,14 @@ STUDIO        : Melbourne & Sydney • Australia
           </div>
         </div>
 
-        <p className="text-xs text-brand-gray max-w-md mx-auto">
+        <p className="text-xs text-brand-teal/70 max-w-md mx-auto">
           *Creative discovery calls are complementary and obligation-free. Our production coordinator will email your calendar invite and video link directly.
         </p>
 
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all"
+            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
           >
             <span>Return to Portfolio</span>
             <ArrowRight className="w-4 h-4" />
@@ -280,7 +280,7 @@ STUDIO        : Melbourne & Sydney • Australia
               setCurrentStep(1);
               setFormData(initialWizardState);
             }}
-            className="text-xs uppercase font-mono tracking-widest text-brand-gray-light hover:text-brand-white px-4 py-3"
+            className="text-xs uppercase font-mono tracking-widest text-brand-teal/70 hover:text-brand-teal px-4 py-3"
           >
             Create Another Brief
           </button>
@@ -293,8 +293,8 @@ STUDIO        : Melbourne & Sydney • Australia
     <div className="max-w-4xl mx-auto space-y-10">
       {/* Step Indicator Bar */}
       <div className="space-y-3">
-        <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.2em] text-brand-gray-light">
-          <span className="text-brand-gold">
+        <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.2em] text-brand-teal/80">
+          <span className="text-brand-gold font-semibold">
             Step 0{currentStep} of 0{totalSteps}
           </span>
           <span>
@@ -306,7 +306,7 @@ STUDIO        : Melbourne & Sydney • Australia
           </span>
         </div>
         {/* Progress Bar Track */}
-        <div className="w-full h-1 bg-brand-black-elevated border border-brand-teal/30 rounded-full overflow-hidden">
+        <div className="w-full h-1.5 bg-brand-teal/10 border border-brand-teal/20 rounded-full overflow-hidden">
           <div
             className="h-full bg-brand-gold transition-all duration-500 ease-out"
             style={{ width: `${(currentStep / totalSteps) * 100}%` }}
@@ -315,15 +315,15 @@ STUDIO        : Melbourne & Sydney • Australia
       </div>
 
       {/* Main Form Step Card */}
-      <div className="bg-brand-black-elevated/70 border border-brand-teal/40 p-4 sm:p-8 md:p-12 rounded-sm shadow-2xl relative">
+      <div className="bg-white border border-brand-teal/20 p-4 sm:p-8 md:p-12 rounded-sm shadow-xl relative">
         {/* STEP 1: What are we creating? */}
         {currentStep === 1 && (
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                 What are we creating together?
               </h2>
-              <p className="text-sm text-brand-gray mt-2 font-light">
+              <p className="text-sm text-brand-teal/70 mt-2 font-light">
                 Select the primary production discipline that best matches your project&apos;s ambition.
               </p>
             </div>
@@ -364,22 +364,22 @@ STUDIO        : Melbourne & Sydney • Australia
                     onClick={() => setFormData({ ...formData, discipline: item.id })}
                     className={`p-6 text-left border rounded-sm transition-all duration-300 flex flex-col justify-between ${
                       isSelected
-                        ? "border-brand-gold bg-brand-teal/40 shadow-md ring-1 ring-brand-gold/60"
-                        : "border-brand-teal/40 bg-brand-black/50 hover:border-brand-gold/40"
+                        ? "border-brand-gold bg-brand-teal text-white shadow-md ring-1 ring-brand-gold"
+                        : "border-brand-teal/20 bg-[#F8F9FA] hover:border-brand-gold hover:bg-white text-brand-teal"
                     }`}
                   >
                     <div className="flex items-center justify-between mb-3">
                       <item.icon
-                        className={`w-5 h-5 ${isSelected ? "text-brand-gold" : "text-brand-gray"}`}
+                        className={`w-5 h-5 ${isSelected ? "text-brand-gold" : "text-brand-teal/70"}`}
                       />
                       {isSelected && (
                         <CheckCircle2 className="w-4 h-4 text-brand-gold" />
                       )}
                     </div>
-                    <span className="font-display font-medium text-base text-brand-white block">
+                    <span className={`font-display font-medium text-base block ${isSelected ? "text-white" : "text-brand-teal"}`}>
                       {item.id}
                     </span>
-                    <p className="text-xs text-brand-gray mt-2 leading-relaxed font-light">
+                    <p className={`text-xs mt-2 leading-relaxed font-light ${isSelected ? "text-white/80" : "text-brand-teal/70"}`}>
                       {item.desc}
                     </p>
                   </button>
@@ -387,7 +387,7 @@ STUDIO        : Melbourne & Sydney • Australia
               })}
             </div>
             {errors.discipline && (
-              <p className="text-xs text-red-400 font-mono">{errors.discipline}</p>
+              <p className="text-xs text-red-600 font-mono">{errors.discipline}</p>
             )}
           </div>
         )}
@@ -396,16 +396,16 @@ STUDIO        : Melbourne & Sydney • Australia
         {currentStep === 2 && (
           <div className="space-y-6 animate-fade-in">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                 Tell us your story.
               </h2>
-              <p className="text-sm text-brand-gray mt-2 font-light">
+              <p className="text-sm text-brand-teal/70 mt-2 font-light">
                 Give us the emotional and narrative heartbeat of what you want viewers to feel.
               </p>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="description" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+              <label htmlFor="description" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                 Project Concept & Logline <span className="text-brand-gold">*</span>
               </label>
               <textarea
@@ -415,10 +415,10 @@ STUDIO        : Melbourne & Sydney • Australia
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="What is the story, subject matter, or song about? What makes it unique?"
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
               />
               {errors.description && (
-                <p role="alert" aria-live="polite" className="text-xs text-red-400 font-mono">
+                <p role="alert" aria-live="polite" className="text-xs text-red-600 font-mono">
                   {errors.description}
                 </p>
               )}
@@ -426,7 +426,7 @@ STUDIO        : Melbourne & Sydney • Australia
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="goals" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                <label htmlFor="goals" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                   Creative Ambition / Core Objective
                 </label>
                 <input
@@ -436,12 +436,12 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.creativeGoals}
                   onChange={(e) => setFormData({ ...formData, creativeGoals: e.target.value })}
                   placeholder="e.g. Festival premiere, viral music release, Series-B fundraise"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="audience" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                <label htmlFor="audience" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                   Intended Audience
                 </label>
                 <input
@@ -451,13 +451,13 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.audience}
                   onChange={(e) => setFormData({ ...formData, audience: e.target.value })}
                   placeholder="e.g. Australian music fans, enterprise buyers, cultural patrons"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="refs" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+              <label htmlFor="refs" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/70 font-semibold">
                 Reference Links / Visual Moodboards (Optional)
               </label>
               <input
@@ -467,7 +467,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 value={formData.referenceLinks}
                 onChange={(e) => setFormData({ ...formData, referenceLinks: e.target.value })}
                 placeholder="Vimeo, YouTube, or Pinterest links that evoke the mood you envision..."
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
               />
             </div>
           </div>
@@ -477,24 +477,24 @@ STUDIO        : Melbourne & Sydney • Australia
         {currentStep === 3 && (
           <div className="space-y-6 animate-fade-in">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                 Project details & practical parameters.
               </h2>
-              <p className="text-sm text-brand-gray mt-2 font-light">
+              <p className="text-sm text-brand-teal/70 mt-2 font-light">
                 Clarifying timeline, geographical parameters, and realistic production resources.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="timeline" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                <label htmlFor="timeline" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                   Target Timeline / Delivery Deadline
                 </label>
                 <select
                   id="timeline"
                   value={formData.timeline}
                   onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 >
                   <option value="1-4 weeks">Urgent / Within 1 month</option>
                   <option value="1-3 months">Within 1–3 months</option>
@@ -504,7 +504,7 @@ STUDIO        : Melbourne & Sydney • Australia
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="location" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                <label htmlFor="location" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                   Intended Filming Location(s)
                 </label>
                 <input
@@ -514,20 +514,20 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                   placeholder="e.g. Melbourne VIC, Sydney NSW, Remote Outback, Studio"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="budget" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+              <label htmlFor="budget" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                 Anticipated Budget Range (AUD)
               </label>
               <select
                 id="budget"
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
               >
                 <option value="$15,000 – $25,000 AUD">$15,000 – $25,000 AUD (Focused Boutique Shoot)</option>
                 <option value="$25,000 – $50,000 AUD">$25,000 – $50,000 AUD (Standard Cinema Package)</option>
@@ -537,7 +537,7 @@ STUDIO        : Melbourne & Sydney • Australia
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="special" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+              <label htmlFor="special" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/70 font-semibold">
                 Special Requirements (Drone, Underwater, Stunts, High-Speed, etc.)
               </label>
               <textarea
@@ -547,7 +547,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 value={formData.specialRequirements}
                 onChange={(e) => setFormData({ ...formData, specialRequirements: e.target.value })}
                 placeholder="Any technical stunts, night shoots, licensed talent, or remote permits needed..."
-                className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
               />
             </div>
           </div>
@@ -557,17 +557,17 @@ STUDIO        : Melbourne & Sydney • Australia
         {currentStep === 4 && (
           <div className="space-y-6 animate-fade-in">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                 Who are we speaking with?
               </h2>
-              <p className="text-sm text-brand-gray mt-2 font-light">
+              <p className="text-sm text-brand-teal/70 mt-2 font-light">
                 Your direct contact details so our creative team can follow up.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="step4-name" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                <label htmlFor="step4-name" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                   Your Full Name <span className="text-brand-gold">*</span>
                 </label>
                 <input
@@ -578,17 +578,17 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Harrison Vance"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 />
                 {errors.name && (
-                  <p role="alert" aria-live="polite" className="text-xs text-red-400 font-mono">
+                  <p role="alert" aria-live="polite" className="text-xs text-red-600 font-mono">
                     {errors.name}
                   </p>
                 )}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="step4-email" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                <label htmlFor="step4-email" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                   Email Address <span className="text-brand-gold">*</span>
                 </label>
                 <input
@@ -599,10 +599,10 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="h.vance@company.com.au"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 />
                 {errors.email && (
-                  <p role="alert" aria-live="polite" className="text-xs text-red-400 font-mono">
+                  <p role="alert" aria-live="polite" className="text-xs text-red-600 font-mono">
                     {errors.email}
                   </p>
                 )}
@@ -611,7 +611,7 @@ STUDIO        : Melbourne & Sydney • Australia
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label htmlFor="step4-company" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+                <label htmlFor="step4-company" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/70 font-semibold">
                   Organisation / Label / Production Company (Optional)
                 </label>
                 <input
@@ -621,12 +621,12 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   placeholder="e.g. Modular Sound / Independent"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 />
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="step4-phone" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+                <label htmlFor="step4-phone" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/70 font-semibold">
                   Telephone (Optional)
                 </label>
                 <input
@@ -636,7 +636,7 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+61 400 000 000"
-                  className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-3.5 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 />
               </div>
             </div>
@@ -647,10 +647,10 @@ STUDIO        : Melbourne & Sydney • Australia
         {currentStep === 5 && (
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                 Schedule a Creative Discovery Session.
               </h2>
-              <p className="text-sm text-brand-gray mt-2 font-light">
+              <p className="text-sm text-brand-teal/70 mt-2 font-light">
                 Choose your preferred dialogue channel and select a provisional time slot to review your brief directly with our director.
               </p>
             </div>
@@ -670,35 +670,41 @@ STUDIO        : Melbourne & Sydney • Australia
                   }
                   className={`p-4 text-left border rounded-sm transition-all ${
                     formData.consultationType === opt.id
-                      ? "border-brand-gold bg-brand-teal/50 ring-1 ring-brand-gold"
-                      : "border-brand-teal/40 bg-brand-black/60 hover:border-brand-gold/40"
+                      ? "border-brand-gold bg-brand-teal text-white ring-1 ring-brand-gold shadow-md"
+                      : "border-brand-teal/20 bg-[#F8F9FA] hover:border-brand-gold hover:bg-white text-brand-teal"
                   }`}
                 >
-                  <span className="text-xs font-mono uppercase tracking-wider text-brand-white block">
+                  <span className={`text-xs font-mono uppercase tracking-wider block font-semibold ${
+                    formData.consultationType === opt.id ? "text-brand-gold" : "text-brand-teal"
+                  }`}>
                     {opt.label}
                   </span>
-                  <p className="text-xs text-brand-gray-light mt-1">{opt.desc}</p>
+                  <p className={`text-xs mt-1 ${
+                    formData.consultationType === opt.id ? "text-white/80" : "text-brand-teal/70"
+                  }`}>
+                    {opt.desc}
+                  </p>
                 </button>
               ))}
             </div>
 
             {/* Frontend Demo Calendar & Slot Picker */}
-            <div className="bg-brand-black border border-brand-teal/50 p-4 sm:p-6 rounded-sm space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-brand-teal/30">
+            <div className="bg-[#F8F9FA] border border-brand-teal/20 p-4 sm:p-6 rounded-sm space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-brand-teal/20">
                 <div className="flex items-center space-x-2 text-brand-gold">
                   <CalendarIcon className="w-4 h-4" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">
                     Select a Discovery Call Slot
                   </span>
                 </div>
-                <span className="text-xs font-mono text-brand-gray-light uppercase">
+                <span className="text-xs font-mono text-brand-teal/70 uppercase">
                   Times in AEDT (Melbourne / Sydney)
                 </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <span className="text-xs font-mono text-brand-gray-light block mb-2">
+                  <span className="text-xs font-mono text-brand-teal/80 block mb-2 font-medium">
                     Available Consultation Dates:
                   </span>
                   <div className="grid grid-cols-3 gap-2">
@@ -712,8 +718,8 @@ STUDIO        : Melbourne & Sydney • Australia
                             onClick={() => setFormData({ ...formData, selectedDate: date })}
                             className={`p-2.5 text-center text-xs font-mono rounded-sm border transition-colors ${
                               isSelected
-                                ? "bg-brand-gold text-brand-black font-semibold border-brand-gold"
-                                : "bg-brand-black-elevated border-brand-teal/40 text-brand-white hover:border-brand-gold/50"
+                                ? "bg-brand-gold text-white font-semibold border-brand-gold shadow-sm"
+                                : "bg-white border-brand-teal/20 text-brand-teal hover:border-brand-gold/50"
                             }`}
                           >
                             {date.slice(5)}
@@ -725,7 +731,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 </div>
 
                 <div>
-                  <span className="text-xs font-mono text-brand-gray-light block mb-2">
+                  <span className="text-xs font-mono text-brand-teal/80 block mb-2 font-medium">
                     Available Slots:
                   </span>
                   <div className="grid grid-cols-2 gap-2">
@@ -739,8 +745,8 @@ STUDIO        : Melbourne & Sydney • Australia
                             onClick={() => setFormData({ ...formData, selectedTimeSlot: slot })}
                             className={`p-2.5 text-center text-xs font-mono rounded-sm border transition-colors ${
                               isSelected
-                                ? "bg-brand-gold text-brand-black font-semibold border-brand-gold"
-                                : "bg-brand-black-elevated border-brand-teal/40 text-brand-white hover:border-brand-gold/50"
+                                ? "bg-brand-gold text-white font-semibold border-brand-gold shadow-sm"
+                                : "bg-white border-brand-teal/20 text-brand-teal hover:border-brand-gold/50"
                             }`}
                           >
                             {slot}
@@ -752,7 +758,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 </div>
               </div>
 
-              <div className="text-xs font-mono text-brand-gray-light pt-2 border-t border-brand-teal/20">
+              <div className="text-xs font-mono text-brand-teal/70 pt-2 border-t border-brand-teal/15">
                 *Discovery sessions are 30-minute introductory conversations held via Google Meet or phone. There is no fee or commitment required.
               </div>
             </div>
@@ -760,12 +766,12 @@ STUDIO        : Melbourne & Sydney • Australia
         )}
 
         {/* Step Navigation Controls (Back & Next / Submit) */}
-        <div className="mt-10 pt-6 border-t border-brand-teal/30 flex items-center justify-between">
+        <div className="mt-10 pt-6 border-t border-brand-teal/20 flex items-center justify-between">
           {currentStep > 1 ? (
             <button
               type="button"
               onClick={handleBack}
-              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider text-brand-gray hover:text-brand-white py-2 px-3 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded"
+              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider text-brand-teal/70 hover:text-brand-teal py-2 px-3 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
@@ -778,7 +784,7 @@ STUDIO        : Melbourne & Sydney • Australia
             <button
               type="button"
               onClick={handleNext}
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
             >
               <span>Continue</span>
               <ArrowRight className="w-4 h-4" />
@@ -788,7 +794,7 @@ STUDIO        : Melbourne & Sydney • Australia
               type="button"
               disabled={isSubmitting}
               onClick={handleSubmit}
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-8 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl disabled:opacity-60"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-8 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl disabled:opacity-60"
             >
               {isSubmitting ? (
                 <>

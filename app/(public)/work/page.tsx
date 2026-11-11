@@ -15,14 +15,14 @@ export default function WorkPage() {
       {/* Editorial Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.02em] leading-[1.02]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-teal tracking-[0.02em] leading-[1.02]">
             The Work Speaks.{" "}
             <span className="text-brand-gold block sm:inline font-normal">
               Stories Told in Motion.
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-200 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
+          <p className="text-lg sm:text-xl text-brand-teal/80 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             A collection of stories told through motion, imagination, and intention. Each project represents a unique collaboration crafted without creative shortcuts.
           </p>
         </div>

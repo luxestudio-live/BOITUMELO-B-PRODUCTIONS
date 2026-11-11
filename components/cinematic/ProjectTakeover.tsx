@@ -83,17 +83,17 @@ export default function ProjectTakeover() {
     <section
       ref={containerRef}
       aria-label="Featured Production Showcase"
-      className="relative bg-brand-black overflow-hidden py-16 sm:py-24 flex flex-col items-center"
+      className="relative bg-white overflow-hidden py-16 sm:py-24 flex flex-col items-center border-b border-brand-teal/15"
     >
       {/* Intro Heading */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 mb-8 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <Film className="w-4 h-4 text-brand-gold" />
-          <h2 className="text-base sm:text-lg font-display font-medium text-brand-white uppercase tracking-[0.2em]">
+          <h2 className="text-base sm:text-lg font-display font-medium text-brand-teal uppercase tracking-[0.2em]">
             Featured Production
           </h2>
         </div>
-        <span className="text-xs font-mono text-brand-gray-light hidden sm:inline">
+        <span className="text-xs font-mono text-brand-teal/70 hidden sm:inline">
           {project.location} • {project.year}
         </span>
       </div>
@@ -194,7 +194,7 @@ export default function ProjectTakeover() {
           <div className="pt-3 flex flex-wrap items-center gap-4 pointer-events-auto">
             <Link
               href={`/work/${project.slug}`}
-              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
             >
               <span>View Film Case Study</span>
               <ArrowUpRight className="w-4 h-4" />

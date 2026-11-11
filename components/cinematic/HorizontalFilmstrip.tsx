@@ -79,22 +79,22 @@ export default function HorizontalFilmstrip() {
       id="filmstrip-section"
       ref={sectionRef}
       aria-label="Scene 03: The Cinematic Filmstrip"
-      className="relative bg-brand-black-elevated overflow-hidden border-y border-brand-teal/40 pt-24 pb-12 sm:pt-28 sm:pb-16 md:py-0 md:h-screen md:flex md:flex-col md:justify-center scroll-mt-20"
+      className="relative bg-white overflow-hidden border-y border-brand-teal/15 pt-24 pb-12 sm:pt-28 sm:pb-16 md:py-0 md:h-screen md:flex md:flex-col md:justify-center scroll-mt-20"
     >
       {/* Section Heading & Viewfinder Cue */}
       <div className="px-5 sm:px-8 mb-6 md:mb-0 md:absolute md:top-8 md:left-12 z-10 flex items-center justify-between w-full md:w-auto pointer-events-auto md:pointer-events-none">
         <div className="flex items-center space-x-2.5 sm:space-x-3">
           <Film className="w-4 h-4 text-brand-gold shrink-0" />
-          <h2 className="text-xs sm:text-sm md:text-base font-display font-medium text-brand-white uppercase tracking-[0.2em]">
+          <h2 className="text-xs sm:text-sm md:text-base font-display font-medium text-brand-teal uppercase tracking-[0.2em]">
             Selected Works <span className="text-brand-gold font-normal">/ 35mm & Large Format</span>
           </h2>
         </div>
-        <span className="md:hidden text-[10px] font-mono uppercase tracking-widest text-brand-gold bg-brand-black/90 px-2.5 py-1 rounded border border-brand-teal/40 mr-1 sm:mr-4">
+        <span className="md:hidden text-[10px] font-mono uppercase tracking-widest text-brand-gold bg-brand-teal px-2.5 py-1 rounded border border-brand-teal-light mr-1 sm:mr-4">
           Archive 01–06
         </span>
       </div>
 
-      <div className="hidden md:flex absolute top-8 right-12 z-10 items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-gray-light pointer-events-none">
+      <div className="hidden md:flex absolute top-8 right-12 z-10 items-center space-x-2 text-xs font-mono uppercase tracking-widest text-brand-teal/70 pointer-events-none">
         <SlidersHorizontal className="w-3.5 h-3.5 text-brand-gold" />
         <span>Scroll Down to Pan Left ◄►</span>
       </div>
@@ -128,18 +128,18 @@ export default function HorizontalFilmstrip() {
                 onMouseLeave={() => handleMouseLeave(p.slug)}
               >
                 {/* Physical 35mm Perforation Style Bar Above Frame with responsive label truncation */}
-                <div className="flex items-center justify-between pb-2 px-1 text-[11px] sm:text-xs font-mono text-brand-gray-light gap-3">
+                <div className="flex items-center justify-between pb-2 px-1 text-[11px] sm:text-xs font-mono text-brand-teal/80 gap-3">
                   <span className="text-brand-gold font-semibold uppercase tracking-wider truncate">
                     REEL 0{idx + 1} <span className="hidden sm:inline">// {p.categoryLabel}</span>
                     <span className="sm:hidden">// {p.categoryLabel.includes("&") ? p.categoryLabel.split("&")[0].trim() : p.categoryLabel.split(" ")[0]}</span>
                   </span>
-                  <span className="shrink-0 text-brand-gray-light">{p.aspectRatio}</span>
+                  <span className="shrink-0 text-brand-teal/70 font-mono">{p.aspectRatio}</span>
                 </div>
 
                 {/* The Video / Poster Frame Box */}
                 <Link
                   href={`/work/${p.slug}`}
-                  className={`relative block ${frameRatio} rounded-sm overflow-hidden border border-brand-teal/50 group-hover:border-brand-gold transition-all duration-500 shadow-2xl bg-brand-black-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold`}
+                  className={`relative block ${frameRatio} rounded-sm overflow-hidden border border-brand-teal/20 group-hover:border-brand-gold transition-all duration-500 shadow-xl bg-brand-black-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold`}
                   aria-label={`View film case study: ${p.title}`}
                 >
                   {/* Poster Image */}
@@ -207,7 +207,7 @@ export default function HorizontalFilmstrip() {
 
       {/* Mobile Swipe Cue */}
       <div className="md:hidden mt-5 flex items-center justify-center">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-black/80 border border-brand-teal/40 text-[10px] font-mono text-brand-gold uppercase tracking-[0.2em]">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-teal text-brand-gold border border-brand-teal-light text-[10px] font-mono uppercase tracking-[0.2em] shadow-sm">
           <span>◄ Swipe Reel to Pan 01–06 ►</span>
         </div>
       </div>

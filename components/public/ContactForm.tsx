@@ -48,19 +48,19 @@ export default function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="bg-brand-black-elevated border border-brand-gold/60 p-8 sm:p-12 rounded-sm text-center space-y-6 animate-fade-in">
+      <div className="bg-[#F8F9FA] border border-brand-gold/60 p-8 sm:p-12 rounded-sm text-center space-y-6 animate-fade-in shadow-md">
         <div className="w-16 h-16 rounded-full bg-brand-teal text-brand-gold flex items-center justify-center mx-auto border border-brand-gold/40">
           <CheckCircle2 className="w-8 h-8" />
         </div>
         <div className="space-y-2">
-          <h3 className="text-2xl font-display font-medium text-brand-white">
+          <h3 className="text-2xl font-display font-medium text-brand-teal">
             Enquiry Received
           </h3>
-          <p className="text-sm text-brand-gray-light max-w-md mx-auto leading-relaxed">
-            Thank you, <strong className="text-brand-white">{formData.name}</strong>. Your enquiry has been received by our production desk. Our creative producing team reviews all briefs directly and will respond within one business day.
+          <p className="text-sm text-brand-teal/80 max-w-md mx-auto leading-relaxed">
+            Thank you, <strong className="text-brand-teal font-semibold">{formData.name}</strong>. Your enquiry has been received by our production desk. Our creative producing team reviews all briefs directly and will respond within one business day.
           </p>
         </div>
-        <div className="p-4 bg-brand-black/60 border border-brand-teal/40 rounded-sm max-w-sm mx-auto text-xs font-mono text-brand-gold">
+        <div className="p-4 bg-white border border-brand-teal/20 rounded-sm max-w-sm mx-auto text-xs font-mono text-brand-gold font-semibold">
           Reference ID: #BB-{Math.floor(1000 + Math.random() * 9000)}
         </div>
         <button
@@ -79,7 +79,7 @@ export default function ContactForm() {
               preferredContact: "email",
             });
           }}
-          className="text-xs uppercase font-mono tracking-widest text-brand-gray hover:text-brand-white underline pt-2 inline-block"
+          className="text-xs uppercase font-mono tracking-widest text-brand-teal/70 hover:text-brand-teal underline pt-2 inline-block"
         >
           Send Another Message
         </button>
@@ -92,7 +92,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Full Name */}
         <div className="space-y-2">
-          <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+          <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
             Full Name <span className="text-brand-gold">*</span>
           </label>
           <input
@@ -103,10 +103,10 @@ export default function ContactForm() {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="e.g. Marcus Thorne"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
           />
           {errors.name && (
-            <p role="alert" aria-live="polite" className="text-xs text-red-400 flex items-center space-x-1 font-mono">
+            <p role="alert" aria-live="polite" className="text-xs text-red-600 flex items-center space-x-1 font-mono">
               <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
               <span>{errors.name}</span>
             </p>
@@ -115,7 +115,7 @@ export default function ContactForm() {
 
         {/* Email Address */}
         <div className="space-y-2">
-          <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+          <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
             Email Address <span className="text-brand-gold">*</span>
           </label>
           <input
@@ -126,10 +126,10 @@ export default function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="m.thorne@example.com.au"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
           />
           {errors.email && (
-            <p role="alert" aria-live="polite" className="text-xs text-red-400 flex items-center space-x-1 font-mono">
+            <p role="alert" aria-live="polite" className="text-xs text-red-600 flex items-center space-x-1 font-mono">
               <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
               <span>{errors.email}</span>
             </p>
@@ -140,7 +140,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Company / Artist Name */}
         <div className="space-y-2">
-          <label htmlFor="company" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+          <label htmlFor="company" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/80 font-medium">
             Organisation / Artist (Optional)
           </label>
           <input
@@ -150,13 +150,13 @@ export default function ContactForm() {
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             placeholder="e.g. Melbourne Contemporary Arts"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
           />
         </div>
 
         {/* Phone */}
         <div className="space-y-2">
-          <label htmlFor="phone" className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+          <label htmlFor="phone" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/80 font-medium">
             Phone Number (Optional)
           </label>
           <input
@@ -166,7 +166,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+61 400 000 000"
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-4 py-3 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -174,14 +174,14 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {/* Service Interested In */}
         <div className="space-y-2">
-          <label htmlFor="service" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+          <label htmlFor="service" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
             Production Discipline
           </label>
           <select
             id="service"
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-3 py-3 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none transition-colors"
           >
             <option value="documentary-film">Documentary & Film</option>
             <option value="music-videos">Music Video Production</option>
@@ -193,14 +193,14 @@ export default function ContactForm() {
 
         {/* Approximate Timeline */}
         <div className="space-y-2">
-          <label htmlFor="timeline" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+          <label htmlFor="timeline" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
             Target Timeline
           </label>
           <select
             id="timeline"
             value={formData.timeline}
             onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-3 py-3 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none transition-colors"
           >
             <option value="immediate">Immediate (1-4 weeks)</option>
             <option value="within-3-months">Within 1-3 months</option>
@@ -211,14 +211,14 @@ export default function ContactForm() {
 
         {/* Budget Guidance */}
         <div className="space-y-2">
-          <label htmlFor="budget" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+          <label htmlFor="budget" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
             Budget Range (AUD)
           </label>
           <select
             id="budget"
             value={formData.budget}
             onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-            className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-3 rounded-sm text-base sm:text-sm text-brand-white focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-3 py-3 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none transition-colors"
           >
             <option value="$15k-$25k">$15,000 – $25,000 AUD</option>
             <option value="$25k-$50k">$25,000 – $50,000 AUD</option>
@@ -230,7 +230,7 @@ export default function ContactForm() {
 
       {/* Project Description */}
       <div className="space-y-2">
-        <label htmlFor="description" className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+        <label htmlFor="description" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
           Tell Us About Your Project <span className="text-brand-gold">*</span>
         </label>
         <textarea
@@ -241,10 +241,10 @@ export default function ContactForm() {
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           placeholder="Describe your story, intended audience, references, or key deliverables..."
-          className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-4 rounded-sm text-base sm:text-sm text-brand-white placeholder-slate-400 focus:outline-none transition-colors"
+          className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
         />
         {errors.description && (
-          <p role="alert" aria-live="polite" className="text-xs text-red-400 flex items-center space-x-1 font-mono">
+          <p role="alert" aria-live="polite" className="text-xs text-red-600 flex items-center space-x-1 font-mono">
             <AlertCircle className="w-3.5 h-3.5 flex-shrink-0" />
             <span>{errors.description}</span>
           </p>
@@ -253,10 +253,10 @@ export default function ContactForm() {
 
       {/* Preferred Contact Method */}
       <div className="space-y-2">
-        <span className="block text-xs font-mono uppercase tracking-wider text-brand-gray-light">
+        <span className="block text-xs font-mono uppercase tracking-wider text-brand-teal/80 font-medium">
           Preferred Contact Method:
         </span>
-        <div className="flex items-center space-x-6 text-sm text-brand-white">
+        <div className="flex items-center space-x-6 text-sm text-brand-teal">
           <label className="flex items-center space-x-2 cursor-pointer">
             <input
               type="radio"
@@ -298,7 +298,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-8 py-4 rounded-sm hover:bg-brand-gold-light transition-all disabled:opacity-60 shadow-xl"
+          className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-8 py-4 rounded-sm hover:bg-brand-gold-light transition-all disabled:opacity-60 shadow-xl"
         >
           {isSubmitting ? (
             <>
@@ -312,7 +312,7 @@ export default function ContactForm() {
             </>
           )}
         </button>
-        <span className="block text-xs font-mono text-brand-gray-light mt-3">
+        <span className="block text-xs font-mono text-brand-teal/70 mt-3">
           *Every enquiry is reviewed directly by our directors in Melbourne & Sydney. We never share your details.
         </span>
       </div>

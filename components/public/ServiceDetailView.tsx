@@ -27,11 +27,11 @@ export default function ServiceDetailView({
       {/* 01: Distinct Cinematic Hero with HUD */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-teal tracking-tight leading-[1.02]">
             {service.heroHeadline}
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
+          <p className="text-lg sm:text-xl text-brand-teal/80 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             {service.tagline}
           </p>
 
@@ -39,7 +39,7 @@ export default function ServiceDetailView({
             {service.visualDirection.aestheticTokens.map((token) => (
               <span
                 key={token}
-                className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 bg-brand-teal/40 border border-brand-teal/60 text-brand-gold rounded-sm shadow-sm"
+                className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 bg-brand-teal text-brand-gold rounded-sm shadow-sm"
               >
                 {token}
               </span>
@@ -62,25 +62,25 @@ export default function ServiceDetailView({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 bg-brand-black-elevated border border-brand-teal/50 rounded-sm shadow-xl">
-              <h2 className="text-2xl font-display font-medium text-brand-white">
+            <div className="p-8 bg-white border border-brand-teal/15 rounded-sm shadow-sm">
+              <h2 className="text-2xl font-display font-medium text-brand-teal">
                 {service.visualDirection.title}
               </h2>
-              <p className="mt-4 text-sm text-brand-gray-light leading-relaxed font-light">
+              <p className="mt-4 text-sm text-brand-teal/80 leading-relaxed font-light">
                 {service.visualDirection.description}
               </p>
             </div>
 
-            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-2xl">
-              <h3 className="text-xl font-display font-medium text-brand-white">
+            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-xl text-white">
+              <h3 className="text-xl font-display font-medium text-white">
                 Commission a Production
               </h3>
-              <p className="mt-2 text-xs text-brand-gray-light leading-relaxed">
+              <p className="mt-2 text-xs text-slate-200 leading-relaxed">
                 We accept a limited number of production commissions per season to ensure singular directorial focus.
               </p>
               <Link
                 href="/book"
-                className="mt-6 inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+                className="mt-6 inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
               >
                 <span>Initiate Brief</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -88,8 +88,8 @@ export default function ServiceDetailView({
             </div>
           </div>
 
-          <div className="lg:col-span-7 space-y-6 text-brand-gray-light text-base sm:text-lg leading-relaxed font-light">
-            <p className="text-xl font-normal text-brand-white leading-relaxed">
+          <div className="lg:col-span-7 space-y-6 text-brand-teal/80 text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-xl font-normal text-brand-teal leading-relaxed">
               {service.introNarrative}
             </p>
             <p>
@@ -97,23 +97,23 @@ export default function ServiceDetailView({
             </p>
 
             {/* Scope Deliverables */}
-            <div className="pt-6 border-t border-brand-teal/30 space-y-4">
-              <h3 className="text-xs font-mono uppercase tracking-[0.25em] text-brand-white">
+            <div className="pt-6 border-t border-brand-teal/15 space-y-4">
+              <h3 className="text-xs font-mono uppercase tracking-[0.25em] text-brand-teal font-semibold">
                 Core Deliverables & Technical Specs:
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.capabilities.map((cap) => (
                   <div
                     key={cap.name}
-                    className="p-5 bg-brand-black-elevated border border-brand-teal/40 rounded-sm"
+                    className="p-5 bg-white border border-brand-teal/15 rounded-sm shadow-sm"
                   >
                     <div className="flex items-center space-x-2 text-brand-gold mb-2">
                       <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                      <span className="text-xs font-mono font-medium uppercase tracking-wider text-brand-white">
+                      <span className="text-xs font-mono font-medium uppercase tracking-wider text-brand-teal">
                         {cap.name}
                       </span>
                     </div>
-                    <p className="text-xs text-brand-gray leading-relaxed font-light">
+                    <p className="text-xs text-brand-teal/75 leading-relaxed font-light">
                       {cap.description}
                     </p>
                   </div>
@@ -125,7 +125,7 @@ export default function ServiceDetailView({
       </section>
 
       {/* 03: Suggested Creative Workflow */}
-      <section className="bg-brand-black-elevated py-20 sm:py-28 border-y border-brand-teal/30">
+      <section className="bg-[#F8F9FA] py-20 sm:py-28 border-y border-brand-teal/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
             title="The Creative Journey."
@@ -137,15 +137,15 @@ export default function ServiceDetailView({
             {service.process.map((p) => (
               <div
                 key={p.step}
-                className="bg-brand-black/70 border border-brand-teal/40 p-8 rounded-sm hover:border-brand-gold/60 transition-colors shadow-lg"
+                className="bg-white border border-brand-teal/15 p-8 rounded-sm hover:border-brand-gold transition-colors shadow-sm"
               >
                 <span className="text-3xl font-display font-semibold text-brand-gold">
                   {p.step}
                 </span>
-                <h3 className="text-lg font-display font-medium text-brand-white mt-4">
+                <h3 className="text-lg font-display font-medium text-brand-teal mt-4">
                   {p.title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-brand-gray leading-relaxed font-light">
+                <p className="mt-2 text-xs sm:text-sm text-brand-teal/75 leading-relaxed font-light">
                   {p.description}
                 </p>
               </div>
@@ -196,23 +196,23 @@ export default function ServiceDetailView({
 
       {/* 06: Service Page Final CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <h2 className="text-3xl sm:text-5xl font-display font-medium text-brand-white">
+        <h2 className="text-3xl sm:text-5xl font-display font-medium text-brand-teal">
           Commission a {service.shortTitle} Production
         </h2>
-        <p className="text-brand-gray max-w-xl mx-auto text-sm sm:text-base font-light">
+        <p className="text-brand-teal/80 max-w-xl mx-auto text-sm sm:text-base font-light">
           Whether you have an established treatment or an initial narrative seed, let&apos;s evaluate the possibilities together.
         </p>
         <div className="pt-4 flex items-center justify-center space-x-4">
           <Link
             href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
           >
             <span>Start a Project Brief</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-teal hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal/20 hover:border-brand-gold transition-colors"
           >
             <span>View All Work</span>
           </Link>

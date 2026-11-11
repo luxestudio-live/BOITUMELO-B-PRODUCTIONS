@@ -121,7 +121,7 @@ export default function CinematicHero() {
     <section
       ref={containerRef}
       aria-label="Flagship Cinematic Showreel"
-      className="relative w-full h-[100svh] min-h-[600px] sm:min-h-[680px] overflow-hidden bg-brand-black flex items-center justify-center"
+      className="relative w-full h-[100svh] min-h-[600px] sm:min-h-[680px] overflow-hidden bg-white flex items-center justify-center"
     >
       {/* Contractable Hero Film Frame */}
       <div
@@ -233,7 +233,7 @@ export default function CinematicHero() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 href="/work"
-                className="inline-flex items-center space-x-3 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl hover:shadow-brand-gold/30"
+                className="inline-flex items-center space-x-3 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl hover:shadow-brand-gold/30"
               >
                 <span>Explore The Work</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -242,7 +242,7 @@ export default function CinematicHero() {
               <button
                 type="button"
                 onClick={scrollToFilmstrip}
-                className="inline-flex items-center space-x-2.5 text-xs uppercase font-mono tracking-[0.2em] text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-colors bg-brand-black/40 backdrop-blur-sm"
+                className="inline-flex items-center space-x-2.5 text-xs uppercase font-mono tracking-[0.2em] text-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal-light hover:border-brand-gold transition-colors bg-brand-teal/80 backdrop-blur-sm"
               >
                 <span>Roll Film</span>
                 <ArrowDown className="w-3.5 h-3.5 text-brand-gold transition-transform group-hover:translate-y-0.5" />
@@ -258,10 +258,10 @@ export default function CinematicHero() {
         aria-hidden="true"
         className="absolute inset-x-0 bottom-6 z-10 pointer-events-none flex items-center justify-between px-4 sm:px-12 opacity-0"
       >
-        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold/80 bg-brand-black/80 px-3 py-1 rounded border border-brand-teal/50">
+        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold bg-brand-teal/90 px-3 py-1 rounded border border-brand-gold/40 shadow-md">
           ◄ Reel 01: The Last Echo
         </div>
-        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold/80 bg-brand-black/80 px-3 py-1 rounded border border-brand-teal/50">
+        <div className="text-xs font-mono uppercase tracking-widest text-brand-gold bg-brand-teal/90 px-3 py-1 rounded border border-brand-gold/40 shadow-md">
           Reel 02: Neon Solitude ►
         </div>
       </div>

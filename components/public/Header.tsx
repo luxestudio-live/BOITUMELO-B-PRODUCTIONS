@@ -34,8 +34,8 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-brand-black/95 backdrop-blur-md border-b border-brand-teal/40 py-3.5 shadow-2xl"
-            : "bg-gradient-to-b from-brand-black/90 via-brand-black/50 to-transparent py-5 sm:py-6"
+            ? "bg-white/95 backdrop-blur-md border-b border-brand-teal/15 py-3.5 shadow-sm text-brand-teal"
+            : "bg-white/90 backdrop-blur-sm border-b border-brand-teal/10 py-5 sm:py-6 text-brand-teal"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -45,10 +45,10 @@ export default function Header() {
             className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded"
             aria-label="BOITUMELO B PRODUCTIONS Home"
           >
-            <span className="font-display font-bold tracking-[0.22em] text-base sm:text-lg text-brand-white group-hover:text-brand-gold transition-colors duration-300">
+            <span className="font-display font-bold tracking-[0.22em] text-base sm:text-lg text-brand-teal group-hover:text-brand-gold transition-colors duration-300">
               BOITUMELO B
             </span>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-brand-gray-light group-hover:text-brand-white transition-colors duration-300">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-brand-teal/70 group-hover:text-brand-teal transition-colors duration-300">
               Productions • Australia
             </span>
           </Link>
@@ -64,7 +64,7 @@ export default function Header() {
                   className={`text-xs uppercase tracking-[0.2em] transition-all duration-300 relative py-1 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded ${
                     isActive
                       ? "text-brand-gold font-medium"
-                      : "text-brand-gray-light hover:text-brand-white"
+                      : "text-brand-teal/80 hover:text-brand-gold"
                   }`}
                 >
                   {item.label}
@@ -80,7 +80,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link
               href="/book"
-              className="hidden sm:inline-flex items-center space-x-2 text-xs uppercase tracking-[0.16em] font-medium bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-sm hover:shadow-brand-gold/20"
+              className="hidden sm:inline-flex items-center space-x-2 text-xs uppercase tracking-[0.16em] font-medium bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-sm"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -90,7 +90,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-white hover:text-brand-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded"
+              className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-brand-teal hover:text-brand-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded"
               aria-label="Open mobile navigation menu"
               aria-expanded={mobileMenuOpen}
             >

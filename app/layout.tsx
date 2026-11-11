@@ -131,7 +131,7 @@ const jsonLd = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -155,7 +155,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-brand-black text-brand-white selection:bg-brand-gold selection:text-brand-black antialiased">
+      <body className="bg-white text-brand-teal selection:bg-brand-gold selection:text-white antialiased">
         {children}
       </body>
     </html>

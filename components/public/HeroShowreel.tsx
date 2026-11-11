@@ -83,7 +83,7 @@ export default function HeroShowreel() {
           <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
             <Link
               href="/work"
-              className="inline-flex items-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl hover:shadow-brand-gold/20"
+              className="inline-flex items-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl"
             >
               <span>Explore Our Work</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -91,7 +91,7 @@ export default function HeroShowreel() {
 
             <Link
               href="/book"
-              className="inline-flex items-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal hover:border-brand-gold transition-all duration-300 backdrop-blur-sm bg-brand-black/40"
+              className="inline-flex items-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium text-white hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-gold/60 hover:border-brand-gold transition-all duration-300 backdrop-blur-sm bg-brand-teal/80"
             >
               <span>Start a Project</span>
             </Link>

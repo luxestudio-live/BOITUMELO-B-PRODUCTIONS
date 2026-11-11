@@ -23,19 +23,19 @@ export default function CinematicTestimonials() {
   return (
     <section
       aria-label="Scene 08: Client Voices"
-      className="relative bg-brand-teal py-28 sm:py-36 border-b border-brand-teal-light overflow-hidden text-brand-white"
+      className="relative bg-white py-28 sm:py-36 border-b border-brand-teal/15 overflow-hidden text-brand-teal"
     >
       {/* Decorative Large Cinematic Background Quote Watermark */}
-      <div className="absolute top-12 right-12 text-brand-black/20 pointer-events-none select-none">
+      <div className="absolute top-12 right-12 text-brand-teal/5 pointer-events-none select-none">
         <Quote className="w-64 h-64" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 space-y-12">
         {/* Header Heading */}
-        <div className="flex items-center justify-between pb-6 border-b border-brand-teal-light/50">
+        <div className="flex items-center justify-between pb-6 border-b border-brand-teal/15">
           <div className="flex items-center space-x-3">
             <Quote className="w-4 h-4 text-brand-gold" />
-            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-white">
+            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-teal">
               Client Perspectives
             </h2>
           </div>
@@ -44,7 +44,7 @@ export default function CinematicTestimonials() {
             <button
               type="button"
               onClick={handlePrev}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-sm bg-brand-black/40 border border-brand-teal-light hover:border-brand-gold text-brand-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-sm bg-[#F8F9FA] border border-brand-teal/20 hover:border-brand-gold text-brand-teal hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               aria-label="Previous client testimonial"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -52,7 +52,7 @@ export default function CinematicTestimonials() {
             <button
               type="button"
               onClick={handleNext}
-              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-sm bg-brand-black/40 border border-brand-teal-light hover:border-brand-gold text-brand-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center p-3 rounded-sm bg-[#F8F9FA] border border-brand-teal/20 hover:border-brand-gold text-brand-teal hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
               aria-label="Next client testimonial"
             >
               <ArrowRight className="w-4 h-4" />
@@ -62,15 +62,15 @@ export default function CinematicTestimonials() {
 
         {/* Master Editorial Quotation Theatre */}
         <div key={current.id} className="space-y-8 animate-fade-in">
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-3.5 bg-brand-black/50 backdrop-blur-sm rounded-sm text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-brand-gold border border-brand-teal-light max-w-full">
+          <div className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-3.5 bg-brand-teal/10 rounded-sm text-[10px] sm:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-brand-teal font-medium border border-brand-teal/20 max-w-full">
             <span className="truncate">Project: {current.projectTitle} // {current.serviceCategory}</span>
           </div>
 
-          <blockquote className="text-2xl sm:text-4xl md:text-5xl font-serif italic text-brand-white font-light leading-snug">
+          <blockquote className="text-2xl sm:text-4xl md:text-5xl font-serif italic text-brand-teal font-light leading-snug">
             &ldquo;{current.quote}&rdquo;
           </blockquote>
 
-          <div className="pt-6 border-t border-brand-teal-light/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="pt-6 border-t border-brand-teal/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center space-x-4">
               <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-brand-gold flex-shrink-0">
                 <Image
@@ -82,10 +82,10 @@ export default function CinematicTestimonials() {
                 />
               </div>
               <div>
-                <h3 className="font-display font-medium text-lg text-brand-white">
+                <h3 className="font-display font-medium text-lg text-brand-teal">
                   {current.author}
                 </h3>
-                <p className="text-xs font-mono text-brand-gray-light">
+                <p className="text-xs font-mono text-brand-teal/70">
                   {current.role} • {current.company}
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function CinematicTestimonials() {
             <div className="flex items-center space-x-4">
               <Link
                 href="/testimonials"
-                className="text-xs font-mono uppercase tracking-widest text-brand-gold hover:underline"
+                className="text-xs font-mono uppercase tracking-widest text-brand-gold hover:text-brand-gold-dark font-medium"
               >
                 Read All Testimonials →
               </Link>

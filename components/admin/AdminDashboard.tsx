@@ -182,11 +182,11 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-black text-brand-white">
+    <div className="flex flex-col min-h-screen bg-[#F8F9FA] text-brand-teal">
       {/* Top Security & Demo Disclaimer Warning Bar */}
       <aside
         aria-label="Admin Security Notice"
-        className="bg-brand-teal-deep border-b border-brand-teal/60 py-2 px-3 sm:py-2.5 sm:px-4 text-[11px] sm:text-xs font-mono text-brand-gray-light"
+        className="bg-brand-teal text-white border-b border-brand-teal-light py-2 px-3 sm:py-2.5 sm:px-4 text-[11px] sm:text-xs font-mono"
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center space-x-2">
@@ -206,14 +206,14 @@ export default function AdminDashboard() {
       </aside>
 
       {/* Mobile Top App Bar (Sticky) */}
-      <header className="md:hidden sticky top-0 z-40 bg-brand-black/95 backdrop-blur-md border-b border-brand-teal/40 px-3.5 py-2.5 flex items-center justify-between shadow-lg">
+      <header className="md:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-teal/20 px-3.5 py-2.5 flex items-center justify-between shadow-sm text-brand-teal">
         {/* Brand identity */}
         <div className="flex items-center space-x-2.5">
           <div className="w-7 h-7 rounded bg-brand-teal flex items-center justify-center border border-brand-gold/60 text-brand-gold font-display font-bold text-xs shadow-sm">
             BB
           </div>
           <div>
-            <span className="font-display font-bold tracking-[0.16em] text-xs text-brand-white block leading-tight">
+            <span className="font-display font-bold tracking-[0.16em] text-xs text-brand-teal block leading-tight">
               BOITUMELO B
             </span>
             <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
@@ -226,7 +226,7 @@ export default function AdminDashboard() {
         <div className="flex items-center space-x-1.5">
           <Link
             href="/"
-            className="p-2 text-brand-gray-light hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="p-2 text-brand-teal/70 hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded min-h-[44px] min-w-[44px] flex items-center justify-center"
             title="Exit to public website"
             aria-label="Exit to public site"
           >
@@ -236,7 +236,7 @@ export default function AdminDashboard() {
           <button
             type="button"
             onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-            className="min-h-[44px] min-w-[44px] flex items-center space-x-1.5 px-3 py-1.5 rounded-sm bg-brand-teal/40 border border-brand-teal/60 text-brand-white hover:border-brand-gold hover:text-brand-gold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+            className="min-h-[44px] min-w-[44px] flex items-center space-x-1.5 px-3 py-1.5 rounded-sm bg-[#F8F9FA] border border-brand-teal/20 text-brand-teal hover:border-brand-gold hover:text-brand-gold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
             aria-label={isMobileNavOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isMobileNavOpen}
           >
@@ -250,7 +250,7 @@ export default function AdminDashboard() {
       <div
         role="tablist"
         aria-label="Mobile Navigation Tabs"
-        className="md:hidden sticky top-[53px] z-30 bg-brand-black-elevated/95 backdrop-blur-md border-b border-brand-teal/30 px-3 py-2 flex items-center space-x-2 overflow-x-auto no-scrollbar"
+        className="md:hidden sticky top-[53px] z-30 bg-white/95 backdrop-blur-md border-b border-brand-teal/20 px-3 py-2 flex items-center space-x-2 overflow-x-auto no-scrollbar"
       >
         {adminNavTabs.map((tab) => {
           const isActive = activeTab === tab.id;
@@ -264,18 +264,18 @@ export default function AdminDashboard() {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-sm text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all shrink-0 min-h-[44px] ${
                 isActive
-                  ? "bg-brand-gold text-brand-black font-semibold shadow-sm"
-                  : "bg-brand-black/60 border border-brand-teal/40 text-brand-gray-light hover:text-brand-white hover:border-brand-gold/40"
+                  ? "bg-brand-teal text-brand-gold font-semibold shadow-sm"
+                  : "bg-[#F8F9FA] border border-brand-teal/20 text-brand-teal hover:text-brand-gold hover:border-brand-gold/40"
               }`}
             >
-              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-brand-black" : "text-brand-gold"}`} />
+              <Icon className={`w-3.5 h-3.5 ${isActive ? "text-brand-gold" : "text-brand-teal/70"}`} />
               <span>{tab.label}</span>
               {tab.count !== undefined && (
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono ${
                     isActive
-                      ? "bg-brand-black/20 text-brand-black font-bold"
-                      : "bg-brand-teal/60 text-brand-gray-light"
+                      ? "bg-brand-gold/20 text-brand-gold font-bold"
+                      : "bg-brand-teal/10 text-brand-teal font-semibold"
                   }`}
                 >
                   {tab.count}
@@ -292,17 +292,17 @@ export default function AdminDashboard() {
           role="dialog"
           aria-modal="true"
           aria-label="Admin Navigation Menu"
-          className="fixed inset-0 top-[53px] z-50 bg-brand-black/98 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-6 overflow-y-auto animate-fade-in md:hidden"
+          className="fixed inset-0 top-[53px] z-50 bg-white/98 backdrop-blur-xl flex flex-col justify-between p-4 sm:p-6 overflow-y-auto animate-fade-in md:hidden text-brand-teal"
         >
           <div className="space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-brand-teal/30">
+            <div className="flex items-center justify-between pb-3 border-b border-brand-teal/20">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
                 Admin Navigation Menu
               </span>
               <button
                 type="button"
                 onClick={() => setIsMobileNavOpen(false)}
-                className="text-brand-gray hover:text-brand-white p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="text-brand-teal hover:text-brand-gold p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -324,26 +324,26 @@ export default function AdminDashboard() {
                     className={`w-full flex items-center justify-between p-3.5 rounded-sm text-xs font-mono uppercase tracking-wider transition-all min-h-[48px] ${
                       isActive
                         ? "bg-brand-teal text-brand-gold font-semibold border border-brand-gold/60 shadow-md"
-                        : "bg-brand-black-elevated/70 border border-brand-teal/30 text-brand-gray-light hover:text-brand-white hover:bg-brand-teal/20"
+                        : "bg-[#F8F9FA] border border-brand-teal/20 text-brand-teal hover:bg-white hover:border-brand-gold/40"
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-sm ${isActive ? "bg-brand-black/50 text-brand-gold" : "bg-brand-teal-deep text-brand-gray"}`}>
+                      <div className={`p-2 rounded-sm ${isActive ? "bg-brand-teal-deep text-brand-gold" : "bg-brand-teal/10 text-brand-teal"}`}>
                         <Icon className="w-4 h-4" />
                       </div>
                       <div className="text-left">
-                        <span className="block font-medium text-sm text-brand-white">{tab.label}</span>
-                        <span className="text-[10px] text-brand-gray block tracking-normal lowercase">
+                        <span className={`block font-medium text-sm ${isActive ? "text-brand-gold" : "text-brand-teal"}`}>{tab.label}</span>
+                        <span className="text-[10px] text-brand-teal/70 block tracking-normal lowercase">
                           Manage studio {tab.label.toLowerCase()}
                         </span>
                       </div>
                     </div>
                     {tab.count !== undefined ? (
-                      <span className="text-xs px-2.5 py-1 rounded bg-brand-black/60 text-brand-gold font-mono border border-brand-teal/40">
+                      <span className="text-xs px-2.5 py-1 rounded bg-brand-gold/15 text-brand-teal font-mono border border-brand-gold/40 font-semibold">
                         {tab.count}
                       </span>
                     ) : (
-                      <ArrowUpRight className="w-4 h-4 text-brand-gray/50" />
+                      <ArrowUpRight className="w-4 h-4 text-brand-teal/40" />
                     )}
                   </button>
                 );
@@ -351,17 +351,17 @@ export default function AdminDashboard() {
             </nav>
           </div>
 
-          <div className="pt-6 mt-6 border-t border-brand-teal/30 space-y-3">
+          <div className="pt-6 mt-6 border-t border-brand-teal/20 space-y-3">
             <Link
               href="/"
               onClick={() => setIsMobileNavOpen(false)}
-              className="w-full min-h-[44px] flex items-center justify-center space-x-2 p-3 bg-brand-gold text-brand-black rounded-sm text-xs font-mono uppercase tracking-wider font-semibold hover:bg-brand-gold-light transition-all"
+              className="w-full min-h-[44px] flex items-center justify-center space-x-2 p-3 bg-brand-gold text-white rounded-sm text-xs font-mono uppercase tracking-wider font-semibold hover:bg-brand-gold-light transition-all shadow-md"
             >
               <span>Exit to Public Website</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
 
-            <div className="text-center text-[10px] font-mono text-brand-gray space-y-1">
+            <div className="text-center text-[10px] font-mono text-brand-teal/60 space-y-1">
               <p>Production Suite // Melbourne & Sydney</p>
               <p>Region: Australia (AEDT) • Secure Session</p>
             </div>
@@ -372,11 +372,11 @@ export default function AdminDashboard() {
       {/* Main Admin Body Shell */}
       <div className="flex flex-grow">
         {/* Left Sidebar Navigation */}
-        <aside className="w-64 bg-brand-black-elevated border-r border-brand-teal/30 p-6 flex flex-col justify-between hidden md:flex flex-shrink-0">
+        <aside className="w-64 bg-white border-r border-brand-teal/15 p-6 flex flex-col justify-between hidden md:flex flex-shrink-0 text-brand-teal">
           <div className="space-y-8">
             {/* Admin Brand Signature */}
             <div className="space-y-1">
-              <span className="font-display font-bold tracking-[0.2em] text-base text-brand-white block">
+              <span className="font-display font-bold tracking-[0.2em] text-base text-brand-teal block">
                 BOITUMELO B
               </span>
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
@@ -397,16 +397,20 @@ export default function AdminDashboard() {
                     onClick={() => setActiveTab(tab.id as AdminTab)}
                     className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-sm text-xs font-mono uppercase tracking-wider transition-all ${
                       isActive
-                        ? "bg-brand-teal text-brand-gold font-semibold shadow-sm border border-brand-teal-light"
-                        : "text-brand-gray-light hover:text-brand-white hover:bg-brand-teal/20"
+                        ? "bg-brand-teal text-brand-gold font-semibold shadow-sm border border-brand-gold/30"
+                        : "text-brand-teal hover:text-brand-gold hover:bg-brand-teal/5"
                     }`}
                   >
                     <span className="flex items-center space-x-3">
-                      <tab.icon className={`w-4 h-4 ${isActive ? "text-brand-gold" : "text-brand-gray"}`} />
+                      <tab.icon className={`w-4 h-4 ${isActive ? "text-brand-gold" : "text-brand-teal/70"}`} />
                       <span>{tab.label}</span>
                     </span>
                     {tab.count !== undefined && (
-                      <span className="text-xs px-2.5 py-1 rounded bg-brand-black/60 text-brand-gray-light font-mono">
+                      <span className={`text-xs px-2.5 py-1 rounded font-mono ${
+                        isActive
+                          ? "bg-brand-gold/20 text-brand-gold font-bold"
+                          : "bg-[#F8F9FA] text-brand-teal font-semibold border border-brand-teal/15"
+                      }`}>
                         {tab.count}
                       </span>
                     )}
@@ -416,26 +420,26 @@ export default function AdminDashboard() {
             </nav>
           </div>
 
-          <div className="pt-6 border-t border-brand-teal/20 space-y-2 text-xs font-mono text-brand-gray">
+          <div className="pt-6 border-t border-brand-teal/15 space-y-2 text-xs font-mono text-brand-teal/60">
             <p>Production Suite // Melbourne & Sydney</p>
             <p>Region: Australia (AEDT)</p>
           </div>
         </aside>
 
         {/* Right Content View Area */}
-        <main className="flex-grow p-3.5 sm:p-6 lg:p-10 overflow-y-auto max-w-7xl mx-auto w-full">
+        <main className="flex-grow p-3.5 sm:p-6 lg:p-10 overflow-y-auto max-w-7xl mx-auto w-full text-brand-teal">
 
           {/* TAB 01: DASHBOARD OVERVIEW */}
           {activeTab === "dashboard" && (
             <div className="space-y-8 animate-fade-in">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/30">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                     Studio Dashboard Overview
                   </h1>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <span className="text-xs font-mono text-brand-gray">
+                  <span className="text-xs font-mono text-brand-teal/70">
                     Last sync: {mockAdminStats.lastUpdated}
                   </span>
                   <button
@@ -444,7 +448,7 @@ export default function AdminDashboard() {
                       setEditingProject({});
                       setIsProjectModalOpen(true);
                     }}
-                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all"
+                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
                   >
                     <Plus className="w-3.5 h-3.5" />
                     <span>Add Project</span>
@@ -462,15 +466,15 @@ export default function AdminDashboard() {
                 ].map((stat, i) => (
                   <div
                     key={i}
-                    className="p-4 sm:p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm"
+                    className="p-4 sm:p-6 bg-white border border-brand-teal/15 rounded-sm shadow-sm"
                   >
-                    <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-medium">
+                    <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-semibold">
                       {stat.label}
                     </span>
-                    <span className="text-3xl sm:text-4xl font-display font-bold text-brand-white mt-2 block">
+                    <span className="text-3xl sm:text-4xl font-display font-bold text-brand-teal mt-2 block">
                       {stat.val}
                     </span>
-                    <span className="text-xs font-mono text-brand-gray-light mt-1 block">
+                    <span className="text-xs font-mono text-brand-teal/70 mt-1 block">
                       {stat.note}
                     </span>
                   </div>
@@ -479,21 +483,21 @@ export default function AdminDashboard() {
 
               {/* Recent Enquiries & Fast Actions */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div className="lg:col-span-7 bg-brand-black-elevated border border-brand-teal/40 p-6 rounded-sm space-y-4">
-                  <div className="flex items-center justify-between pb-3 border-b border-brand-teal/30">
-                    <h2 className="font-display font-medium text-base text-brand-white">
+                <div className="lg:col-span-7 bg-white border border-brand-teal/15 p-6 rounded-sm space-y-4 shadow-sm">
+                  <div className="flex items-center justify-between pb-3 border-b border-brand-teal/15">
+                    <h2 className="font-display font-medium text-base text-brand-teal">
                       Recent Inbound Enquiries
                     </h2>
                     <button
                       type="button"
                       onClick={() => setActiveTab("enquiries")}
-                      className="text-xs font-mono text-brand-gold hover:underline"
+                      className="text-xs font-mono text-brand-gold hover:underline font-medium"
                     >
                       View All ({enquiriesList.length})
                     </button>
                   </div>
 
-                  <div className="divide-y divide-brand-teal/20">
+                  <div className="divide-y divide-brand-teal/15">
                     {enquiriesList.slice(0, 3).map((enq) => (
                       <div
                         key={enq.id}
@@ -501,21 +505,21 @@ export default function AdminDashboard() {
                           setSelectedEnquiry(enq);
                           setActiveTab("enquiries");
                         }}
-                        className="py-3 flex items-center justify-between cursor-pointer hover:bg-brand-teal/20 px-2 rounded transition-colors"
+                        className="py-3 flex items-center justify-between cursor-pointer hover:bg-brand-teal/5 px-2 rounded transition-colors"
                       >
                         <div>
-                          <h3 className="text-sm font-medium text-brand-white">
+                          <h3 className="text-sm font-medium text-brand-teal">
                             {enq.name}
                           </h3>
-                          <p className="text-xs font-mono text-brand-gray">
+                          <p className="text-xs font-mono text-brand-teal/70">
                             {enq.service} • {enq.date}
                           </p>
                         </div>
                         <span
                           className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
-                              ? "bg-brand-gold/20 text-brand-gold border border-brand-gold/40"
-                              : "bg-brand-teal/40 text-brand-gray-light"
+                              ? "bg-brand-gold/15 text-brand-gold border border-brand-gold/40 font-semibold"
+                              : "bg-brand-teal/10 text-brand-teal font-medium"
                           }`}
                         >
                           {enq.status}
@@ -526,15 +530,15 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Quick Shortcuts */}
-                <div className="lg:col-span-5 bg-brand-teal/30 border border-brand-teal/50 p-6 rounded-sm space-y-4">
-                  <h2 className="font-display font-medium text-base text-brand-white">
+                <div className="lg:col-span-5 bg-white border border-brand-teal/15 p-6 rounded-sm space-y-4 shadow-sm">
+                  <h2 className="font-display font-medium text-base text-brand-teal">
                     Production Shortcuts
                   </h2>
                   <div className="space-y-2 text-xs font-mono">
                     <Link
                       href="/work"
                       target="_blank"
-                      className="flex items-center justify-between p-3 bg-brand-black/60 rounded border border-brand-teal/40 hover:border-brand-gold text-brand-gray-light hover:text-brand-white transition-all"
+                      className="flex items-center justify-between p-3 bg-[#F8F9FA] rounded border border-brand-teal/20 hover:border-brand-gold text-brand-teal hover:bg-white transition-all"
                     >
                       <span>Preview Live Portfolio Grid</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-brand-gold" />
@@ -542,7 +546,7 @@ export default function AdminDashboard() {
                     <Link
                       href="/book"
                       target="_blank"
-                      className="flex items-center justify-between p-3 bg-brand-black/60 rounded border border-brand-teal/40 hover:border-brand-gold text-brand-gray-light hover:text-brand-white transition-all"
+                      className="flex items-center justify-between p-3 bg-[#F8F9FA] rounded border border-brand-teal/20 hover:border-brand-gold text-brand-teal hover:bg-white transition-all"
                     >
                       <span>Test Client Booking Flow</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-brand-gold" />
@@ -550,7 +554,7 @@ export default function AdminDashboard() {
                     <button
                       type="button"
                       onClick={() => setActiveTab("settings")}
-                      className="w-full flex items-center justify-between p-3 bg-brand-black/60 rounded border border-brand-teal/40 hover:border-brand-gold text-brand-gray-light hover:text-brand-white transition-all text-left"
+                      className="w-full flex items-center justify-between p-3 bg-[#F8F9FA] rounded border border-brand-teal/20 hover:border-brand-gold text-brand-teal hover:bg-white transition-all text-left"
                     >
                       <span>Update SEO & Brand Tokens</span>
                       <Settings className="w-3.5 h-3.5 text-brand-gold" />
@@ -564,12 +568,12 @@ export default function AdminDashboard() {
           {/* TAB 02: PROJECTS MANAGEMENT */}
           {activeTab === "projects" && (
             <div className="space-y-6 animate-fade-in">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/30">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
                     Curated Archive
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
                     Projects Management
                   </h1>
                 </div>
@@ -580,7 +584,7 @@ export default function AdminDashboard() {
                     setEditingProject({});
                     setIsProjectModalOpen(true);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>New Project</span>
@@ -590,22 +594,22 @@ export default function AdminDashboard() {
               {/* Search & Filter Bar */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="relative flex-grow">
-                  <Search className="w-4 h-4 text-brand-gray absolute left-3.5 top-3.5" />
+                  <Search className="w-4 h-4 text-brand-teal/60 absolute left-3.5 top-3.5" />
                   <input
                     type="text"
                     value={projectSearch}
                     onChange={(e) => setProjectSearch(e.target.value)}
                     placeholder="Search by project title, client, or keyword..."
-                    className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold pl-10 pr-4 py-2.5 rounded-sm text-xs font-mono text-brand-white placeholder-brand-gray/60 focus:outline-none"
+                    className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold pl-10 pr-4 py-2.5 rounded-sm text-xs font-mono text-brand-teal placeholder-slate-400 focus:outline-none"
                   />
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Filter className="w-4 h-4 text-brand-gray" />
+                  <Filter className="w-4 h-4 text-brand-teal/60" />
                   <select
                     value={projectCategoryFilter}
                     onChange={(e) => setProjectCategoryFilter(e.target.value)}
-                    className="bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold px-3 py-2.5 rounded-sm text-xs font-mono text-brand-white focus:outline-none"
+                    className="bg-white border border-brand-teal/20 focus:border-brand-gold px-3 py-2.5 rounded-sm text-xs font-mono text-brand-teal focus:outline-none"
                   >
                     <option value="all">All Disciplines</option>
                     <option value="documentary-film">Documentary & Film</option>
@@ -617,10 +621,10 @@ export default function AdminDashboard() {
               </div>
 
               {/* Projects Table */}
-              <div className="bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden">
+              <div className="bg-white border border-brand-teal/15 rounded-sm overflow-hidden shadow-sm">
                 <div className="overflow-x-auto">
                   <table className="w-full min-w-[640px] text-left text-xs font-mono">
-                    <thead className="bg-brand-teal-deep text-brand-gold uppercase tracking-wider border-b border-brand-teal/40">
+                    <thead className="bg-[#F0F4F5] text-brand-teal uppercase tracking-wider border-b border-brand-teal/20 font-semibold">
                       <tr>
                         <th className="p-4">Cover</th>
                         <th className="p-4">Title & Client</th>
@@ -630,20 +634,20 @@ export default function AdminDashboard() {
                         <th className="p-4 text-right">Actions</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-brand-teal/20 text-brand-gray-light">
+                    <tbody className="divide-y divide-brand-teal/15 text-brand-teal">
                       {filteredProjects.length === 0 ? (
                         <tr>
-                          <td colSpan={6} className="p-12 text-center text-brand-gray-light">
-                            <Film className="w-8 h-8 text-brand-gold/60 mx-auto mb-3" />
-                            <p className="text-sm font-sans text-brand-white">No film projects matched your current search or filter.</p>
-                            <p className="text-xs font-mono text-brand-gray mt-1">Try resetting the category filter or adding a new production record.</p>
+                          <td colSpan={6} className="p-12 text-center text-brand-teal/70">
+                            <Film className="w-8 h-8 text-brand-gold mx-auto mb-3" />
+                            <p className="text-sm font-sans text-brand-teal">No film projects matched your current search or filter.</p>
+                            <p className="text-xs font-mono text-brand-teal/60 mt-1">Try resetting the category filter or adding a new production record.</p>
                           </td>
                         </tr>
                       ) : (
                         filteredProjects.map((p) => (
-                        <tr key={p.id} className="hover:bg-brand-teal/15 transition-colors">
+                        <tr key={p.id} className="hover:bg-brand-teal/5 transition-colors">
                           <td className="p-4 w-20">
-                            <div className="relative w-16 h-10 rounded overflow-hidden border border-brand-teal/40">
+                            <div className="relative w-16 h-10 rounded overflow-hidden border border-brand-teal/20">
                               <Image
                                 src={p.heroPoster}
                                 alt={p.title}
@@ -654,17 +658,17 @@ export default function AdminDashboard() {
                             </div>
                           </td>
                           <td className="p-4 font-sans">
-                            <span className="font-medium text-sm text-brand-white block">
+                            <span className="font-medium text-sm text-brand-teal block">
                               {p.title}
                             </span>
-                            <span className="text-xs text-brand-gray font-mono">
+                            <span className="text-xs text-brand-teal/70 font-mono">
                               {p.client} • {p.location}
                             </span>
                           </td>
-                          <td className="p-4 uppercase tracking-wider text-[11px] text-brand-gray">
+                          <td className="p-4 uppercase tracking-wider text-[11px] text-brand-teal/70 font-mono">
                             {p.categoryLabel}
                           </td>
-                          <td className="p-4">{p.year}</td>
+                          <td className="p-4 font-mono">{p.year}</td>
                           <td className="p-4">
                             <button
                               type="button"
@@ -672,8 +676,8 @@ export default function AdminDashboard() {
                               aria-label={p.featured ? `Remove ${p.title} from featured projects` : `Mark ${p.title} as featured project`}
                               className={`text-xs uppercase font-mono tracking-wider px-2.5 py-1 rounded border transition-colors ${
                                 p.featured
-                                  ? "bg-brand-gold text-brand-black border-brand-gold font-semibold"
-                                  : "bg-brand-black/60 border-brand-teal/40 text-brand-gray"
+                                  ? "bg-brand-gold text-white border-brand-gold font-semibold shadow-sm"
+                                  : "bg-[#F8F9FA] border-brand-teal/20 text-brand-teal hover:border-brand-gold/50"
                               }`}
                             >
                               {p.featured ? "Featured" : "Standard"}
@@ -683,7 +687,7 @@ export default function AdminDashboard() {
                             <Link
                               href={`/work/${p.slug}`}
                               target="_blank"
-                              className="p-1 text-brand-gray hover:text-brand-white inline-block"
+                              className="p-1 text-brand-teal/70 hover:text-brand-gold inline-block"
                               title="Preview Live Case Study"
                               aria-label={`Preview live case study for ${p.title}`}
                             >
@@ -695,7 +699,7 @@ export default function AdminDashboard() {
                                 setEditingProject(p);
                                 setIsProjectModalOpen(true);
                               }}
-                              className="p-1 text-brand-gray hover:text-brand-gold inline-block"
+                              className="p-1 text-brand-teal/70 hover:text-brand-gold inline-block"
                               title="Edit Project"
                               aria-label={`Edit project: ${p.title}`}
                             >
@@ -704,7 +708,7 @@ export default function AdminDashboard() {
                             <button
                               type="button"
                               onClick={() => handleDeleteProject(p.id)}
-                              className="p-1 text-brand-gray hover:text-red-400 inline-block"
+                              className="p-1 text-brand-teal/70 hover:text-red-600 inline-block"
                               title="Delete Project"
                               aria-label={`Delete project: ${p.title}`}
                             >
@@ -723,14 +727,14 @@ export default function AdminDashboard() {
           {/* TAB 03: SERVICES MANAGEMENT */}
           {activeTab === "services" && (
             <div className="space-y-6 animate-fade-in">
-              <div className="pb-6 border-b border-brand-teal/30">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+              <div className="pb-6 border-b border-brand-teal/15">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
                   Disciplines Content
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
                   Services Management
                 </h1>
-                <p className="text-xs text-brand-gray mt-1 font-mono">
+                <p className="text-xs text-brand-teal/70 mt-1 font-mono">
                   Manage copy, capabilities, and visual direction parameters for the four core production disciplines.
                 </p>
               </div>
@@ -739,44 +743,44 @@ export default function AdminDashboard() {
                 {Object.values(servicesData).map((s) => (
                   <div
                     key={s.slug}
-                    className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm space-y-4 flex flex-col justify-between"
+                    className="p-6 bg-white border border-brand-teal/15 rounded-sm space-y-4 flex flex-col justify-between shadow-sm"
                   >
                     <div>
-                      <div className="flex items-center justify-between pb-3 border-b border-brand-teal/20 text-xs font-mono">
-                        <span className="text-brand-gold">VERTICAL // {s.number}</span>
+                      <div className="flex items-center justify-between pb-3 border-b border-brand-teal/15 text-xs font-mono">
+                        <span className="text-brand-gold font-semibold">VERTICAL // {s.number}</span>
                         <Link
                           href={`/services/${s.slug}`}
                           target="_blank"
-                          className="hover:text-brand-white flex items-center space-x-1"
+                          className="hover:text-brand-gold text-brand-teal/70 flex items-center space-x-1"
                         >
                           <span>Live View</span>
                           <ExternalLink className="w-3 h-3" />
                         </Link>
                       </div>
 
-                      <h3 className="text-xl font-display font-medium text-brand-white mt-4">
+                      <h3 className="text-xl font-display font-medium text-brand-teal mt-4">
                         {s.title}
                       </h3>
-                      <p className="text-xs text-brand-gray-light mt-2 leading-relaxed">
+                      <p className="text-xs text-brand-teal/80 mt-2 leading-relaxed">
                         {s.tagline}
                       </p>
 
-                      <div className="mt-4 pt-3 border-t border-brand-teal/20 text-xs font-mono">
-                        <span className="text-brand-gold block mb-1">Visual Direction:</span>
-                        <p className="text-brand-gray text-[11px] leading-relaxed">
+                      <div className="mt-4 pt-3 border-t border-brand-teal/15 text-xs font-mono">
+                        <span className="text-brand-gold block mb-1 font-semibold">Visual Direction:</span>
+                        <p className="text-brand-teal/70 text-[11px] leading-relaxed">
                           {s.visualDirection.description}
                         </p>
                       </div>
                     </div>
 
-                    <div className="pt-4 flex items-center justify-between text-xs font-mono border-t border-brand-teal/20">
-                      <span className="text-brand-gray">
+                    <div className="pt-4 flex items-center justify-between text-xs font-mono border-t border-brand-teal/15">
+                      <span className="text-brand-teal/70">
                         {s.capabilities.length} Capabilities Configured
                       </span>
                       <button
                         type="button"
                         onClick={() => alert(`Service editor for ${s.title} ready for CMS backend.`)}
-                        className="text-brand-gold hover:underline"
+                        className="text-brand-gold hover:underline font-semibold"
                       >
                         Edit Service Spec
                       </button>
@@ -790,12 +794,12 @@ export default function AdminDashboard() {
           {/* TAB 04: TESTIMONIALS MANAGEMENT */}
           {activeTab === "testimonials" && (
             <div className="space-y-6 animate-fade-in">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/30">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
                     Endorsement Archive
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
                     Testimonials Management
                   </h1>
                 </div>
@@ -821,7 +825,7 @@ export default function AdminDashboard() {
                     };
                     setTestimonialsList([newTestimonial, ...testimonialsList]);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Testimonial</span>
@@ -832,26 +836,26 @@ export default function AdminDashboard() {
                 {testimonialsList.map((t) => (
                   <div
                     key={t.id}
-                    className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm flex flex-col justify-between space-y-4"
+                    className="p-6 bg-white border border-brand-teal/15 rounded-sm flex flex-col justify-between space-y-4 shadow-sm"
                   >
                     <div>
-                      <div className="flex items-center justify-between pb-3 border-b border-brand-teal/20 text-xs font-mono text-brand-gray">
-                        <span className="text-brand-gold">{t.serviceCategory}</span>
+                      <div className="flex items-center justify-between pb-3 border-b border-brand-teal/15 text-xs font-mono text-brand-teal/70">
+                        <span className="text-brand-gold font-semibold">{t.serviceCategory}</span>
                         <span>{t.year}</span>
                       </div>
-                      <p className="text-xs text-brand-gray-light italic mt-3 leading-relaxed">
+                      <p className="text-xs text-brand-teal/85 italic mt-3 leading-relaxed">
                         &ldquo;{t.quote}&rdquo;
                       </p>
                     </div>
 
-                    <div className="pt-3 border-t border-brand-teal/20 flex items-center justify-between">
+                    <div className="pt-3 border-t border-brand-teal/15 flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className="relative w-8 h-8 rounded-full overflow-hidden border border-brand-gold/40">
                           <Image src={t.portraitUrl} alt={t.author} fill className="object-cover" />
                         </div>
                         <div className="text-xs font-mono">
-                          <span className="text-brand-white font-medium block">{t.author}</span>
-                          <span className="text-brand-gray text-[10px]">{t.company}</span>
+                          <span className="text-brand-teal font-medium block">{t.author}</span>
+                          <span className="text-brand-teal/70 text-[10px]">{t.company}</span>
                         </div>
                       </div>
 
@@ -860,7 +864,7 @@ export default function AdminDashboard() {
                         onClick={() =>
                           setTestimonialsList(testimonialsList.filter((item) => item.id !== t.id))
                         }
-                        className="p-1 text-brand-gray hover:text-red-400"
+                        className="p-1 text-brand-teal/60 hover:text-red-600"
                         title="Delete record"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -875,12 +879,12 @@ export default function AdminDashboard() {
           {/* TAB 05: MEDIA LIBRARY */}
           {activeTab === "media" && (
             <div className="space-y-6 animate-fade-in">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/30">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
                     Asset Repository
                   </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
                     Media Library
                   </h1>
                 </div>
@@ -902,7 +906,7 @@ export default function AdminDashboard() {
                     };
                     setMediaList([newItem, ...mediaList]);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
                 >
                   <Upload className="w-3.5 h-3.5" />
                   <span>Upload Asset</span>
@@ -911,18 +915,18 @@ export default function AdminDashboard() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {mediaList.length === 0 ? (
-                  <div className="col-span-full py-16 text-center border border-dashed border-brand-teal/40 rounded-sm p-8 space-y-3">
-                    <FolderArchive className="w-8 h-8 text-brand-gold/60 mx-auto" />
-                    <p className="text-sm font-sans text-brand-white">No media assets in library.</p>
-                    <p className="text-xs font-mono text-brand-gray">Upload film stills, DCI masters, or promotional posters to populate the vault.</p>
+                  <div className="col-span-full py-16 text-center border border-dashed border-brand-teal/30 bg-white rounded-sm p-8 space-y-3 shadow-sm">
+                    <FolderArchive className="w-8 h-8 text-brand-gold mx-auto" />
+                    <p className="text-sm font-sans text-brand-teal font-medium">No media assets in library.</p>
+                    <p className="text-xs font-mono text-brand-teal/70">Upload film stills, DCI masters, or promotional posters to populate the vault.</p>
                   </div>
                 ) : (
                   mediaList.map((m) => (
                   <div
                     key={m.id}
-                    className="group bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden flex flex-col justify-between"
+                    className="group bg-white border border-brand-teal/15 rounded-sm overflow-hidden flex flex-col justify-between shadow-sm"
                   >
-                    <div className="relative aspect-[16/10] bg-brand-black">
+                    <div className="relative aspect-[16/10] bg-brand-teal">
                       <Image
                         src={m.thumbnail}
                         alt={m.title}
@@ -930,16 +934,16 @@ export default function AdminDashboard() {
                         sizes="(max-width: 768px) 100vw, 25vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <span className="absolute top-2 left-2 px-2.5 py-1 bg-brand-black/80 backdrop-blur-sm text-[11px] font-mono uppercase text-brand-gold rounded border border-brand-teal/40">
+                      <span className="absolute top-2 left-2 px-2.5 py-1 bg-brand-teal/90 backdrop-blur-sm text-[11px] font-mono uppercase text-brand-gold rounded border border-brand-gold/40 font-semibold">
                         {m.category}
                       </span>
                     </div>
 
                     <div className="p-4 space-y-2 font-mono text-xs">
-                      <h4 className="text-brand-white font-sans text-xs font-medium line-clamp-1">
+                      <h4 className="text-brand-teal font-sans text-xs font-medium line-clamp-1">
                         {m.title}
                       </h4>
-                      <div className="flex justify-between text-[10px] text-brand-gray border-t border-brand-teal/20 pt-2">
+                      <div className="flex justify-between text-[10px] text-brand-teal/70 border-t border-brand-teal/15 pt-2">
                         <span>{m.format} • {m.size}</span>
                         <span>{m.resolution}</span>
                       </div>
@@ -953,25 +957,25 @@ export default function AdminDashboard() {
           {/* TAB 06: ENQUIRIES INBOX */}
           {activeTab === "enquiries" && (
             <div className="space-y-6 animate-fade-in">
-              <div className="pb-6 border-b border-brand-teal/30">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+              <div className="pb-6 border-b border-brand-teal/15">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
                   Inbound Commissions
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
                   Enquiries Inbox
                 </h1>
-                <p className="text-xs text-brand-gray mt-1 font-mono">
+                <p className="text-xs text-brand-teal/70 mt-1 font-mono">
                   Review project commissions, budget scopes, and customer contact requests.
                 </p>
               </div>
 
-              <div className="bg-brand-black-elevated border border-brand-teal/40 rounded-sm overflow-hidden">
-                <div className="divide-y divide-brand-teal/20">
+              <div className="bg-white border border-brand-teal/15 rounded-sm overflow-hidden shadow-sm">
+                <div className="divide-y divide-brand-teal/15">
                   {enquiriesList.length === 0 ? (
-                    <div className="p-12 text-center text-brand-gray-light space-y-3">
-                      <Inbox className="w-8 h-8 text-brand-gold/60 mx-auto" />
-                      <p className="text-sm font-sans text-brand-white">No production enquiries logged yet.</p>
-                      <p className="text-xs font-mono text-brand-gray">Inbound project briefs submitted via /contact or /book will appear in this registry.</p>
+                    <div className="p-12 text-center text-brand-teal/70 space-y-3">
+                      <Inbox className="w-8 h-8 text-brand-gold mx-auto" />
+                      <p className="text-sm font-sans text-brand-teal font-medium">No production enquiries logged yet.</p>
+                      <p className="text-xs font-mono text-brand-teal/60">Inbound project briefs submitted via /contact or /book will appear in this registry.</p>
                     </div>
                   ) : (
                     enquiriesList.map((enq) => (
@@ -987,23 +991,23 @@ export default function AdminDashboard() {
                           setSelectedEnquiry(enq);
                         }
                       }}
-                      className={`p-6 cursor-pointer hover:bg-brand-teal/15 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
-                        selectedEnquiry?.id === enq.id ? "bg-brand-teal/30 ring-1 ring-inset ring-brand-gold/60" : ""
+                      className={`p-6 cursor-pointer hover:bg-brand-teal/5 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
+                        selectedEnquiry?.id === enq.id ? "bg-brand-teal/10 ring-1 ring-inset ring-brand-gold" : ""
                       }`}
                     >
                       <div className="space-y-1">
                         <div className="flex items-center space-x-3">
-                          <h3 className="text-sm font-medium text-brand-white font-sans">
+                          <h3 className="text-sm font-medium text-brand-teal font-sans">
                             {enq.name}
                           </h3>
-                          <span className="text-xs font-mono text-brand-gray">
+                          <span className="text-xs font-mono text-brand-teal/70">
                             ({enq.company})
                           </span>
                         </div>
-                        <p className="text-xs text-brand-gray-light font-mono">
+                        <p className="text-xs text-brand-teal/80 font-mono">
                           {enq.service} • Budget: {enq.budget}
                         </p>
-                        <p className="text-xs text-brand-gray line-clamp-1 font-light pt-1">
+                        <p className="text-xs text-brand-teal/70 line-clamp-1 font-light pt-1">
                           {enq.message}
                         </p>
                       </div>
@@ -1012,15 +1016,15 @@ export default function AdminDashboard() {
                         <span
                           className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
-                              ? "bg-brand-gold text-brand-black font-semibold"
+                              ? "bg-brand-gold text-white font-semibold shadow-sm"
                               : enq.status === "In Review"
-                              ? "bg-blue-500/20 text-blue-300 border border-blue-500/40"
-                              : "bg-brand-teal/40 text-brand-gray"
+                              ? "bg-brand-teal/10 text-brand-teal border border-brand-teal/30 font-medium"
+                              : "bg-[#F8F9FA] text-brand-teal/70"
                           }`}
                         >
                           {enq.status}
                         </span>
-                        <span className="text-[10px] font-mono text-brand-gray">
+                        <span className="text-[10px] font-mono text-brand-teal/60">
                           {enq.date}
                         </span>
                       </div>
@@ -1031,20 +1035,20 @@ export default function AdminDashboard() {
 
               {/* Enquiry Detail Drawer */}
               {selectedEnquiry && (
-                <div className="p-4 sm:p-8 bg-brand-teal rounded-sm border border-brand-teal-light space-y-6 animate-fade-in">
+                <div className="p-4 sm:p-8 bg-brand-teal rounded-sm border border-brand-gold/40 text-white space-y-6 animate-fade-in shadow-xl">
                   <div className="flex items-center justify-between pb-4 border-b border-brand-teal-light/50">
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gold block">
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gold block font-semibold">
                         Detail Drawer // ID: {selectedEnquiry.id}
                       </span>
-                      <h3 className="text-lg sm:text-xl font-display font-medium text-brand-white mt-1 break-words">
+                      <h3 className="text-lg sm:text-xl font-display font-medium text-white mt-1 break-words">
                         {selectedEnquiry.name} — {selectedEnquiry.company}
                       </h3>
                     </div>
                     <button
                       type="button"
                       onClick={() => setSelectedEnquiry(null)}
-                      className="p-1 text-brand-gray-light hover:text-brand-white focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded"
+                      className="p-1 text-white/80 hover:text-white focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold rounded"
                       aria-label="Close enquiry detail drawer"
                     >
                       <X className="w-5 h-5" />
@@ -1053,28 +1057,28 @@ export default function AdminDashboard() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono break-all">
                     <div>
-                      <span className="text-brand-gray-light block">Email:</span>
-                      <span className="text-brand-white">{selectedEnquiry.email}</span>
+                      <span className="text-brand-teal-light/80 block">Email:</span>
+                      <span className="text-white font-medium">{selectedEnquiry.email}</span>
                     </div>
                     <div>
-                      <span className="text-brand-gray-light block">Service:</span>
-                      <span className="text-brand-white">{selectedEnquiry.service}</span>
+                      <span className="text-brand-teal-light/80 block">Service:</span>
+                      <span className="text-white font-medium">{selectedEnquiry.service}</span>
                     </div>
                     <div>
-                      <span className="text-brand-gray-light block">Budget:</span>
-                      <span className="text-brand-white">{selectedEnquiry.budget}</span>
+                      <span className="text-brand-teal-light/80 block">Budget:</span>
+                      <span className="text-white font-medium">{selectedEnquiry.budget}</span>
                     </div>
                     <div>
-                      <span className="text-brand-gray-light block">Timeline:</span>
-                      <span className="text-brand-white">{selectedEnquiry.timeline}</span>
+                      <span className="text-brand-teal-light/80 block">Timeline:</span>
+                      <span className="text-white font-medium">{selectedEnquiry.timeline}</span>
                     </div>
                   </div>
 
                   <div className="space-y-2 pt-2 border-t border-brand-teal-light/40">
-                    <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block">
+                    <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-semibold">
                       Enquiry Narrative:
                     </span>
-                    <p className="text-sm text-brand-gray-light font-light leading-relaxed">
+                    <p className="text-sm text-white/90 font-light leading-relaxed">
                       {selectedEnquiry.message}
                     </p>
                   </div>
@@ -1095,7 +1099,7 @@ export default function AdminDashboard() {
                           status: "Consultation Scheduled",
                         });
                       }}
-                      className="text-xs font-mono uppercase tracking-wider bg-brand-gold text-brand-black px-4 py-2 rounded-sm font-semibold hover:bg-brand-gold-light"
+                      className="text-xs font-mono uppercase tracking-wider bg-brand-gold text-white px-4 py-2 rounded-sm font-semibold hover:bg-brand-gold-light shadow-sm"
                     >
                       Schedule Consultation
                     </button>
@@ -1111,7 +1115,7 @@ export default function AdminDashboard() {
                         );
                         setSelectedEnquiry(null);
                       }}
-                      className="text-xs font-mono uppercase tracking-wider border border-brand-teal-light text-brand-gray-light hover:text-brand-white px-4 py-2 rounded-sm"
+                      className="text-xs font-mono uppercase tracking-wider border border-brand-teal-light text-white/80 hover:text-white px-4 py-2 rounded-sm hover:bg-white/10"
                     >
                       Archive Record
                     </button>
@@ -1124,14 +1128,14 @@ export default function AdminDashboard() {
           {/* TAB 07: SITE SETTINGS */}
           {activeTab === "settings" && (
             <div className="space-y-6 animate-fade-in max-w-4xl">
-              <div className="pb-6 border-b border-brand-teal/30">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
+              <div className="pb-6 border-b border-brand-teal/15">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
                   System Configuration
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-white mt-1">
+                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
                   Site Settings & Tokens
                 </h1>
-                <p className="text-xs text-brand-gray mt-1 font-mono">
+                <p className="text-xs text-brand-teal/70 mt-1 font-mono">
                   Global studio variables, brand contact anchors, and SEO meta defaults.
                 </p>
               </div>
@@ -1139,115 +1143,115 @@ export default function AdminDashboard() {
               <form onSubmit={handleSaveSettings} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                       Brand Name
                     </label>
                     <input
                       type="text"
                       value={settingsForm.studioName}
                       onChange={(e) => setSettingsForm({ ...settingsForm, studioName: e.target.value })}
-                      className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-3 rounded-sm text-sm text-brand-white focus:outline-none"
+                      className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold p-3 rounded-sm text-sm text-brand-teal focus:outline-none"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                       Proposed Tagline
                     </label>
                     <input
                       type="text"
                       value={settingsForm.tagline}
                       onChange={(e) => setSettingsForm({ ...settingsForm, tagline: e.target.value })}
-                      className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-3 rounded-sm text-sm text-brand-white focus:outline-none"
+                      className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold p-3 rounded-sm text-sm text-brand-teal focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div className="space-y-2">
-                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                       Email Anchor
                     </label>
                     <input
                       type="email"
                       value={settingsForm.email}
                       onChange={(e) => setSettingsForm({ ...settingsForm, email: e.target.value })}
-                      className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-3 rounded-sm text-xs font-mono text-brand-white focus:outline-none"
+                      className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold p-3 rounded-sm text-xs font-mono text-brand-teal focus:outline-none"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                       Telephone
                     </label>
                     <input
                       type="text"
                       value={settingsForm.phone}
                       onChange={(e) => setSettingsForm({ ...settingsForm, phone: e.target.value })}
-                      className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-3 rounded-sm text-xs font-mono text-brand-white focus:outline-none"
+                      className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold p-3 rounded-sm text-xs font-mono text-brand-teal focus:outline-none"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                       WhatsApp Display
                     </label>
                     <input
                       type="text"
                       value={settingsForm.whatsapp}
                       onChange={(e) => setSettingsForm({ ...settingsForm, whatsapp: e.target.value })}
-                      className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-3 rounded-sm text-xs font-mono text-brand-white focus:outline-none"
+                      className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold p-3 rounded-sm text-xs font-mono text-brand-teal focus:outline-none"
                     />
                   </div>
                 </div>
 
                 {/* Brand Colors Definition */}
-                <div className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm space-y-4">
-                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block">
+                <div className="p-6 bg-white border border-brand-teal/15 rounded-sm space-y-4 shadow-sm">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block font-semibold">
                     Brand Colour Tokens
                   </span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-                    <div className="p-3 bg-brand-black border border-brand-teal/40 rounded">
-                      <span className="block text-brand-gray text-[10px]">Pure Black</span>
-                      <span className="text-brand-white">#000000</span>
+                    <div className="p-3 bg-brand-black border border-black rounded text-white shadow-sm">
+                      <span className="block text-white/70 text-[10px]">Pure Black</span>
+                      <span className="text-white font-semibold">#000000</span>
                     </div>
-                    <div className="p-3 bg-brand-teal border border-brand-teal-light rounded">
-                      <span className="block text-brand-gray-light text-[10px]">Deep Teal</span>
-                      <span className="text-brand-white">{settingsForm.brandTeal}</span>
+                    <div className="p-3 bg-brand-teal border border-brand-teal rounded text-white shadow-sm">
+                      <span className="block text-brand-teal-light text-[10px]">Deep Blue / Teal</span>
+                      <span className="text-white font-semibold">{settingsForm.brandTeal}</span>
                     </div>
-                    <div className="p-3 bg-brand-gold text-brand-black rounded font-medium">
-                      <span className="block text-[10px]">Warm Gold</span>
-                      <span>{settingsForm.brandGold}</span>
+                    <div className="p-3 bg-brand-gold text-white rounded font-medium shadow-sm">
+                      <span className="block text-white/80 text-[10px]">Warm Gold</span>
+                      <span className="font-semibold">{settingsForm.brandGold}</span>
                     </div>
-                    <div className="p-3 bg-brand-white text-brand-black rounded font-medium">
-                      <span className="block text-[10px]">Pure White</span>
-                      <span>#FFFFFF</span>
+                    <div className="p-3 bg-white text-brand-teal rounded font-medium border border-brand-teal/20 shadow-sm">
+                      <span className="block text-brand-teal/70 text-[10px]">Pure White</span>
+                      <span className="font-semibold">#FFFFFF</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="block text-xs font-mono uppercase tracking-wider text-brand-white">
+                  <label className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
                     Default Technical SEO Description
                   </label>
                   <textarea
                     rows={3}
                     value={settingsForm.seoDescription}
                     onChange={(e) => setSettingsForm({ ...settingsForm, seoDescription: e.target.value })}
-                    className="w-full bg-brand-black-elevated border border-brand-teal/40 focus:border-brand-gold p-3 rounded-sm text-xs text-brand-white font-mono focus:outline-none"
+                    className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold p-3 rounded-sm text-xs text-brand-teal font-mono focus:outline-none"
                   />
                 </div>
 
                 <div className="flex items-center space-x-4">
                   <button
                     type="submit"
-                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-6 py-3 rounded-sm font-semibold hover:bg-brand-gold-light transition-all"
+                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-6 py-3 rounded-sm font-semibold hover:bg-brand-gold-light transition-all shadow-md"
                   >
                     <Save className="w-4 h-4" />
                     <span>Save Site Settings</span>
                   </button>
                   {settingsSaved && (
-                    <span className="text-xs font-mono text-emerald-400 flex items-center space-x-1 animate-fade-in">
+                    <span className="text-xs font-mono text-emerald-600 flex items-center space-x-1 animate-fade-in font-medium">
                       <CheckCircle2 className="w-4 h-4" />
                       <span>Settings staged locally!</span>
                     </span>
@@ -1264,11 +1268,11 @@ export default function AdminDashboard() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-brand-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
         >
-          <div className="bg-brand-black-elevated border border-brand-teal/50 rounded-sm w-full max-w-2xl p-4 sm:p-8 space-y-6 my-auto shadow-2xl max-h-[92vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-4 border-b border-brand-teal/30">
-              <h3 className="font-display font-medium text-xl text-brand-white">
+          <div className="bg-white border border-brand-teal/20 rounded-sm w-full max-w-2xl p-4 sm:p-8 space-y-6 my-auto shadow-2xl max-h-[92vh] overflow-y-auto text-brand-teal">
+            <div className="flex items-center justify-between pb-4 border-b border-brand-teal/15">
+              <h3 className="font-display font-medium text-xl text-brand-teal">
                 {editingProject?.id ? "Edit Film Project" : "Add New Film Project"}
               </h3>
               <button
@@ -1277,7 +1281,7 @@ export default function AdminDashboard() {
                   setIsProjectModalOpen(false);
                   setEditingProject(null);
                 }}
-                className="p-1 text-brand-gray hover:text-brand-white"
+                className="p-1 text-brand-teal/70 hover:text-brand-gold"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1286,7 +1290,7 @@ export default function AdminDashboard() {
             <form onSubmit={handleSaveProject} className="space-y-4 text-xs font-mono">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-brand-white">Title *</label>
+                  <label className="text-brand-teal font-semibold">Title *</label>
                   <input
                     type="text"
                     required
@@ -1295,12 +1299,12 @@ export default function AdminDashboard() {
                       setEditingProject({ ...editingProject, title: e.target.value })
                     }
                     placeholder="e.g. Horizon Lights"
-                    className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-2.5 rounded text-brand-white"
+                    className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold p-2.5 rounded text-brand-teal focus:bg-white"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-brand-white">Slug (URL Route) *</label>
+                  <label className="text-brand-teal font-semibold">Slug (URL Route) *</label>
                   <input
                     type="text"
                     required
@@ -1309,14 +1313,14 @@ export default function AdminDashboard() {
                       setEditingProject({ ...editingProject, slug: e.target.value })
                     }
                     placeholder="e.g. horizon-lights"
-                    className="w-full bg-brand-black border border-brand-teal/40 focus:border-brand-gold p-2.5 rounded text-brand-white"
+                    className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold p-2.5 rounded text-brand-teal focus:bg-white"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-brand-white">Category</label>
+                  <label className="text-brand-teal font-semibold">Category</label>
                   <select
                     value={editingProject?.category || "documentary-film"}
                     onChange={(e) => {
@@ -1335,7 +1339,7 @@ export default function AdminDashboard() {
                         categoryLabel: label,
                       });
                     }}
-                    className="w-full bg-brand-black border border-brand-teal/40 p-2.5 rounded text-brand-white"
+                    className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-brand-teal focus:bg-white"
                   >
                     <option value="documentary-film">Documentary & Film</option>
                     <option value="music-videos">Music Videos</option>
@@ -1345,32 +1349,32 @@ export default function AdminDashboard() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-brand-white">Year</label>
+                  <label className="text-brand-teal font-semibold">Year</label>
                   <input
                     type="text"
                     value={editingProject?.year || "2026"}
                     onChange={(e) =>
                       setEditingProject({ ...editingProject, year: e.target.value })
                     }
-                    className="w-full bg-brand-black border border-brand-teal/40 p-2.5 rounded text-brand-white"
+                    className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-brand-teal focus:bg-white"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-brand-white">Client</label>
+                  <label className="text-brand-teal font-semibold">Client</label>
                   <input
                     type="text"
                     value={editingProject?.client || "Independent"}
                     onChange={(e) =>
                       setEditingProject({ ...editingProject, client: e.target.value })
                     }
-                    className="w-full bg-brand-black border border-brand-teal/40 p-2.5 rounded text-brand-white"
+                    className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-brand-teal focus:bg-white"
                   />
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-brand-white">Short Subtitle / Hook</label>
+                <label className="text-brand-teal font-semibold">Short Subtitle / Hook</label>
                 <input
                   type="text"
                   value={editingProject?.subtitle || ""}
@@ -1378,12 +1382,12 @@ export default function AdminDashboard() {
                     setEditingProject({ ...editingProject, subtitle: e.target.value })
                   }
                   placeholder="A cinematic exploration of..."
-                  className="w-full bg-brand-black border border-brand-teal/40 p-2.5 rounded text-brand-white"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-brand-teal focus:bg-white"
                 />
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-brand-white">Logline & Synopsis</label>
+                <label className="text-brand-teal font-semibold">Logline & Synopsis</label>
                 <textarea
                   rows={3}
                   value={editingProject?.logline || ""}
@@ -1391,7 +1395,7 @@ export default function AdminDashboard() {
                     setEditingProject({ ...editingProject, logline: e.target.value })
                   }
                   placeholder="Logline narrative..."
-                  className="w-full bg-brand-black border border-brand-teal/40 p-2.5 rounded text-brand-white"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-brand-teal focus:bg-white"
                 />
               </div>
 
@@ -1405,25 +1409,25 @@ export default function AdminDashboard() {
                   }
                   className="accent-brand-gold w-4 h-4"
                 />
-                <label htmlFor="featured-check" className="text-brand-white cursor-pointer">
+                <label htmlFor="featured-check" className="text-brand-teal cursor-pointer font-medium">
                   Feature this film prominently on the Homepage Showcase
                 </label>
               </div>
 
-              <div className="pt-4 border-t border-brand-teal/30 flex justify-end space-x-3">
+              <div className="pt-4 border-t border-brand-teal/15 flex justify-end space-x-3">
                 <button
                   type="button"
                   onClick={() => {
                     setIsProjectModalOpen(false);
                     setEditingProject(null);
                   }}
-                  className="px-4 py-2 border border-brand-teal/40 text-brand-gray-light hover:text-brand-white rounded"
+                  className="px-4 py-2 border border-brand-teal/20 text-brand-teal hover:bg-brand-teal/5 rounded"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-brand-gold text-brand-black font-semibold rounded hover:bg-brand-gold-light"
+                  className="px-6 py-2 bg-brand-gold text-white font-semibold rounded hover:bg-brand-gold-light shadow-md"
                 >
                   Save Project Record
                 </button>

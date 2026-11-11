@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <div className="relative w-full overflow-hidden bg-brand-black text-brand-white">
+    <div className="relative w-full overflow-hidden bg-white text-brand-teal">
       {/* SCENE 01 & SCENE 02: The Opening Frame & The Frame Breaks Open */}
       <CinematicHero />
 

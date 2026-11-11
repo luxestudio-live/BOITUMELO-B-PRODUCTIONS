@@ -17,18 +17,18 @@ export default function InteractiveServices() {
   return (
     <section
       aria-label="Production Disciplines in Motion"
-      className="relative bg-brand-teal-deep py-24 sm:py-36 border-y border-brand-teal/40 overflow-hidden"
+      className="relative bg-[#F8F9FA] py-24 sm:py-36 border-y border-brand-teal/15 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         {/* Section Heading */}
-        <div className="flex items-center justify-between pb-8 mb-12 border-b border-brand-teal/30">
+        <div className="flex items-center justify-between pb-8 mb-12 border-b border-brand-teal/15">
           <div className="flex items-center space-x-3">
             <Layers className="w-4 h-4 text-brand-gold" />
-            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-white">
+            <h2 className="text-xl sm:text-2xl font-display font-medium text-brand-teal">
               Production Disciplines
             </h2>
           </div>
-          <span className="text-xs font-mono text-brand-gray-light hidden sm:inline">
+          <span className="text-xs font-mono text-brand-teal/70 hidden sm:inline">
             Interactive Vertical Index
           </span>
         </div>
@@ -50,16 +50,16 @@ export default function InteractiveServices() {
                   aria-selected={isSelected}
                   className={`group relative p-4 sm:p-8 rounded-sm border transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
                     isSelected
-                      ? "bg-brand-black/80 border-brand-gold/80 shadow-2xl"
-                      : "bg-brand-black/40 border-brand-teal/40 hover:border-brand-teal hover:bg-brand-black/60"
+                      ? "bg-brand-teal border-brand-gold text-white shadow-xl"
+                      : "bg-white border-brand-teal/15 hover:border-brand-teal/40 hover:bg-white/80 text-brand-teal shadow-sm"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <h3
                       className={`text-xl sm:text-2xl md:text-3xl font-display font-medium transition-colors ${
                         isSelected
-                          ? "text-brand-white"
-                          : "text-brand-gray-light group-hover:text-brand-white"
+                          ? "text-white"
+                          : "text-brand-teal group-hover:text-brand-gold"
                       }`}
                     >
                       {service.title}
@@ -68,15 +68,15 @@ export default function InteractiveServices() {
                       className={`w-5 h-5 flex-shrink-0 ml-4 transition-transform duration-300 ${
                         isSelected
                           ? "text-brand-gold translate-x-0.5 -translate-y-0.5"
-                          : "text-brand-gray opacity-40 group-hover:opacity-100"
+                          : "text-brand-teal/60 opacity-60 group-hover:opacity-100"
                       }`}
                     />
                   </div>
 
                   {/* Expandable Info for active state */}
                   {isSelected && (
-                    <div className="mt-4 pt-4 border-t border-brand-teal/30 space-y-3 animate-fade-in">
-                      <p className="text-xs sm:text-sm text-brand-gray-light leading-relaxed font-light">
+                    <div className="mt-4 pt-4 border-t border-brand-teal-light/60 space-y-3 animate-fade-in">
+                      <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-light">
                         {service.tagline}
                       </p>
 
@@ -84,7 +84,7 @@ export default function InteractiveServices() {
                         {service.visualDirection.aestheticTokens.slice(0, 3).map((token) => (
                           <span
                             key={token}
-                            className="text-xs font-mono uppercase tracking-widest px-2.5 py-1 bg-brand-teal/40 text-brand-gray-light rounded border border-brand-teal/50"
+                            className="text-xs font-mono uppercase tracking-widest px-2.5 py-1 bg-brand-teal-dark text-brand-gold-light rounded border border-brand-gold/30"
                           >
                             {token}
                           </span>
@@ -139,7 +139,7 @@ export default function InteractiveServices() {
                 </span>
                 <Link
                   href={`/services/${activeService.slug}`}
-                  className="bg-brand-gold text-brand-black font-semibold px-3 py-1 rounded hover:bg-brand-gold-light transition-colors uppercase tracking-wider text-xs"
+                  className="bg-brand-gold text-white font-semibold px-3 py-1 rounded hover:bg-brand-gold-light transition-colors uppercase tracking-wider text-xs shadow-md"
                 >
                   View Vertical Specs
                 </Link>

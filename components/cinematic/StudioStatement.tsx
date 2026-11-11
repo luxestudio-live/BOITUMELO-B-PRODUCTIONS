@@ -59,11 +59,11 @@ export default function StudioStatement() {
         },
       });
 
-      // 1. Sequentially illuminate white words with clean contrast (starts at 0.65 for WCAG AA compliance)
-      const whiteElements = wordsRef.current.slice(0, 6);
+      // 1. Sequentially illuminate blue words with clean contrast (starts at 0.5 for WCAG AA compliance)
+      const tealElements = wordsRef.current.slice(0, 6);
       tl.fromTo(
-        whiteElements,
-        { opacity: 0.65 },
+        tealElements,
+        { opacity: 0.5 },
         {
           opacity: 1,
           stagger: 0.025,
@@ -78,15 +78,15 @@ export default function StudioStatement() {
       tl.fromTo(
         goldElements,
         {
-          color: "#E2A65F",
-          opacity: 0.75,
+          color: "#CB8D44",
+          opacity: 0.7,
           textShadow: "0 0 0px rgba(203, 141, 68, 0)",
         },
         {
-          color: "#E2A65F",
+          color: "#CB8D44",
           opacity: 1,
           textShadow:
-            "0 0 35px rgba(203, 141, 68, 0.8), 0 0 14px rgba(203, 141, 68, 0.45)",
+            "0 0 35px rgba(203, 141, 68, 0.4), 0 0 14px rgba(203, 141, 68, 0.25)",
           stagger: 0.025,
           duration: 0.2,
           ease: "power1.out",
@@ -122,18 +122,18 @@ export default function StudioStatement() {
     <section
       ref={containerRef}
       aria-label="The Studio Statement"
-      className="relative bg-brand-teal-deep py-28 sm:py-44 border-b border-brand-teal/40 overflow-hidden flex items-center justify-center"
+      className="relative bg-white py-28 sm:py-44 border-b border-brand-teal/15 overflow-hidden flex items-center justify-center"
     >
       {/* Atmospheric radial spotlight in Deep Teal & Gold */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-teal/35 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-gold/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute inset-0 film-grain opacity-40 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-brand-teal/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-gold/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 film-grain opacity-20 pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 text-center space-y-8 sm:space-y-10">
         {/* Master Scaled Cinematic Manifesto */}
         <h2
           ref={titleRef}
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-medium tracking-tight text-brand-white leading-[1.04] flex flex-wrap justify-center gap-x-3 sm:gap-x-5 lg:gap-x-6 gap-y-2 sm:gap-y-3 max-w-5xl mx-auto select-none"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-medium tracking-tight text-brand-teal leading-[1.04] flex flex-wrap justify-center gap-x-3 sm:gap-x-5 lg:gap-x-6 gap-y-2 sm:gap-y-3 max-w-5xl mx-auto select-none"
         >
           {statementWords.map((item, idx) => (
             <span
@@ -143,8 +143,8 @@ export default function StudioStatement() {
               }}
               className={`inline-block ${
                 item.gold
-                  ? "text-[#E2A65F] font-semibold"
-                  : "text-brand-white"
+                  ? "text-brand-gold font-semibold"
+                  : "text-brand-teal"
               }`}
             >
               {item.text}
@@ -155,7 +155,7 @@ export default function StudioStatement() {
         {/* Supporting Narrative */}
         <p
           ref={subtextRef}
-          className="max-w-2xl mx-auto text-base sm:text-xl text-brand-white font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
+          className="max-w-2xl mx-auto text-base sm:text-xl text-brand-teal/80 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
           In an era of disposable video feeds, true cinema demands reverence. We pair large format anamorphic glass with deep cultural listening to craft films that endure.
         </p>
@@ -163,7 +163,7 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-brand-gray-light tracking-widest uppercase"
+          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-brand-teal/70 tracking-widest uppercase"
         >
           <span>MELBOURNE</span>
           <span className="text-brand-gold">•</span>

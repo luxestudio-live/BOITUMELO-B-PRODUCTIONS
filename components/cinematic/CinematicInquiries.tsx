@@ -113,12 +113,12 @@ export default function CinematicInquiries({
   return (
     <section
       aria-label="Common Inquiries & Production Standards"
-      className="relative bg-brand-teal-deep py-24 sm:py-32 border-y border-brand-teal/40 overflow-hidden"
+      className="relative bg-white py-24 sm:py-32 border-y border-brand-teal/15 overflow-hidden text-brand-teal"
     >
       {/* Cinematic Ambient Glow & Subtle Film Grain */}
-      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-brand-teal/25 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-48 w-96 h-96 bg-brand-teal/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-brand-gold/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute inset-0 film-grain opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 film-grain opacity-20 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main 2-Column Asymmetrical Grid */}
@@ -127,13 +127,13 @@ export default function CinematicInquiries({
           <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-28">
             {/* Architectural Heading */}
             <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-white leading-[1.05] tracking-[0.02em]">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-brand-teal leading-[1.05] tracking-[0.02em]">
                 {title}{" "}
                 <span className="block text-brand-gold font-normal mt-1">
                   {serifAccent}
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-brand-gray-light leading-relaxed font-light pt-2 [text-wrap:pretty]">
+              <p className="text-sm sm:text-base text-brand-teal/80 leading-relaxed font-light pt-2 [text-wrap:pretty]">
                 {lead}
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function CinematicInquiries({
             {/* Category Filter Pills (when enabled) */}
             {enableCategories && categories.length > 2 && (
               <div className="pt-2 space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-brand-gray-light block">
+                <span className="text-xs font-mono uppercase tracking-widest text-brand-teal/70 block font-medium">
                   Filter by Topic
                 </span>
                 <div className="flex flex-wrap gap-2.5">
@@ -162,14 +162,14 @@ export default function CinematicInquiries({
                         }}
                         className={`min-h-[44px] text-xs font-mono uppercase tracking-wider px-4 py-2.5 rounded-sm border transition-all duration-300 flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold ${
                           isSelected
-                            ? "bg-brand-gold text-brand-black border-brand-gold font-medium shadow-md shadow-brand-gold/15"
-                            : "bg-brand-black/60 text-brand-gray-light border-brand-teal/50 hover:border-brand-gold/60 hover:text-brand-white"
+                            ? "bg-brand-gold text-white border-brand-gold font-medium shadow-md shadow-brand-gold/15"
+                            : "bg-[#F8F9FA] text-brand-teal border-brand-teal/20 hover:border-brand-gold/60 hover:text-brand-teal"
                         }`}
                       >
                         <span>{cat}</span>
                         <span
                           className={`text-xs ml-1 font-semibold ${
-                            isSelected ? "text-brand-black" : "text-brand-gold"
+                            isSelected ? "text-white" : "text-brand-gold"
                           }`}
                         >
                           ({count})
@@ -182,7 +182,7 @@ export default function CinematicInquiries({
             )}
 
             {/* Executive Producer Contact Hotline Card */}
-            <div className="relative p-6 sm:p-7 bg-brand-black/80 border border-brand-teal/60 rounded-sm space-y-4 shadow-xl">
+            <div className="relative p-6 sm:p-7 bg-brand-teal border border-brand-teal-light rounded-sm space-y-4 shadow-xl text-white">
               <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-brand-gold/40 pointer-events-none" />
               <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-brand-gold/40 pointer-events-none" />
 
@@ -193,21 +193,21 @@ export default function CinematicInquiries({
                 </span>
               </div>
 
-              <p className="text-xs text-brand-gray-light font-light leading-relaxed">
+              <p className="text-xs text-slate-200 font-light leading-relaxed">
                 Have a bespoke brief, sensitive NDA project, or complex aviation requirement not answered here?
               </p>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all font-medium"
+                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all font-medium shadow-sm"
                 >
                   <span>Direct Message</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   href="/book"
-                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-brand-teal/50 border border-brand-teal-light text-brand-white hover:border-brand-gold px-4 py-2.5 rounded-sm transition-all"
+                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-brand-teal-dark/60 border border-brand-gold/40 text-white hover:border-brand-gold px-4 py-2.5 rounded-sm transition-all"
                 >
                   <span>Build Brief</span>
                 </Link>
@@ -225,8 +225,8 @@ export default function CinematicInquiries({
                   key={idx}
                   className={`group relative transition-all duration-300 rounded-sm border ${
                     isOpen
-                      ? "bg-brand-black-elevated border-brand-gold/70 shadow-2xl shadow-brand-black"
-                      : "bg-brand-black/60 border-brand-teal/40 hover:border-brand-teal/80 hover:bg-brand-black/80"
+                      ? "bg-[#F8F9FA] border-brand-gold shadow-md"
+                      : "bg-white border-brand-teal/15 hover:border-brand-teal/40 hover:bg-[#F8F9FA]/60"
                   }`}
                 >
                   {/* Viewfinder Framelines on Active Item */}
@@ -249,13 +249,13 @@ export default function CinematicInquiries({
                       <div className="flex items-center space-x-3 text-xs font-mono">
                         <span
                           className={`font-semibold tracking-wider transition-colors duration-300 ${
-                            isOpen ? "text-brand-gold" : "text-brand-gray"
+                            isOpen ? "text-brand-gold" : "text-brand-teal/60"
                           }`}
                         >
                           [ 0{idx + 1} ]
                         </span>
                         {item.category && (
-                          <span className="inline-flex items-center space-x-1.5 text-brand-gray-light bg-brand-teal/40 px-2.5 py-1 rounded-sm border border-brand-teal/50">
+                          <span className="inline-flex items-center space-x-1.5 text-brand-teal/80 bg-brand-teal/5 px-2.5 py-1 rounded-sm border border-brand-teal/15">
                             {getCategoryIcon(item.category)}
                             <span className="uppercase tracking-wider text-xs font-mono font-medium">
                               {item.category}
@@ -268,8 +268,8 @@ export default function CinematicInquiries({
                       <h3
                         className={`text-base sm:text-lg font-display transition-colors duration-300 tracking-wide leading-snug ${
                           isOpen
-                            ? "text-brand-gold font-medium"
-                            : "text-brand-white group-hover:text-brand-gold-light"
+                            ? "text-brand-teal font-medium"
+                            : "text-brand-teal group-hover:text-brand-gold"
                         }`}
                       >
                         {item.q}
@@ -280,8 +280,8 @@ export default function CinematicInquiries({
                     <div
                       className={`flex-shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 mt-1 ${
                         isOpen
-                          ? "bg-brand-gold text-brand-black border-brand-gold rotate-90"
-                          : "bg-brand-teal/30 text-brand-gray-light border-brand-teal/60 group-hover:border-brand-gold group-hover:text-brand-gold"
+                          ? "bg-brand-gold text-white border-brand-gold rotate-90"
+                          : "bg-brand-teal/10 text-brand-teal border-brand-teal/30 group-hover:border-brand-gold group-hover:text-brand-gold"
                       }`}
                       aria-hidden="true"
                     >
@@ -295,15 +295,15 @@ export default function CinematicInquiries({
 
                   {/* Expanded Content Drawer */}
                   {isOpen && (
-                    <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 border-t border-brand-teal/30 mt-1 animate-fade-in space-y-4">
+                    <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 border-t border-brand-teal/15 mt-1 animate-fade-in space-y-4">
                       {/* Answer Paragraph */}
-                      <p className="text-sm sm:text-base text-brand-gray-light leading-relaxed font-light pt-4">
+                      <p className="text-sm sm:text-base text-brand-teal/85 leading-relaxed font-light pt-4">
                         {item.a}
                       </p>
 
                       {/* Technical Specs Footer Ribbon */}
                       {item.specs && (
-                        <div className="p-3 bg-brand-teal-deep/80 border border-brand-teal/40 rounded-sm flex items-center space-x-2 text-xs font-mono text-brand-gray-light">
+                        <div className="p-3 bg-brand-teal text-white border border-brand-teal-light rounded-sm flex items-center space-x-2 text-xs font-mono">
                           <span className="w-1.5 h-1.5 rounded-full bg-brand-gold flex-shrink-0" />
                           <span className="truncate">
                             <strong className="text-brand-gold font-semibold uppercase tracking-wider mr-1">

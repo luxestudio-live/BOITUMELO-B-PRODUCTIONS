@@ -16,14 +16,14 @@ export default function AboutPage() {
       {/* 01: Immersive Opening Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-[0.02em] leading-[1.02]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-teal tracking-[0.02em] leading-[1.02]">
             Behind Every Frame,{" "}
             <span className="text-brand-gold block sm:inline font-normal">
               There&apos;s a Story.
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-gray-light font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
+          <p className="text-lg sm:text-xl text-brand-teal/80 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             BOITUMELO B PRODUCTIONS was founded on a singular belief: filmmaking is not an exercise in operating equipment—it is the art of giving emotional weight to human truth.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-teal leading-tight">
               An Australian Studio with a{" "}
               <span className="text-brand-gold font-normal">
                 Global Cinematic Lens.
@@ -59,14 +59,14 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="lg:col-span-7 space-y-6 text-brand-gray-light text-base sm:text-lg leading-relaxed font-light max-w-[68ch] [text-wrap:pretty]">
+          <div className="lg:col-span-7 space-y-6 text-brand-teal/80 text-base sm:text-lg leading-relaxed font-light max-w-[68ch] [text-wrap:pretty]">
             <p>
-              Based in Australia, <strong className="text-brand-white font-medium">BOITUMELO B PRODUCTIONS</strong> is an independent creative film and video production house. We work across the country—from the coastal metropolises of Melbourne and Sydney to the remote ochre desert ranges of central Australia.
+              Based in Australia, <strong className="text-brand-teal font-semibold">BOITUMELO B PRODUCTIONS</strong> is an independent creative film and video production house. We work across the country—from the coastal metropolises of Melbourne and Sydney to the remote ochre desert ranges of central Australia.
             </p>
             <p>
               Our perspective was forged by crossing boundaries between diverse genres. We take the patience, cultural reverence, and narrative depth of documentary cinema and bring it to commercial brand films. Conversely, we take the visual flair, rhythmic tempo, and lighting ingenuity of music videos and infuse it into corporate storytelling.
             </p>
-            <p className="pt-2 text-brand-white font-display text-base sm:text-lg border-l-2 border-brand-gold pl-4 tracking-wide">
+            <p className="pt-2 text-brand-teal font-display text-base sm:text-lg border-l-2 border-brand-gold pl-4 tracking-wide">
               &ldquo;We measure a production not by how much noise it creates, but by how long its resonance lingers after the screen goes dark.&rdquo;
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function AboutPage() {
       </section>
 
       {/* 03: Four Pillars of Our Philosophy */}
-      <section className="bg-brand-black-elevated py-20 sm:py-28 border-y border-brand-teal/30">
+      <section className="bg-[#F8F9FA] py-20 sm:py-28 border-y border-brand-teal/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <EditorialHeading
             title="The Principles That Guide Us."
@@ -107,13 +107,13 @@ export default function AboutPage() {
             ].map((p) => (
               <div
                 key={p.title}
-                className="bg-brand-black/60 border border-brand-teal/40 p-8 rounded-sm hover:border-brand-gold/60 transition-colors shadow-lg"
+                className="bg-white border border-brand-teal/15 p-8 rounded-sm hover:border-brand-gold transition-colors shadow-sm"
               >
                 <p.icon className="w-8 h-8 text-brand-gold mb-5" />
-                <h3 className="text-xl font-display font-medium text-brand-white">
+                <h3 className="text-xl font-display font-medium text-brand-teal">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-xs sm:text-sm text-brand-gray leading-relaxed font-light">
+                <p className="mt-3 text-xs sm:text-sm text-brand-teal/75 leading-relaxed font-light">
                   {p.desc}
                 </p>
               </div>
@@ -133,7 +133,7 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/40 shadow-xl group">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/20 shadow-md group">
             <Image
               src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1000&q=80"
               alt="Rigging camera kit in the desert"
@@ -147,7 +147,7 @@ export default function AboutPage() {
             </span>
           </div>
 
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/40 shadow-xl group">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/20 shadow-md group">
             <Image
               src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80"
               alt="Subterranean music video lighting setup"
@@ -161,7 +161,7 @@ export default function AboutPage() {
             </span>
           </div>
 
-          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/40 shadow-xl group">
+          <div className="relative aspect-[4/5] rounded-sm overflow-hidden border border-brand-teal/20 shadow-md group">
             <Image
               src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=80"
               alt="Cellar macro lens filming session"
@@ -178,7 +178,7 @@ export default function AboutPage() {
       </section>
 
       {/* 05: Meet the Director & Crew Network */}
-      <section className="bg-brand-teal-deep py-20 sm:py-28 border-y border-brand-teal/40">
+      <section className="bg-brand-teal py-20 sm:py-28 border-y border-brand-teal-light text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 relative">
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="text-2xl font-display font-medium text-brand-white">
+                  <h3 className="text-2xl font-display font-medium text-white">
                     Boitumelo B.
                   </h3>
                   <p className="text-xs text-brand-gold font-mono uppercase tracking-wider mt-1">
@@ -203,10 +203,10 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-medium text-white leading-tight">
                 A Collaborative Network of Master Craftspeople.
               </h2>
-              <div className="space-y-4 text-brand-gray-light text-base leading-relaxed font-light max-w-[68ch] [text-wrap:pretty]">
+              <div className="space-y-4 text-slate-200 text-base leading-relaxed font-light max-w-[68ch] [text-wrap:pretty]">
                 <p>
                   While every film is led with singular creative direction, great cinema is inherently collective. BOITUMELO B PRODUCTIONS scales dynamically around each project&apos;s needs—calling upon an elite network of Australian gaffers, sound recordists, drone pilots, editors, and senior DaVinci colourists.
                 </p>
@@ -218,14 +218,14 @@ export default function AboutPage() {
               <div className="pt-4 flex items-center space-x-6">
                 <Link
                   href="/work"
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
                 >
                   <span>Explore Selected Work</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/book"
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-white hover:text-brand-gold transition-colors"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-white hover:text-brand-gold transition-colors"
                 >
                   <span>Start a Project</span>
                   <ArrowUpRight className="w-4 h-4" />

@@ -30,7 +30,7 @@ export default function PublicLayout({
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-black text-brand-white">
+    <div className="flex flex-col min-h-screen bg-white text-brand-teal">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -49,7 +49,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
         <div className="mb-8">
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] text-brand-gray hover:text-brand-gold transition-colors py-1"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] text-brand-teal/70 hover:text-brand-gold transition-colors py-1"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to All Projects</span>
@@ -58,25 +58,25 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
         <div className="space-y-4 max-w-4xl">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="px-3 py-1 bg-brand-teal/40 border border-brand-teal text-xs font-mono uppercase tracking-[0.2em] text-brand-gold rounded-sm">
+            <span className="px-3 py-1 bg-brand-teal text-xs font-mono uppercase tracking-[0.2em] text-brand-gold rounded-sm border border-brand-teal">
               {project.categoryLabel}
             </span>
-            <span className="text-xs font-mono text-brand-gray">
+            <span className="text-xs font-mono text-brand-teal/70">
               Year: {project.year}
             </span>
             {project.awardNote && (
-              <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-brand-gold/15 border border-brand-gold/40 text-xs font-mono text-brand-gold rounded-sm">
+              <span className="inline-flex items-center space-x-1.5 px-3 py-1 bg-brand-gold/15 border border-brand-gold/40 text-xs font-mono text-brand-gold-dark rounded-sm">
                 <Award className="w-3.5 h-3.5" />
                 <span>{project.awardNote}</span>
               </span>
             )}
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-white tracking-tight leading-[1.02]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-teal tracking-tight leading-[1.02]">
             {project.title}
           </h1>
 
-          <p className="text-lg sm:text-2xl text-brand-gray-light font-serif italic max-w-3xl leading-relaxed">
+          <p className="text-lg sm:text-2xl text-brand-teal/80 font-serif italic max-w-3xl leading-relaxed">
             &ldquo;{project.logline}&rdquo;
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               aspectRatio="aspect-[16/9] lg:aspect-[2.39/1]"
             />
           </div>
-          <div className="flex items-center justify-between text-xs font-mono text-slate-300 px-1">
+          <div className="flex items-center justify-between text-xs font-mono text-brand-teal/70 px-1">
             <span>DCI 4K Exhibition Master</span>
             <span>Ambisonic 5.1 Surround Mastering</span>
           </div>
@@ -102,36 +102,36 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
       {/* 03: Structured Production Overview & Metadata Matrix */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-brand-black-elevated border border-brand-teal/50 rounded-sm shadow-xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-white border border-brand-teal/15 rounded-sm shadow-sm">
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
               Client / Commissioner
             </span>
-            <p className="text-sm font-medium text-brand-white mt-1">
+            <p className="text-sm font-medium text-brand-teal mt-1">
               {project.client}
             </p>
           </div>
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
               Filming Location
             </span>
-            <p className="text-sm font-medium text-brand-white mt-1">
+            <p className="text-sm font-medium text-brand-teal mt-1">
               {project.location}
             </p>
           </div>
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
               Aspect Ratio & Glass
             </span>
-            <p className="text-sm font-medium text-brand-white mt-1">
+            <p className="text-sm font-medium text-brand-teal mt-1">
               {project.aspectRatio}
             </p>
           </div>
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
               Camera System
             </span>
-            <p className="text-sm font-medium text-brand-white mt-1">
+            <p className="text-sm font-medium text-brand-teal mt-1">
               {project.cameraFormat}
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-4 space-y-8">
-            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-2xl">
+            <div className="p-8 bg-brand-teal rounded-sm border border-brand-teal-light shadow-xl text-white">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block mb-2 font-medium">
                 Production Slate & Credits
               </span>
@@ -152,7 +152,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                     <span className="text-xs font-mono text-slate-300 uppercase block">
                       {c.role}
                     </span>
-                    <span className="text-sm font-medium text-brand-white">
+                    <span className="text-sm font-medium text-white">
                       {c.name}
                     </span>
                   </li>
@@ -161,16 +161,16 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
 
             {project.quote && (
-              <div className="p-6 bg-brand-black-elevated border border-brand-teal/40 rounded-sm shadow-lg">
+              <div className="p-6 bg-white border border-brand-teal/15 rounded-sm shadow-sm">
                 <Quote className="w-6 h-6 text-brand-gold mb-3" />
-                <p className="text-xs sm:text-sm text-brand-gray-light italic leading-relaxed">
+                <p className="text-xs sm:text-sm text-brand-teal/85 italic leading-relaxed">
                   &ldquo;{project.quote.text}&rdquo;
                 </p>
-                <div className="mt-4 pt-3 border-t border-brand-teal/20 text-xs">
-                  <span className="text-brand-white font-medium block">
+                <div className="mt-4 pt-3 border-t border-brand-teal/10 text-xs">
+                  <span className="text-brand-teal font-medium block">
                     {project.quote.author}
                   </span>
-                  <span className="text-slate-300 font-mono text-xs">
+                  <span className="text-brand-teal/70 font-mono text-xs">
                     {project.quote.role}
                   </span>
                 </div>
@@ -178,9 +178,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             )}
           </div>
 
-          <div className="lg:col-span-8 space-y-10 text-brand-gray-light font-light leading-relaxed">
+          <div className="lg:col-span-8 space-y-10 text-brand-teal/80 font-light leading-relaxed">
             <div>
-              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-white leading-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal leading-tight mb-4">
                 Synopsis & Context
               </h2>
               <p className="text-base sm:text-lg leading-relaxed max-w-2xl [text-wrap:pretty]">
@@ -188,9 +188,9 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-brand-teal/30">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-brand-teal/15">
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold block">
                   The Creative Challenge
                 </span>
                 <p className="text-sm leading-relaxed">
@@ -199,7 +199,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold block">
                   Cinematic Direction
                 </span>
                 <p className="text-sm leading-relaxed">
@@ -209,13 +209,13 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </div>
 
             {/* Production Notes Bulleted List */}
-            <div className="pt-6 border-t border-brand-teal/30 space-y-4">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-white block">
+            <div className="pt-6 border-t border-brand-teal/15 space-y-4">
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-teal font-semibold block">
                 Technical Production Notes:
               </span>
               <ul className="space-y-2.5">
                 {project.productionNotes.map((note, idx) => (
-                  <li key={idx} className="flex items-start space-x-3 text-sm">
+                  <li key={idx} className="flex items-start space-x-3 text-sm text-brand-teal/80">
                     <span className="text-brand-gold font-mono text-xs mt-0.5">•</span>
                     <span>{note}</span>
                   </li>
@@ -239,7 +239,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             {project.behindTheFrames.map((frame, idx) => (
               <figure
                 key={idx}
-                className="group relative bg-brand-black-elevated border border-brand-teal/50 rounded-sm overflow-hidden shadow-xl"
+                className="group relative bg-white border border-brand-teal/15 rounded-sm overflow-hidden shadow-sm"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -251,7 +251,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 via-transparent to-transparent" />
                 </div>
-                <figcaption className="p-4 text-xs font-mono text-brand-gray-light leading-snug">
+                <figcaption className="p-4 text-xs font-mono text-brand-teal/80 leading-snug">
                   {frame.caption}
                 </figcaption>
               </figure>
@@ -264,7 +264,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           href={`/work/${nextProject.slug}`}
-          className="group block relative bg-brand-black-elevated border border-brand-teal/50 hover:border-brand-gold rounded-sm overflow-hidden p-8 sm:p-14 transition-all duration-500 shadow-2xl"
+          className="group block relative bg-brand-teal border border-brand-teal-light hover:border-brand-gold rounded-sm overflow-hidden p-8 sm:p-14 transition-all duration-500 shadow-xl text-white"
         >
           <div className="absolute inset-0 opacity-20 group-hover:opacity-35 transition-opacity">
             <Image
@@ -273,18 +273,18 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/90 to-brand-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-teal-deep via-brand-teal/90 to-brand-teal/60" />
           </div>
 
           <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2">
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold block mb-2 font-medium">
                 Next Production // {nextProject.categoryLabel}
               </span>
-              <h3 className="text-2xl sm:text-4xl font-display font-medium text-brand-white group-hover:text-brand-gold transition-colors">
+              <h3 className="text-2xl sm:text-4xl font-display font-medium text-white group-hover:text-brand-gold transition-colors">
                 {nextProject.title}
               </h3>
-              <p className="text-sm text-brand-gray mt-1 font-light">
+              <p className="text-sm text-slate-200 mt-1 font-light">
                 {nextProject.location} • {nextProject.duration}
               </p>
             </div>
@@ -299,16 +299,16 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
       {/* 07: Project Contact CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-white">
+        <h2 className="text-3xl sm:text-4xl font-display font-medium text-brand-teal">
           Inspired by this production?
         </h2>
-        <p className="text-brand-gray max-w-xl mx-auto text-sm sm:text-base font-light">
+        <p className="text-brand-teal/80 max-w-xl mx-auto text-sm sm:text-base font-light">
           Let&apos;s explore how a similar cinematic approach can amplify your documentary, artist vision, or brand campaign.
         </p>
         <div className="pt-2 flex items-center justify-center space-x-4">
           <Link
             href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
+            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
           >
             <span>Start a Project Brief</span>
             <ArrowRight className="w-4 h-4" />

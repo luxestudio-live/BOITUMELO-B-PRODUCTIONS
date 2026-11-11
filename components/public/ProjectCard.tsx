@@ -47,7 +47,7 @@ export default function ProjectCard({
 
   return (
     <article
-      className="group relative flex flex-col bg-brand-black-elevated border border-brand-teal/40 hover:border-brand-gold/70 transition-all duration-500 rounded-sm overflow-hidden shadow-xl"
+      className="group relative flex flex-col bg-white border border-brand-teal/15 hover:border-brand-gold transition-all duration-500 rounded-sm overflow-hidden shadow-sm hover:shadow-xl"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -57,11 +57,11 @@ export default function ProjectCard({
         aria-label={`View film project: ${project.title}`}
       >
         {/* Physical 35mm Perforation Header Strip */}
-        <div className="flex items-center justify-between px-3 py-1.5 bg-brand-teal-deep text-xs font-mono text-brand-gray-light border-b border-brand-teal/40">
+        <div className="flex items-center justify-between px-3 py-1.5 bg-brand-teal text-xs font-mono text-white border-b border-brand-teal-light">
           <span className="text-brand-gold font-semibold uppercase tracking-wider">
             {project.categoryLabel}
           </span>
-          <span className="text-brand-gray-light">{project.aspectRatio}</span>
+          <span className="text-slate-300">{project.aspectRatio}</span>
         </div>
 
         <div className={`relative w-full ${aspectClass} overflow-hidden bg-brand-black-surface`}>
@@ -117,20 +117,20 @@ export default function ProjectCard({
         <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
           <div>
             <div className="flex items-start justify-between gap-4">
-              <h3 className="font-display font-medium text-lg sm:text-xl text-brand-white group-hover:text-brand-gold transition-colors duration-300 tracking-wide break-words line-clamp-2">
+              <h3 className="font-display font-medium text-lg sm:text-xl text-brand-teal group-hover:text-brand-gold transition-colors duration-300 tracking-wide break-words line-clamp-2">
                 {project.title}
               </h3>
               <ArrowUpRight className="w-4 h-4 text-brand-gold opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all flex-shrink-0 mt-1" />
             </div>
 
-            <p className="mt-2 text-xs sm:text-sm text-brand-gray-light line-clamp-2 leading-relaxed font-light [text-wrap:pretty]">
+            <p className="mt-2 text-xs sm:text-sm text-brand-teal/80 line-clamp-2 leading-relaxed font-light [text-wrap:pretty]">
               {project.subtitle}
             </p>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-brand-teal/20 flex items-center justify-between text-xs font-mono text-brand-gray-light gap-2">
+          <div className="mt-4 pt-4 border-t border-brand-teal/10 flex items-center justify-between text-xs font-mono text-brand-teal/70 gap-2">
             <span className="truncate max-w-[65%]">{project.location}</span>
-            <span className="text-brand-gold flex-shrink-0">{project.duration}</span>
+            <span className="text-brand-gold font-medium flex-shrink-0">{project.duration}</span>
           </div>
         </div>
       </Link>

@@ -31,7 +31,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
     <div className="space-y-12">
       <h2 className="sr-only">Selected Productions Archive</h2>
       {/* Category Filter Controls */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/30 pb-6">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/15 pb-6">
         <div className="flex flex-wrap items-center gap-2 sm:gap-3" role="tablist" aria-label="Project Categories">
           {filterTabs.map((tab) => {
             const isSelected = activeFilter === tab.value;
@@ -43,8 +43,8 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
                 onClick={() => setActiveFilter(tab.value)}
                 className={`text-xs uppercase font-mono tracking-[0.2em] px-4 py-2 rounded-sm transition-all duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-brand-gold ${
                   isSelected
-                    ? "bg-brand-gold text-brand-black font-semibold shadow-sm"
-                    : "text-brand-gray-light bg-brand-black-elevated border border-brand-teal/40 hover:border-brand-gold/50 hover:text-brand-white"
+                    ? "bg-brand-gold text-white font-semibold shadow-sm"
+                    : "text-brand-teal bg-[#F8F9FA] border border-brand-teal/20 hover:border-brand-gold hover:text-brand-gold"
                 }`}
               >
                 {tab.label}
@@ -53,26 +53,26 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
           })}
         </div>
 
-        <span className="text-xs font-mono text-brand-gray hidden sm:inline">
+        <span className="text-xs font-mono text-brand-teal/70 hidden sm:inline">
           Showing {filteredProjects.length} of {initialProjects.length} Works
         </span>
       </div>
 
       {/* Dynamic Projects Grid with Uneven Editorial Rhythm */}
       {filteredProjects.length === 0 ? (
-        <div className="py-24 text-center border border-dashed border-brand-teal/40 rounded-sm p-8 space-y-4">
+        <div className="py-24 text-center border border-dashed border-brand-teal/20 rounded-sm p-8 space-y-4">
           <Film className="w-10 h-10 text-brand-gold/50 mx-auto" />
-          <h3 className="text-xl font-display font-medium text-brand-white">
+          <h3 className="text-xl font-display font-medium text-brand-teal">
             No projects found in this category.
           </h3>
-          <p className="text-sm text-brand-gray-light font-light max-w-md mx-auto">
+          <p className="text-sm text-brand-teal/80 font-light max-w-md mx-auto">
             Try switching to another category tab to view available films in our catalogue.
           </p>
           <div className="pt-2">
             <button
               type="button"
               onClick={() => setActiveFilter("all")}
-              className="min-h-[44px] px-6 py-2.5 text-xs uppercase font-mono tracking-widest text-brand-black bg-brand-gold hover:bg-brand-gold-light rounded-sm transition-colors inline-flex items-center"
+              className="min-h-[44px] px-6 py-2.5 text-xs uppercase font-mono tracking-widest text-white bg-brand-gold hover:bg-brand-gold-light rounded-sm transition-colors inline-flex items-center"
             >
               Reset Filters
             </button>
