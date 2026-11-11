@@ -3,35 +3,49 @@ import Image from "next/image";
 import EditorialHeading from "@/components/public/EditorialHeading";
 import ProjectCard from "@/components/public/ProjectCard";
 import VideoPlayer from "@/components/public/VideoPlayer";
-import ViewfinderHUD from "@/components/cinematic/ViewfinderHUD";
-import CinematicInquiries from "@/components/cinematic/CinematicInquiries";
 import { ServiceDetail } from "@/data/services";
 import { sampleProjects } from "@/data/projects";
-import { ArrowUpRight, ArrowRight, CheckCircle2, Film, Clapperboard, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  CheckCircle2,
+  Calendar,
+  Video,
+  Scissors,
+  Clapperboard,
+  Sparkles,
+  HelpCircle,
+} from "lucide-react";
 
 interface ServiceDetailViewProps {
   service: ServiceDetail;
-  aestheticVariant: "documentary" | "music" | "corporate" | "commercial";
+  aestheticVariant?: "business" | "real-estate" | "events" | "corporate" | "commercial" | "documentary" | "music";
 }
 
 export default function ServiceDetailView({
   service,
-  aestheticVariant,
 }: ServiceDetailViewProps) {
   const relatedProjects = sampleProjects.filter((p) =>
     service.relatedProjectSlugs.includes(p.slug)
   );
 
+  const stepIcons = [Calendar, Video, Scissors];
+
   return (
-    <div className="pt-32 pb-24 space-y-24 sm:space-y-36">
-      {/* 01: Distinct Cinematic Hero with HUD */}
+    <div className="pt-28 sm:pt-36 pb-24 space-y-20 sm:space-y-32 bg-[var(--bg)] text-[var(--ink)]">
+      {/* 01: Hero Headline + Tagline + Answer Nugget */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-teal tracking-tight leading-[1.02]">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
+            <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)]" />
+            <span>Service Specification • {service.title}</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             {service.heroHeadline}
           </h1>
 
-          <p className="text-lg sm:text-xl text-brand-teal/80 font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
+          <p className="text-lg sm:text-xl text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             {service.tagline}
           </p>
 
@@ -39,7 +53,7 @@ export default function ServiceDetailView({
             {service.visualDirection.aestheticTokens.map((token) => (
               <span
                 key={token}
-                className="text-[11px] font-mono uppercase tracking-widest px-3 py-1.5 bg-brand-teal text-brand-gold rounded-sm shadow-sm"
+                className="text-[11px] font-mono uppercase tracking-[0.1em] px-3 py-1.5 bg-[var(--bg-soft)] text-[var(--gold-deep)] border border-[var(--line)] rounded-[2px]"
               >
                 {token}
               </span>
@@ -47,8 +61,21 @@ export default function ServiceDetailView({
           </div>
         </div>
 
-        {/* Hero Video Preview / Poster with Viewfinder Overlay */}
-        <div className="mt-12 relative rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
+        {/* Answer Nugget Callout */}
+        {service.answerNugget && (
+          <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
+            <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
+              <Sparkles className="w-4 h-4 text-[var(--gold)]" />
+              <span>Answer Nugget • {service.title}</span>
+            </div>
+            <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
+              {service.answerNugget}
+            </p>
+          </div>
+        )}
+
+        {/* Hero Video Preview / Poster with Clean Framing */}
+        <div className="mt-12 relative rounded-[2px] overflow-hidden border border-[var(--gold)]/40 shadow-[0_10px_30px_rgba(14,14,15,0.06)]">
           <VideoPlayer
             src={service.videoPreviewUrl}
             poster={service.heroImage}
@@ -58,62 +85,66 @@ export default function ServiceDetailView({
         </div>
       </section>
 
-      {/* 02: In-Depth Narrative & Visual Direction */}
+      {/* 02: Narrative Overview & Scope Deliverables */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 bg-white border border-brand-teal/15 rounded-sm shadow-sm">
-              <h2 className="text-2xl font-display font-medium text-brand-teal">
+            <div className="p-8 bg-[var(--bg)] border border-[var(--line)] rounded-[2px] shadow-subtle">
+              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium block mb-2">
+                Visual Standards
+              </span>
+              <h2 className="text-2xl font-display font-medium text-[var(--ink)]">
                 {service.visualDirection.title}
               </h2>
-              <p className="mt-4 text-sm text-brand-teal/80 leading-relaxed font-light">
+              <p className="mt-4 text-sm text-[var(--ink-soft)] leading-relaxed font-light">
                 {service.visualDirection.description}
               </p>
             </div>
 
-            <div className="p-8 bg-[var(--ink)] rounded-[2px] border border-[rgba(255,255,255,0.12)] shadow-[0_10px_30px_rgba(14,14,15,0.06)] text-[var(--white-on-dark)]">
+            <div className="p-8 bg-[var(--ink)] rounded-[2px] border border-[rgba(255,255,255,0.12)] shadow-subtle text-[var(--white-on-dark)]">
               <h3 className="text-xl font-display font-medium text-[var(--white-on-dark)]">
-                Commission a Production
+                Book a Project Consultation
               </h3>
               <p className="mt-2 text-xs text-[var(--text-on-dark)] leading-relaxed font-light">
-                We accept a limited number of production commissions per season to ensure singular directorial focus.
+                Discuss your project, expectations, planning, payments, filming, editing and revisions before filming begins.
               </p>
               <Link
                 href="/book"
                 className="mt-6 inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-6 py-3 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm"
               >
-                <span>Initiate Brief</span>
+                <span>Book Consultation</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
 
-          <div className="lg:col-span-7 space-y-6 text-brand-teal/80 text-base sm:text-lg leading-relaxed font-light">
-            <p className="text-xl font-normal text-brand-teal leading-relaxed">
+          <div className="lg:col-span-7 space-y-6 text-[var(--ink-soft)] text-base sm:text-lg leading-relaxed font-light">
+            <p className="text-xl font-normal text-[var(--ink)] leading-relaxed">
               {service.introNarrative}
             </p>
-            <p>
-              Every production under this vertical benefits from our dedicated cinema camera packages, seasoned lighting technicians, and in-house post-production colour science. We collaborate intimately with our clients—maintaining full transparency across every stage of pre-production, principal photography, and master editorial delivery.
-            </p>
+
+            <blockquote className="border-l-2 border-[var(--gold)] pl-6 py-2 text-base sm:text-lg text-[var(--ink)] font-serif italic">
+              &ldquo;You can’t fix it in post.&rdquo; Planning and briefing ensure nothing important is left behind.
+            </blockquote>
 
             {/* Scope Deliverables */}
-            <div className="pt-6 border-t border-brand-teal/15 space-y-4">
-              <h3 className="text-xs font-mono uppercase tracking-[0.25em] text-brand-teal font-semibold">
-                Core Deliverables & Technical Specs:
+            <div className="pt-6 border-t border-[var(--line)] space-y-4">
+              <h3 className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--ink)] font-semibold">
+                What this service includes:
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.capabilities.map((cap) => (
                   <div
                     key={cap.name}
-                    className="p-5 bg-white border border-brand-teal/15 rounded-sm shadow-sm"
+                    className="p-5 bg-[var(--bg-soft)] border border-[var(--line)] rounded-[2px]"
                   >
-                    <div className="flex items-center space-x-2 text-brand-gold mb-2">
-                      <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                      <span className="text-xs font-mono font-medium uppercase tracking-wider text-brand-teal">
+                    <div className="flex items-center space-x-2 text-[var(--gold-deep)] mb-2">
+                      <CheckCircle2 className="w-4 h-4 shrink-0 text-[var(--gold)]" />
+                      <span className="text-xs font-mono font-medium uppercase tracking-wider text-[var(--ink)]">
                         {cap.name}
                       </span>
                     </div>
-                    <p className="text-xs text-brand-teal/75 leading-relaxed font-light">
+                    <p className="text-xs text-[var(--ink-soft)] leading-relaxed font-light">
                       {cap.description}
                     </p>
                   </div>
@@ -124,50 +155,62 @@ export default function ServiceDetailView({
         </div>
       </section>
 
-      {/* 03: Suggested Creative Workflow */}
-      <section className="bg-[var(--bg-soft)] py-20 sm:py-28 border-y border-[var(--line)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <EditorialHeading
-            title="The Creative Journey."
-            serifAccent={`Crafted for ${service.shortTitle}.`}
-            lead="How we navigate from the opening brainstorming conversation to final exhibition masters."
-          />
+      {/* 03: How Does the Process Work? (3 Steps) */}
+      <section className="bg-[var(--bg-soft)] py-16 sm:py-24 border-y border-[var(--line)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          <div className="border-b border-[var(--line)] pb-6">
+            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
+              3-Step Framework
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] mt-2">
+              How does the process work?
+            </h2>
+          </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {service.process.map((p) => (
-              <div
-                key={p.step}
-                className="bg-[var(--bg)] border border-[var(--line)] p-8 rounded-[2px] hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-sm"
-              >
-                <span className="text-3xl font-display font-medium text-[var(--gold)]">
-                  {p.step}
-                </span>
-                <h3 className="text-lg font-display font-medium text-[var(--ink)] mt-4">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-xs sm:text-sm text-[var(--ink-soft)] leading-relaxed font-light">
-                  {p.description}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {service.process.map((p, idx) => {
+              const Icon = stepIcons[idx % stepIcons.length];
+              return (
+                <div
+                  key={p.step}
+                  className="bg-[var(--bg)] border border-[var(--line)] p-8 rounded-[2px] hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-subtle space-y-4"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-display font-medium text-[var(--gold)]">
+                      {p.step}
+                    </span>
+                    <Icon className="w-5 h-5 text-[var(--gold)]" />
+                  </div>
+                  <h3 className="text-lg font-display font-medium text-[var(--ink)]">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-[var(--ink-soft)] leading-relaxed font-light">
+                    {p.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* 04: Representative Projects */}
       {relatedProjects.length > 0 && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
-            <EditorialHeading
-              title="Related Productions."
-              serifAccent="Evidence of Craft."
-              lead={`Examine completed films produced under our ${service.shortTitle} discipline.`}
-            />
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[var(--line)]">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
+                Portfolio Preview
+              </span>
+              <h2 className="text-3xl font-display font-medium text-[var(--ink)] mt-2">
+                Related Work
+              </h2>
+            </div>
             <Link
               href="/work"
-              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-gold hover:text-brand-gold-light py-2"
+              className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.12em] font-medium text-[var(--gold-deep)] hover:text-[var(--gold)]"
             >
-              <span>Explore Full Archive</span>
+              <span>See Full Portfolio</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -180,42 +223,61 @@ export default function ServiceDetailView({
         </section>
       )}
 
-      {/* 05: Frequently Asked Questions Terminal */}
-      <CinematicInquiries
-        title={`${service.shortTitle} Enquiries.`}
-        serifAccent="Clear Answers for Every Stage of Production."
-        lead={`Specific technical standards, delivery formats, and production protocols for ${service.title.toLowerCase()} commissions.`}
-        enableCategories={false}
-        inquiries={service.faqs.map((faq) => ({
-          q: faq.question,
-          a: faq.answer,
-          category: service.shortTitle,
-          specs: "Format: 4K / 8K Cinema Master • Audio: 24-bit 48kHz • Delivery: Master ProRes / Web Streams",
-        }))}
-      />
+      {/* 05: Questions & Clarity */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="border-b border-[var(--line)] pb-6">
+          <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
+            Clarity & FAQs
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] mt-2">
+            Questions about {service.title}
+          </h2>
+        </div>
 
-      {/* 06: Service Page Final CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <h2 className="text-3xl sm:text-5xl font-display font-medium text-brand-teal">
-          Commission a {service.shortTitle} Production
-        </h2>
-        <p className="text-brand-teal/80 max-w-xl mx-auto text-sm sm:text-base font-light">
-          Whether you have an established treatment or an initial narrative seed, let&apos;s evaluate the possibilities together.
-        </p>
-        <div className="pt-4 flex items-center justify-center space-x-4">
-          <Link
-            href="/book"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl"
-          >
-            <span>Start a Project Brief</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.2em] font-medium text-brand-teal hover:text-brand-gold px-6 py-4 rounded-sm border border-brand-teal/20 hover:border-brand-gold transition-colors"
-          >
-            <span>View All Work</span>
-          </Link>
+        <div className="space-y-4">
+          {service.faqs.map((faq) => (
+            <div
+              key={faq.question}
+              className="p-6 bg-[var(--bg-soft)] border border-[var(--line)] rounded-[2px] space-y-2"
+            >
+              <div className="flex items-start space-x-3">
+                <HelpCircle className="w-4 h-4 text-[var(--gold)] shrink-0 mt-1" />
+                <h3 className="font-display font-medium text-lg text-[var(--ink)]">
+                  {faq.question}
+                </h3>
+              </div>
+              <p className="text-sm text-[var(--ink-soft)] leading-relaxed font-light pl-7">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 06: Service Page Closing Call to Action */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 pt-8">
+        <div className="p-10 sm:p-16 rounded-[2px] border border-[var(--gold)]/40 bg-[var(--ink)] text-[var(--white-on-dark)] space-y-6 shadow-subtle">
+          <h2 className="text-3xl sm:text-5xl font-display font-medium text-[var(--white-on-dark)] leading-tight">
+            Ready to discuss your {service.shortTitle.toLowerCase()}?
+          </h2>
+          <p className="text-[var(--text-on-dark)] max-w-xl mx-auto text-base font-light">
+            Book a project consultation and explain what you need filmed.
+          </p>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/book"
+              className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] hover:bg-[var(--gold-light)] px-8 py-3.5 rounded-[2px] transition-all duration-250 ease-out shadow-sm"
+            >
+              <span>Book a Project Consultation</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/work"
+              className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] text-[var(--white-on-dark)] hover:text-[var(--gold)] px-6 py-3.5 rounded-[2px] border border-[rgba(255,255,255,0.2)] hover:border-[var(--gold)] transition-all duration-250 ease-out"
+            >
+              <span>View All Work</span>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

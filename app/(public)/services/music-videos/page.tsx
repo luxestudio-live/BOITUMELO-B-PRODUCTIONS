@@ -1,17 +1,13 @@
-import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
 import ServiceDetailView from "@/components/public/ServiceDetailView";
 
 export const metadata = {
-  title: "Music Video Production | BOITUMELO B PRODUCTIONS",
+  title: "Event Videographer Adelaide | Party Video Services",
   description:
-    "Bold, rhythmic, and visually expressive music video production for independent artists and record labels in Australia.",
+    "Looking for event videography in Adelaide? Plan your project, capture your event and receive an edited video through a clear filming process.",
 };
 
 export default function MusicVideosPage() {
-  const service = servicesData["music-videos"];
-  if (!service) notFound();
-
-  return <ServiceDetailView service={service} aestheticVariant="music" />;
+  const service = servicesData["events-parties"];
+  return <ServiceDetailView service={service} aestheticVariant="events" />;
 }
-

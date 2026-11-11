@@ -1,17 +1,13 @@
-import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
 import ServiceDetailView from "@/components/public/ServiceDetailView";
 
 export const metadata = {
-  title: "Corporate Video Production | BOITUMELO B PRODUCTIONS",
+  title: "Business Video Services Adelaide | Filming & Editing",
   description:
-    "Authoritative corporate films, executive thought leadership, and culture storytelling with cinematic documentary craft.",
+    "Need better business video content? Get filming and editing in Northern Adelaide with a clear brief, pre-production process and project consultation.",
 };
 
 export default function CorporateVideoPage() {
-  const service = servicesData["corporate-video"];
-  if (!service) notFound();
-
-  return <ServiceDetailView service={service} aestheticVariant="corporate" />;
+  const service = servicesData["business-videos"];
+  return <ServiceDetailView service={service} aestheticVariant="business" />;
 }
-

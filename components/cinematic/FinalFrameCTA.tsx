@@ -17,15 +17,12 @@ export default function FinalFrameCTA() {
           <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[var(--gold)]" />
           <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[var(--gold)]" />
 
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.04em] uppercase leading-[1.05]">
-            YOUR STORY.{" "}
-            <span className="text-[var(--gold)] block sm:inline font-normal">
-              OUR NEXT FRAME.
-            </span>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.03em] leading-[1.05]">
+            Ready to make your video?
           </h2>
 
           <p className="max-w-xl mx-auto text-sm sm:text-base text-[var(--text-on-dark)] font-light leading-relaxed [text-wrap:pretty]">
-            From the opening creative brainstorm to the final colour grade, let&apos;s build an extraordinary piece of cinema that moves people and endures.
+            Tell us what you need, discuss the project and build the right plan before filming begins.
           </p>
 
           {/* Action CTAs */}
@@ -34,7 +31,7 @@ export default function FinalFrameCTA() {
               href="/book"
               className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-8 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm group"
             >
-              <span>Start a Project Brief</span>
+              <span>Book a Project Consultation</span>
               <ArrowUpRight className="w-4 h-4 transition-transform duration-250 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
@@ -65,11 +62,10 @@ export default function FinalFrameCTA() {
               <span>WhatsApp Direct</span>
             </a>
             <span className="text-[var(--gold)]/60 hidden sm:inline">•</span>
-            <span>Melbourne • Sydney • Australia Wide</span>
+            <span>Northern Adelaide • South Australia</span>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

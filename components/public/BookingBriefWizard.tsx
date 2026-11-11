@@ -47,14 +47,14 @@ interface WizardState {
 }
 
 const initialWizardState: WizardState = {
-  discipline: "Documentary & Film",
+  discipline: "Business Videos",
   description: "",
   creativeGoals: "",
   audience: "",
   referenceLinks: "",
-  timeline: "1-3 months",
-  location: "Melbourne / Victoria",
-  budget: "$25,000 – $50,000 AUD",
+  timeline: "Within 1 month",
+  location: "Northern Adelaide, SA",
+  budget: "Standard Project Budget",
   specialRequirements: "",
   name: "",
   email: "",
@@ -62,7 +62,7 @@ const initialWizardState: WizardState = {
   phone: "",
   consultationType: "video",
   selectedDate: "2026-11-16",
-  selectedTimeSlot: "11:00 AM AEDT",
+  selectedTimeSlot: "11:00 AM ACDT",
 };
 
 export default function BookingBriefWizard() {
@@ -163,7 +163,7 @@ STUDIO        : Melbourne & Sydney • Australia
             Brief Received. Discovery Consultation Slated.
           </h2>
           <p className="text-sm sm:text-base text-brand-teal/80 max-w-lg mx-auto font-light leading-relaxed">
-            Thank you, <strong className="text-brand-teal font-semibold">{formData.name}</strong>. Your creative brief for <strong className="text-brand-teal font-semibold">{formData.discipline}</strong> has been logged with our Melbourne & Sydney creative team. We will review your materials and confirm your session within 24 business hours.
+            Thank you, <strong className="text-[var(--ink)] font-semibold">{formData.name}</strong>. Your project brief for <strong className="text-[var(--ink)] font-semibold">{formData.discipline}</strong> has been logged with our Northern Adelaide video operator. We will review your materials and confirm your session within 24 business hours.
           </p>
         </div>
 
@@ -331,28 +331,23 @@ STUDIO        : Melbourne & Sydney • Australia
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 {
-                  id: "Documentary & Film",
-                  desc: "Authentic non-fiction, cultural narratives, human-centred stories, or festival shorts.",
-                  icon: Film,
-                },
-                {
-                  id: "Music Video Production",
-                  desc: "Visually expressive, rhythmic artist collaborations, and concept performance films.",
-                  icon: Music,
-                },
-                {
-                  id: "Corporate Video",
-                  desc: "Executive vision, investor pitch cinema, sustainability profiles, or internal culture.",
+                  id: "Business Videos",
+                  desc: "Promotional videos, social media content, team overviews, or customer stories.",
                   icon: Briefcase,
                 },
                 {
-                  id: "Brand & Commercial Cinema",
-                  desc: "High-craft campaign films, product aesthetics, TVC releases, and digital narratives.",
+                  id: "Real Estate Videos",
+                  desc: "Property walkthroughs, listing videos, architectural features, and agency reels.",
                   icon: Sparkles,
                 },
                 {
-                  id: "Something Else / Hybrid",
-                  desc: "Experimental installations, architectural studies, or multi-format visual arts.",
+                  id: "Events & Parties",
+                  desc: "Milestone birthdays, private functions, corporate events, and celebrations.",
+                  icon: Clapperboard,
+                },
+                {
+                  id: "Custom Video / Other",
+                  desc: "Specific filming, bespoke editing, or projects requiring dedicated consultation.",
                   icon: Layers,
                 },
               ].map((item) => {

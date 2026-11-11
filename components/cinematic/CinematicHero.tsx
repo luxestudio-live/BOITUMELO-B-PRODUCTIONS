@@ -175,7 +175,7 @@ export default function CinematicHero() {
               <div className="sm:ml-16 inline-flex items-center space-x-2 px-3 py-1 bg-[#0E0E0F]/80 backdrop-blur-md border border-[var(--gold)]/40 rounded-[2px]">
                 <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)] shrink-0" />
                 <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] font-medium whitespace-nowrap">
-                  Live Showreel • 2024–2026
+                  Northern Adelaide • Videography
                 </span>
               </div>
             </div>
@@ -217,21 +217,26 @@ export default function CinematicHero() {
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
           <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.04em] uppercase leading-[0.94] drop-shadow-[0_4px_16px_rgba(14,14,15,0.7)]">
+            <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[var(--gold)] font-medium block">
               BOITUMELO B PRODUCTIONS
+            </span>
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.03em] leading-[1.02] drop-shadow-[0_4px_16px_rgba(14,14,15,0.7)]">
+              Professional videos. <br className="hidden sm:inline" />
+              <span className="text-[var(--gold-light)] font-normal">Clear process.</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-[var(--text-on-dark)] font-light max-w-xl leading-relaxed [text-wrap:pretty]">
-              Films that move people. Visuals that move brands. An Australian production house specialising in documentary cinema, music videos, and commercial film.
+            <p className="text-base sm:text-lg md:text-xl text-[var(--text-on-dark)] font-light max-w-2xl leading-relaxed [text-wrap:pretty]">
+              Get professional video content without having to handle the filming and editing yourself.
             </p>
 
             {/* Action Triggers */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
-                href="/work"
+                href="/book"
                 className="inline-flex items-center space-x-3 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
               >
-                <span>Explore The Work</span>
+                <span>Book a Project Consultation</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
 
@@ -240,7 +245,7 @@ export default function CinematicHero() {
                 onClick={scrollToFilmstrip}
                 className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium text-[var(--white-on-dark)] border border-[var(--white-on-dark)] hover:bg-[var(--white-on-dark)] hover:text-[var(--ink)] px-6 py-3.5 rounded-[2px] transition-all duration-250 ease-out backdrop-blur-sm bg-transparent"
               >
-                <span>Roll Film</span>
+                <span>See The Work</span>
                 <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
               </button>
             </div>

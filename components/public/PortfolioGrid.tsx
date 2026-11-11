@@ -9,14 +9,13 @@ interface PortfolioGridProps {
   initialProjects: ProjectItem[];
 }
 
-type FilterOption = "all" | ProjectCategory;
+type FilterOption = "all" | "business-videos" | "real-estate" | "events-parties";
 
 const filterTabs: { label: string; value: FilterOption }[] = [
   { label: "All Projects", value: "all" },
-  { label: "Documentary & Film", value: "documentary-film" },
-  { label: "Music Videos", value: "music-videos" },
-  { label: "Corporate", value: "corporate-video" },
-  { label: "Commercial", value: "brand-commercials" },
+  { label: "Business Videos", value: "business-videos" },
+  { label: "Real Estate", value: "real-estate" },
+  { label: "Events & Parties", value: "events-parties" },
 ];
 
 export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
@@ -24,7 +23,25 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "all") return initialProjects;
-    return initialProjects.filter((p) => p.category === activeFilter);
+    if (activeFilter === "business-videos") {
+      return initialProjects.filter(
+        (p) => p.category === "corporate-video" || p.category === "brand-commercials"
+      );
+    }
+    if (activeFilter === "real-estate") {
+      return initialProjects.filter(
+        (p) =>
+          p.slug === "lumina-architects" ||
+          p.slug === "the-last-echo" ||
+          p.category === "corporate-video"
+      );
+    }
+    if (activeFilter === "events-parties") {
+      return initialProjects.filter(
+        (p) => p.category === "music-videos" || p.category === "documentary-film"
+      );
+    }
+    return initialProjects;
   }, [activeFilter, initialProjects]);
 
   return (

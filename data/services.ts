@@ -6,6 +6,7 @@ export interface ServiceDetail {
   tagline: string;
   heroHeadline: string;
   introNarrative: string;
+  answerNugget?: string;
   visualDirection: {
     title: string;
     description: string;
@@ -30,305 +31,276 @@ export interface ServiceDetail {
 }
 
 export const servicesData: Record<string, ServiceDetail> = {
-  "documentary-film": {
-    slug: "documentary-film",
+  "business-videos": {
+    slug: "business-videos",
     number: "01",
-    title: "Documentary & Film Production",
-    shortTitle: "Documentary & Film",
-    tagline: "Authentic narratives, patient observation, and profound human connection.",
-    heroHeadline: "Stories That Resonate Long After the Credits Roll.",
+    title: "Business Videos",
+    shortTitle: "Business Videos",
+    tagline: "Create better business content without having to handle the filming and editing yourself.",
+    heroHeadline: "Create better business content",
     introNarrative:
-      "We believe non-fiction filmmaking is an act of deep listening. Rather than forcing pre-conceived scripts onto real lives, our documentary methodology allows authentic human experiences to guide the lens. From remote cultural conservation projects in central Australia to intimate biographical profiles, we craft cinematic long-form and short-form films with immense emotional resonance and cinematic reverence.",
+      "You need content that looks professional. If recording, editing and creating videos yourself is taking too much time, you can bring in a videographer to handle the work. Business videos are for customers who need help creating professional video content. You may already know what you want to say. You may simply need someone to film and edit it properly. You may also be struggling with marketing and not having enough good-quality content to use.",
+    answerNugget:
+      "Business Videos are created through a process of project briefing, pre-production, filming and editing. The business is based in Northern Adelaide, South Australia, and focuses on helping customers create professional video content when recording, editing and producing content themselves is difficult.",
     visualDirection: {
-      title: "Human-Centred & Contemplative",
+      title: "Clean, Credible & Professional",
       description:
-        "Naturalistic lighting, 2.39:1 anamorphic framing, organic film grain, and patient compositions that honour the subject's environment without invasive production footprints.",
-      aestheticTokens: ["Anamorphic Glass", "Natural Light First", "Rich Earthy Ochres", "Intimate Close-ups", "Acoustic Ambience"],
+        "Balanced natural lighting, crisp speech audio, stable framing, and clean editing designed to establish commercial authority and trust.",
+      aestheticTokens: [
+        "Crisp Audio",
+        "Natural Light",
+        "Clear Framing",
+        "Professional Grade",
+        "One Revision Included",
+      ],
     },
     capabilities: [
       {
-        name: "Feature & Short Documentaries",
-        description: "Full-lifecycle film production from research and field access to festival distribution deliverables.",
+        name: "Promotional & Marketing Videos",
+        description:
+          "High-clarity video content showcasing your brand, products, services and client value proposition.",
       },
       {
-        name: "Cultural & Heritage Archiving",
-        description: "Culturally sensitive fieldwork developed in respectful consultation with community elders and custodians.",
+        name: "Social Media & Advertising Content",
+        description:
+          "Engaging video clips formatted for digital platforms to help solve content shortages and marketing bottlenecks.",
       },
       {
-        name: "Impact & Social Advocacy Films",
-        description: "Narratives engineered to provoke empathy, policy discussions, and grassroots community mobilisation.",
+        name: "Company Culture & Team Overviews",
+        description:
+          "Showcase your facilities, team members, process, and values to build confidence with prospective clients.",
       },
       {
-        name: "Biographical & Artist Profiles",
-        description: "Intimate character portraits that unearth the creative philosophy and personal stakes of innovators.",
-      },
-      {
-        name: "Festival Master Deliverables",
-        description: "DCP packaging, 5.1 surround sound mastering, HDR colour management, and international exhibition deliveries.",
+        name: "Customer Stories & Testimonials",
+        description:
+          "Capture authentic client satisfaction and case studies with clear, professional sound and visuals.",
       },
     ],
     process: [
       {
         step: "01",
-        title: "Immersion & Trust",
-        description: "We spend time with subjects without cameras, establishing mutual trust, ethical boundaries, and narrative focus.",
+        title: "Book and brief",
+        description:
+          "Book a consultation to discuss your project, expectations, planning, payments, filming, editing and revisions.",
       },
       {
         step: "02",
-        title: "Field Exploration",
-        description: "Small-footprint cinema cameras capture unfolding reality with minimal disruption and maximum intimacy.",
+        title: "Prepare and film",
+        description:
+          "Send your brief and pre-production information, then filming takes place according to the agreed plan.",
       },
       {
         step: "03",
-        title: "Sculpting the Edit",
-        description: "Hundreds of hours of vérité footage are carved into a rhythmic, emotionally compelling narrative arc.",
-      },
-      {
-        step: "04",
-        title: "Sound & Colour Alchemy",
-        description: "Bespoke acoustic scores, ambisonic field recordings, and 35mm film emulation grading bring final cinematic majesty.",
+        title: "Edit and deliver",
+        description:
+          "The footage is edited and polished, then you receive the video for the usual one revision before final delivery.",
       },
     ],
     faqs: [
       {
-        question: "How long does a documentary production typically take?",
-        answer: "Timelines vary depending on access and subject scope. Short doc profiles typically run 4–8 weeks, while long-form or festival shorts span 3–9 months to capture seasonal shifts and authentic life developments.",
+        question: "Are business videos right for you?",
+        answer:
+          "Business videos are for customers who need help creating professional video content. You may already know what you want to say. You may simply need someone to film and edit it properly. You may also be struggling with marketing and not having enough good-quality content to use.",
       },
       {
-        question: "How do you handle sensitive cultural or personal topics?",
-        answer: "We adhere strictly to collaborative ethical protocols. Subjects retain narrative dignity, cultural advisory permissions are honoured throughout, and rough cuts are reviewed collaboratively before public release.",
+        question: "What if I do not know what to film?",
+        answer:
+          "Start with the conversation. The project brief gives you a chance to explain what you need before filming begins. Planning helps establish the foundations before the camera comes out.",
       },
       {
-        question: "Do you travel to remote Australian locations?",
-        answer: "Yes. Our team is fully equipped with self-sufficient off-grid solar power packs, 4WD remote logistics, satellite communication, and climate-hardened cinema gear designed for remote Australian conditions.",
-      },
-      {
-        question: "Can you assist with film festival submissions and deliverables?",
-        answer: "Absolutely. We supply certified DCI compliant DCP masters, ProRes 4444 archival packages, closed captions, M&E audio stems, and festival promotional collateral.",
+        question: "Why should the video be planned first?",
+        answer:
+          "Because editing cannot fix everything. If important footage is missing or the footage does not work, editing cannot simply create what was never captured. Good planning helps reduce that risk.",
       },
     ],
-    heroImage: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2000&q=85",
-    videoPreviewUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-    relatedProjectSlugs: ["the-last-echo", "red-dirt-whispers"],
-  },
-  "music-videos": {
-    slug: "music-videos",
-    number: "02",
-    title: "Music Video Production",
-    shortTitle: "Music Videos",
-    tagline: "Bold visual poetry, visceral rhythm, and boundary-pushing artistic collaboration.",
-    heroHeadline: "Visuals That Magnify the Soul of the Sound.",
-    introNarrative:
-      "A great music video does not merely visualise lyrics; it expands an artist's conceptual mythology. We collaborate closely with solo acts, bands, and record labels to translate sonic frequency into arresting visual metaphors. Combining inventive optical camera effects, precision choreography, dynamic lighting installations, and editorial rhythm, our music films are engineered to capture cultural attention and live forever in the audience's mind.",
-    visualDirection: {
-      title: "Kinetic, Expressive & Tactile",
-      description:
-        "High-energy contrast, saturated twilight pools, optical prism distortions, choreographed movement, and intentional speed-ramping calibrated to sonic transients.",
-      aestheticTokens: ["DMX Lighting Sync", "Prism Halos", "Subterranean Noir", "Kinetic Camera Flow", "Optical Grain"],
-    },
-    capabilities: [
-      {
-        name: "Concept Conception & Treatment Design",
-        description: "Visionary visual treatments, narrative worldbuilding, and mood decks tailored to artist brand identity.",
-      },
-      {
-        name: "Performance & Conceptual Music Films",
-        description: "From raw subterranean live performances to elaborate, multi-location narrative short films.",
-      },
-      {
-        name: "DMX Lighting Installation & Sync",
-        description: "Programmable light arrays and kinetic rigs locked directly to audio transients and MIDI tracks.",
-      },
-      {
-        name: "Artist Visual Identity & Teaser Assets",
-        description: "Vertical cutdowns for social ecosystems, album artwork frames, animated vinyl loops, and canvas videos.",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Sonic Analysis & Treatment",
-        description: "We break down the stems, lyrics, and emotional tone of the track to draft a tailored creative treatment.",
-      },
-      {
-        step: "02",
-        title: "Visual Architecture",
-        description: "Location scouting, set construction, DMX pre-visualisation, styling, and choreography rehearsals.",
-      },
-      {
-        step: "03",
-        title: "High-Energy Shoot",
-        description: "High-intensity multi-camera setups, specialised camera rigs, and high frame rates for butter-smooth slow-motion.",
-      },
-      {
-        step: "04",
-        title: "Rhythmic Edit & Grade",
-        description: "Frame-accurate editing locked to tempo, aggressive custom film LUTs, and optical VFX polishing.",
-      },
-    ],
-    faqs: [
-      {
-        question: "How involved is the artist in the creative concept?",
-        answer: "As much as you desire. We can pitch full turnkey creative treatments from scratch or build directly upon the artist's existing vision, moodboard, and aesthetic references.",
-      },
-      {
-        question: "What budgets do you work with for music videos?",
-        answer: "We design creative concepts around realistic resource parameters—from punchy single-location stylized performance pieces to larger-scale multi-set narrative productions.",
-      },
-      {
-        question: "Do you provide promotional cutdowns for TikTok, Instagram Reels, and YouTube Shorts?",
-        answer: "Yes, every music video package includes bespoke vertical cutdowns, high-impact teaser trailers, and loopable Spotify Canvas assets.",
-      },
-    ],
-    heroImage: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2000&q=85",
-    videoPreviewUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    relatedProjectSlugs: ["neon-solitude", "aurora-drift"],
-  },
-  "corporate-video": {
-    slug: "corporate-video",
-    number: "03",
-    title: "Corporate Video Production",
-    shortTitle: "Corporate Video",
-    tagline: "Sophisticated brand storytelling, executive insight, and high-trust communications.",
-    heroHeadline: "Elevate Your Corporate Narrative Beyond the Predictable.",
-    introNarrative:
-      "Modern audiences immediately tune out predictable corporate talking heads and stock video montages. We bring cinematic documentary craftsmanship to business communications. By treating founders, engineers, and employees as genuine human characters with purpose and passion, we produce films that build unshakeable credibility, galvanize internal teams, and convince institutional investors and enterprise clients.",
-    visualDirection: {
-      title: "Architectural Precision & Editorial Clarity",
-      description:
-        "Clean geometric framing, balanced natural-light interiors, subtle camera motion, and authoritative typography overlays.",
-      aestheticTokens: ["Architectural Symmetry", "Deep Contrast", "Warm Titanium Highlights", "Crisp Sound Design"],
-    },
-    capabilities: [
-      {
-        name: "Executive & Founder Profiles",
-        description: "Cinematic interviews that convey authentic vision, strategic depth, and personal integrity.",
-      },
-      {
-        name: "Investor & Capital Raise Films",
-        description: "High-stakes pitch films that distill complex technical value propositions into unforgettable clarity.",
-      },
-      {
-        name: "Culture & Talent Recruitment",
-        description: "Films showcasing the genuine energy, collaboration, and human culture that attracts top tier candidates.",
-      },
-      {
-        name: "ESG & Sustainability Reporting",
-        description: "Compelling documentation of environmental stewardship and social responsibility initiatives in action.",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Strategic Discovery",
-        description: "We analyze your business objectives, target audience mindset, and core commercial thesis.",
-      },
-      {
-        step: "02",
-        title: "Interview Coaching & Prep",
-        description: "We prepare participants to speak conversationally and with genuine conviction without memorized scripts.",
-      },
-      {
-        step: "03",
-        title: "Zero-Interruption Production",
-        description: "Efficient, respectful crew protocols that capture workplace reality without stalling corporate operations.",
-      },
-      {
-        step: "04",
-        title: "Refined Post-Production",
-        description: "Rapid editorial turnaround, corporate brand token adherence, subtitle localization, and multi-format exports.",
-      },
-    ],
-    faqs: [
-      {
-        question: "How do you ensure our executives appear natural on camera?",
-        answer: "We never use teleprompters or force robotic scripts. Our conversational interview method puts leaders at ease, capturing spontaneous eloquence, passion, and genuine confidence.",
-      },
-      {
-        question: "Can you film across multiple office locations or industrial sites?",
-        answer: "Yes, we regularly coordinate multi-state shoots across capital cities and regional industrial hubs with full safety gear (PPE) and site-induction compliance.",
-      },
-      {
-        question: "What is your typical turnaround time for corporate films?",
-        answer: "Standard turnaround from final shoot day to first cut is typically 7–10 business days, with accelerated rush delivery available for time-sensitive announcements.",
-      },
-    ],
-    heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85",
-    videoPreviewUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
+    heroImage:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85",
+    videoPreviewUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
     relatedProjectSlugs: ["vanguard-quantum", "lumina-architects"],
   },
-  "brand-commercials": {
-    slug: "brand-commercials",
-    number: "04",
-    title: "Brand & Commercial Films",
-    shortTitle: "Brand & Commercials",
-    tagline: "High-concept visual cinema, tactile product aesthetics, and emotional commercial impact.",
-    heroHeadline: "Commercials Conceived as Cinematic Cinema.",
+  "real-estate-videos": {
+    slug: "real-estate-videos",
+    number: "02",
+    title: "Real Estate Videos",
+    shortTitle: "Real Estate",
+    tagline: "Show the property clearly with planned walkthroughs and architectural video.",
+    heroHeadline: "Show the property clearly",
     introNarrative:
-      "In a crowded digital landscape, consumers do not remember specifications—they remember how a brand made them feel. Our commercial productions bridge the gap between high-end feature film aesthetics and commercially rigorous marketing objectives. We build sensory worlds around your product, capturing light, texture, and human aspiration in a way that creates immediate desire and lasting brand equity.",
+      "A property needs video that shows what is there. Real estate is one of the project types identified as part of our video work. The confirmed process includes gathering your project information, preparing for the shoot, filming the required footage, editing it and making a revision before delivery.",
+    answerNugget:
+      "Real estate is one of the video categories identified in the business interview. Video projects follow a briefing, pre-production, filming and editing process, with the usual workflow including at least one revision before the finished video is delivered.",
     visualDirection: {
-      title: "Sculpted Light & Premium Textures",
+      title: "Bright, Accurate & Architectural",
       description:
-        "High-art direction, rich colour palettes, purposeful macro cinematography, and bespoke sound design that elevates products into icons.",
-      aestheticTokens: ["Sculpted Lighting", "Macro Textures", "Deep Teal & Warm Gold", "Atmospheric Haze", "Dynamic Ratios"],
+        "Balanced exposure between indoor and outdoor light, level vertical lines, and smooth fluid camera movement that accurately portrays spatial dimensions.",
+      aestheticTokens: [
+        "Balanced Light",
+        "Smooth Movement",
+        "Architectural Framing",
+        "Accurate Colour",
+        "Clear Presentation",
+      ],
     },
     capabilities: [
       {
-        name: "Hero Campaign Films (TVC & Online)",
-        description: "Flagship commercial anthems crafted for cinema screens, national broadcast, and prime digital placements.",
+        name: "Property Walkthroughs",
+        description:
+          "Fluid, steady walkthroughs showing room layout, natural flow, spatial connectivity, and interior aesthetics.",
       },
       {
-        name: "Sensory Product Cinema",
-        description: "Tactile macro cinematography exploring materials, engineering craft, liquids, and luxury textures.",
+        name: "Listing & Campaign Videos",
+        description:
+          "Engaging video packages formatted for real estate portals, agency listings, and digital advertising.",
       },
       {
-        name: "Lifestyle & Brand Worlds",
-        description: "Aspirational narrative vignettes depicting your target audience thriving within your brand's universe.",
+        name: "Architectural & Interior Details",
+        description:
+          "Focused coverage of premium finishes, custom cabinetry, bespoke fixtures, and unique architectural design elements.",
       },
       {
-        name: "Omnichannel Campaign Packs",
-        description: "Complete asset suites: 60s, 30s, 15s, and 6s cutdowns formatted for 16:9, 9:16, 4:5, and 1:1 platforms.",
+        name: "Pre-Production Shoot Coordination",
+        description:
+          "Clear shot planning and pre-shoot guidance to ensure the property is prepared before the camera arrives.",
       },
     ],
     process: [
       {
         step: "01",
-        title: "Creative Treatment & Mood",
-        description: "We develop visual boards, colour studies, and director's treatments outlining the aesthetic world of the campaign.",
+        title: "Book and brief",
+        description:
+          "Discuss the property, your expectations and the practical details of the project.",
       },
       {
         step: "02",
-        title: "Art Direction & Casting",
-        description: "Curating bespoke talent, styling, prop selection, and precision location scouting across Australia.",
+        title: "Prepare and film",
+        description:
+          "Gather the required information and film according to the agreed expectations.",
       },
       {
         step: "03",
-        title: "Cinematic Principal Shoot",
-        description: "Top-tier cinema cameras (ARRI Alexa 35 / RED V-Raptor), specialised motion rigs, and cinema-grade lighting.",
-      },
-      {
-        step: "04",
-        title: "Finishing & Colour Mastery",
-        description: "Feature-film colour grading, sound mixing, motion graphics, and broadcast-compliant QA masters.",
+        title: "Edit and deliver",
+        description:
+          "Edit and polish the footage, make the usual one revision and deliver the finished video.",
       },
     ],
     faqs: [
       {
-        question: "Can you collaborate with our existing advertising agency or in-house brand team?",
-        answer: "Yes. We frequently partner with creative agencies, serving either as the dedicated production partner executing an existing storyboard, or leading creative direction collaboratively from the initial spark.",
+        question: "What does the service include?",
+        answer:
+          "The confirmed process includes gathering your project information, preparing for the shoot, filming the required footage, editing it and making a revision before delivery.",
       },
       {
-        question: "Do you supply all aspect ratios for social media and outdoor screens?",
-        answer: "Yes, our framing is planned during pre-production to protect vertical (9:16) and square (1:1) crops without compromising the primary cinematic 2.39:1 widescreen master.",
+        question: "Why does the brief matter?",
+        answer:
+          "The brief gives you a chance to explain what needs to be captured before filming starts. That matters because you cannot rely on editing to fix missing or poor footage later.",
       },
       {
-        question: "What licensing is included for actors and music?",
-        answer: "We handle complete talent usage buyouts, SAG/MEAA compliance, and commercial sync licensing for original or curated musical tracks.",
+        question: "Who is this service for?",
+        answer:
+          "This service is for customers who need video for a real estate project, including property owners, agents, and developers.",
       },
     ],
-    heroImage: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=2000&q=85",
-    videoPreviewUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    relatedProjectSlugs: ["terra-nova-harvest", "solaris-electric"],
+    heroImage:
+      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=2000&q=85",
+    videoPreviewUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    relatedProjectSlugs: ["lumina-architects", "solaris-electric"],
+  },
+  "events-parties": {
+    slug: "events-parties",
+    number: "03",
+    title: "Events & Parties",
+    shortTitle: "Events & Parties",
+    tagline: "Capture the event and preserve the moments that matter through a clear filming process.",
+    heroHeadline: "Capture the event",
+    introNarrative:
+      "You want to remember what happened. Events and parties are among the types of projects identified as suitable for our video services. You start with a booking and project brief covering planning, filming, editing, payments and revisions to give your project a clear foundation before filming begins.",
+    answerNugget:
+      "Events and parties are among the project types identified for the video service. The standard process includes a project booking, briefing, pre-production, filming, editing and a usual one-revision stage before the finished video is delivered.",
+    visualDirection: {
+      title: "Vibrant, Candid & Atmosphere-Driven",
+      description:
+        "Unobtrusive handheld and stabilised filming capturing natural interactions, venue atmosphere, milestone moments, and genuine celebrations.",
+      aestheticTokens: [
+        "Candid Moments",
+        "Ambient Lighting",
+        "Crisp Speech Audio",
+        "Polished Editing",
+        "Milestone Coverage",
+      ],
+    },
+    capabilities: [
+      {
+        name: "Private Celebrations & Parties",
+        description:
+          "Discreet, candid video coverage for milestone birthdays, anniversaries, family gatherings, and private celebrations.",
+      },
+      {
+        name: "Corporate & Community Events",
+        description:
+          "Professional filming of presentations, guest interactions, venue atmosphere, and key event proceedings.",
+      },
+      {
+        name: "Highlight Video Packages",
+        description:
+          "Paced, music-driven highlight videos that capture the energy, emotion, and story of your gathering.",
+      },
+      {
+        name: "Key Milestone Documentation",
+        description:
+          "Dedicated recording of speeches, toasts, performances, and ceremonial moments with clear audio capture.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Book and brief",
+        description:
+          "Book a date and discuss what you want captured and how the project will work.",
+      },
+      {
+        step: "02",
+        title: "Prepare and film",
+        description:
+          "Provide the required brief and information, then filming takes place according to the agreed expectations.",
+      },
+      {
+        step: "03",
+        title: "Edit and deliver",
+        description:
+          "The footage is edited and polished, followed by the usual one revision before final delivery.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What happens before filming?",
+        answer:
+          "You start with a booking and project brief. The discussion covers what is expected, including planning, filming, editing, payments and revisions. This gives the project a clear foundation before filming begins.",
+      },
+      {
+        question: "What if I have something specific in mind?",
+        answer:
+          "Talk about it before filming. Your preferred approach, expectations and project details should be discussed during the briefing. The aim is to establish the foundation before production starts.",
+      },
+      {
+        question: "Why does preparation matter?",
+        answer:
+          "Because you cannot fix everything afterwards. If something important is missed during filming, editing cannot simply create the missing footage. That is why the briefing and pre-production matter.",
+      },
+    ],
+    heroImage:
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2000&q=85",
+    videoPreviewUrl:
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    relatedProjectSlugs: ["neon-solitude", "aurora-drift"],
   },
 };
 
+// Aliases for backwards compatibility with any legacy routes or bookmarks
+export const legacyServicesAlias: Record<string, string> = {
+  "corporate-video": "business-videos",
+  "brand-commercials": "business-videos",
+  "documentary-film": "events-parties",
+  "music-videos": "events-parties",
+};

@@ -47,7 +47,7 @@ export default function Header() {
               BOITUMELO B
             </span>
             <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--ink-soft)] group-hover:text-[var(--ink)] transition-colors duration-250 ease-out">
-              Productions • Australia
+              Productions • Northern Adelaide
             </span>
           </Link>
 

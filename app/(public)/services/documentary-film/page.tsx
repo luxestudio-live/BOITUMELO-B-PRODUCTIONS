@@ -1,17 +1,13 @@
-import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
 import ServiceDetailView from "@/components/public/ServiceDetailView";
 
 export const metadata = {
-  title: "Documentary & Film Production | BOITUMELO B PRODUCTIONS",
+  title: "Event Videographer Adelaide | Party Video Services",
   description:
-    "Authentic non-fiction storytelling, human-centred narratives, and cinematic documentary filmmaking across Australia.",
+    "Looking for event videography in Adelaide? Plan your project, capture your event and receive an edited video through a clear filming process.",
 };
 
 export default function DocumentaryFilmPage() {
-  const service = servicesData["documentary-film"];
-  if (!service) notFound();
-
-  return <ServiceDetailView service={service} aestheticVariant="documentary" />;
+  const service = servicesData["events-parties"];
+  return <ServiceDetailView service={service} aestheticVariant="events" />;
 }
-

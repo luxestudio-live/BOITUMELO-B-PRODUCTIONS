@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "skills": {
+    "avoid-ai-writing": {
+      "source": "sickn33/agentic-awesome-skills",
+      "ref": "main",
+      "sourceType": "github",
+      "skillPath": "plugins/agentic-awesome-skills-claude/skills/avoid-ai-writing/SKILL.md",
+      "computedHash": "a3a43c1908ef714639a77ab08fcabdb35974fa514b88a5c5fadcbbf9fec9d56a"
+    }
+  }
+}

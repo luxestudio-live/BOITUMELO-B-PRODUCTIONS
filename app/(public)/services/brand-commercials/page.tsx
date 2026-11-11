@@ -1,17 +1,13 @@
-import { notFound } from "next/navigation";
 import { servicesData } from "@/data/services";
 import ServiceDetailView from "@/components/public/ServiceDetailView";
 
 export const metadata = {
-  title: "Brand & Commercial Films | BOITUMELO B PRODUCTIONS",
+  title: "Business Video Services Adelaide | Filming & Editing",
   description:
-    "High-craft commercial cinema, sensory product storytelling, and national campaign films for discerning brands.",
+    "Need better business video content? Get filming and editing in Northern Adelaide with a clear brief, pre-production process and project consultation.",
 };
 
 export default function BrandCommercialsPage() {
-  const service = servicesData["brand-commercials"];
-  if (!service) notFound();
-
-  return <ServiceDetailView service={service} aestheticVariant="commercial" />;
+  const service = servicesData["business-videos"];
+  return <ServiceDetailView service={service} aestheticVariant="business" />;
 }
-

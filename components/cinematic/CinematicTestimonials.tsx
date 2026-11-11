@@ -32,15 +32,23 @@ export default function CinematicTestimonials() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 space-y-10">
         {/* Header Heading */}
-        <div className="flex items-center justify-between pb-6 border-b border-[var(--line)]">
-          <div className="flex items-center space-x-3">
-            <Quote className="w-4 h-4 text-[var(--gold)]" />
-            <h2 className="text-xl sm:text-2xl font-display font-medium text-[var(--ink)]">
-              Client Perspectives
-            </h2>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[var(--line)]">
+          <div className="space-y-2">
+            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
+              Social Proof
+            </span>
+            <div className="flex items-center space-x-3">
+              <Quote className="w-4 h-4 text-[var(--gold)]" />
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-[var(--ink)]">
+                Hear from customers
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-[var(--ink-soft)] font-light max-w-xl">
+              Customers finish projects feeling happy, excited and surprised by the result, including reactions such as &ldquo;wow, this looks so good&rdquo;.
+            </p>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 shrink-0">
             <button
               type="button"
               onClick={handlePrev}

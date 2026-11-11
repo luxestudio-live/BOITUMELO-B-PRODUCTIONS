@@ -146,7 +146,7 @@ export default function StudioStatement() {
           ref={subtextRef}
           className="max-w-2xl mx-auto text-base sm:text-xl text-[var(--text-on-dark)] font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
-          In an era of disposable video feeds, true cinema demands reverence. We pair large format anamorphic glass with deep cultural listening to craft films that endure.
+          Good footage starts with good preparation. We build the brief, plan every frame, and handle filming and editing with clear expectations from day one.
         </p>
 
         {/* Geographic Hubs */}
@@ -154,11 +154,11 @@ export default function StudioStatement() {
           ref={footerRef}
           className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-[var(--text-on-dark)] tracking-[0.1em] uppercase"
         >
-          <span>MELBOURNE</span>
+          <span>NORTHERN ADELAIDE</span>
           <span className="text-[var(--gold)]">•</span>
-          <span>SYDNEY</span>
+          <span>SOUTH AUSTRALIA</span>
           <span className="text-[var(--gold)]">•</span>
-          <span>REGIONAL AUSTRALIA</span>
+          <span>BUSINESS • REAL ESTATE • EVENTS</span>
         </div>
       </div>
     </section>

@@ -19,9 +19,9 @@ export default function Footer() {
         <div className="border-b border-[rgba(255,255,255,0.12)] pb-16 mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-medium tracking-tight text-[var(--white-on-dark)] leading-tight">
-              Have a story in mind?{" "}
+              Ready to make your video?{" "}
               <span className="text-[var(--gold)] block font-normal mt-1">
-                Let&apos;s make something worth remembering.
+                Tell us what you need and build the right plan.
               </span>
             </h2>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
               href="/book"
               className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm"
             >
-              <span>Start a Project</span>
+              <span>Book a Project Consultation</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
@@ -45,10 +45,10 @@ export default function Footer() {
               BOITUMELO B
             </h3>
             <p className="text-xs uppercase font-mono tracking-[0.2em] text-[var(--gold)] font-medium">
-              Productions • Australia
+              Productions • Northern Adelaide
             </p>
             <p className="text-sm text-[var(--text-on-dark)] leading-relaxed max-w-sm pt-2 font-light">
-              An Australian creative film and video production house specialising in cinematic documentary, visionary music videos, corporate narratives, and commercial cinema.
+              Video filming and editing in Northern Adelaide, South Australia, covering business, real estate, parties and events through a clear process.
             </p>
             <div className="pt-2 flex items-center space-x-2 text-xs text-[var(--text-on-dark)]/80">
               <MapPin className="w-3.5 h-3.5 text-[var(--gold)] flex-shrink-0" />
