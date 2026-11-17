@@ -105,7 +105,7 @@ export default function CustomSelect({
           id={`${selectId}-label`}
           className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium mb-2"
         >
-          {label} {required && <span className="text-brand-gold">*</span>}
+          {label} {required && <span className="text-[var(--gold-deep)]">*</span>}
         </label>
       )}
 
@@ -183,7 +183,7 @@ export default function CustomSelect({
                     )}
                   </div>
                   {isSelected && (
-                    <Check className="w-3.5 h-3.5 text-brand-gold flex-shrink-0 ml-2" aria-hidden="true" />
+                    <Check className="w-3.5 h-3.5 text-[var(--gold-deep)] flex-shrink-0 ml-2" aria-hidden="true" />
                   )}
                 </li>
               );

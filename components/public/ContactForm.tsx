@@ -91,7 +91,7 @@ export default function ContactForm() {
             Thank you, <strong className="text-brand-teal font-semibold">{formData.name}</strong>. Your enquiry has been received by our production desk. Our creative producing team reviews all briefs directly and will respond within one business day.
           </p>
         </div>
-        <div className="p-4 bg-white border border-brand-teal/20 rounded-sm max-w-sm mx-auto text-xs font-mono text-brand-gold font-semibold">
+        <div className="p-4 bg-white border border-brand-teal/20 rounded-sm max-w-sm mx-auto text-xs font-mono text-[var(--gold-deep)] font-semibold">
           Reference ID: #BB-{Math.floor(1000 + Math.random() * 9000)}
         </div>
         <button
@@ -124,7 +124,7 @@ export default function ContactForm() {
         {/* Full Name */}
         <div className="space-y-2">
           <label htmlFor="name" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
-            Full Name <span className="text-brand-gold">*</span>
+            Full Name <span className="text-[var(--gold-deep)]">*</span>
           </label>
           <input
             id="name"
@@ -147,7 +147,7 @@ export default function ContactForm() {
         {/* Email Address */}
         <div className="space-y-2">
           <label htmlFor="email" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
-            Email Address <span className="text-brand-gold">*</span>
+            Email Address <span className="text-[var(--gold-deep)]">*</span>
           </label>
           <input
             id="email"
@@ -245,7 +245,7 @@ export default function ContactForm() {
       {/* Project Description */}
       <div className="space-y-2">
         <label htmlFor="description" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
-          Tell Us About Your Project <span className="text-brand-gold">*</span>
+          Tell Us About Your Project <span className="text-[var(--gold-deep)]">*</span>
         </label>
         <textarea
           id="description"
@@ -263,48 +263,6 @@ export default function ContactForm() {
             <span>{errors.description}</span>
           </p>
         )}
-      </div>
-
-      {/* Preferred Contact Method */}
-      <div className="space-y-2">
-        <span className="block text-xs font-mono uppercase tracking-wider text-brand-teal/80 font-medium">
-          Preferred Contact Method:
-        </span>
-        <div className="flex items-center space-x-6 text-sm text-brand-teal">
-          <label className="flex items-center space-x-2 cursor-pointer">
-            <input
-              type="radio"
-              name="contactMethod"
-              value="email"
-              checked={formData.preferredContact === "email"}
-              onChange={() => setFormData({ ...formData, preferredContact: "email" })}
-              className="accent-brand-gold"
-            />
-            <span>Email</span>
-          </label>
-          <label className="flex items-center space-x-2 cursor-pointer">
-            <input
-              type="radio"
-              name="contactMethod"
-              value="phone"
-              checked={formData.preferredContact === "phone"}
-              onChange={() => setFormData({ ...formData, preferredContact: "phone" })}
-              className="accent-brand-gold"
-            />
-            <span>Phone Call</span>
-          </label>
-          <label className="flex items-center space-x-2 cursor-pointer">
-            <input
-              type="radio"
-              name="contactMethod"
-              value="video"
-              checked={formData.preferredContact === "video"}
-              onChange={() => setFormData({ ...formData, preferredContact: "video" })}
-              className="accent-brand-gold"
-            />
-            <span>Video Consultation</span>
-          </label>
-        </div>
       </div>
 
       {/* Submit Button */}
