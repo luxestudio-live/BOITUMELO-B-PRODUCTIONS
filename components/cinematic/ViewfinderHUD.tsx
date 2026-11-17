@@ -86,10 +86,10 @@ export default function ViewfinderHUD({
       className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-[11px] tracking-[0.1em] text-[var(--white-on-dark)] select-none ${className}`}
     >
       {/* 4 Corner Frameline Brackets */}
-      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 w-6 h-6 border-t-2 border-l-2 border-[var(--gold)]/60" />
-      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 w-6 h-6 border-t-2 border-r-2 border-[var(--gold)]/60" />
-      <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 w-6 h-6 border-b-2 border-l-2 border-[var(--gold)]/60" />
-      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 border-b-2 border-r-2 border-[var(--gold)]/60" />
+      <svg className="absolute top-4 left-4 sm:top-8 sm:left-8 w-6 h-6 text-[var(--gold)]/60 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 23V1h22" /></svg>
+      <svg className="absolute top-4 right-4 sm:top-8 sm:right-8 w-6 h-6 text-[var(--gold)]/60 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M23 23V1H1" /></svg>
+      <svg className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 w-6 h-6 text-[var(--gold)]/60 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 1v22h22" /></svg>
+      <svg className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 w-6 h-6 text-[var(--gold)]/60 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M23 1v22H1" /></svg>
 
       {/* Top HUD Bar */}
       {showTopBar && (

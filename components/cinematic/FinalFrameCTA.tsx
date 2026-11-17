@@ -12,10 +12,10 @@ export default function FinalFrameCTA() {
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="relative p-8 sm:p-16 lg:p-20 rounded-[2px] border border-[var(--gold)]/40 bg-[var(--ink)] shadow-[0_10px_30px_rgba(11,19,32,0.07)] text-center space-y-6 sm:space-y-8">
           {/* Subtle Viewfinder HUD inside final frame */}
-          <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[var(--gold)]" />
-          <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[var(--gold)]" />
-          <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[var(--gold)]" />
-          <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[var(--gold)]" />
+          <svg className="absolute top-4 left-4 w-4 h-4 text-[var(--gold)] pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 15V1h14" /></svg>
+          <svg className="absolute top-4 right-4 w-4 h-4 text-[var(--gold)] pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 15V1H1" /></svg>
+          <svg className="absolute bottom-4 left-4 w-4 h-4 text-[var(--gold)] pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 1v14h14" /></svg>
+          <svg className="absolute bottom-4 right-4 w-4 h-4 text-[var(--gold)] pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 1v14H1" /></svg>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.03em] leading-[1.05]">
             Ready to make your video?

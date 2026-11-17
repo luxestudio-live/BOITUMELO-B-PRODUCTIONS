@@ -13,30 +13,37 @@ colors:
   line: "#E6E1D6"
   white-on-dark: "#FFFFFF"
   text-on-dark: "#D4DCE8"
+  rec: "#FF4D4D"
 typography:
   display:
-    fontFamily: "Cinzel, Cormorant Garamond, Playfair Display, Georgia, serif"
+    fontFamily: "Cinzel, __cinzel_3b98c5, __cinzel_fallback_3b98c5, Cormorant Garamond, Playfair Display, Georgia, serif"
     fontSize: "clamp(2.25rem, 5vw, 4.5rem)"
     fontWeight: 500
     lineHeight: "1.02"
     letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Cinzel, Cormorant Garamond, Playfair Display, Georgia, serif"
+    fontFamily: "Cinzel, __cinzel_3b98c5, __cinzel_fallback_3b98c5, Cormorant Garamond, Playfair Display, Georgia, serif"
     fontSize: "clamp(1.75rem, 3.5vw, 3rem)"
     fontWeight: 500
     lineHeight: "1.1"
     letterSpacing: "-0.02em"
   title:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontFamily: "Inter, __inter_d8ebd1, __inter_fallback_d8ebd1, Arial, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
     fontSize: "clamp(1.25rem, 2vw, 1.75rem)"
     fontWeight: 500
     lineHeight: "1.25"
     letterSpacing: "-0.01em"
   body:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontFamily: "Inter, __inter_d8ebd1, __inter_fallback_d8ebd1, Arial, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: "1.6"
+    letterSpacing: "0.01em"
+  ui:
+    fontFamily: "Inter, __inter_d8ebd1, __inter_fallback_d8ebd1, Arial, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: "1.5"
     letterSpacing: "0.01em"
   hud:
     fontFamily: "JetBrains Mono, monospace"
@@ -51,7 +58,7 @@ typography:
     lineHeight: "1"
     letterSpacing: "0.2em"
   label:
-    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+    fontFamily: "Inter, __inter_d8ebd1, __inter_fallback_d8ebd1, Arial, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "1"

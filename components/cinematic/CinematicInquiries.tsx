@@ -227,8 +227,8 @@ export default function CinematicInquiries({
                   {/* Viewfinder Framelines on Active Item */}
                   {isOpen && (
                     <>
-                      <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-[var(--gold)] pointer-events-none" />
-                      <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-[var(--gold)] pointer-events-none" />
+                      <svg className="absolute top-2 left-2 w-3 h-3 text-[var(--gold)] pointer-events-none" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 11V1h10" /></svg>
+                      <svg className="absolute bottom-2 right-2 w-3 h-3 text-[var(--gold)] pointer-events-none" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M11 1v10H1" /></svg>
                     </>
                   )}
 

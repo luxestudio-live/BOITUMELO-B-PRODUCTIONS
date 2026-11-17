@@ -153,6 +153,21 @@
           "#D4DCE8",
           "#F0F4FA"
         ]
+      },
+      "rec": {
+        "role": "primary",
+        "displayName": "Camera REC Crimson",
+        "canonical": "#FF4D4D",
+        "tonalRamp": [
+          "#3D0A0A",
+          "#6B1414",
+          "#A82020",
+          "#D63333",
+          "#FF4D4D",
+          "#FF7A7A",
+          "#FFA8A8",
+          "#FFE5E5"
+        ]
       }
     },
     "typographyMeta": {
@@ -171,6 +186,10 @@
       "body": {
         "displayName": "Body & Narrative Prose",
         "purpose": "Long-form editorial paragraphs, methodology explanations, and narrative descriptions constrained to 65–75ch."
+      },
+      "ui": {
+        "displayName": "UI Description & Subtitles",
+        "purpose": "14px descriptive copy and form notes set in Inter sans-serif."
       },
       "label": {
         "displayName": "HUD & Metadata Labels",

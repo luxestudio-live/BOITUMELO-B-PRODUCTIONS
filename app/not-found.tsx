@@ -41,10 +41,10 @@ export default function NotFound() {
         {/* The Anamorphic Viewfinder Framing Container */}
         <div className="relative border border-brand-teal/60 bg-[#070D16]/95 backdrop-blur-md p-8 sm:p-16 rounded-sm shadow-2xl">
           {/* Signature 4-Corner Viewfinder Brackets */}
-          <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-brand-gold pointer-events-none" />
-          <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-brand-gold pointer-events-none" />
-          <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-brand-gold pointer-events-none" />
-          <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-brand-gold pointer-events-none" />
+          <svg className="absolute top-3 left-3 w-4 h-4 text-brand-gold pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 15V1h14" /></svg>
+          <svg className="absolute top-3 right-3 w-4 h-4 text-brand-gold pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 15V1H1" /></svg>
+          <svg className="absolute bottom-3 left-3 w-4 h-4 text-brand-gold pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 1v14h14" /></svg>
+          <svg className="absolute bottom-3 right-3 w-4 h-4 text-brand-gold pointer-events-none" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 1v14H1" /></svg>
 
           {/* SVG Optical Resolution Chart in Background */}
           <div className="absolute inset-0 m-auto w-72 h-72 sm:w-96 sm:h-96 pointer-events-none opacity-20 flex items-center justify-center">

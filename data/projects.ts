@@ -88,7 +88,7 @@ export const sampleProjects: ProjectItem[] = [
     featured: true,
     awardNote: "Featured Music Video Production",
     quote: {
-      text: "Boitumelo captured the exact emotion and cinematic atmosphere we envisioned for 'Intoxicated'. The visual quality is world-class.",
+      text: "Boitumelo captured the exact emotion and cinematic atmosphere we envisioned for 'Intoxicated'. The visual quality and lighting were exceptional.",
       author: "Pegasuz",
       role: "Recording Artist",
     },

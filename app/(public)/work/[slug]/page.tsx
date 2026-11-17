@@ -72,7 +72,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             )}
           </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-brand-teal tracking-tight leading-[1.02]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-medium text-brand-teal tracking-tight leading-[1.08] [text-wrap:balance]">
             {project.title}
           </h1>
 
