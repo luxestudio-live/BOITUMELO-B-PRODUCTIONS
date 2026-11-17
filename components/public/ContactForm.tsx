@@ -2,6 +2,37 @@
 
 import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import CustomSelect, { SelectOption } from "./CustomSelect";
+
+const SERVICE_OPTIONS: SelectOption[] = [
+  { value: "business-videos", label: "Business Videos", sublabel: "Filming & Editing for Local Companies" },
+  { value: "real-estate-videos", label: "Real Estate Videos", sublabel: "Property & Architectural Showcases" },
+  { value: "events-parties", label: "Events & Celebrations", sublabel: "Parties, Anniversaries & Gatherings" },
+  { value: "documentary-film", label: "Documentary & Film", sublabel: "Cultural & Narrative Storytelling" },
+  { value: "music-videos", label: "Music Videos", sublabel: "Stylised Performance Cinema" },
+  { value: "brand-commercials", label: "Brand & Commercial Cinema", sublabel: "Broadcast & Digital Campaigns" },
+  { value: "other", label: "Other Visual Project", sublabel: "Bespoke Production Scope" },
+];
+
+const TIMELINE_OPTIONS: SelectOption[] = [
+  { value: "immediate", label: "Immediate (1–4 weeks)" },
+  { value: "within-3-months", label: "Within 1–3 months" },
+  { value: "within-6-months", label: "3–6 months" },
+  { value: "exploratory", label: "Flexible / Planning Stage" },
+];
+
+const BUDGET_OPTIONS: SelectOption[] = [
+  { value: "$15k-$25k", label: "$15,000 – $25,000 AUD" },
+  { value: "$25k-$50k", label: "$25,000 – $50,000 AUD" },
+  { value: "$50k-$100k", label: "$50,000 – $100,000 AUD" },
+  { value: "$100k+", label: "$100,000+ AUD" },
+];
+
+const CONTACT_PREF_OPTIONS: SelectOption[] = [
+  { value: "email", label: "Email (Written Brief & Estimate)" },
+  { value: "phone", label: "Phone / Direct Consultation" },
+  { value: "video-call", label: "Video Call (Google Meet)" },
+];
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,10 +40,10 @@ export default function ContactForm() {
     email: "",
     company: "",
     phone: "",
-    service: "documentary-film",
+    service: "business-videos",
     description: "",
     timeline: "within-3-months",
-    budget: "$25,000 - $50,000 AUD",
+    budget: "$15k-$25k",
     preferredContact: "email",
   });
 
@@ -72,10 +103,10 @@ export default function ContactForm() {
               email: "",
               company: "",
               phone: "",
-              service: "documentary-film",
+              service: "business-videos",
               description: "",
               timeline: "within-3-months",
-              budget: "$25,000 - $50,000 AUD",
+              budget: "$15k-$25k",
               preferredContact: "email",
             });
           }}
@@ -171,61 +202,44 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Service Interested In */}
-        <div className="space-y-2">
-          <label htmlFor="service" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
-            Production Discipline
-          </label>
-          <select
-            id="service"
-            value={formData.service}
-            onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-3 py-3 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none transition-colors"
-          >
-            <option value="documentary-film">Documentary & Film</option>
-            <option value="music-videos">Music Video Production</option>
-            <option value="corporate-video">Corporate Video</option>
-            <option value="brand-commercials">Brand & Commercial Cinema</option>
-            <option value="other">Other Visual Narrative</option>
-          </select>
-        </div>
+        <CustomSelect
+          id="service"
+          label="Production Discipline"
+          value={formData.service}
+          onChange={(val) => setFormData({ ...formData, service: val })}
+          options={SERVICE_OPTIONS}
+        />
 
         {/* Approximate Timeline */}
-        <div className="space-y-2">
-          <label htmlFor="timeline" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
-            Target Timeline
-          </label>
-          <select
-            id="timeline"
-            value={formData.timeline}
-            onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-3 py-3 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none transition-colors"
-          >
-            <option value="immediate">Immediate (1-4 weeks)</option>
-            <option value="within-3-months">Within 1-3 months</option>
-            <option value="within-6-months">3-6 months</option>
-            <option value="exploratory">Exploratory / Planning Stage</option>
-          </select>
-        </div>
+        <CustomSelect
+          id="timeline"
+          label="Target Timeline"
+          value={formData.timeline}
+          onChange={(val) => setFormData({ ...formData, timeline: val })}
+          options={TIMELINE_OPTIONS}
+        />
+      </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Budget Guidance */}
-        <div className="space-y-2">
-          <label htmlFor="budget" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-medium">
-            Budget Range (AUD)
-          </label>
-          <select
-            id="budget"
-            value={formData.budget}
-            onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-3 py-3 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none transition-colors"
-          >
-            <option value="$15k-$25k">$15,000 – $25,000 AUD</option>
-            <option value="$25k-$50k">$25,000 – $50,000 AUD</option>
-            <option value="$50k-$100k">$50,000 – $100,000 AUD</option>
-            <option value="$100k+">$100,000+ AUD</option>
-          </select>
-        </div>
+        <CustomSelect
+          id="budget"
+          label="Budget Range (AUD)"
+          value={formData.budget}
+          onChange={(val) => setFormData({ ...formData, budget: val })}
+          options={BUDGET_OPTIONS}
+        />
+
+        {/* Preferred Contact Method */}
+        <CustomSelect
+          id="preferredContact"
+          label="Preferred Contact Method"
+          value={formData.preferredContact}
+          onChange={(val) => setFormData({ ...formData, preferredContact: val })}
+          options={CONTACT_PREF_OPTIONS}
+        />
       </div>
 
       {/* Project Description */}

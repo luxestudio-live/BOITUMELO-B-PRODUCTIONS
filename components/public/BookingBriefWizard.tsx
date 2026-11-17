@@ -21,6 +21,21 @@ import {
   Check,
   Clapperboard,
 } from "lucide-react";
+import CustomSelect, { SelectOption } from "./CustomSelect";
+
+const WIZARD_TIMELINE_OPTIONS: SelectOption[] = [
+  { value: "1-4 weeks", label: "Urgent / Within 1 month" },
+  { value: "1-3 months", label: "Within 1–3 months" },
+  { value: "3-6 months", label: "3–6 months" },
+  { value: "6+ months", label: "Flexible / Later this year" },
+];
+
+const WIZARD_BUDGET_OPTIONS: SelectOption[] = [
+  { value: "$15,000 – $25,000 AUD", label: "$15,000 – $25,000 AUD", sublabel: "Focused Boutique Shoot" },
+  { value: "$25,000 – $50,000 AUD", label: "$25,000 – $50,000 AUD", sublabel: "Standard Cinema Package" },
+  { value: "$50,000 – $100,000 AUD", label: "$50,000 – $100,000 AUD", sublabel: "Multi-Day Full Scale Production" },
+  { value: "$100,000+ AUD", label: "$100,000+ AUD", sublabel: "Flagship Commercial or Festival Master" },
+];
 
 interface WizardState {
   // Step 1: Discipline
@@ -52,9 +67,9 @@ const initialWizardState: WizardState = {
   creativeGoals: "",
   audience: "",
   referenceLinks: "",
-  timeline: "Within 1 month",
+  timeline: "1-4 weeks",
   location: "Northern Adelaide, SA",
-  budget: "Standard Project Budget",
+  budget: "$15,000 – $25,000 AUD",
   specialRequirements: "",
   name: "",
   email: "",
@@ -481,22 +496,13 @@ STUDIO        : Melbourne & Sydney • Australia
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="timeline" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
-                  Target Timeline / Delivery Deadline
-                </label>
-                <select
-                  id="timeline"
-                  value={formData.timeline}
-                  onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
-                >
-                  <option value="1-4 weeks">Urgent / Within 1 month</option>
-                  <option value="1-3 months">Within 1–3 months</option>
-                  <option value="3-6 months">3–6 months</option>
-                  <option value="6+ months">Flexible / Later this year</option>
-                </select>
-              </div>
+              <CustomSelect
+                id="timeline"
+                label="Target Timeline / Delivery Deadline"
+                value={formData.timeline}
+                onChange={(val) => setFormData({ ...formData, timeline: val })}
+                options={WIZARD_TIMELINE_OPTIONS}
+              />
 
               <div className="space-y-2">
                 <label htmlFor="location" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
@@ -508,28 +514,19 @@ STUDIO        : Melbourne & Sydney • Australia
                   maxLength={150}
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  placeholder="e.g. Melbourne VIC, Sydney NSW, Remote Outback, Studio"
+                  placeholder="e.g. Northern Adelaide, Barossa Valley, Studio"
                   className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label htmlFor="budget" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
-                Anticipated Budget Range (AUD)
-              </label>
-              <select
-                id="budget"
-                value={formData.budget}
-                onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal focus:outline-none"
-              >
-                <option value="$15,000 – $25,000 AUD">$15,000 – $25,000 AUD (Focused Boutique Shoot)</option>
-                <option value="$25,000 – $50,000 AUD">$25,000 – $50,000 AUD (Standard Cinema Package)</option>
-                <option value="$50,000 – $100,000 AUD">$50,000 – $100,000 AUD (Multi-Day Full Scale Production)</option>
-                <option value="$100,000+ AUD">$100,000+ AUD (Flagship Commercial or Festival Master)</option>
-              </select>
-            </div>
+            <CustomSelect
+              id="budget"
+              label="Anticipated Budget Range (AUD)"
+              value={formData.budget}
+              onChange={(val) => setFormData({ ...formData, budget: val })}
+              options={WIZARD_BUDGET_OPTIONS}
+            />
 
             <div className="space-y-2">
               <label htmlFor="special" className="block text-xs font-mono uppercase tracking-wider text-brand-teal/70 font-semibold">
