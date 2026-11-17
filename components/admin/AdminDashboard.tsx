@@ -95,7 +95,7 @@ export default function AdminDashboard() {
     instagram: siteConfig.instagram,
     vimeo: siteConfig.vimeo,
     brandGold: "#B08D57",
-    brandTeal: "#0E0E0F",
+    brandTeal: "#0B1320",
     seoDescription:
       "Australian creative production studio specialising in cinematic documentary filmmaking, visionary music videos, corporate narratives, and commercial films.",
   });
@@ -1217,9 +1217,9 @@ export default function AdminDashboard() {
                     Brand Colour Tokens
                   </span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-                    <div className="p-3 bg-brand-black border border-black rounded text-white shadow-sm">
-                      <span className="block text-white/70 text-[10px]">Pure Black</span>
-                      <span className="text-white font-semibold">#000000</span>
+                    <div className="p-3 bg-brand-black border border-brand-black rounded text-white shadow-sm">
+                      <span className="block text-white/70 text-[10px]">Midnight Navy</span>
+                      <span className="text-white font-semibold">#0B1320</span>
                     </div>
                     <div className="p-3 bg-brand-teal border border-brand-teal rounded text-white shadow-sm">
                       <span className="block text-brand-teal-light text-[10px]">Deep Blue / Teal</span>
@@ -1274,7 +1274,7 @@ export default function AdminDashboard() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-[#0B1320]/75 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
         >
           <div className="bg-white border border-brand-teal/20 rounded-sm w-full max-w-2xl p-4 sm:p-8 space-y-6 my-auto shadow-2xl max-h-[92vh] overflow-y-auto text-brand-teal">
             <div className="flex items-center justify-between pb-4 border-b border-brand-teal/15">

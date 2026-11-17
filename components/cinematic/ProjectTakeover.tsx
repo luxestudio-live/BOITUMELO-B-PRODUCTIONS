@@ -88,7 +88,7 @@ export default function ProjectTakeover() {
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         {/* White Card with Gold Hairline Border */}
-        <div className="bg-[var(--bg)] border border-[var(--gold)]/40 rounded-[2px] p-4 sm:p-8 lg:p-10 shadow-[0_10px_30px_rgba(14,14,15,0.06)] space-y-6 sm:space-y-8">
+        <div className="bg-[var(--bg)] border border-[var(--gold)]/40 rounded-[2px] p-4 sm:p-8 lg:p-10 shadow-[0_10px_30px_rgba(11,19,32,0.07)] space-y-6 sm:space-y-8">
           {/* Card Header */}
           <div className="flex items-center justify-between border-b border-[var(--line)] pb-4">
             <div className="flex items-center space-x-3">
@@ -105,7 +105,7 @@ export default function ProjectTakeover() {
           {/* Expanding Takeover Media Frame */}
           <div
             ref={mediaContainerRef}
-            className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[380px] sm:min-h-[480px] max-h-[85vh] overflow-hidden rounded-[2px] border border-[#0E0E0F]/20 shadow-md bg-[#0E0E0F]"
+            className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[380px] sm:min-h-[480px] max-h-[85vh] overflow-hidden rounded-[2px] border border-[#0B1320]/20 shadow-md bg-[#0B1320]"
           >
             {/* Poster Image */}
             <Image
@@ -133,7 +133,7 @@ export default function ProjectTakeover() {
             />
 
             {/* Cinematic Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E0F]/90 via-[#0E0E0F]/40 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-[#0B1320]/40 to-transparent pointer-events-none" />
 
             {/* Camera HUD Overlaid on Takeover */}
             <ViewfinderHUD
@@ -147,7 +147,7 @@ export default function ProjectTakeover() {
               <button
                 type="button"
                 onClick={toggleVideoPlayback}
-                className="absolute inset-0 m-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#0E0E0F]/80 border border-[var(--gold)]/80 text-[var(--gold)] flex items-center justify-center hover:scale-105 hover:bg-[var(--gold)] hover:text-[var(--ink)] transition-all duration-250 ease-out shadow-lg backdrop-blur-md z-30 group"
+                className="absolute inset-0 m-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#0B1320]/80 border border-[var(--gold)]/80 text-[var(--gold)] flex items-center justify-center hover:scale-105 hover:bg-[var(--gold)] hover:text-[var(--ink)] transition-all duration-250 ease-out shadow-lg backdrop-blur-md z-30 group"
                 aria-label="Play Featured Film Preview"
               >
                 <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-current translate-x-0.5" />
@@ -160,7 +160,7 @@ export default function ProjectTakeover() {
                 <button
                   type="button"
                   onClick={toggleMute}
-                  className="p-2.5 rounded-[2px] bg-[#0E0E0F]/85 backdrop-blur-md border border-[var(--gold)]/40 text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                  className="p-2.5 rounded-[2px] bg-[#0B1320]/85 backdrop-blur-md border border-[var(--gold)]/40 text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
                   aria-label={isMuted ? "Unmute audio" : "Mute audio"}
                 >
                   {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-[var(--gold)]" />}
@@ -168,7 +168,7 @@ export default function ProjectTakeover() {
                 <button
                   type="button"
                   onClick={toggleVideoPlayback}
-                  className="text-[12px] uppercase font-mono tracking-[0.12em] px-3.5 py-2.5 rounded-[2px] bg-[#0E0E0F]/85 backdrop-blur-md border border-[var(--gold)]/40 text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                  className="text-[12px] uppercase font-mono tracking-[0.12em] px-3.5 py-2.5 rounded-[2px] bg-[#0B1320]/85 backdrop-blur-md border border-[var(--gold)]/40 text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
                 >
                   Pause
                 </button>
@@ -181,7 +181,7 @@ export default function ProjectTakeover() {
               className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-8 lg:p-10 max-w-4xl space-y-2 pointer-events-none"
             >
               {project.awardNote && (
-                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#0E0E0F]/85 backdrop-blur-md border border-[var(--gold)]/50 rounded-[2px] text-[11px] font-mono text-[var(--gold)] pointer-events-auto">
+                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#0B1320]/85 backdrop-blur-md border border-[var(--gold)]/50 rounded-[2px] text-[11px] font-mono text-[var(--gold)] pointer-events-auto">
                   <Award className="w-3.5 h-3.5" />
                   <span>{project.awardNote}</span>
                 </div>
@@ -201,7 +201,7 @@ export default function ProjectTakeover() {
           <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
             <Link
               href={`/work/${project.slug}`}
-              className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
+              className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(11,19,32,0.07)]"
             >
               <span>View Film Case Study</span>
               <ArrowUpRight className="w-4 h-4" />

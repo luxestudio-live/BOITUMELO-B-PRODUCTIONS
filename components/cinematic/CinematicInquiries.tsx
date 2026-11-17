@@ -177,7 +177,7 @@ export default function CinematicInquiries({
             )}
 
             {/* Executive Producer Contact Hotline Card */}
-            <div className="relative p-6 sm:p-7 bg-[var(--ink)] border border-[rgba(255,255,255,0.12)] rounded-[2px] space-y-4 shadow-[0_10px_30px_rgba(14,14,15,0.06)] text-[var(--white-on-dark)]">
+            <div className="relative p-6 sm:p-7 bg-[var(--ink)] border border-[rgba(255,255,255,0.12)] rounded-[2px] space-y-4 shadow-[0_10px_30px_rgba(11,19,32,0.07)] text-[var(--white-on-dark)]">
               <div className="absolute top-3 right-3 w-3 h-3 border-t border-r border-[var(--gold)]/40 pointer-events-none" />
               <div className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-[var(--gold)]/40 pointer-events-none" />
 

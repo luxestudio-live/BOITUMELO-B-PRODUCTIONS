@@ -52,7 +52,7 @@ export default function InteractiveServices() {
                   aria-selected={isSelected}
                   className={`group relative p-5 sm:p-7 rounded-[2px] border transition-all duration-250 ease-out cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] ${
                     isSelected
-                      ? "bg-[var(--ink)] border-[var(--gold)] text-[var(--white-on-dark)] shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
+                      ? "bg-[var(--ink)] border-[var(--gold)] text-[var(--white-on-dark)] shadow-[0_10px_30px_rgba(11,19,32,0.07)]"
                       : "bg-[var(--bg-soft)] border-[var(--line)] hover:border-[var(--gold)]/50 text-[var(--ink-soft)] hover:text-[var(--ink)]"
                   }`}
                 >
@@ -92,7 +92,7 @@ export default function InteractiveServices() {
                         {service.visualDirection.aestheticTokens.slice(0, 3).map((token) => (
                           <span
                             key={token}
-                            className="text-[11px] font-mono uppercase tracking-[0.1em] px-2.5 py-1 bg-[#000000]/40 text-[var(--gold-light)] rounded-[2px] border border-[var(--gold)]/30"
+                            className="text-[11px] font-mono uppercase tracking-[0.1em] px-2.5 py-1 bg-[#0B1320]/40 text-[var(--gold-light)] rounded-[2px] border border-[var(--gold)]/30"
                           >
                             {token}
                           </span>
@@ -119,7 +119,7 @@ export default function InteractiveServices() {
           <div className="lg:col-span-6">
             <div
               key={activeService.slug}
-              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(14,14,15,0.06)] bg-[#0E0E0F] animate-fade-in"
+              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] animate-fade-in"
             >
               {/* Dynamic Image / Footage */}
               <Image
@@ -132,7 +132,7 @@ export default function InteractiveServices() {
               />
 
               {/* Cinematic Vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E0F]/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/80 via-transparent to-transparent pointer-events-none" />
 
               {/* Camera Viewfinder Overlay */}
               <ViewfinderHUD
@@ -142,7 +142,7 @@ export default function InteractiveServices() {
 
               {/* Lower Overlay Badge */}
               <div className="absolute bottom-5 left-5 right-5 z-20 flex items-center justify-between text-xs font-mono">
-                <span className="text-[var(--white-on-dark)] bg-[#0E0E0F]/80 backdrop-blur-md px-3 py-1 rounded-[2px] border border-[var(--line)]/30">
+                <span className="text-[var(--white-on-dark)] bg-[#0B1320]/80 backdrop-blur-md px-3 py-1 rounded-[2px] border border-[var(--line)]/30">
                   {activeService.shortTitle} Cinema Frame
                 </span>
                 <Link

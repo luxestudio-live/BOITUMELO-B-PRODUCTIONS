@@ -4,14 +4,14 @@ description: Elite Australian creative production house specialising in independ
 colors:
   bg: "#FFFFFF"          # main page background (60%)
   bg-soft: "#F6F2EA"     # alternating sections, cards
-  ink: "#0E0E0F"         # headings, body text, dark sections (30%)
-  ink-soft: "#5A5750"    # secondary / paragraph text
+  ink: "#0B1320"         # headings, body text, dark sections (30% midnight navy blue)
+  ink-soft: "#4A5568"    # slate navy secondary / paragraph text
   gold: "#B08D57"        # accents, lines, icons, large text only (10%)
   gold-deep: "#8A6A2F"   # gold text links, small gold text (AA contrast >= 4.5:1)
   gold-light: "#E8DCC3"  # borders, tints, hover backgrounds
   line: "#E6E1D6"        # hairline dividers (1px)
   white-on-dark: "#FFFFFF"
-  text-on-dark: "#CFCAC0"
+  text-on-dark: "#D4DCE8"
 typography:
   display:
     fontFamily: "Cinzel, Cormorant Garamond, Playfair Display, Georgia, serif"

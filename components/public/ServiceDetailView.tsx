@@ -75,7 +75,7 @@ export default function ServiceDetailView({
         )}
 
         {/* Hero Video Preview / Poster with Clean Framing */}
-        <div className="mt-12 relative rounded-[2px] overflow-hidden border border-[var(--gold)]/40 shadow-[0_10px_30px_rgba(14,14,15,0.06)]">
+        <div className="mt-12 relative rounded-[2px] overflow-hidden border border-[var(--gold)]/40 shadow-[0_10px_30px_rgba(11,19,32,0.07)]">
           <VideoPlayer
             src={service.videoPreviewUrl}
             poster={service.heroImage}

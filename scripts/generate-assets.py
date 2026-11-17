@@ -99,7 +99,7 @@ mark = rgba.crop((0, 10, 460, 200))
 mark.save('public/images/logo-mark.png', 'PNG')
 
 # 5. Square app icons: 512, 192, 180 (apple-touch-icon)
-icon_512 = Image.new('RGBA', (512, 512), (14, 14, 15, 255))
+icon_512 = Image.new('RGBA', (512, 512), (11, 19, 32, 255))
 target_w = 420
 scale = target_w / mark.width
 target_h = int(mark.height * scale)
@@ -132,7 +132,7 @@ svg_str = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" widt
       <stop offset="100%" stop-color="#8A6A2F" />
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="96" fill="#0E0E0F" />
+  <rect width="512" height="512" rx="96" fill="#0B1320" />
   <rect x="20" y="20" width="472" height="472" rx="80" fill="none" stroke="url(#goldFrame)" stroke-width="2.5" opacity="0.6" />
   <path d="M 52 112 L 52 52 L 112 52" fill="none" stroke="#B08D57" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
   <path d="M 400 52 L 460 52 L 460 112" fill="none" stroke="#B08D57" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />

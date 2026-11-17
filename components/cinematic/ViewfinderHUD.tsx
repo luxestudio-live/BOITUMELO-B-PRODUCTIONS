@@ -95,20 +95,20 @@ export default function ViewfinderHUD({
       {showTopBar && (
         <div className={`${paddedForNav ? "pt-20 sm:pt-24" : "pt-0 sm:pt-1"} flex items-center justify-between tracking-widest uppercase`}>
           <div className="flex items-center space-x-3">
-            <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px]">
+            <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
               <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse" />
               <span>REC</span>
             </span>
             <span
               ref={timecodeRef}
               suppressHydrationWarning
-              className="text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px]"
+              className="text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]"
             >
               {timecode}
             </span>
           </div>
 
-          <div className="hidden sm:flex items-center space-x-6 text-[var(--white-on-dark)] bg-[#0E0E0F]/85 px-3 py-1 rounded-[2px] tracking-wider">
+          <div className="hidden sm:flex items-center space-x-6 text-[var(--white-on-dark)] bg-[#0B1320]/85 px-3 py-1 rounded-[2px] tracking-wider">
             <span>{fps}</span>
             <span className="text-[var(--gold)]">•</span>
             <span>{iso}</span>
@@ -131,15 +131,15 @@ export default function ViewfinderHUD({
       {showBottomBar && (
         <div className="mt-auto flex items-center justify-between tracking-widest uppercase">
           <div className="flex items-center space-x-2">
-            <span className="px-2.5 py-1 bg-[#0E0E0F]/85 border border-[var(--gold)]/40 text-[var(--gold)] rounded-[2px] text-[11px]">
+            <span className="px-2.5 py-1 bg-[#0B1320]/85 border border-[var(--gold)]/40 text-[var(--gold)] rounded-[2px] text-[11px]">
               {aspectRatioLabel}
             </span>
-            <span className="hidden md:inline text-[var(--text-on-dark)] bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px] text-[11px]">
+            <span className="hidden md:inline text-[var(--text-on-dark)] bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px] text-[11px]">
               {lensLabel}
             </span>
           </div>
 
-          <div className="flex items-center space-x-3 text-[11px] text-[var(--text-on-dark)] bg-[#0E0E0F]/85 px-2.5 py-1 rounded-[2px]">
+          <div className="flex items-center space-x-3 text-[11px] text-[var(--text-on-dark)] bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
             <span className="hidden sm:inline">BAT 14.8V</span>
             <span className="text-[var(--gold)] font-medium">CALIBRATED</span>
           </div>

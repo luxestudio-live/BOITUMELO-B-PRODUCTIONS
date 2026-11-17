@@ -50,7 +50,7 @@ export default function ProjectCard({
 
   return (
     <article
-      className="group relative flex flex-col bg-[var(--bg)] border border-[var(--line)] hover:border-[var(--gold)] transition-all duration-250 ease-out rounded-[2px] overflow-hidden shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
+      className="group relative flex flex-col bg-[var(--bg)] border border-[var(--line)] hover:border-[var(--gold)] transition-all duration-250 ease-out rounded-[2px] overflow-hidden shadow-[0_10px_30px_rgba(11,19,32,0.07)]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -67,7 +67,7 @@ export default function ProjectCard({
           <span className="text-[var(--text-on-dark)]">{project.aspectRatio}</span>
         </div>
 
-        <div className={`relative w-full ${aspectClass} overflow-hidden bg-[#000000]`}>
+        <div className={`relative w-full ${aspectClass} overflow-hidden bg-[#0B1320]`}>
           {/* Static High-Res Poster Image */}
           <Image
             src={getAssetPath(project.heroPoster)}
@@ -95,7 +95,7 @@ export default function ProjectCard({
           />
 
           {/* Cinematic Vignette */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/90 via-[#000000]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-250 ease-out" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-[#0B1320]/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-250 ease-out" />
 
           {/* Viewfinder Corner Framelines */}
           <div className="absolute top-2.5 left-2.5 w-3 h-3 border-t border-l border-[var(--gold)]/60 pointer-events-none" />
@@ -105,13 +105,13 @@ export default function ProjectCard({
 
           {/* Year Badge */}
           <div className="absolute top-4 left-4 z-10 flex items-center space-x-2">
-            <span className="px-2.5 py-1 bg-[#000000]/80 backdrop-blur-md text-[10px] font-mono text-[var(--gold)] border border-[rgba(255,255,255,0.2)] rounded-[2px]">
+            <span className="px-2.5 py-1 bg-[#0B1320]/80 backdrop-blur-md text-[10px] font-mono text-[var(--gold)] border border-[rgba(255,255,255,0.2)] rounded-[2px]">
               {project.year}
             </span>
           </div>
 
           {/* Quick Play Cue */}
-          <div className="absolute bottom-4 right-4 z-10 w-9 h-9 rounded-full bg-[#000000]/80 backdrop-blur-sm border border-[var(--gold)] text-[var(--gold)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-250 ease-out transform translate-y-2 group-hover:translate-y-0">
+          <div className="absolute bottom-4 right-4 z-10 w-9 h-9 rounded-full bg-[#0B1320]/80 backdrop-blur-sm border border-[var(--gold)] text-[var(--gold)] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-250 ease-out transform translate-y-2 group-hover:translate-y-0">
             <Play className="w-3.5 h-3.5 fill-current translate-x-0.5" />
           </div>
         </div>

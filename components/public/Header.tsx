@@ -35,7 +35,7 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-250 ease-out bg-[var(--bg)] text-[var(--ink)] border-b border-[var(--line)] ${
-          scrolled ? "py-3.5 shadow-[0_10px_30px_rgba(14,14,15,0.06)]" : "py-5 sm:py-6"
+          scrolled ? "py-3.5 shadow-[0_10px_30px_rgba(11,19,32,0.07)]" : "py-5 sm:py-6"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -93,7 +93,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link
               href="/book"
-              className="hidden sm:inline-flex items-center space-x-2 text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--ink)] text-[var(--white-on-dark)] hover:bg-[var(--gold)] hover:text-[var(--ink)] px-5 py-2.5 rounded-[2px] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
+              className="hidden sm:inline-flex items-center space-x-2 text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--ink)] text-[var(--white-on-dark)] hover:bg-[var(--gold)] hover:text-[var(--ink)] px-5 py-2.5 rounded-[2px] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(11,19,32,0.07)]"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

@@ -10,7 +10,7 @@ export default function FinalFrameCTA() {
     >
       {/* Viewfinder Framing Container */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-8 lg:px-12">
-        <div className="relative p-8 sm:p-16 lg:p-20 rounded-[2px] border border-[var(--gold)]/40 bg-[var(--ink)] shadow-[0_10px_30px_rgba(14,14,15,0.06)] text-center space-y-6 sm:space-y-8">
+        <div className="relative p-8 sm:p-16 lg:p-20 rounded-[2px] border border-[var(--gold)]/40 bg-[var(--ink)] shadow-[0_10px_30px_rgba(11,19,32,0.07)] text-center space-y-6 sm:space-y-8">
           {/* Subtle Viewfinder HUD inside final frame */}
           <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[var(--gold)]" />
           <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[var(--gold)]" />

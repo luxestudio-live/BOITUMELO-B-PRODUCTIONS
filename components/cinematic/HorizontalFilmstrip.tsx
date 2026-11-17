@@ -130,10 +130,10 @@ export default function HorizontalFilmstrip() {
                 onMouseEnter={() => handleMouseEnter(p.slug)}
                 onMouseLeave={() => handleMouseLeave(p.slug)}
               >
-                {/* Physical 35mm Film Frame Box - Keeps authentic dark film look */}
+                {/* Physical 35mm Film Frame Box - Keeps authentic midnight navy film look */}
                 <Link
                   href={`/work/${p.slug}`}
-                  className={`relative block ${frameRatio} rounded-[2px] overflow-hidden border border-[#0E0E0F]/15 group-hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)] bg-[#0E0E0F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)]`}
+                  className={`relative block ${frameRatio} rounded-[2px] overflow-hidden border border-[#0B1320]/15 group-hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)]`}
                   aria-label={`View film case study: ${p.title}`}
                 >
                   {/* Poster Image */}
@@ -163,8 +163,8 @@ export default function HorizontalFilmstrip() {
                     }`}
                   />
 
-                  {/* Dark Vignette Overlay for Depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E0F]/80 via-transparent to-[#0E0E0F]/20 opacity-80 group-hover:opacity-60 transition-opacity duration-250 ease-out" />
+                  {/* Midnight Navy Vignette Overlay for Depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/80 via-transparent to-[#0B1320]/20 opacity-80 group-hover:opacity-60 transition-opacity duration-250 ease-out" />
 
                   {/* Camera Corner Frameline Markers */}
                   <div className="absolute top-3 left-3 w-3 h-3 border-t border-l border-[var(--gold)]/60 pointer-events-none" />

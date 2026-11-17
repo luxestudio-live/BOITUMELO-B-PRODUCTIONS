@@ -71,7 +71,7 @@ export default function CinematicTestimonials() {
         {/* Master Editorial Quotation Theatre - White Card */}
         <div
           key={current.id}
-          className="bg-[var(--bg)] border border-[var(--line)] rounded-[2px] p-6 sm:p-12 shadow-[0_10px_30px_rgba(14,14,15,0.06)] space-y-8 animate-fade-in"
+          className="bg-[var(--bg)] border border-[var(--line)] rounded-[2px] p-6 sm:p-12 shadow-[0_10px_30px_rgba(11,19,32,0.07)] space-y-8 animate-fade-in"
         >
           <div className="flex items-center justify-between">
             <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-[var(--bg-soft)] rounded-[2px] text-[10px] sm:text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium border border-[var(--line)] max-w-full">

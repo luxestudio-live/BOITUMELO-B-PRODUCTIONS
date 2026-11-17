@@ -112,7 +112,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <Link
             href="/book"
             onClick={onClose}
-            className="w-full flex items-center justify-center space-x-2 text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--ink)] text-[var(--white-on-dark)] hover:bg-[var(--gold)] hover:text-[var(--ink)] py-4 px-6 rounded-[2px] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(14,14,15,0.06)]"
+            className="w-full flex items-center justify-center space-x-2 text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--ink)] text-[var(--white-on-dark)] hover:bg-[var(--gold)] hover:text-[var(--ink)] py-4 px-6 rounded-[2px] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(11,19,32,0.07)]"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-4 h-4" />

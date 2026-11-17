@@ -5,27 +5,27 @@
 :root {
   --bg: #FFFFFF;
   --bg-soft: #F6F2EA;
-  --ink: #0E0E0F;
-  --ink-deep: #0E0E0F;
-  --ink-soft: #5A5750;
+  --ink: #0B1320;        /* Deep midnight navy blue */
+  --ink-deep: #070D16;   /* Rich dark navy black */
+  --ink-soft: #4A5568;   /* Slate navy secondary copy */
   --gold: #B08D57;
   --gold-deep: #8A6A2F;
   --gold-light: #E8DCC3;
   --line: #E6E1D6;
   --white-on-dark: #FFFFFF;
-  --text-on-dark: #CFCAC0;
+  --text-on-dark: #D4DCE8; /* Crisp pale slate on navy */
 
   /* Aliases for brand compatibility */
-  --color-black: #0E0E0F;
+  --color-black: #0B1320;
   --color-black-elevated: #F6F2EA;
-  --color-teal: #0E0E0F;
-  --color-teal-dark: #0E0E0F;
-  --color-teal-light: #5A5750;
+  --color-teal: #0B1320;
+  --color-teal-dark: #070D16;
+  --color-teal-light: #4A5568;
   --color-gold: #B08D57;
   --color-gold-light: #E8DCC3;
   --color-gold-deep: #8A6A2F;
   --color-white: #FFFFFF;
-  --color-gray: #5A5750;
+  --color-gray: #4A5568;
   --color-line: #E6E1D6;
 }
 
