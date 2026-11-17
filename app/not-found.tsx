@@ -9,7 +9,7 @@ export default function NotFound() {
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
           background:
-            "radial-gradient(ellipse 65% 55% at 50% 48%, rgba(203, 141, 68, 0.12) 0%, rgba(8, 18, 21, 0.6) 50%, transparent 100%)",
+            "radial-gradient(ellipse 65% 55% at 50% 48%, rgba(176, 141, 87, 0.12) 0%, rgba(7, 13, 22, 0.6) 50%, transparent 100%)",
         }}
       />
 

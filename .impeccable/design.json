@@ -1,179 +1,164 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-06T02:03:00.000Z",
+  "generatedAt": "2026-11-17T13:48:00.000Z",
   "title": "Design System: Boitumelo B Productions",
   "extensions": {
     "colorMeta": {
-      "primary": {
-        "role": "primary",
-        "displayName": "Warm Gold",
-        "canonical": "#CB8D44",
-        "tonalRamp": [
-          "#3A230A",
-          "#5C3A13",
-          "#935F24",
-          "#CB8D44",
-          "#DFA764",
-          "#EBC28E",
-          "#F4DCBA",
-          "#FAF3E8"
-        ]
-      },
-      "primary-light": {
-        "role": "primary",
-        "displayName": "Radiant Amber",
-        "canonical": "#E2A65F",
-        "tonalRamp": [
-          "#4A2C0D",
-          "#704417",
-          "#A86927",
-          "#CB8D44",
-          "#E2A65F",
-          "#ECC18E",
-          "#F6DDC0",
-          "#FCF6EE"
-        ]
-      },
-      "primary-dark": {
-        "role": "primary",
-        "displayName": "Deep Bronze",
-        "canonical": "#9F6C2E",
-        "tonalRamp": [
-          "#261706",
-          "#4A2E0E",
-          "#724819",
-          "#9F6C2E",
-          "#BC8340",
-          "#D5A367",
-          "#ECC79B",
-          "#F8EAD9"
-        ]
-      },
-      "canvas": {
+      "bg": {
         "role": "neutral",
-        "displayName": "Letterbox Black",
-        "canonical": "#000000",
-        "tonalRamp": [
-          "#000000",
-          "#070C0E",
-          "#0F171A",
-          "#1C2528",
-          "#2D393D",
-          "#4A575B",
-          "#7C8B90",
-          "#B5C0C4"
-        ]
-      },
-      "surface-deep": {
-        "role": "neutral",
-        "displayName": "Atmospheric Deep Teal",
-        "canonical": "#081215",
-        "tonalRamp": [
-          "#04090B",
-          "#081215",
-          "#102127",
-          "#1B343D",
-          "#284E5B",
-          "#3B7285",
-          "#5B9CB4",
-          "#A7D0DF"
-        ]
-      },
-      "surface-card": {
-        "role": "neutral",
-        "displayName": "Card Surface Black",
-        "canonical": "#070C0E",
-        "tonalRamp": [
-          "#030607",
-          "#070C0E",
-          "#111A1D",
-          "#1D2B30",
-          "#2E4148",
-          "#47616A",
-          "#6F8F99",
-          "#B6CBD1"
-        ]
-      },
-      "surface-teal": {
-        "role": "neutral",
-        "displayName": "Grading Suite Teal",
-        "canonical": "#183036",
-        "tonalRamp": [
-          "#081215",
-          "#0E1D21",
-          "#183036",
-          "#24434B",
-          "#37616C",
-          "#548694",
-          "#8EAFB9",
-          "#D8E4E7"
-        ]
-      },
-      "border-subtle": {
-        "role": "neutral",
-        "displayName": "Precision Border Teal",
-        "canonical": "#24434B",
-        "tonalRamp": [
-          "#0D1A1D",
-          "#172D32",
-          "#24434B",
-          "#335D67",
-          "#467B88",
-          "#63A0AF",
-          "#91C4D0",
-          "#D4EAEF"
-        ]
-      },
-      "text-display": {
-        "role": "neutral",
-        "displayName": "Pure White",
+        "displayName": "Pure White Canvas",
         "canonical": "#FFFFFF",
         "tonalRamp": [
-          "#1A1D1E",
-          "#3B3E40",
-          "#636769",
-          "#8E9294",
-          "#B8BCBE",
-          "#D8DCDE",
-          "#EEEEF0",
+          "#1A1D20",
+          "#3B4148",
+          "#68727D",
+          "#9AA5B1",
+          "#CCD4DC",
+          "#E8ECF0",
+          "#F6F8FA",
           "#FFFFFF"
         ]
       },
-      "text-body": {
+      "bg-soft": {
         "role": "neutral",
-        "displayName": "Secondary Body Silver",
-        "canonical": "#C3CDD0",
+        "displayName": "Soft Warm Cream",
+        "canonical": "#F6F2EA",
         "tonalRamp": [
-          "#1E2426",
-          "#3D474A",
-          "#647377",
-          "#8F9FA3",
-          "#C3CDD0",
-          "#D6DFE1",
-          "#E8EFF0",
-          "#F6FAFA"
+          "#2A261F",
+          "#4B4438",
+          "#7A705E",
+          "#ABA08C",
+          "#D2C9B8",
+          "#E8E1D2",
+          "#F6F2EA",
+          "#FDFBF8"
         ]
       },
-      "text-muted": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Muted Metadata Grey",
-        "canonical": "#8E9DA1",
+        "displayName": "Midnight Navy",
+        "canonical": "#0B1320",
         "tonalRamp": [
-          "#161A1B",
-          "#2F3638",
-          "#515C5F",
-          "#738185",
-          "#8E9DA1",
-          "#ADC0C4",
-          "#CFDDE0",
-          "#EFF5F6"
+          "#04070D",
+          "#0B1320",
+          "#15233A",
+          "#223859",
+          "#335380",
+          "#5078B3",
+          "#89AADB",
+          "#D4E2F5"
+        ]
+      },
+      "ink-deep": {
+        "role": "neutral",
+        "displayName": "Deep Midnight Navy",
+        "canonical": "#070D16",
+        "tonalRamp": [
+          "#020407",
+          "#070D16",
+          "#101C2E",
+          "#1A2E4B",
+          "#27436B",
+          "#3B649E",
+          "#6B94D4",
+          "#C2D7F6"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Slate Navy Body",
+        "canonical": "#4A5568",
+        "tonalRamp": [
+          "#171B21",
+          "#2D343F",
+          "#4A5568",
+          "#66748C",
+          "#8796AF",
+          "#ABB7CC",
+          "#D1DAE8",
+          "#EDF2F7"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Warm Gold",
+        "canonical": "#B08D57",
+        "tonalRamp": [
+          "#2E2312",
+          "#4D3A1B",
+          "#7A5E2E",
+          "#B08D57",
+          "#C7A877",
+          "#DDC49C",
+          "#EFE1C8",
+          "#FAF5EB"
+        ]
+      },
+      "gold-deep": {
+        "role": "primary",
+        "displayName": "Deep Bronze Gold",
+        "canonical": "#785920",
+        "tonalRamp": [
+          "#1F1607",
+          "#3D2C0E",
+          "#5B4215",
+          "#785920",
+          "#9C762F",
+          "#BF9645",
+          "#DFC177",
+          "#F5E9CC"
+        ]
+      },
+      "gold-light": {
+        "role": "primary",
+        "displayName": "Soft Gold Tint",
+        "canonical": "#E8DCC3",
+        "tonalRamp": [
+          "#3B3527",
+          "#615842",
+          "#8F8364",
+          "#BDB08C",
+          "#D8CBB0",
+          "#E8DCC3",
+          "#F4EEDB",
+          "#FAF7F0"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline Divider",
+        "canonical": "#E6E1D6",
+        "tonalRamp": [
+          "#292723",
+          "#4C4841",
+          "#767167",
+          "#A6A094",
+          "#CCC6B9",
+          "#E6E1D6",
+          "#F2EFE9",
+          "#FAF9F7"
+        ]
+      },
+      "text-on-dark": {
+        "role": "neutral",
+        "displayName": "Pale Slate Text",
+        "canonical": "#D4DCE8",
+        "tonalRamp": [
+          "#1B222E",
+          "#2F3B4E",
+          "#4A5B75",
+          "#6F85A6",
+          "#9EB0CC",
+          "#C2D0E4",
+          "#D4DCE8",
+          "#F0F4FA"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display Titles",
-        "purpose": "Hero statements and major cinematic acts set in uppercase with authoritative letter-spacing."
+        "purpose": "Hero statements and major cinematic acts set in Cinzel serif."
       },
       "headline": {
         "displayName": "Editorial Headlines",
@@ -189,32 +174,32 @@
       },
       "label": {
         "displayName": "HUD & Metadata Labels",
-        "purpose": "All-caps tracking for camera telemetry, category chips, timecodes, and interactive button text."
+        "purpose": "All-caps tracking for camera telemetry, category chips, and interactive button text."
       },
-      "caption": {
-        "displayName": "Technical Caption",
-        "purpose": "11px tracking for camera settings, status notes, and secondary metadata."
+      "hud": {
+        "displayName": "HUD Caption",
+        "purpose": "11px tracking for camera settings, status notes, and navigation subtitles."
       },
-      "micro": {
+      "telemetry": {
         "displayName": "Micro Badges & HUD Telemetry",
-        "purpose": "10px monospace figures for live timecodes and camera badges."
+        "purpose": "10px tabular monospace figures for live timecodes and camera badges."
       }
     },
     "shadows": [
       {
-        "name": "glow-amber",
-        "value": "0 0 35px rgba(203, 141, 68, 0.4), 0 0 14px rgba(203, 141, 68, 0.2)",
+        "name": "subtle-light",
+        "value": "0 10px 30px rgba(11, 19, 32, 0.06)",
+        "purpose": "Subtle surface elevation under cards on light cream canvas."
+      },
+      {
+        "name": "glow-gold",
+        "value": "0 0 25px rgba(176, 141, 87, 0.25)",
         "purpose": "Ambient tungsten halo projecting from focused interactive triggers and play buttons."
       },
       {
         "name": "cinematic-deep",
-        "value": "0 25px 70px -15px rgba(0, 0, 0, 0.9)",
+        "value": "0 25px 70px -15px rgba(7, 13, 22, 0.9)",
         "purpose": "Heavy elevation shadow for full-screen video lightbox modals and floating booking drawers."
-      },
-      {
-        "name": "card-lift",
-        "value": "0 8px 30px rgba(0, 0, 0, 0.6)",
-        "purpose": "Subtle surface lift on project card hover."
       }
     ],
     "motion": [
@@ -235,7 +220,7 @@
       },
       {
         "name": "duration-flow",
-        "value": "400ms",
+        "value": "300ms",
         "purpose": "Smooth crossfade transitions between filtered categories and video tabs."
       }
     ],
@@ -252,33 +237,41 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Primary conversion button with warm gold fill, letterspaced typography, and amber hover bloom.",
+      "description": "Primary conversion button with warm gold fill, midnight navy text, letterspaced typography, and bronze hover state.",
       "html": "<button class=\"ds-btn-primary\"><span class=\"ds-btn-text\">START A CONVERSATION</span><svg class=\"ds-btn-icon\" viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg></button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #CB8D44; color: #000000; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #CB8D44; border-radius: 2px; cursor: pointer; text-decoration: none; min-height: 48px; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background-color: #E2A65F; border-color: #E2A65F; transform: translateY(-1px); box-shadow: 0 0 20px rgba(203, 141, 68, 0.4); } .ds-btn-primary:active { transform: translateY(0); background-color: #9F6C2E; } .ds-btn-primary:focus-visible { outline: 2px solid #CB8D44; outline-offset: 3px; } .ds-btn-icon { transition: transform 0.2s ease; } .ds-btn-primary:hover .ds-btn-icon { transform: translateX(3px); }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #B08D57; color: #0B1320; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #B08D57; border-radius: 2px; cursor: pointer; text-decoration: none; min-height: 48px; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background-color: #785920; border-color: #785920; color: #FFFFFF; transform: translateY(-1px); box-shadow: 0 0 20px rgba(176, 141, 87, 0.3); } .ds-btn-primary:active { transform: translateY(0); background-color: #5B4215; } .ds-btn-primary:focus-visible { outline: 2px solid #B08D57; outline-offset: 2px; } .ds-btn-icon { transition: transform 0.2s ease; } .ds-btn-primary:hover .ds-btn-icon { transform: translateX(3px); }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Ghost button with precision 1px teal border, pure white text, and grading suite teal fill on hover.",
+      "description": "Ghost button with 1px midnight navy border, midnight navy text, and soft cream fill on hover.",
       "html": "<button class=\"ds-btn-secondary\">EXPLORE THE ARCHIVE</button>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; background-color: transparent; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #24434B; border-radius: 2px; cursor: pointer; text-decoration: none; min-height: 48px; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { background-color: #183036; border-color: #CB8D44; color: #E2A65F; } .ds-btn-secondary:active { background-color: #0E1D21; } .ds-btn-secondary:focus-visible { outline: 2px solid #CB8D44; outline-offset: 3px; }"
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; background-color: transparent; color: #0B1320; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 28px; border: 1px solid #0B1320; border-radius: 2px; cursor: pointer; text-decoration: none; min-height: 48px; transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-secondary:hover { background-color: #F6F2EA; border-color: #785920; color: #785920; } .ds-btn-secondary:active { background-color: #E8E1D2; } .ds-btn-secondary:focus-visible { outline: 2px solid #B08D57; outline-offset: 2px; }"
     },
     {
       "name": "Film Card",
       "kind": "card",
       "refersTo": "card-film",
-      "description": "Architectural project card featuring 16:9 media aperture, precision teal border, and hover scale.",
+      "description": "Architectural project card featuring 16:9 media aperture, hairline border, and subtle scale.",
       "html": "<div class=\"ds-film-card\"><div class=\"ds-card-media\"><div class=\"ds-card-badge\">24 FPS / ANAMORPHIC</div></div><div class=\"ds-card-content\"><div class=\"ds-card-category\">COMMERCIAL CINEMA</div><h3 class=\"ds-card-title\">SOLAR ECLIPSE 4WD ODYSSEY</h3><p class=\"ds-card-desc\">Remote Outback commercial shot across the rugged terrain of the Flinders Ranges.</p></div></div>",
-      "css": ".ds-film-card { background-color: #070C0E; border: 1px solid #24434B; border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; } .ds-film-card:hover { border-color: #CB8D44; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(203, 141, 68, 0.15); } .ds-card-media { position: relative; aspect-ratio: 16/9; background-color: #081215; background-image: radial-gradient(#183036 1px, transparent 0); background-size: 16px 16px; border-bottom: 1px solid #24434B; } .ds-card-badge { position: absolute; top: 12px; left: 12px; background: rgba(0, 0, 0, 0.85); border: 1px solid #24434B; color: #8E9DA1; font-family: monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; padding: 4px 8px; border-radius: 2px; } .ds-card-content { padding: 20px; } .ds-card-category { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #CB8D44; text-transform: uppercase; margin-bottom: 8px; } .ds-card-title { font-family: Copperplate, Cinzel, serif; font-size: 18px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 8px 0; transition: color 0.2s ease; } .ds-film-card:hover .ds-card-title { color: #E2A65F; } .ds-card-desc { font-family: Inter, sans-serif; font-size: 14px; line-height: 1.5; color: #C3CDD0; margin: 0; }"
+      "css": ".ds-film-card { background-color: #F6F2EA; border: 1px solid #E6E1D6; border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; } .ds-film-card:hover { border-color: #B08D57; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(11, 19, 32, 0.06); } .ds-card-media { position: relative; aspect-ratio: 16/9; background-color: #0B1320; border-bottom: 1px solid #E6E1D6; } .ds-card-badge { position: absolute; top: 12px; left: 12px; background: rgba(11, 19, 32, 0.85); border: 1px solid rgba(212, 220, 232, 0.2); color: #D4DCE8; font-family: monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; padding: 4px 8px; border-radius: 2px; } .ds-card-content { padding: 24px; } .ds-card-category { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #785920; text-transform: uppercase; margin-bottom: 8px; } .ds-card-title { font-family: Cinzel, serif; font-size: 18px; font-weight: 600; color: #0B1320; letter-spacing: 0.02em; text-transform: uppercase; margin: 0 0 8px 0; transition: color 0.2s ease; } .ds-film-card:hover .ds-card-title { color: #785920; } .ds-card-desc { font-family: Inter, sans-serif; font-size: 14px; line-height: 1.6; color: #4A5568; margin: 0; }"
+    },
+    {
+      "name": "Custom Select",
+      "kind": "custom",
+      "refersTo": "select-custom",
+      "description": "Accessible custom select bounded strictly to container width with smooth dropdown menu and bronze selection state.",
+      "html": "<div class=\"ds-select-container\"><label class=\"ds-select-label\">PRODUCTION DISCIPLINE</label><button class=\"ds-select-trigger\" aria-expanded=\"false\"><span class=\"ds-select-value\">Documentary & Film</span><svg class=\"ds-select-chevron\" viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></div>",
+      "css": ".ds-select-container { display: flex; flex-direction: column; gap: 8px; width: 100%; position: relative; } .ds-select-label { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #4A5568; text-transform: uppercase; } .ds-select-trigger { display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 2px; color: #0B1320; font-family: Inter, sans-serif; font-size: 14px; padding: 12px 16px; min-height: 48px; cursor: pointer; text-align: left; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-select-trigger:hover { border-color: #B08D57; } .ds-select-trigger:focus-visible { outline: 2px solid #B08D57; outline-offset: 2px; } .ds-select-value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ds-select-chevron { color: #785920; flex-shrink: 0; margin-left: 8px; }"
     },
     {
       "name": "Text Input Field",
       "kind": "input",
       "refersTo": "input-field",
-      "description": "Dark cinema form input with high contrast text, minimum 48px touch height, and warm gold focus ring.",
+      "description": "Clean light form input with high contrast text, minimum 48px touch height, and warm gold focus ring.",
       "html": "<div class=\"ds-input-group\"><label class=\"ds-input-label\" for=\"demo-input\">DIRECTOR NAME</label><input id=\"demo-input\" class=\"ds-input-field\" type=\"text\" placeholder=\"e.g. Boitumelo B\" value=\"\" /></div>",
-      "css": ".ds-input-group { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 400px; } .ds-input-label { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #8E9DA1; text-transform: uppercase; } .ds-input-field { background-color: #070C0E; border: 1px solid #24434B; border-radius: 4px; color: #FFFFFF; font-family: Inter, sans-serif; font-size: 16px; padding: 12px 16px; min-height: 48px; box-sizing: border-box; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input-field::placeholder { color: #8E9DA1; opacity: 0.6; } .ds-input-field:hover { border-color: #3A5C65; } .ds-input-field:focus { border-color: #CB8D44; box-shadow: 0 0 0 1px #CB8D44, 0 0 12px rgba(203, 141, 68, 0.25); }"
+      "css": ".ds-input-group { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 400px; } .ds-input-label { font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: #4A5568; text-transform: uppercase; } .ds-input-field { background-color: #FFFFFF; border: 1px solid #E6E1D6; border-radius: 2px; color: #0B1320; font-family: Inter, sans-serif; font-size: 16px; padding: 12px 16px; min-height: 48px; box-sizing: border-box; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-input-field::placeholder { color: #8C98A8; } .ds-input-field:hover { border-color: #B08D57; } .ds-input-field:focus { border-color: #B08D57; box-shadow: 0 0 0 1px #B08D57; }"
     },
     {
       "name": "Viewfinder HUD",
@@ -286,35 +279,35 @@
       "refersTo": "signature-viewfinder",
       "description": "Signature camera monitor framing reticle with corner alignment marks and live camera telemetry.",
       "html": "<div class=\"ds-viewfinder-hud\"><div class=\"ds-hud-bracket ds-hud-tl\"></div><div class=\"ds-hud-bracket ds-hud-tr\"></div><div class=\"ds-hud-bracket ds-hud-bl\"></div><div class=\"ds-hud-bracket ds-hud-br\"></div><div class=\"ds-hud-header\"><div class=\"ds-hud-rec\"><span class=\"ds-rec-dot\"></span><span class=\"ds-rec-text\">REC</span></div><div class=\"ds-hud-timecode\">01:24:18:04</div></div><div class=\"ds-hud-footer\"><div class=\"ds-hud-spec\">ARRI LogC4</div><div class=\"ds-hud-spec\">2.39:1 SCOPE</div><div class=\"ds-hud-spec\">24.000 FPS</div></div></div>",
-      "css": ".ds-viewfinder-hud { position: relative; width: 100%; max-width: 480px; aspect-ratio: 2.39/1; background-color: #000000; border: 1px solid rgba(36, 67, 75, 0.4); padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; } .ds-hud-bracket { position: absolute; width: 12px; height: 12px; border-color: #CB8D44; border-style: solid; } .ds-hud-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; } .ds-hud-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; } .ds-hud-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; } .ds-hud-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; } .ds-hud-header { display: flex; justify-content: space-between; align-items: center; font-family: monospace; font-size: 11px; } .ds-hud-rec { display: flex; align-items: center; gap: 6px; color: #FFFFFF; font-weight: 700; letter-spacing: 0.1em; } .ds-rec-dot { width: 8px; height: 8px; background-color: #FF4D4D; border-radius: 50%; display: inline-block; } .ds-rec-text { color: #FF4D4D; } .ds-hud-timecode { color: #CB8D44; font-weight: 600; letter-spacing: 0.1em; } .ds-hud-footer { display: flex; justify-content: space-between; font-family: monospace; font-size: 10px; color: #8E9DA1; letter-spacing: 0.08em; }"
+      "css": ".ds-viewfinder-hud { position: relative; width: 100%; max-width: 480px; aspect-ratio: 2.39/1; background-color: #070D16; border: 1px solid rgba(212, 220, 232, 0.15); padding: 16px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; } .ds-hud-bracket { position: absolute; width: 12px; height: 12px; border-color: #B08D57; border-style: solid; } .ds-hud-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; } .ds-hud-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; } .ds-hud-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; } .ds-hud-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; } .ds-hud-header { display: flex; justify-content: space-between; align-items: center; font-family: monospace; font-size: 11px; } .ds-hud-rec { display: flex; align-items: center; gap: 6px; color: #FFFFFF; font-weight: 700; letter-spacing: 0.1em; } .ds-rec-dot { width: 8px; height: 8px; background-color: #FF4D4D; border-radius: 50%; display: inline-block; } .ds-rec-text { color: #FF4D4D; } .ds-hud-timecode { color: #B08D57; font-weight: 600; letter-spacing: 0.1em; } .ds-hud-footer { display: flex; justify-content: space-between; font-family: monospace; font-size: 10px; color: #D4DCE8; letter-spacing: 0.08em; }"
     },
     {
       "name": "Filter Chip",
       "kind": "chip",
       "refersTo": "filter-chip",
-      "description": "Category archive filter with 2px corner radius and active gold highlight underline.",
+      "description": "Category archive filter with 2px corner radius and active midnight navy fill.",
       "html": "<div class=\"ds-chip-group\"><button class=\"ds-filter-chip ds-chip-active\">ALL FILMS</button><button class=\"ds-filter-chip\">DOCUMENTARY</button><button class=\"ds-filter-chip\">COMMERCIAL</button></div>",
-      "css": ".ds-chip-group { display: flex; gap: 8px; align-items: center; } .ds-filter-chip { background-color: #070C0E; border: 1px solid #24434B; color: #C3CDD0; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; border-radius: 2px; cursor: pointer; min-height: 36px; transition: all 0.2s ease; } .ds-filter-chip:hover { border-color: #CB8D44; color: #FFFFFF; } .ds-chip-active { background-color: #183036; border-color: #CB8D44; color: #CB8D44; font-weight: 700; }"
+      "css": ".ds-chip-group { display: flex; gap: 8px; align-items: center; } .ds-filter-chip { background-color: #F6F2EA; border: 1px solid #E6E1D6; color: #4A5568; font-family: Inter, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 16px; border-radius: 2px; cursor: pointer; min-height: 36px; transition: all 0.2s ease; } .ds-filter-chip:hover { border-color: #785920; color: #0B1320; } .ds-chip-active { background-color: #0B1320; border-color: #0B1320; color: #FFFFFF; font-weight: 600; }"
     }
   ],
   "narrative": {
     "northStar": "The Anamorphic Archive",
-    "overview": "Boitumelo B Productions exists as an elite digital exhibition space capturing the craft, gravity, and emotional resonance of prestige Australian visual cinema. The design evokes the tactile atmosphere of a private cinema grading suite: unyielding black surfaces, calibrated warm tungsten highlights, physical celluloid textures, and surgical optical precision. Every interaction is paced with cinematic intentionality, prioritising patient revelation and editorial authority over rapid digital noise.\n\nThe interface rejects commoditised video agency tropes—eschewing playful pastels, floating pastel cards, generic software-as-a-service gradients, and excessive bubbly corner radii. Instead, it embraces high-contrast letterboxed frames, 2.39:1 anamorphic ratios, optical lens calibration marks, and measured typography that honours both narrative documentary depth and commercial visual spectacle.",
+    "overview": "Boitumelo B Productions is an elite digital exhibition space capturing the craft, gravity, and emotional resonance of prestige Australian visual cinema. The design evokes the tactile atmosphere of a private cinema grading suite: architecturally grounded Midnight Navy surfaces, calibrated warm tungsten highlights, physical celluloid textures, and surgical optical precision. Every interaction is paced with cinematic intentionality, prioritising patient revelation and editorial authority over rapid digital noise.\n\nThe interface rejects commoditised video agency tropes—eschewing playful pastels, floating cards, generic SaaS gradients, and bubbly corner radii. Instead, it embraces high-contrast letterboxed frames, 2.39:1 anamorphic ratios, optical lens calibration marks, and measured typography that honours both narrative documentary truth and commercial visual spectacle.",
     "keyCharacteristics": [
-      "Cinematic Letterboxing: Pure black margins (#000000) and structured 2.39:1 widescreen apertures that elevate video works into genuine theatrical events.",
-      "Tungsten & Teal Contrast: Deep atmospheric ocean-slate surfaces (#183036) illuminated by focused warm gold accents (#CB8D44), mirroring traditional film colour timing.",
-      "Surgical Optical Precision: Micro 2px chamfers, razor-thin borders, and discrete viewfinder HUD framing brackets that evoke high-end ARRI and RED cinema cameras.",
-      "Uncompromising Editorial Rigour: Deliberate typography balancing display roman elegance with high-legibility tabular metadata and zero single-word heading orphans."
+      "Cinematic Midnight Canvas: High-depth Midnight Navy (#0B1320) and Deep Midnight (#070D16) surfaces deliver rich optical gravity, replacing harsh pitch black with a sophisticated architectural tone.",
+      "Warm Gold & Bronze Discipline: Warm Gold (#B08D57) deployed with strict 10% scarcity, supported by WCAG AA-compliant Deep Bronze Gold (#785920) for text legibility on light surfaces.",
+      "Surgical Optical Precision: Micro 2px chamfers, razor-thin hairline dividers (#E6E1D6), and ARRI/RED-inspired viewfinder HUD framing brackets.",
+      "Uncompromising Editorial Rigour: High-legibility tabular monospace telemetry (10px / 11px), balanced headings without single-word orphans, and accessible contrast exceeding WCAG AA across every viewport."
     ],
     "rules": [
       {
         "name": "The Rarity of Gold Rule",
-        "body": "Warm Gold (#CB8D44) must never occupy more than 10% of any given screen surface. Its prestige and directional power depend entirely on its scarcity. When everything glows gold, nothing commands attention.",
+        "body": "Warm Gold (#B08D57) must never occupy more than 10% of any given screen surface. Its prestige and directional power depend entirely on its scarcity. When everything glows gold, nothing commands attention.",
         "section": "colors"
       },
       {
         "name": "The Contrast Floor Rule",
-        "body": "All text elements against dark surfaces must meet or exceed WCAG 2.2 AA contrast standards (minimum 4.5:1 for body copy; pure white #FFFFFF achieves 21:1 against #000000, and #C3CDD0 delivers 11.2:1).",
+        "body": "All text elements against surfaces must meet or exceed WCAG 2.2 AA contrast standards (minimum 4.5:1 for body copy; pure white #FFFFFF achieves 18.3:1 against #0B1320, pale slate #D4DCE8 delivers 13.6:1 against #070D16, and bronze gold #785920 delivers 5.42:1 against #F6F2EA).",
         "section": "colors"
       },
       {
@@ -328,12 +321,17 @@
         "section": "typography"
       },
       {
+        "name": "The 11px Functional Floor Rule",
+        "body": "Interactive and functional text labels must maintain a minimum font size of 11px (0.6875rem) to guarantee human legibility. Telemetry readouts and camera timecodes at 10px are permitted only when rendered in high-tracking tabular monospace uppercase.",
+        "section": "typography"
+      },
+      {
         "name": "The Tonal Depth Rule",
-        "body": "Depth is created through value contrast and light bloom—never through heavy artificial black drop-shadows on flat black surfaces. If an element must lift, illuminate its edge with border luminance (#24434B) or ambient gold bloom (rgba(203, 141, 68, 0.2)).",
+        "body": "Depth is created through value contrast, border luminance, and subtle tonal layering—never through artificial heavy black drop-shadows. If an element must lift, illuminate its edge with border luminance (#E6E1D6) or ambient gold bloom (rgba(176, 141, 87, 0.2)).",
         "section": "elevation"
       },
       {
-        "name": "The Lens-Grade Precision Rule",
+        "name": "The Architectural Precision Rule",
         "body": "Corner radii must never exceed 4px on rectangular surfaces. Organic, playful, or bubbly shapes dilute the technical gravitas of the studio and are strictly forbidden.",
         "section": "shapes"
       }
@@ -342,16 +340,18 @@
       "Do use Australian English spelling across all interface copy, metadata, and studio communications (specialising, visualise, colour, organisation, rigour, calibrated).",
       "Do enforce text-wrap: balance on all headings and text-wrap: pretty on all editorial body paragraphs.",
       "Do maintain a minimum touch target size of 44×44px (ideally 48px) for all interactive buttons, links, and form elements.",
-      "Do preserve the 10% rarity cap on Warm Gold (#CB8D44), reserving it for moments requiring genuine user focus or conversion.",
+      "Do preserve the 10% rarity cap on Warm Gold (#B08D57), reserving it for moments requiring genuine user focus or conversion.",
       "Do use tabular monospace figures for timecodes, durations, coordinates, and technical film specifications.",
-      "Do respect user system motion preferences via @media (prefers-reduced-motion: reduce), disabling large transforms while maintaining instant visual state feedback."
+      "Do respect user system motion preferences via @media (prefers-reduced-motion: reduce), disabling large transforms while maintaining instant visual state feedback.",
+      "Do use CustomSelect for dropdown fields to prevent native browser popup menus from overflowing container widths."
     ],
     "donts": [
       "Don't introduce generic SaaS pastel colours (purple, pink, indigo, neon blue) or cheerful rounded bubble cards.",
-      "Don't use decorative drop-shadows on black surfaces; convey depth through subtle lighting gradients and border illumination.",
+      "Don't use decorative heavy black drop-shadows; convey depth through subtle lighting gradients and border illumination.",
       "Don't permit headings to wrap with a single dangling word on the final line (orphans).",
       "Don't render form inputs with font sizes below 16px on mobile viewports to avoid triggering iOS Safari viewport zooming.",
-      "Don't use animated pulsing status dots for purely decorative reasons; reserve status indicators for actual live camera states or audio playback.",
+      "Don't use standalone kicker badges directly stacked above <h1> headings; integrate telemetry directly into top diagnostic status bars.",
+      "Don't use functional text sizes below 11px.",
       "Don't autoplay audio under any circumstance. All video playback must initialise muted with clear, accessible user audio toggles."
     ]
   }
