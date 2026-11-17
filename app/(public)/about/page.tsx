@@ -37,7 +37,7 @@ export default function AboutPage() {
 
         {/* Studio Image Frame */}
         <div className="mt-12 p-1.5 sm:p-2 rounded-[2px] border border-[var(--line)] shadow-subtle bg-[var(--ink)]">
-          <div className="relative aspect-[16/9] sm:aspect-[2.39/1] rounded-[2px] overflow-hidden">
+          <div className="relative aspect-[16/9] rounded-[2px] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85"
               alt="Director framing a cinema shot on location"

@@ -285,7 +285,7 @@ export default function VideoPlayer({
               </div>
             )}
 
-            <span className="font-mono text-xs text-brand-gray-light">
+            <span className="font-mono text-xs text-brand-gray-light tabular-nums">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           </div>

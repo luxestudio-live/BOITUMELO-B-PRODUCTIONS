@@ -270,7 +270,7 @@ export default function AdminDashboard() {
               <span>{tab.label}</span>
               {tab.count !== undefined && (
                 <span
-                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-mono ${
+                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-mono tabular-nums ${
                     isActive
                       ? "bg-brand-gold/20 text-brand-gold font-bold"
                       : "bg-brand-teal/10 text-brand-teal font-semibold"
@@ -410,7 +410,7 @@ export default function AdminDashboard() {
                       <span>{tab.label}</span>
                     </span>
                     {tab.count !== undefined && (
-                      <span className={`text-xs px-2.5 py-1 rounded font-mono ${
+                      <span className={`text-xs px-2.5 py-1 rounded font-mono tabular-nums ${
                         isActive
                           ? "bg-brand-gold/20 text-brand-gold font-bold"
                           : "bg-[#F8F9FA] text-brand-teal font-semibold border border-brand-teal/15"
@@ -475,7 +475,7 @@ export default function AdminDashboard() {
                     <span className="text-xs font-mono uppercase tracking-wider text-[var(--gold-deep)] block font-semibold">
                       {stat.label}
                     </span>
-                    <span className="text-3xl sm:text-4xl font-display font-bold text-brand-teal mt-2 block">
+                    <span className="text-3xl sm:text-4xl font-display font-bold text-brand-teal mt-2 block tabular-nums">
                       {stat.val}
                     </span>
                     <span className="text-xs font-mono text-brand-teal/70 mt-1 block">
@@ -918,7 +918,7 @@ export default function AdminDashboard() {
                     key={m.id}
                     className="group bg-white border border-brand-teal/15 rounded-sm overflow-hidden flex flex-col justify-between shadow-sm"
                   >
-                    <div className="relative aspect-[16/10] bg-brand-teal">
+                    <div className="relative aspect-[16/9] bg-brand-teal">
                       <Image
                         src={m.thumbnail}
                         alt={m.title}

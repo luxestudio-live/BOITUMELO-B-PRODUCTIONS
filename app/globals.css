@@ -60,6 +60,12 @@
     text-wrap: pretty;
   }
 
+  /* Numeric and data stability */
+  time,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
   /* Accessible focus indicators */
   *:focus-visible {
     outline: 2px solid var(--gold);

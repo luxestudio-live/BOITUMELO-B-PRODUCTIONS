@@ -102,7 +102,7 @@ export default function ViewfinderHUD({
             <span
               ref={timecodeRef}
               suppressHydrationWarning
-              className="text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]"
+              className="text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px] tabular-nums"
             >
               {timecode}
             </span>

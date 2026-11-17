@@ -97,7 +97,7 @@ export default function ServicesPage() {
               className="bg-[var(--bg)] border border-[var(--line)] rounded-[2px] overflow-hidden p-6 sm:p-8 hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-subtle flex flex-col justify-between group"
             >
               <div className="space-y-6">
-                <div className="relative aspect-[16/10] rounded-[2px] overflow-hidden border border-[var(--line)] bg-[var(--ink)]">
+                <div className="relative aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--line)] bg-[var(--ink)]">
                   <Image
                     src={service.heroImage}
                     alt={service.title}

@@ -308,7 +308,7 @@ STUDIO        : Melbourne & Sydney • Australia
       {/* Step Indicator Bar */}
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.2em] text-brand-teal/80">
-          <span className="text-[var(--gold-deep)] font-semibold">
+          <span className="text-[var(--gold-deep)] font-semibold tabular-nums">
             Step 0{currentStep} of 0{totalSteps}
           </span>
           <span>

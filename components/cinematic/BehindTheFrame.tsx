@@ -53,7 +53,7 @@ export default function BehindTheFrame() {
             </div>
 
             {/* Overlapping Floating Secondary Frame */}
-            <div className="hidden sm:block absolute -bottom-10 -right-8 w-60 aspect-[16/10] rounded-[2px] overflow-hidden border-2 border-[var(--gold)] shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] hover:scale-[1.03] transition-transform duration-250 ease-out">
+            <div className="hidden sm:block absolute -bottom-10 -right-8 w-60 aspect-[16/9] rounded-[2px] overflow-hidden border-2 border-[var(--gold)] shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] hover:scale-[1.03] transition-transform duration-250 ease-out">
               <Image
                 src={getAssetPath("/images/posters/andrews-music-video.png")}
                 alt="Studio editing and sound design monitor"
