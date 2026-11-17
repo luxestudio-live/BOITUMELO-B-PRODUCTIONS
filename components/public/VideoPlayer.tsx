@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX, Maximize, RotateCcw, Scan, Crosshair } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 interface VideoPlayerProps {
   src: string;
@@ -46,7 +47,12 @@ export default function VideoPlayer({
   const togglePlay = () => {
     if (!videoRef.current) return;
     if (videoRef.current.paused) {
-      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+        setHasError(false);
+      }).catch((e) => {
+        console.warn("Video play interrupted:", e);
+      });
     } else {
       videoRef.current.pause();
       setIsPlaying(false);
@@ -149,8 +155,8 @@ export default function VideoPlayer({
     >
       <video
         ref={videoRef}
-        src={src}
-        poster={poster}
+        src={getAssetPath(src)}
+        poster={getAssetPath(poster)}
         playsInline
         autoPlay={autoPlay}
         loop={loop}

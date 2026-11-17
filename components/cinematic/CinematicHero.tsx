@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Volume2, VolumeX, ArrowDown, ArrowUpRight, Clapperboard } from "lucide-react";
 import ViewfinderHUD from "./ViewfinderHUD";
+import { getAssetPath } from "@/lib/asset-path";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -33,6 +34,15 @@ export default function CinematicHero() {
     }, 1000 / 24);
 
     return () => clearInterval(intervalId);
+  }, []);
+
+  // Ensure robust muted autoplay across browsers
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
+    }
   }, []);
 
   useEffect(() => {
@@ -131,17 +141,17 @@ export default function CinematicHero() {
         {/* Background Video Showreel */}
         <video
           ref={videoRef}
-          src="/videos/hero-showreel.mp4"
-          poster="/images/posters/hero-showreel.png"
+          src={getAssetPath("/videos/hero-showreel.mp4")}
+          poster={getAssetPath("/images/posters/hero-showreel.png")}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover object-center"
           aria-hidden="true"
         >
-          <source src="/videos/hero-showreel.mp4" type="video/mp4" />
+          <source src={getAssetPath("/videos/hero-showreel.mp4")} type="video/mp4" />
         </video>
 
         {/* Cinematic Lighting Overlays with Specified Dark Overlay */}

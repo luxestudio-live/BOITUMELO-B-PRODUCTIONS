@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sampleProjects, ProjectItem } from "@/data/projects";
 import { ArrowUpRight, Play, Film, SlidersHorizontal } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -61,6 +62,8 @@ export default function HorizontalFilmstrip() {
     setHoveredProject(slug);
     const v = videoRefs.current[slug];
     if (v) {
+      v.defaultMuted = true;
+      v.muted = true;
       v.play().catch(() => {});
     }
   };
@@ -135,7 +138,7 @@ export default function HorizontalFilmstrip() {
                 >
                   {/* Poster Image */}
                   <Image
-                    src={p.heroPoster}
+                    src={getAssetPath(p.heroPoster)}
                     alt={p.title}
                     fill
                     sizes="(max-width: 768px) 85vw, 600px"
@@ -149,8 +152,8 @@ export default function HorizontalFilmstrip() {
                     ref={(el) => {
                       videoRefs.current[p.slug] = el;
                     }}
-                    src={p.videoPreviewUrl}
-                    poster={p.heroPoster}
+                    src={getAssetPath(p.videoPreviewUrl)}
+                    poster={getAssetPath(p.heroPoster)}
                     muted
                     loop
                     playsInline

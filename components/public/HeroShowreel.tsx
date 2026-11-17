@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Volume2, VolumeX, ArrowDown, ArrowUpRight, Film } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 export default function HeroShowreel() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -11,6 +12,8 @@ export default function HeroShowreel() {
 
   useEffect(() => {
     if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
       videoRef.current.play().catch(() => {
         // Autoplay policy prevented playback, keep state updated
         setIsPlaying(false);
@@ -39,17 +42,17 @@ export default function HeroShowreel() {
       {/* Background Video */}
       <video
         ref={videoRef}
-        src="/videos/hero-showreel.mp4"
-        poster="/images/posters/hero-showreel.png"
+        src={getAssetPath("/videos/hero-showreel.mp4")}
+        poster={getAssetPath("/images/posters/hero-showreel.png")}
         autoPlay
         loop
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover object-center"
         aria-hidden="true"
       >
-        <source src="/videos/hero-showreel.mp4" type="video/mp4" />
+        <source src={getAssetPath("/videos/hero-showreel.mp4")} type="video/mp4" />
       </video>
 
       {/* Cinematic Overlays: Top header fade, bottom editorial shadow, and subtle film tint */}

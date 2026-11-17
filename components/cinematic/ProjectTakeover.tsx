@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sampleProjects } from "@/data/projects";
 import { ArrowUpRight, Play, Film, Award, Volume2, VolumeX } from "lucide-react";
 import ViewfinderHUD from "./ViewfinderHUD";
+import { getAssetPath } from "@/lib/asset-path";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -108,7 +109,7 @@ export default function ProjectTakeover() {
           >
             {/* Poster Image */}
             <Image
-              src={project.heroPoster}
+              src={getAssetPath(project.heroPoster)}
               alt={project.title}
               fill
               sizes="100vw"
@@ -120,8 +121,8 @@ export default function ProjectTakeover() {
             {/* Video Player Element */}
             <video
               ref={videoRef}
-              src={project.fullVideoUrl}
-              poster={project.heroPoster}
+              src={getAssetPath(project.fullVideoUrl)}
+              poster={getAssetPath(project.heroPoster)}
               playsInline
               loop
               muted={isMuted}

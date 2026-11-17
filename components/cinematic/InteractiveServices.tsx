@@ -6,6 +6,7 @@ import Image from "next/image";
 import { servicesData, ServiceDetail } from "@/data/services";
 import { ArrowUpRight, ArrowRight, Layers, CheckCircle2, Film } from "lucide-react";
 import ViewfinderHUD from "./ViewfinderHUD";
+import { getAssetPath } from "@/lib/asset-path";
 
 export default function InteractiveServices() {
   const servicesList = Object.values(servicesData);
@@ -123,7 +124,7 @@ export default function InteractiveServices() {
               {/* Dynamic Image / Footage */}
               <Image
                 key={activeService.slug}
-                src={activeService.heroImage}
+                src={getAssetPath(activeService.heroImage)}
                 alt={activeService.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

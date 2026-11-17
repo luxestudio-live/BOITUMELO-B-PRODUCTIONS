@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ProjectItem } from "@/data/projects";
 import { ArrowUpRight, Play, Film } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 interface ProjectCardProps {
   project: ProjectItem;
@@ -23,6 +24,8 @@ export default function ProjectCard({
   const handleMouseEnter = () => {
     setIsHovered(true);
     if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
       videoRef.current.play().catch(() => {});
     }
   };
@@ -67,7 +70,7 @@ export default function ProjectCard({
         <div className={`relative w-full ${aspectClass} overflow-hidden bg-[#000000]`}>
           {/* Static High-Res Poster Image */}
           <Image
-            src={project.heroPoster}
+            src={getAssetPath(project.heroPoster)}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -80,8 +83,8 @@ export default function ProjectCard({
           {/* Video Preview on Hover (Capable devices only) */}
           <video
             ref={videoRef}
-            src={project.videoPreviewUrl}
-            poster={project.heroPoster}
+            src={getAssetPath(project.videoPreviewUrl)}
+            poster={getAssetPath(project.heroPoster)}
             muted
             loop
             playsInline
