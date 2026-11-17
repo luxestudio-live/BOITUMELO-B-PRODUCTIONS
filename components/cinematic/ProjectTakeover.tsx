@@ -41,7 +41,7 @@ export default function ProjectTakeover() {
         mediaContainerRef.current,
         {
           width: "82vw",
-          borderRadius: "8px",
+          borderRadius: "2px",
           scale: 0.94,
         },
         {

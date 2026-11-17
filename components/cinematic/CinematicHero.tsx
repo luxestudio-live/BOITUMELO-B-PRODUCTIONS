@@ -76,7 +76,7 @@ export default function CinematicHero() {
         frameRef.current,
         {
           scale: 0.86,
-          borderRadius: "8px",
+          borderRadius: "2px",
           borderColor: "#CB8D44",
           boxShadow: "0 25px 70px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(203, 141, 68, 0.15)",
           ease: "power2.inOut",
