@@ -111,17 +111,8 @@ export default function HorizontalFilmstrip() {
           {stripProjects.map((p, idx) => {
             const isHovered = hoveredProject === p.slug;
 
-            // Varied cinematic framing per project
-            const frameRatio =
-              idx === 0
-                ? "aspect-[16/10] md:aspect-[2.39/1] w-[82vw] max-w-[340px] sm:w-[460px] md:w-[480px] lg:w-[620px]"
-                : idx === 1
-                ? "aspect-[16/10] md:aspect-[1.85/1] w-[82vw] max-w-[340px] sm:w-[440px] md:w-[440px] lg:w-[560px]"
-                : idx === 2
-                ? "aspect-[16/10] md:aspect-[2.20/1] w-[82vw] max-w-[340px] sm:w-[460px] md:w-[480px] lg:w-[600px]"
-                : idx === 3
-                ? "aspect-[16/10] md:aspect-[16/9] w-[82vw] max-w-[340px] sm:w-[420px] md:w-[420px] lg:w-[540px]"
-                : "aspect-[16/10] md:aspect-[2.39/1] w-[82vw] max-w-[340px] sm:w-[460px] md:w-[480px] lg:w-[580px]";
+            // All project videos are standardised to 16:9 widescreen
+            const frameRatio = "aspect-[16/9] w-[82vw] max-w-[340px] sm:w-[440px] md:w-[480px] lg:w-[560px]";
 
             return (
               <div

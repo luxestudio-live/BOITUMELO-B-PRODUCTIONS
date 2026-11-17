@@ -90,7 +90,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               src={project.fullVideoUrl}
               poster={project.heroPoster}
               title={project.title}
-              aspectRatio="aspect-[16/9] lg:aspect-[2.39/1]"
+              aspectRatio="aspect-[16/9]"
             />
           </div>
           <div className="flex items-center justify-between text-xs font-mono text-brand-teal/70 px-1">

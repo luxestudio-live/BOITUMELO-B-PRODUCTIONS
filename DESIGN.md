@@ -177,7 +177,7 @@ The spatial system is constructed around a flexible 12-column responsive grid fr
 
 - **Letterboxed Canvas:** Full-width viewport with fixed horizontal safety padding (`px-4 sm:px-6 lg:px-8 xl:px-12`) ensuring content never crowds the physical screen edges.
 - **Max Content Container:** `max-w-7xl` (`1280px`) for structured archives and forms; unrestricted edge-to-edge bounds for full-bleed video showreels.
-- **Cinematic Aspect Ratios:** Standardised to 16:9 (`aspect-video`) for preview thumbnails and 2.39:1 for theatrical feature hero experiences.
+- **Cinematic Aspect Ratios:** Standardised strictly to 16:9 (`aspect-[16/9]` / `aspect-video`) across all project cards, portfolio grids, filmstrips, and video player instances, ensuring authentic widescreen presentation without distortion or awkward letterbox crops.
 - **Spacing Scale:** Built on a strict 8px base rhythm (`8px`, `16px`, `24px`, `32px`, `48px`, `64px`, `96px`, `128px`), ensuring vertical cadence feels spacious, unhurried, and dignified.
 - **Safe Area Insets:** Native compliance with `env(safe-area-inset-*)` across mobile viewports, safeguarding corner navigation and home indicators on mobile devices.
 

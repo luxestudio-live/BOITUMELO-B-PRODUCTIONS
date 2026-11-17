@@ -58,7 +58,7 @@ export const sampleProjects: ProjectItem[] = [
     client: "Pegasuz",
     location: "Adelaide Coast, SA",
     duration: "2m 49s",
-    aspectRatio: "16:9 Cinema",
+    aspectRatio: "16:9 Widescreen",
     cameraFormat: "Cinema 4K • Natural Light",
     colorGrade: "Golden Hour Warmth & Coastal Tones",
     heroPoster: "/images/posters/hero-showreel.png",

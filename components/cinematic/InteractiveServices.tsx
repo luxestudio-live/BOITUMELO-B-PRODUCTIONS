@@ -122,7 +122,7 @@ export default function InteractiveServices() {
           <div className="lg:col-span-6">
             <div
               key={activeService.slug}
-              className="relative aspect-[16/10] sm:aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] animate-fade-in"
+              className="relative aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] animate-fade-in"
             >
               {/* Dynamic Image / Footage */}
               <Image

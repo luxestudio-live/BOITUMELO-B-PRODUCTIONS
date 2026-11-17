@@ -38,15 +38,8 @@ export default function ProjectCard({
     }
   };
 
-  // Determine aspect ratio class
-  const aspectClass =
-    layoutVariant === "featured-wide"
-      ? "aspect-[16/9] lg:aspect-[2.39/1]"
-      : layoutVariant === "tall"
-      ? "aspect-[3/4]"
-      : layoutVariant === "editorial"
-      ? "aspect-[16/10]"
-      : "aspect-[16/9]";
+  // All project videos are standardised to 16:9 widescreen
+  const aspectClass = "aspect-[16/9]";
 
   return (
     <article

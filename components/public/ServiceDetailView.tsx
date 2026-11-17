@@ -71,7 +71,7 @@ export default function ServiceDetailView({
             src={service.videoPreviewUrl}
             poster={service.heroImage}
             title={service.title}
-            aspectRatio="aspect-[21/9] sm:aspect-[2.39/1]"
+            aspectRatio="aspect-[16/9]"
           />
         </div>
       </section>
@@ -208,7 +208,7 @@ export default function ServiceDetailView({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {relatedProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} layoutVariant="editorial" />
+              <ProjectCard key={project.id} project={project} layoutVariant="standard" />
             ))}
           </div>
         </section>

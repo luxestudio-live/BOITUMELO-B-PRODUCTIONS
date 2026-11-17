@@ -105,7 +105,7 @@ export default function ProjectTakeover() {
           {/* Expanding Takeover Media Frame */}
           <div
             ref={mediaContainerRef}
-            className="relative w-full aspect-[16/9] lg:aspect-[2.39/1] min-h-[380px] sm:min-h-[480px] max-h-[85vh] overflow-hidden rounded-[2px] border border-[#0B1320]/20 shadow-md bg-[#0B1320]"
+            className="relative w-full aspect-[16/9] min-h-[380px] sm:min-h-[480px] max-h-[85vh] overflow-hidden rounded-[2px] border border-[#0B1320]/20 shadow-md bg-[#0B1320]"
           >
             {/* Poster Image */}
             <Image

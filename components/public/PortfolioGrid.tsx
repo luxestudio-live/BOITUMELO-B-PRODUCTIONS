@@ -97,28 +97,16 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
         </div>
       ) : (
         <div key={activeFilter} className="space-y-8 animate-fade-in">
-          {/* If "All Projects" is selected, highlight the first item as a dramatic wide banner */}
-          {activeFilter === "all" && filteredProjects.length > 0 && (
-            <div className="mb-8">
-              <ProjectCard project={filteredProjects[0]} layoutVariant="featured-wide" priority />
-            </div>
-          )}
-
-          {/* Staggered Grid for remaining projects */}
+          {/* Uniform 16:9 Widescreen Portfolio Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {(activeFilter === "all" ? filteredProjects.slice(1) : filteredProjects).map(
-              (project, idx) => {
-                const variant =
-                  idx % 5 === 0 ? "tall" : idx % 3 === 0 ? "editorial" : "standard";
-                return (
-                  <ProjectCard
-                    key={project.id}
-                    project={project}
-                    layoutVariant={variant}
-                  />
-                );
-              }
-            )}
+            {filteredProjects.map((project, idx) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                layoutVariant="standard"
+                priority={idx < 3}
+              />
+            ))}
           </div>
         </div>
       )}
