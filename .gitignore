@@ -29,6 +29,10 @@ yarn-error.log*
 .env*.local
 .env
 
+# large video binaries (>100MB exceeds GitHub push limit)
+/videos/
+/public/videos/*.mp4
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

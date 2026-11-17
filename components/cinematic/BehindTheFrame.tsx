@@ -37,7 +37,7 @@ export default function BehindTheFrame() {
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[4/5] rounded-[2px] overflow-hidden border border-[#0E0E0F]/15 shadow-[0_10px_30px_rgba(14,14,15,0.06)] bg-[#0E0E0F]">
               <Image
-                src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=1200&q=80"
+                src="/images/posters/hero-showreel.png"
                 alt="Filming and camera setup on location"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -57,7 +57,7 @@ export default function BehindTheFrame() {
             {/* Overlapping Floating Secondary Frame */}
             <div className="hidden sm:block absolute -bottom-10 -right-8 w-60 aspect-[16/10] rounded-[2px] overflow-hidden border-2 border-[var(--gold)] shadow-[0_10px_30px_rgba(14,14,15,0.06)] bg-[#0E0E0F] hover:scale-[1.03] transition-transform duration-250 ease-out">
               <Image
-                src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+                src="/images/posters/andrews-music-video.png"
                 alt="Studio editing and sound design monitor"
                 fill
                 sizes="240px"

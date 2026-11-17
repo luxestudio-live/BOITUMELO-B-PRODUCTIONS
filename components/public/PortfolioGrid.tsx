@@ -31,6 +31,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
     if (activeFilter === "real-estate") {
       return initialProjects.filter(
         (p) =>
+          p.slug === "commercial-facility-showcase" ||
           p.slug === "lumina-architects" ||
           p.slug === "the-last-echo" ||
           p.category === "corporate-video"

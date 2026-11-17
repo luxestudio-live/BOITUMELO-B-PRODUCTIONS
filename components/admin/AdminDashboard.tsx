@@ -140,13 +140,13 @@ export default function AdminDashboard() {
         colorGrade: "Kodak 2383 Emulation",
         heroPoster:
           editingProject.heroPoster ||
-          "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=80",
+          "/images/posters/hero-showreel.png",
         videoPreviewUrl:
           editingProject.videoPreviewUrl ||
-          "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          "/videos/hero-showreel.mp4",
         fullVideoUrl:
           editingProject.fullVideoUrl ||
-          "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          "/videos/hero-showreel.mp4",
         logline: editingProject.logline || "A powerful story captured on location.",
         synopsis: editingProject.synopsis || "Detailed synopsis of this production.",
         creativeChallenge: editingProject.creativeChallenge || "Challenging elements overcome.",

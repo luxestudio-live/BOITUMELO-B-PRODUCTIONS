@@ -114,10 +114,10 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85",
+      "/images/posters/commercial-facility-showcase.png",
     videoPreviewUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
-    relatedProjectSlugs: ["vanguard-quantum", "lumina-architects"],
+      "/videos/commercial-facility-showcase.mp4",
+    relatedProjectSlugs: ["commercial-facility-showcase", "the-last-echo"],
   },
   "real-estate-videos": {
     slug: "real-estate-videos",
@@ -202,10 +202,10 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=2000&q=85",
+      "/images/posters/commercial-facility-showcase.png",
     videoPreviewUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-    relatedProjectSlugs: ["lumina-architects", "solaris-electric"],
+      "/videos/commercial-facility-showcase.mp4",
+    relatedProjectSlugs: ["commercial-facility-showcase", "bonolo-vineyard-celebration"],
   },
   "events-parties": {
     slug: "events-parties",
@@ -290,10 +290,10 @@ export const servicesData: Record<string, ServiceDetail> = {
       },
     ],
     heroImage:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2000&q=85",
+      "/images/posters/bonolo-vineyard-celebration.png",
     videoPreviewUrl:
-      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-    relatedProjectSlugs: ["neon-solitude", "aurora-drift"],
+      "/videos/bonolo-vineyard-celebration.mp4",
+    relatedProjectSlugs: ["bonolo-vineyard-celebration", "mama-vero-70th-gala", "neon-solitude"],
   },
 };
 

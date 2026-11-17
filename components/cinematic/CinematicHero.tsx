@@ -131,8 +131,8 @@ export default function CinematicHero() {
         {/* Background Video Showreel */}
         <video
           ref={videoRef}
-          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-          poster="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2000&q=85"
+          src="/videos/hero-showreel.mp4"
+          poster="/images/posters/hero-showreel.png"
           autoPlay
           loop
           muted
@@ -140,7 +140,9 @@ export default function CinematicHero() {
           preload="metadata"
           className="absolute inset-0 w-full h-full object-cover object-center"
           aria-hidden="true"
-        />
+        >
+          <source src="/videos/hero-showreel.mp4" type="video/mp4" />
+        </video>
 
         {/* Cinematic Lighting Overlays with Specified Dark Overlay */}
         <div className="absolute inset-0 bg-[#0E0E0F]/45 pointer-events-none" />

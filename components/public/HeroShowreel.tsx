@@ -39,8 +39,8 @@ export default function HeroShowreel() {
       {/* Background Video */}
       <video
         ref={videoRef}
-        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-        poster="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=2000&q=85"
+        src="/videos/hero-showreel.mp4"
+        poster="/images/posters/hero-showreel.png"
         autoPlay
         loop
         muted
@@ -48,7 +48,9 @@ export default function HeroShowreel() {
         preload="metadata"
         className="absolute inset-0 w-full h-full object-cover object-center"
         aria-hidden="true"
-      />
+      >
+        <source src="/videos/hero-showreel.mp4" type="video/mp4" />
+      </video>
 
       {/* Cinematic Overlays: Top header fade, bottom editorial shadow, and subtle film tint */}
       <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/40 to-brand-black/70 pointer-events-none" />
