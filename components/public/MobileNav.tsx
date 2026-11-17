@@ -52,17 +52,24 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
+          className="flex items-center space-x-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
           aria-label="BOITUMELO B PRODUCTIONS Home"
         >
           <Image
-            src={getAssetPath("/images/logo.png")}
-            alt="BOITUMELO B PRODUCTIONS"
-            width={170}
-            height={38}
-            className="h-8 w-auto object-contain"
+            src={getAssetPath("/images/logo-mark.png")}
+            alt="Boitumelo B Emblem"
+            width={70}
+            height={30}
+            className="h-7 w-auto object-contain"
           />
-          <span className="sr-only">BOITUMELO B PRODUCTIONS</span>
+          <div className="flex flex-col border-l border-[var(--line)] pl-2.5 py-0.5">
+            <span className="font-display font-bold tracking-[0.16em] text-sm text-[var(--ink)] leading-tight">
+              BOITUMELO B
+            </span>
+            <span className="text-[9.5px] uppercase tracking-[0.2em] text-[var(--gold-deep)] font-medium leading-tight">
+              Productions
+            </span>
+          </div>
         </Link>
         <button
           ref={closeButtonRef}

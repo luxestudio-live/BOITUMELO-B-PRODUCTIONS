@@ -39,21 +39,29 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo */}
+          {/* Brand Identity: Authentic Golden Mark + Architectural Typographic Lockup */}
           <Link
             href="/"
-            className="group flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
+            className="group flex items-center space-x-2.5 sm:space-x-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
             aria-label="BOITUMELO B PRODUCTIONS Home"
           >
             <Image
-              src={getAssetPath("/images/logo.png")}
-              alt="BOITUMELO B PRODUCTIONS"
-              width={200}
-              height={44}
+              src={getAssetPath("/images/logo-mark.png")}
+              alt="Boitumelo B Emblem"
+              width={88}
+              height={38}
               priority
-              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-opacity duration-250 ease-out group-hover:opacity-85"
+              className="h-6 sm:h-8 w-auto object-contain transition-transform duration-250 ease-out group-hover:scale-105 shrink-0"
             />
-            <span className="sr-only">BOITUMELO B PRODUCTIONS — Film & Video Production Northern Adelaide</span>
+            <div className="flex flex-col border-l border-[var(--line)] pl-2.5 sm:pl-3.5 py-0.5">
+              <span className="font-display font-bold tracking-[0.16em] sm:tracking-[0.18em] text-xs sm:text-base text-[var(--ink)] group-hover:text-[var(--gold)] transition-colors duration-250 ease-out leading-tight whitespace-nowrap">
+                BOITUMELO B
+              </span>
+              <span className="text-[9px] sm:text-[10.5px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-[var(--gold-deep)] font-medium leading-tight mt-0.5 whitespace-nowrap">
+                <span className="hidden sm:inline">Productions • Northern Adelaide</span>
+                <span className="sm:hidden">Productions</span>
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -45,21 +45,25 @@ export default function Footer() {
           <div className="lg:col-span-2 space-y-4">
             <Link
               href="/"
-              className="inline-block group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
+              className="group inline-flex items-center space-x-3.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
               aria-label="BOITUMELO B PRODUCTIONS Home"
             >
               <Image
-                src={getAssetPath("/images/logo-dark.png")}
-                alt="BOITUMELO B PRODUCTIONS"
-                width={220}
-                height={48}
-                className="h-9 sm:h-10 w-auto object-contain transition-opacity duration-250 ease-out group-hover:opacity-85"
+                src={getAssetPath("/images/logo-mark.png")}
+                alt="Boitumelo B Emblem"
+                width={88}
+                height={38}
+                className="h-8 sm:h-9 w-auto object-contain transition-transform duration-250 ease-out group-hover:scale-105"
               />
-              <span className="sr-only">BOITUMELO B PRODUCTIONS</span>
+              <div className="flex flex-col border-l border-[rgba(255,255,255,0.18)] pl-3.5 py-0.5">
+                <span className="font-display font-bold tracking-[0.2em] text-lg sm:text-xl text-[var(--white-on-dark)] leading-tight">
+                  BOITUMELO B
+                </span>
+                <span className="text-[10px] sm:text-[10.5px] uppercase font-mono tracking-[0.22em] text-[var(--gold)] font-medium leading-tight mt-0.5">
+                  Productions • Northern Adelaide
+                </span>
+              </div>
             </Link>
-            <p className="text-xs uppercase font-mono tracking-[0.2em] text-[var(--gold)] font-medium">
-              Productions • Northern Adelaide
-            </p>
             <p className="text-sm text-[var(--text-on-dark)] leading-relaxed max-w-sm pt-2 font-light">
               Video filming and editing in Northern Adelaide, South Australia, covering business, real estate, parties and events through a clear process.
             </p>
