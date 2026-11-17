@@ -86,7 +86,7 @@ export const initialMockEnquiries: MockEnquiry[] = [
 export const initialMockMedia: MockMediaItem[] = [
   {
     id: "med-1",
-    title: "Flagship Showreel — Golden Hour Cut",
+    title: "Pegasuz — Intoxicated (Official Music Video)",
     category: "Showreel",
     format: "MP4",
     size: "108.8 MB",
@@ -96,7 +96,7 @@ export const initialMockMedia: MockMediaItem[] = [
   },
   {
     id: "med-2",
-    title: "Andrew — Nocturne (Official Music Video)",
+    title: "Andrew — Official Music Video",
     category: "Showreel",
     format: "MP4",
     size: "121.4 MB",
@@ -106,7 +106,7 @@ export const initialMockMedia: MockMediaItem[] = [
   },
   {
     id: "med-3",
-    title: "Bonolo 2026 — Vineyard Birthday Celebration",
+    title: "Bonolo's Birthday Celebration — Bridgerton Vibe",
     category: "Showreel",
     format: "MP4",
     size: "479.7 MB",
@@ -116,7 +116,7 @@ export const initialMockMedia: MockMediaItem[] = [
   },
   {
     id: "med-4",
-    title: "Commercial Facility & Architectural Walkthrough",
+    title: "Final Cut — Short Film",
     category: "Showreel",
     format: "MP4",
     size: "161.9 MB",
@@ -126,7 +126,7 @@ export const initialMockMedia: MockMediaItem[] = [
   },
   {
     id: "med-5",
-    title: "Mama Vero's 70th Birthday Gala Celebration",
+    title: "Mama Veronica's 70th Birthday Celebration",
     category: "Showreel",
     format: "MP4",
     size: "201.9 MB",
