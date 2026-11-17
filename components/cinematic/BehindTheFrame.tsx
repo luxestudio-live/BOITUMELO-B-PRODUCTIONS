@@ -18,7 +18,7 @@ export default function BehindTheFrame() {
             </span>
             <h2 className="text-3xl sm:text-5xl font-display font-medium text-[var(--ink)] leading-tight">
               Why Trust Us.{" "}
-              <span className="text-[var(--gold)] block sm:inline font-normal">
+              <span className="text-[var(--gold-deep)] block sm:inline font-normal">
                 Clear Expectations.
               </span>
             </h2>
@@ -80,7 +80,7 @@ export default function BehindTheFrame() {
               upfront.
             </p>
 
-            <blockquote className="border-l-2 border-[var(--gold)] pl-6 py-1.5 text-base sm:text-lg text-[var(--ink)] font-serif italic">
+            <blockquote className="border-l border-[var(--gold-deep)]/40 pl-6 py-1.5 text-base sm:text-lg text-[var(--ink)] font-serif italic">
               &ldquo;The owner has been interested in directing and producing since
               about age 12, beginning with creating and producing a Bratz doll show
               inspired by a YouTube trend.&rdquo;

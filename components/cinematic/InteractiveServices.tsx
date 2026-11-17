@@ -38,9 +38,8 @@ export default function InteractiveServices() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Interactive Vertical Roster */}
           <div className="lg:col-span-6 space-y-4" role="tablist" aria-label="Production Disciplines">
-            {servicesList.map((service, index) => {
+            {servicesList.map((service) => {
               const isSelected = activeSlug === service.slug;
-              const indexStr = `0${index + 1}`;
 
               return (
                 <div
@@ -58,10 +57,14 @@ export default function InteractiveServices() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      {/* Gold index number */}
-                      <span className="text-xs font-mono tracking-[0.12em] text-[var(--gold)] font-medium">
-                        {indexStr}
-                      </span>
+                      {/* Active indicator dot */}
+                      <span
+                        className={`w-2 h-2 rounded-full transition-colors duration-250 ${
+                          isSelected
+                            ? "bg-[var(--gold)]"
+                            : "bg-[var(--line)] group-hover:bg-[var(--gold-deep)]"
+                        }`}
+                      />
                       <h3
                         className={`text-lg sm:text-xl md:text-2xl font-display font-medium transition-colors duration-250 ease-out ${
                           isSelected

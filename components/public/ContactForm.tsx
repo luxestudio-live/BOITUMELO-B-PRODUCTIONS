@@ -134,7 +134,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="e.g. Marcus Thorne"
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none transition-colors"
           />
           {errors.name && (
             <p role="alert" aria-live="polite" className="text-xs text-red-600 flex items-center space-x-1 font-mono">
@@ -157,7 +157,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             placeholder="m.thorne@example.com.au"
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none transition-colors"
           />
           {errors.email && (
             <p role="alert" aria-live="polite" className="text-xs text-red-600 flex items-center space-x-1 font-mono">
@@ -181,7 +181,7 @@ export default function ContactForm() {
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
             placeholder="e.g. Melbourne Contemporary Arts"
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none transition-colors"
           />
         </div>
 
@@ -197,7 +197,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             placeholder="+61 400 000 000"
-            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
+            className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white px-4 py-3 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none transition-colors"
           />
         </div>
       </div>
@@ -255,7 +255,7 @@ export default function ContactForm() {
           value={formData.description}
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           placeholder="Describe your story, intended audience, references, or key deliverables..."
-          className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-brand-teal/40 focus:outline-none transition-colors"
+          className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none transition-colors"
         />
         {errors.description && (
           <p role="alert" aria-live="polite" className="text-xs text-red-600 flex items-center space-x-1 font-mono">

@@ -425,7 +425,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 placeholder="What is the story, subject matter, or song about? What makes it unique?"
-                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none"
               />
               {errors.description && (
                 <p role="alert" aria-live="polite" className="text-xs text-red-600 font-mono">
@@ -446,7 +446,7 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.creativeGoals}
                   onChange={(e) => setFormData({ ...formData, creativeGoals: e.target.value })}
                   placeholder="e.g. Festival premiere, viral music release, Series-B fundraise"
-                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none"
                 />
               </div>
 
@@ -461,7 +461,7 @@ STUDIO        : Melbourne & Sydney • Australia
                   value={formData.audience}
                   onChange={(e) => setFormData({ ...formData, audience: e.target.value })}
                   placeholder="e.g. Australian music fans, enterprise buyers, cultural patrons"
-                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
+                  className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none"
                 />
               </div>
             </div>
@@ -477,7 +477,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 value={formData.referenceLinks}
                 onChange={(e) => setFormData({ ...formData, referenceLinks: e.target.value })}
                 placeholder="Vimeo, YouTube, or Pinterest links that evoke the mood you envision..."
-                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-3.5 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none"
               />
             </div>
           </div>
@@ -539,7 +539,7 @@ STUDIO        : Melbourne & Sydney • Australia
                 value={formData.specialRequirements}
                 onChange={(e) => setFormData({ ...formData, specialRequirements: e.target.value })}
                 placeholder="Any technical stunts, night shoots, licensed talent, or remote permits needed..."
-                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#F8F9FA] border border-brand-teal/20 focus:border-brand-gold focus:bg-white p-4 rounded-sm text-base sm:text-sm text-brand-teal placeholder-[#5A6778] focus:outline-none"
               />
             </div>
           </div>

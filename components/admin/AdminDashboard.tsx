@@ -606,7 +606,7 @@ export default function AdminDashboard() {
                     value={projectSearch}
                     onChange={(e) => setProjectSearch(e.target.value)}
                     placeholder="Search by project title, client, or keyword..."
-                    className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold pl-10 pr-4 py-2.5 rounded-sm text-xs font-mono text-brand-teal placeholder-slate-400 focus:outline-none"
+                    className="w-full bg-white border border-brand-teal/20 focus:border-brand-gold pl-10 pr-4 py-2.5 rounded-sm text-xs font-mono text-brand-teal placeholder-[#5A6778] focus:outline-none"
                   />
                 </div>
 

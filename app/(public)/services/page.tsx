@@ -223,7 +223,7 @@ export default function ServicesPage() {
           <p className="text-lg sm:text-xl text-[var(--gold-light)] font-medium">
             Good footage starts with good preparation.
           </p>
-          <blockquote className="border-l-2 border-[var(--gold)] pl-6 py-2 text-lg sm:text-2xl text-[var(--white-on-dark)] font-serif italic">
+          <blockquote className="border-l border-[var(--gold)]/40 pl-6 py-2 text-lg sm:text-2xl text-[var(--white-on-dark)] font-serif italic">
             &ldquo;You can’t fix it in post.&rdquo;
           </blockquote>
           <p className="text-base sm:text-lg text-[var(--text-on-dark)] leading-relaxed font-light">

@@ -86,11 +86,8 @@ export default function HomeOrientationAndOptions() {
                   className="bg-[var(--bg)] border border-[var(--line)] p-6 sm:p-7 rounded-[2px] hover:border-[var(--gold)] transition-all duration-250 ease-out shadow-subtle flex flex-col justify-between group"
                 >
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono tracking-[0.12em] text-[var(--gold)] font-medium">
-                        0{idx + 1}
-                      </span>
-                      <Icon className="w-5 h-5 text-[var(--gold)]" />
+                    <div className="w-10 h-10 rounded-[2px] bg-[var(--bg-soft)] border border-[var(--line)] flex items-center justify-center text-[var(--gold-deep)] group-hover:border-[var(--gold)] transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
 
                     <h3 className="text-lg font-display font-medium text-[var(--ink)] group-hover:text-[var(--gold-deep)] transition-colors leading-snug">

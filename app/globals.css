@@ -71,6 +71,13 @@
     background-color: var(--gold);
     color: var(--ink);
   }
+
+  /* Form controls caret color */
+  input,
+  textarea,
+  select {
+    caret-color: var(--gold-deep);
+  }
 }
 
 @layer utilities {

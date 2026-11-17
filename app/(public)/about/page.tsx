@@ -27,7 +27,7 @@ export default function AboutPage() {
         <div className="space-y-6 max-w-4xl">
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             Behind Every Frame,{" "}
-            <span className="text-[var(--gold)] block sm:inline font-normal">
+            <span className="text-[var(--gold-deep)] block sm:inline font-normal">
               A Clear Process.
             </span>
           </h1>
@@ -50,23 +50,25 @@ export default function AboutPage() {
         </div>
 
         {/* Studio Image Frame */}
-        <div className="mt-12 relative aspect-[16/9] sm:aspect-[2.39/1] rounded-[2px] overflow-hidden border border-[var(--gold)]/40 shadow-subtle bg-[var(--ink)]">
-          <Image
-            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85"
-            alt="Director framing a cinema shot on location"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/85 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-[var(--white-on-dark)]">
-            <span className="text-[var(--gold)] uppercase tracking-[0.12em]">
-              Northern Adelaide • Local Filming Operations
-            </span>
-            <span className="hidden sm:inline text-[var(--text-on-dark)]">
-              One-Person Crew • Practical & Direct
-            </span>
+        <div className="mt-12 p-1.5 sm:p-2 rounded-[2px] border border-[var(--line)] shadow-subtle bg-[var(--ink)]">
+          <div className="relative aspect-[16/9] sm:aspect-[2.39/1] rounded-[2px] overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85"
+              alt="Director framing a cinema shot on location"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/85 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-[var(--white-on-dark)]">
+              <span className="text-[var(--gold)] uppercase tracking-[0.12em]">
+                Northern Adelaide • Local Filming Operations
+              </span>
+              <span className="hidden sm:inline text-[var(--text-on-dark)]">
+                One-Person Crew • Practical & Direct
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -77,7 +79,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 space-y-4">
             <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] leading-tight">
               Good footage starts with{" "}
-              <span className="text-[var(--gold)] font-normal">
+              <span className="text-[var(--gold-deep)] font-normal">
                 good preparation.
               </span>
             </h2>
@@ -90,7 +92,7 @@ export default function AboutPage() {
             <p>
               The business operates as a one-person crew. This structure was chosen deliberately: shorter travel across Northern Adelaide makes local filming work practical, keeps communications direct with the person holding the camera and cutting the footage, and reduces unpaid travel overheads.
             </p>
-            <blockquote className="border-l-2 border-[var(--gold)] pl-6 py-2 text-base sm:text-lg text-[var(--ink)] font-serif italic">
+            <blockquote className="border-l border-[var(--gold-deep)]/40 pl-6 py-2 text-base sm:text-lg text-[var(--ink)] font-serif italic">
               &ldquo;You can’t fix it in post.&rdquo; Editing can polish footage, but it cannot replace something that was never captured properly. That is why planning, briefing, and clear expectations must happen before filming starts.
             </blockquote>
             <p>

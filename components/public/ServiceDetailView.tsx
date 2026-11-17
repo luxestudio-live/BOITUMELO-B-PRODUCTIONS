@@ -114,7 +114,7 @@ export default function ServiceDetailView({
               {service.introNarrative}
             </p>
 
-            <blockquote className="border-l-2 border-[var(--gold)] pl-6 py-2 text-base sm:text-lg text-[var(--ink)] font-serif italic">
+            <blockquote className="border-l border-[var(--gold-deep)]/40 pl-6 py-2 text-base sm:text-lg text-[var(--ink)] font-serif italic">
               &ldquo;You can’t fix it in post.&rdquo; Planning and briefing ensure nothing important is left behind.
             </blockquote>
 
