@@ -57,7 +57,7 @@ export default function Header() {
               <span className="font-display font-bold tracking-[0.16em] sm:tracking-[0.18em] text-xs sm:text-base text-[var(--ink)] group-hover:text-[var(--gold)] transition-colors duration-250 ease-out leading-tight whitespace-nowrap">
                 BOITUMELO B
               </span>
-              <span className="text-[9px] sm:text-[10.5px] uppercase tracking-[0.2em] sm:tracking-[0.22em] text-[var(--gold-deep)] font-medium leading-tight mt-0.5 whitespace-nowrap">
+              <span className="text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-[var(--gold-deep)] font-medium leading-tight mt-0.5 whitespace-nowrap">
                 <span className="hidden sm:inline">Productions • Northern Adelaide</span>
                 <span className="sm:hidden">Productions</span>
               </span>

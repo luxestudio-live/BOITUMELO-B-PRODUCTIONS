@@ -46,14 +46,9 @@ export default function ServicesPage() {
 
   return (
     <div className="pt-28 sm:pt-36 pb-24 space-y-20 sm:space-y-32 bg-[var(--bg)] text-[var(--ink)]">
-      {/* 01: Hero Intro + Answer Nugget */}
+      {/* 01: Hero Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Filming & Editing • Northern Adelaide</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             Make your video work
           </h1>
@@ -70,12 +65,8 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        {/* Answer Nugget Callout */}
-        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-            <span>Answer Nugget • Video Services</span>
-          </div>
+        {/* Production Scope Overview */}
+        <div className="mt-8 p-6 sm:p-8 bg-[var(--bg-soft)] border border-[var(--line)] rounded-[2px] max-w-4xl">
           <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
             Video Services covers filming and editing for businesses, real estate,
             parties and events. The process starts with a booking and project brief,

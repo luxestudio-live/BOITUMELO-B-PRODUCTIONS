@@ -59,7 +59,7 @@ export default function Footer() {
                 <span className="font-display font-bold tracking-[0.2em] text-lg sm:text-xl text-[var(--white-on-dark)] leading-tight">
                   BOITUMELO B
                 </span>
-                <span className="text-[10px] sm:text-[10.5px] uppercase font-mono tracking-[0.22em] text-[var(--gold)] font-medium leading-tight mt-0.5">
+                <span className="text-[11px] sm:text-xs uppercase font-mono tracking-[0.2em] text-[var(--gold)] font-medium leading-tight mt-0.5">
                   Productions • Northern Adelaide
                 </span>
               </div>

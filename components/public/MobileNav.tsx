@@ -66,7 +66,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <span className="font-display font-bold tracking-[0.16em] text-sm text-[var(--ink)] leading-tight">
               BOITUMELO B
             </span>
-            <span className="text-[9.5px] uppercase tracking-[0.2em] text-[var(--gold-deep)] font-medium leading-tight">
+            <span className="text-[11px] uppercase tracking-[0.18em] text-[var(--gold-deep)] font-medium leading-tight">
               Productions
             </span>
           </div>

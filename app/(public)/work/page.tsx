@@ -20,14 +20,9 @@ export const metadata = {
 export default function WorkPage() {
   return (
     <div className="pt-28 sm:pt-36 pb-24 space-y-16 sm:space-y-28 bg-[var(--bg)] text-[var(--ink)]">
-      {/* 01: Hero Intro + Answer Nugget */}
+      {/* 01: Hero Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <Film className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Project Archive • Northern Adelaide</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             See the work
           </h1>
@@ -35,20 +30,6 @@ export default function WorkPage() {
           <p className="text-lg sm:text-xl text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             You want to know what the finished video can look like. The best way to
             judge a video service is to see the work before you book.
-          </p>
-        </div>
-
-        {/* Answer Nugget Callout */}
-        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-            <span>Answer Nugget • Portfolio</span>
-          </div>
-          <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
-            The video portfolio should show completed filming and editing work across
-            categories identified in the interview, including real estate, parties and
-            events. The business owner began directing and producing videos at about 12
-            years old and now works as a solo video operator in Northern Adelaide.
           </p>
         </div>
       </section>

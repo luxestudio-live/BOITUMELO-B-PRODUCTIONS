@@ -23,14 +23,9 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <div className="pt-28 sm:pt-36 pb-24 space-y-16 sm:space-y-28 bg-[var(--bg)] text-[var(--ink)]">
-      {/* 01: Hero Intro + Answer Nugget */}
+      {/* 01: Hero Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <MapPin className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Northern Adelaide • South Australia</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             Let’s discuss your project
           </h1>
@@ -38,20 +33,6 @@ export default function ContactPage() {
           <p className="text-lg sm:text-xl text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
             You know you need a video. You may not know exactly how to make it
             happen. Start with a conversation about what you need.
-          </p>
-        </div>
-
-        {/* Answer Nugget Callout */}
-        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-            <span>Answer Nugget • Contact & Service Area</span>
-          </div>
-          <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
-            The video business is based in Northern Adelaide, South Australia, where
-            the owner works as a one-person video crew. Northern Adelaide is the
-            preferred service area because shorter travel makes filming jobs more
-            practical and reduces unpaid travel time and petrol costs.
           </p>
         </div>
       </section>

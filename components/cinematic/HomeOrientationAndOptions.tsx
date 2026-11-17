@@ -51,48 +51,26 @@ export default function HomeOrientationAndOptions() {
       className="relative bg-[var(--bg)] py-20 sm:py-28 border-b border-[var(--line)] overflow-hidden text-[var(--ink)]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
-        {/* 2. ANSWER NUGGET */}
-        <div className="p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-5xl mx-auto">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-            <span>Answer Nugget • Northern Adelaide Videography</span>
-          </div>
-          <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
-            The business provides video filming and editing in Northern Adelaide,
-            South Australia, for projects including real estate, parties and events.
-            The owner began directing and producing videos at about 12 years old and
-            now works as a one-person video crew.
-          </p>
-        </div>
-
-        {/* 3. ORIENTATION PARAGRAPH */}
-        <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <Compass className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Orientation</span>
-          </div>
-
+        {/* Studio Introduction */}
+        <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl sm:text-5xl font-display font-medium text-[var(--ink)] leading-tight">
-            Need better content?
+            Need better video content?
           </h2>
 
-          <p className="text-base sm:text-lg text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl mx-auto">
-            You may be struggling with recording, editing, marketing or creating enough
-            good-quality content. You may also be worried about whether your video will
-            look professional.
+          <p className="text-base sm:text-lg text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
+            Video filming and editing in Northern Adelaide for businesses, real estate, parties and events. Start with a clear project brief and realistic planning before the camera comes out.
           </p>
 
-          <p className="text-sm sm:text-base text-[var(--gold-deep)] font-medium tracking-wide pt-1">
-            Start with a clear brief. Plan the project properly. Then film and edit it
-            according to what you need.
+          <p className="text-sm sm:text-base text-[var(--gold-deep)] font-medium tracking-wide">
+            Good footage starts with good preparation. We handle the filming and editing so you get content you are proud to share.
           </p>
         </div>
 
-        {/* 4. JUMP-IN OPTIONS (4 CARDS) */}
+        {/* Core Video Services */}
         <div className="space-y-6">
           <div className="border-b border-[var(--line)] pb-4 flex items-center justify-between">
             <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-              Jump-In Options
+              Core Video Services
             </span>
             <span className="text-xs font-mono text-[var(--ink-soft)] hidden sm:inline">
               Choose your project focus

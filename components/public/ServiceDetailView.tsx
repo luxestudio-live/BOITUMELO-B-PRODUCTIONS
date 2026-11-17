@@ -33,14 +33,9 @@ export default function ServiceDetailView({
 
   return (
     <div className="pt-28 sm:pt-36 pb-24 space-y-20 sm:space-y-32 bg-[var(--bg)] text-[var(--ink)]">
-      {/* 01: Hero Headline + Tagline + Answer Nugget */}
+      {/* 01: Hero Headline + Tagline */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Service Specification • {service.title}</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             {service.heroHeadline}
           </h1>
@@ -61,13 +56,9 @@ export default function ServiceDetailView({
           </div>
         </div>
 
-        {/* Answer Nugget Callout */}
+        {/* Service Scope Overview */}
         {service.answerNugget && (
-          <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
-            <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-              <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-              <span>Answer Nugget • {service.title}</span>
-            </div>
+          <div className="mt-8 p-6 sm:p-8 bg-[var(--bg-soft)] border border-[var(--line)] rounded-[2px] max-w-4xl">
             <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
               {service.answerNugget}
             </p>

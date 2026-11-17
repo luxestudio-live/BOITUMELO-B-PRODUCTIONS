@@ -14,36 +14,15 @@ export const metadata = {
 export default function TestimonialsPage() {
   return (
     <div className="pt-28 sm:pt-36 pb-24 space-y-20 sm:space-y-32 bg-[var(--bg)] text-[var(--ink)]">
-      {/* 01: Hero Header + Answer Nugget */}
+      {/* 01: Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl space-y-6">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <Quote className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Social Proof • Northern Adelaide</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             Hear from customers
           </h1>
 
           <p className="text-lg sm:text-xl text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl [text-wrap:pretty]">
-            Customers finish projects feeling happy, excited and surprised by the
-            result, including reactions such as &ldquo;wow, this looks so good&rdquo;.
-          </p>
-        </div>
-
-        {/* Social Proof Callout */}
-        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-            <span>Customer Experience</span>
-          </div>
-          <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
-            The interview describes customers finishing projects feeling happy,
-            excited and surprised by the result, including reactions such as
-            &ldquo;wow, this looks so good&rdquo;. From the initial booking and brief
-            through to the revision and delivery, our goal is a clear and dependable
-            collaboration.
+            From the initial booking and project brief through to final color timing and delivery, our goal is dependable collaboration and films that exceed expectations.
           </p>
         </div>
       </section>

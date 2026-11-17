@@ -22,14 +22,9 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="pt-28 sm:pt-36 pb-24 space-y-20 sm:space-y-32 bg-[var(--bg)] text-[var(--ink)]">
-      {/* 01: Hero Intro + Answer Nugget */}
+      {/* 01: Hero Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 max-w-4xl">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg-soft)] rounded-[2px] border border-[var(--line)] text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)]">
-            <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)]" />
-            <span>Studio Story • Northern Adelaide</span>
-          </div>
-
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-medium text-[var(--ink)] tracking-tight leading-[1.02]">
             Behind Every Frame,{" "}
             <span className="text-[var(--gold)] block sm:inline font-normal">
@@ -44,12 +39,8 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Answer Nugget Callout */}
-        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border-l-2 border-[var(--gold)] rounded-r-[2px] border-y border-r border-[var(--line)] shadow-subtle max-w-4xl">
-          <div className="flex items-center space-x-2 text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium mb-3">
-            <Sparkles className="w-4 h-4 text-[var(--gold)]" />
-            <span>Origin & Structure</span>
-          </div>
+        {/* Studio Origin Overview */}
+        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border border-[var(--line)] rounded-[2px] max-w-4xl">
           <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
             The business provides video filming and editing in Northern Adelaide,
             South Australia. The owner began directing and producing videos at about
@@ -84,9 +75,6 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-              Core Philosophy
-            </span>
             <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] leading-tight">
               Good footage starts with{" "}
               <span className="text-[var(--gold)] font-normal">
@@ -116,10 +104,7 @@ export default function AboutPage() {
       <section className="bg-[var(--bg-soft)] py-20 sm:py-28 border-y border-[var(--line)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="border-b border-[var(--line)] pb-6">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-              Our Commitments
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] mt-2">
+            <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
               How We Work With You
             </h2>
           </div>
@@ -190,9 +175,6 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold)] font-medium block">
-                The Journey
-              </span>
               <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--white-on-dark)] leading-tight">
                 Directing & Producing Since Age 12
               </h2>
