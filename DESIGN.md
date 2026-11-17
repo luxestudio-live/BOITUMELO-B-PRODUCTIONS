@@ -7,7 +7,7 @@ colors:
   ink: "#0B1320"         # headings, body text, dark sections (30% midnight navy blue)
   ink-soft: "#4A5568"    # slate navy secondary / paragraph text
   gold: "#B08D57"        # accents, lines, icons, large text only (10%)
-  gold-deep: "#8A6A2F"   # gold text links, small gold text (AA contrast >= 4.5:1)
+  gold-deep: "#785920"   # gold text links, small gold text (AA contrast >= 5.4:1)
   gold-light: "#E8DCC3"  # borders, tints, hover backgrounds
   line: "#E6E1D6"        # hairline dividers (1px)
   white-on-dark: "#FFFFFF"
@@ -43,6 +43,12 @@ typography:
     fontWeight: 500
     lineHeight: "1.2"
     letterSpacing: "0.1em"
+  telemetry:
+    fontFamily: "JetBrains Mono, monospace"
+    fontSize: "10px"
+    fontWeight: 500
+    lineHeight: "1"
+    letterSpacing: "0.2em"
   label:
     fontFamily: "Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
     fontSize: "12px"
@@ -120,19 +126,17 @@ The interface rejects commoditised video agency tropes—eschewing playful paste
 The colour system is derived from cinematic grading suites: absolute blacks for deep contrast, atmospheric teals for spatial volume, and warm gold deployed with extreme restraint as an optical focal point.
 
 ### Primary
-- **Warm Gold** (`#CB8D44`): The primary focal instrument. Reserved strictly for primary conversion actions, active navigation states, interactive scrubbing handles, and live timecode indicators.
+- **Warm Gold** (`#B08D57` / `#CB8D44`): The primary focal instrument. Reserved strictly for primary conversion actions, active navigation states, interactive scrubbing handles, and live timecode indicators.
+- **Deep Bronze Gold** (`#785920`): WCAG AA compliant (>5.4:1 contrast ratio against cream `#F6F2EA` and `#F3EEE6`) used for tags, section label chips, and category indicators.
 - **Radiant Amber** (`#E2A65F`): The elevated illumination state. Used exclusively for button hover illumination, focused lens flares, and interactive highlight pulses.
-- **Deep Bronze** (`#9F6C2E`): The pressed and active state for primary gold interactive targets.
 
 ### Neutral
-- **Letterbox Black** (`#000000`): The absolute canvas. Provides theatrical contrast and letterbox framing for edge-to-edge video exhibitions.
-- **Atmospheric Canvas** (`#081215`): Deep oceanic baseline tone used behind hero backdrops and interactive ambient projections.
-- **Card Surface Black** (`#070C0E`): Elevated card and container background providing subtle structural separation from pure black without introducing harsh borders.
-- **Grading Suite Teal** (`#183036`): The secondary structural tone. Applied to interactive surface backplates, tags, filter pills, and secondary containers.
-- **Precision Border Teal** (`#24434B`): Razor 1px boundary lines, grid dividers, viewfinder brackets, and card outlines.
-- **Pure White** (`#FFFFFF`): Primary display headlines and high-contrast titles providing maximum visual punch against dark backdrops.
-- **Secondary Body Silver** (`#C3CDD0`): High-legibility editorial prose and narrative descriptions delivering accessible contrast (>10:1) without ocular fatigue.
-- **Muted Metadata Grey** (`#8E9DA1`): Technical metadata, aspect ratios, frame rates, and archival credits.
+- **Midnight Navy** (`#0B1320`): The signature digital canvas, replacing pitch black with an architectural, high-depth oceanic midnight tone. Contrast against white exceeds 18.3:1.
+- **Deep Midnight** (`#070D16`): The deep navy foundation used for high-depth panels, modals, and dark letterbox framing.
+- **Pale Slate Text** (`#D4DCE8`): High-legibility editorial prose on dark midnight surfaces delivering accessible contrast (>12.8:1) without ocular fatigue.
+- **Slate Navy Body** (`#4A5568`): Secondary body prose and paragraph copy on light cream surfaces (contrast >6.5:1).
+- **Soft Cream Canvas** (`#F6F2EA`): Warm editorial surface for cards, testimonials, and narrative reading sections.
+- **Pure White** (`#FFFFFF`): Primary display headlines and crisp light surfaces.
 
 ### Named Rules
 **The Rarity of Gold Rule.** Warm Gold (`#CB8D44`) must never occupy more than 10% of any given screen surface. Its prestige and directional power depend entirely on its scarcity. When everything glows gold, nothing commands attention.
@@ -154,7 +158,8 @@ The colour system is derived from cinematic grading suites: absolute blacks for 
 - **Title** (Semi-bold 600, `clamp(1.25rem, 2vw, 1.75rem)`, line-height `1.25`, letter-spacing `-0.01em`): Project card names, service titles, and modal headers.
 - **Editorial Quote** (Regular 400 italic, `clamp(1.25rem, 2.2vw, 1.85rem)`, line-height `1.45`, letter-spacing `-0.01em`): Director statements, client testimonials, and curated production quotes.
 - **Body** (Regular 400, `1rem` / `16px`, line-height `1.6`, letter-spacing `0.01em`): Case study overviews, technical narratives, service descriptions, and booking form copy (restricted to 65–75 characters per line).
-- **Label / Metadata** (Semi-bold 600, `0.75rem` / `12px`, letter-spacing `0.15em`, uppercase): Viewfinder HUD metrics, category filters, button text, timecodes, and technical specifications.
+- **Label / Metadata** (Semi-bold 600, `0.75rem` / `12px`, letter-spacing `0.15em`, uppercase): Category filters, button labels, timecodes, and technical specifications.
+- **Micro-Telemetry / Camera HUD** (Semi-bold 600, `0.625rem` / `10px` or `9.5px`, letter-spacing `0.2em`, uppercase, tabular monospace): Electronic viewfinder metrics, REC timecodes, optical shutter angle, audio gain readouts, anamorphic gate stamps, and year metadata chips.
 
 ### Named Rules
 **The Balanced Heading Rule.** All headings (`h1` through `h6`) must enforce `text-wrap: balance` to prevent awkward typography line breaks and single-word orphans.

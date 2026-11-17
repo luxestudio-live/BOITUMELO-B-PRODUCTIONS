@@ -9,7 +9,7 @@
   --ink-deep: #070D16;   /* Rich dark navy black */
   --ink-soft: #4A5568;   /* Slate navy secondary copy */
   --gold: #B08D57;
-  --gold-deep: #8A6A2F;
+  --gold-deep: #785920;   /* WCAG AA compliant (>5.4:1 contrast on cream) */
   --gold-light: #E8DCC3;
   --line: #E6E1D6;
   --white-on-dark: #FFFFFF;
@@ -23,7 +23,7 @@
   --color-teal-light: #4A5568;
   --color-gold: #B08D57;
   --color-gold-light: #E8DCC3;
-  --color-gold-deep: #8A6A2F;
+  --color-gold-deep: #785920;
   --color-white: #FFFFFF;
   --color-gray: #4A5568;
   --color-line: #E6E1D6;

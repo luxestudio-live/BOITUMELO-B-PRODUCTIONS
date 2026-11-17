@@ -14,13 +14,13 @@ export default function NotFound() {
       />
 
       {/* Top Projector Booth Telemetry Header */}
-      <header className="relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/40 pb-4 text-xs font-mono uppercase tracking-[0.2em] text-brand-gray-light">
+      <header className="relative z-10 flex flex-wrap items-center justify-between gap-4 border-b border-brand-teal/40 pb-4 text-xs font-mono uppercase tracking-[0.2em] text-[#D4DCE8]">
         <div className="flex items-center space-x-3">
           <span className="flex items-center space-x-1.5 px-2.5 py-1 bg-brand-black/90 border border-brand-teal/60 rounded-sm text-[#FF4D4D] font-bold">
             <span className="w-2 h-2 rounded-full bg-[#FF4D4D] inline-block" />
-            <span>OPTICAL FAULT</span>
+            <span>OPTICAL FAULT: FRAME NOT REGISTERED</span>
           </span>
-          <span className="hidden sm:inline text-brand-gray">
+          <span className="hidden sm:inline text-[#D4DCE8]">
             REEL UNLATCHED
           </span>
         </div>
@@ -29,7 +29,7 @@ export default function NotFound() {
           TIMECODE: 00:04:04:00
         </div>
 
-        <div className="hidden md:flex items-center space-x-2 text-brand-gray">
+        <div className="hidden md:flex items-center space-x-2 text-[#D4DCE8]">
           <span>GATE: 2.39:1 ANAMORPHIC</span>
           <span className="text-brand-gold">•</span>
           <span>DCI ARCHIVE</span>
@@ -39,7 +39,7 @@ export default function NotFound() {
       {/* Center Optical Calibration Slate */}
       <section className="relative z-10 my-auto py-8 sm:py-12 max-w-4xl mx-auto w-full text-center space-y-8">
         {/* The Anamorphic Viewfinder Framing Container */}
-        <div className="relative border border-brand-teal/60 bg-brand-black-elevated/90 backdrop-blur-md p-8 sm:p-16 rounded-sm shadow-2xl">
+        <div className="relative border border-brand-teal/60 bg-[#070D16]/95 backdrop-blur-md p-8 sm:p-16 rounded-sm shadow-2xl">
           {/* Signature 4-Corner Viewfinder Brackets */}
           <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-brand-gold pointer-events-none" />
           <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-brand-gold pointer-events-none" />
@@ -70,16 +70,12 @@ export default function NotFound() {
               404
             </div>
 
-            <div className="space-y-3 max-w-lg mx-auto">
-              <span className="inline-block text-xs font-mono uppercase tracking-[0.3em] text-brand-gold bg-brand-teal/40 px-3 py-1 rounded-sm border border-brand-teal/60">
-                FRAME NOT REGISTERED
-              </span>
-
+            <div className="space-y-4 max-w-lg mx-auto">
               <h1 className="text-2xl sm:text-4xl font-display font-medium text-brand-white uppercase tracking-[0.05em] leading-tight">
                 Leader Runout. Frame Not Found.
               </h1>
 
-              <p className="text-sm sm:text-base text-brand-gray-light font-light leading-relaxed [text-wrap:pretty]">
+              <p className="text-sm sm:text-base text-[#D4DCE8] font-normal leading-relaxed [text-wrap:pretty]">
                 The coordinates you requested do not exist in our Australian production vault. The projector shutter has engaged to protect the negative.
               </p>
             </div>
@@ -107,7 +103,7 @@ export default function NotFound() {
       </section>
 
       {/* Bottom Production House Colophon */}
-      <footer className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-brand-teal/40 pt-4 text-xs font-mono text-brand-gray">
+      <footer className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-brand-teal/40 pt-4 text-xs font-mono text-[#D4DCE8]">
         <span>BOITUMELO B PRODUCTIONS • AUSTRALIAN ARCHIVE</span>
         <span className="hidden sm:inline">MELBOURNE • SYDNEY • REGIONAL AUSTRALIA</span>
         <span className="text-brand-gold font-medium">35MM & LARGE FORMAT CINEMA</span>
