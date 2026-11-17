@@ -1,12 +1,10 @@
 import Link from "next/link";
 import {
-  Sparkles,
   ArrowRight,
   Briefcase,
   Home as HomeIcon,
   PartyPopper,
   Film,
-  Compass,
 } from "lucide-react";
 
 export default function HomeOrientationAndOptions() {
@@ -58,20 +56,16 @@ export default function HomeOrientationAndOptions() {
           </h2>
 
           <p className="text-base sm:text-lg text-[var(--ink-soft)] font-light leading-relaxed max-w-2xl mx-auto [text-wrap:pretty]">
-            Video filming and editing in Northern Adelaide for businesses, real estate, parties and events. Start with a clear project brief and realistic planning before the camera comes out.
-          </p>
-
-          <p className="text-sm sm:text-base text-[var(--gold-deep)] font-medium tracking-wide">
-            Good footage starts with good preparation. We handle the filming and editing so you get content you are proud to share.
+            Video filming and editing in Northern Adelaide for businesses, real estate, parties and events. We establish clear expectations from day one so you get footage you are proud to share.
           </p>
         </div>
 
         {/* Core Video Services */}
         <div className="space-y-6">
           <div className="border-b border-[var(--line)] pb-4 flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
+            <h3 className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
               Core Video Services
-            </span>
+            </h3>
             <span className="text-xs font-mono text-[var(--ink-soft)] hidden sm:inline">
               Choose your project focus
             </span>

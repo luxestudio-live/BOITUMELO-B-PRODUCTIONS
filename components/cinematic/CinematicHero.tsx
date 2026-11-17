@@ -229,10 +229,6 @@ export default function CinematicHero() {
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
           <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
-            <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-[var(--gold)] font-medium block">
-              BOITUMELO B PRODUCTIONS
-            </span>
-
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.03em] leading-[1.02] drop-shadow-[0_4px_16px_rgba(11,19,32,0.8)]">
               Professional videos. <br className="hidden sm:inline" />
               <span className="text-[var(--gold-light)] font-normal">Clear process.</span>

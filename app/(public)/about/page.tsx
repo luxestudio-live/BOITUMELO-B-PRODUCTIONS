@@ -1,16 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import EditorialHeading from "@/components/public/EditorialHeading";
 import {
   ArrowUpRight,
   ArrowRight,
   Calendar,
-  Sparkles,
   Camera,
   Scissors,
-  Clapperboard,
   ShieldCheck,
-  MapPin,
 } from "lucide-react";
 
 export const metadata = {
@@ -36,16 +32,6 @@ export default function AboutPage() {
             Filming and video editing across Northern Adelaide for business, real
             estate, parties and events. Clear expectations before the camera comes
             out.
-          </p>
-        </div>
-
-        {/* Studio Origin Overview */}
-        <div className="mt-10 p-6 sm:p-8 bg-[var(--bg-soft)] border border-[var(--line)] rounded-[2px] max-w-4xl">
-          <p className="text-sm sm:text-base text-[var(--ink)] font-normal leading-relaxed">
-            The business provides video filming and editing in Northern Adelaide,
-            South Australia. The owner began directing and producing videos at about
-            12 years old—beginning with a Bratz doll show inspired by a YouTube
-            trend—and now operates as a dedicated one-person crew.
           </p>
         </div>
 

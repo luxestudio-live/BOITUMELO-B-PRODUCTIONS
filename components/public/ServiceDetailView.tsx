@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import EditorialHeading from "@/components/public/EditorialHeading";
 import ProjectCard from "@/components/public/ProjectCard";
 import VideoPlayer from "@/components/public/VideoPlayer";
 import { ServiceDetail } from "@/data/services";
@@ -12,8 +11,6 @@ import {
   Calendar,
   Video,
   Scissors,
-  Clapperboard,
-  Sparkles,
   HelpCircle,
 } from "lucide-react";
 

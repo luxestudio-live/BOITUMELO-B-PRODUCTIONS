@@ -239,7 +239,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                 key={idx}
                 className="group relative bg-white border border-brand-teal/15 rounded-sm overflow-hidden shadow-sm"
               >
-                <div className="relative aspect-[16/10] overflow-hidden">
+                <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
                     src={frame.imageUrl}
                     alt={frame.caption}

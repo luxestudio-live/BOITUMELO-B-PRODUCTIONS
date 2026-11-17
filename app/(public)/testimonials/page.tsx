@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import EditorialHeading from "@/components/public/EditorialHeading";
 import CinematicTestimonials from "@/components/cinematic/CinematicTestimonials";
 import { sampleTestimonials } from "@/data/testimonials";
-import { ArrowUpRight, ArrowRight, Quote, Sparkles } from "lucide-react";
+import { ArrowUpRight, Quote } from "lucide-react";
 
 export const metadata = {
   title: "Client Testimonials | Videographer Adelaide",

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { servicesData, ServiceDetail } from "@/data/services";
-import { ArrowUpRight, ArrowRight, Layers, CheckCircle2, Film } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Layers } from "lucide-react";
 import ViewfinderHUD from "./ViewfinderHUD";
 import { getAssetPath } from "@/lib/asset-path";
 

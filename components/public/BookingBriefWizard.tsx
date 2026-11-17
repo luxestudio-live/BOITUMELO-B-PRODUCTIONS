@@ -10,7 +10,6 @@ import {
   Clock,
   Sparkles,
   Film,
-  Music,
   Briefcase,
   Layers,
   HelpCircle,

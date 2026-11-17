@@ -22,7 +22,7 @@ export default function EditorialHeading({
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium tracking-[0.02em] text-[var(--ink)] leading-[1.1]">
         {title}{" "}
         {serifAccent && (
-          <span className="text-[var(--gold)] block sm:inline font-normal mt-1 sm:mt-0">
+          <span className="text-[var(--gold-deep)] block sm:inline font-normal mt-1 sm:mt-0">
             {serifAccent}
           </span>
         )}

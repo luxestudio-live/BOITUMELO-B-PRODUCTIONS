@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Clapperboard, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { getAssetPath } from "@/lib/asset-path";
 
 export default function BehindTheFrame() {
