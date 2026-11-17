@@ -92,7 +92,7 @@ export default function HorizontalFilmstrip() {
             Selected Works <span className="text-[var(--gold-deep)] font-normal">/ 35mm & Large Format</span>
           </h2>
         </div>
-        <span className="md:hidden text-[10px] font-mono uppercase tracking-[0.1em] text-[var(--gold-deep)] bg-[var(--bg-soft)] px-2.5 py-1 rounded-[2px] border border-[var(--line)] mr-1 sm:mr-4">
+        <span className="md:hidden text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold-deep)] bg-[var(--bg-soft)] px-2.5 py-1 rounded-[2px] border border-[var(--line)] mr-1 sm:mr-4">
           Archive 01–05
         </span>
       </div>
@@ -209,7 +209,7 @@ export default function HorizontalFilmstrip() {
 
       {/* Mobile Swipe Cue */}
       <div className="md:hidden mt-5 flex items-center justify-center">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-[2px] bg-[var(--bg-soft)] text-[var(--gold-deep)] border border-[var(--line)] text-[10px] font-mono uppercase tracking-[0.1em] shadow-subtle">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-[2px] bg-[var(--bg-soft)] text-[var(--gold-deep)] border border-[var(--line)] text-[11px] font-mono uppercase tracking-[0.1em] shadow-subtle">
           <span>◄ Swipe Reel to Pan 01–06 ►</span>
         </div>
       </div>

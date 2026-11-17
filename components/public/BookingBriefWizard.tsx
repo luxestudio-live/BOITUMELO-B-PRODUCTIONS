@@ -199,19 +199,19 @@ STUDIO        : Melbourne & Sydney • Australia
           {/* Slate Telemetry Header */}
           <div className="grid grid-cols-4 border-b border-brand-gold/30 bg-brand-teal-deep text-center font-mono text-[11px] py-2 text-brand-teal-light divide-x divide-brand-gold/30">
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">PROD NO.</span>
+              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">PROD NO.</span>
               <span className="font-semibold text-brand-gold">#BB-2026-X9</span>
             </div>
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">SCENE</span>
+              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">SCENE</span>
               <span className="font-semibold text-white">BRIEF</span>
             </div>
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">TAKE</span>
+              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">TAKE</span>
               <span className="font-semibold text-white">01</span>
             </div>
             <div>
-              <span className="block text-[10px] uppercase tracking-wider text-brand-teal-light/70">SOUND</span>
+              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">SOUND</span>
               <span className="font-semibold text-brand-gold">SYNC</span>
             </div>
           </div>
@@ -309,7 +309,7 @@ STUDIO        : Melbourne & Sydney • Australia
       {/* Step Indicator Bar */}
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs font-mono uppercase tracking-[0.2em] text-brand-teal/80">
-          <span className="text-brand-gold font-semibold">
+          <span className="text-[var(--gold-deep)] font-semibold">
             Step 0{currentStep} of 0{totalSteps}
           </span>
           <span>
@@ -416,7 +416,7 @@ STUDIO        : Melbourne & Sydney • Australia
 
             <div className="space-y-2">
               <label htmlFor="description" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
-                Project Concept & Logline <span className="text-brand-gold">*</span>
+                Project Concept & Logline <span className="text-[var(--gold-deep)]">*</span>
               </label>
               <textarea
                 id="description"
@@ -560,7 +560,7 @@ STUDIO        : Melbourne & Sydney • Australia
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label htmlFor="step4-name" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
-                  Your Full Name <span className="text-brand-gold">*</span>
+                  Your Full Name <span className="text-[var(--gold-deep)]">*</span>
                 </label>
                 <input
                   id="step4-name"
@@ -581,7 +581,7 @@ STUDIO        : Melbourne & Sydney • Australia
 
               <div className="space-y-2">
                 <label htmlFor="step4-email" className="block text-xs font-mono uppercase tracking-wider text-brand-teal font-semibold">
-                  Email Address <span className="text-brand-gold">*</span>
+                  Email Address <span className="text-[var(--gold-deep)]">*</span>
                 </label>
                 <input
                   id="step4-email"
@@ -683,7 +683,7 @@ STUDIO        : Melbourne & Sydney • Australia
             {/* Frontend Demo Calendar & Slot Picker */}
             <div className="bg-[#F8F9FA] border border-brand-teal/20 p-4 sm:p-6 rounded-sm space-y-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-brand-teal/20">
-                <div className="flex items-center space-x-2 text-brand-gold">
+                <div className="flex items-center space-x-2 text-[var(--gold-deep)]">
                   <CalendarIcon className="w-4 h-4" />
                   <span className="text-xs font-mono uppercase tracking-wider font-semibold">
                     Select a Discovery Call Slot

@@ -79,10 +79,7 @@ export default function ServicesPage() {
       {/* 02: What video services do you offer? (3 Category Cards) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="border-b border-[var(--line)] pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-              Core Offerings
-            </span>
+          <div>
             <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
               What video services do you offer?
             </h2>
@@ -157,9 +154,6 @@ export default function ServicesPage() {
       {/* 03: Who are video services for? */}
       <section className="bg-[var(--bg-soft)] py-16 sm:py-24 border-y border-[var(--line)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-            Audience & Fit
-          </span>
           <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
             Who are video services for?
           </h2>
@@ -177,10 +171,7 @@ export default function ServicesPage() {
       {/* 04: How does the process work? (3 Steps) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <div className="border-b border-[var(--line)] pb-6">
-          <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-            The Plan
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] mt-2">
+          <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
             How does the process work?
           </h2>
         </div>
@@ -214,9 +205,6 @@ export default function ServicesPage() {
       {/* 05: Why does planning matter? ("You can't fix it in post") */}
       <section className="bg-[var(--ink)] text-[var(--white-on-dark)] py-16 sm:py-24 border-y border-[rgba(255,255,255,0.12)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold)] font-medium">
-            Pre-Production Philosophy
-          </span>
           <h2 className="text-3xl sm:text-5xl font-display font-medium text-[var(--white-on-dark)] leading-tight">
             Why does planning matter?
           </h2>
@@ -236,9 +224,6 @@ export default function ServicesPage() {
 
       {/* 06: What can you expect? */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-          Commitment & Delivery
-        </span>
         <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
           What can you expect?
         </h2>

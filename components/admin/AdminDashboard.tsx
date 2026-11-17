@@ -217,7 +217,7 @@ export default function AdminDashboard() {
             height={30}
             className="h-6 w-auto object-contain"
           />
-          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold font-medium border-l border-brand-teal/20 pl-2">
+          <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[var(--gold-deep)] font-medium border-l border-brand-teal/20 pl-2">
             Portal
           </span>
         </div>
@@ -272,7 +272,7 @@ export default function AdminDashboard() {
               <span>{tab.label}</span>
               {tab.count !== undefined && (
                 <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono ${
+                  className={`text-[11px] px-1.5 py-0.5 rounded-full font-mono ${
                     isActive
                       ? "bg-brand-gold/20 text-brand-gold font-bold"
                       : "bg-brand-teal/10 text-brand-teal font-semibold"
@@ -296,7 +296,7 @@ export default function AdminDashboard() {
         >
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-brand-teal/20">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold font-medium">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--gold-deep)] font-medium">
                 Admin Navigation Menu
               </span>
               <button
@@ -333,7 +333,7 @@ export default function AdminDashboard() {
                       </div>
                       <div className="text-left">
                         <span className={`block font-medium text-sm ${isActive ? "text-brand-gold" : "text-brand-teal"}`}>{tab.label}</span>
-                        <span className="text-[10px] text-brand-teal/70 block tracking-normal lowercase">
+                        <span className="text-[11px] text-brand-teal/70 block tracking-normal lowercase">
                           Manage studio {tab.label.toLowerCase()}
                         </span>
                       </div>
@@ -361,7 +361,7 @@ export default function AdminDashboard() {
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
 
-            <div className="text-center text-[10px] font-mono text-brand-teal/60 space-y-1">
+            <div className="text-center text-[11px] font-mono text-brand-teal/60 space-y-1">
               <p>Production Suite // Melbourne & Sydney</p>
               <p>Region: Australia (AEDT) • Secure Session</p>
             </div>
@@ -385,7 +385,7 @@ export default function AdminDashboard() {
                   className="h-7 w-auto object-contain"
                 />
               </Link>
-              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
+              <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[var(--gold-deep)] block font-medium">
                 Studio CMS Portal
               </span>
             </div>
@@ -474,7 +474,7 @@ export default function AdminDashboard() {
                     key={i}
                     className="p-4 sm:p-6 bg-white border border-brand-teal/15 rounded-sm shadow-sm"
                   >
-                    <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-semibold">
+                    <span className="text-xs font-mono uppercase tracking-wider text-[var(--gold-deep)] block font-semibold">
                       {stat.label}
                     </span>
                     <span className="text-3xl sm:text-4xl font-display font-bold text-brand-teal mt-2 block">
@@ -497,7 +497,7 @@ export default function AdminDashboard() {
                     <button
                       type="button"
                       onClick={() => setActiveTab("enquiries")}
-                      className="text-xs font-mono text-brand-gold hover:underline font-medium"
+                      className="text-xs font-mono text-[var(--gold-deep)] hover:underline font-medium"
                     >
                       View All ({enquiriesList.length})
                     </button>
@@ -524,7 +524,7 @@ export default function AdminDashboard() {
                         <span
                           className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
-                              ? "bg-brand-gold/15 text-brand-gold border border-brand-gold/40 font-semibold"
+                              ? "bg-brand-gold/15 text-[var(--gold-deep)] border border-brand-gold/40 font-semibold"
                               : "bg-brand-teal/10 text-brand-teal font-medium"
                           }`}
                         >
@@ -576,10 +576,7 @@ export default function AdminDashboard() {
             <div className="space-y-6 animate-fade-in">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
-                    Curated Archive
-                  </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                     Projects Management
                   </h1>
                 </div>
@@ -734,10 +731,7 @@ export default function AdminDashboard() {
           {activeTab === "services" && (
             <div className="space-y-6 animate-fade-in">
               <div className="pb-6 border-b border-brand-teal/15">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
-                  Disciplines Content
-                </span>
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
+                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                   Services Management
                 </h1>
                 <p className="text-xs text-brand-teal/70 mt-1 font-mono">
@@ -753,7 +747,7 @@ export default function AdminDashboard() {
                   >
                     <div>
                       <div className="flex items-center justify-between pb-3 border-b border-brand-teal/15 text-xs font-mono">
-                        <span className="text-brand-gold font-semibold">VERTICAL // {s.number}</span>
+                        <span className="text-[var(--gold-deep)] font-semibold">VERTICAL // {s.number}</span>
                         <Link
                           href={`/services/${s.slug}`}
                           target="_blank"
@@ -772,7 +766,7 @@ export default function AdminDashboard() {
                       </p>
 
                       <div className="mt-4 pt-3 border-t border-brand-teal/15 text-xs font-mono">
-                        <span className="text-brand-gold block mb-1 font-semibold">Visual Direction:</span>
+                        <span className="text-[var(--gold-deep)] block mb-1 font-semibold">Visual Direction:</span>
                         <p className="text-brand-teal/70 text-[11px] leading-relaxed">
                           {s.visualDirection.description}
                         </p>
@@ -786,7 +780,7 @@ export default function AdminDashboard() {
                       <button
                         type="button"
                         onClick={() => alert(`Service editor for ${s.title} ready for CMS backend.`)}
-                        className="text-brand-gold hover:underline font-semibold"
+                        className="text-[var(--gold-deep)] hover:underline font-semibold"
                       >
                         Edit Service Spec
                       </button>
@@ -802,10 +796,7 @@ export default function AdminDashboard() {
             <div className="space-y-6 animate-fade-in">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
-                    Endorsement Archive
-                  </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                     Testimonials Management
                   </h1>
                 </div>
@@ -846,7 +837,7 @@ export default function AdminDashboard() {
                   >
                     <div>
                       <div className="flex items-center justify-between pb-3 border-b border-brand-teal/15 text-xs font-mono text-brand-teal/70">
-                        <span className="text-brand-gold font-semibold">{t.serviceCategory}</span>
+                        <span className="text-[var(--gold-deep)] font-semibold">{t.serviceCategory}</span>
                         <span>{t.year}</span>
                       </div>
                       <p className="text-xs text-brand-teal/85 italic mt-3 leading-relaxed">
@@ -861,7 +852,7 @@ export default function AdminDashboard() {
                         </div>
                         <div className="text-xs font-mono">
                           <span className="text-brand-teal font-medium block">{t.author}</span>
-                          <span className="text-brand-teal/70 text-[10px]">{t.company}</span>
+                          <span className="text-brand-teal/70 text-[11px]">{t.company}</span>
                         </div>
                       </div>
 
@@ -887,10 +878,7 @@ export default function AdminDashboard() {
             <div className="space-y-6 animate-fade-in">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-teal/15">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
-                    Asset Repository
-                  </span>
-                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                     Media Library
                   </h1>
                 </div>
@@ -949,7 +937,7 @@ export default function AdminDashboard() {
                       <h4 className="text-brand-teal font-sans text-xs font-medium line-clamp-1">
                         {m.title}
                       </h4>
-                      <div className="flex justify-between text-[10px] text-brand-teal/70 border-t border-brand-teal/15 pt-2">
+                      <div className="flex justify-between text-[11px] text-brand-teal/70 border-t border-brand-teal/15 pt-2">
                         <span>{m.format} • {m.size}</span>
                         <span>{m.resolution}</span>
                       </div>
@@ -964,10 +952,7 @@ export default function AdminDashboard() {
           {activeTab === "enquiries" && (
             <div className="space-y-6 animate-fade-in">
               <div className="pb-6 border-b border-brand-teal/15">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
-                  Inbound Commissions
-                </span>
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
+                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                   Enquiries Inbox
                 </h1>
                 <p className="text-xs text-brand-teal/70 mt-1 font-mono">
@@ -1030,7 +1015,7 @@ export default function AdminDashboard() {
                         >
                           {enq.status}
                         </span>
-                        <span className="text-[10px] font-mono text-brand-teal/60">
+                        <span className="text-[11px] font-mono text-brand-teal/60">
                           {enq.date}
                         </span>
                       </div>
@@ -1044,7 +1029,7 @@ export default function AdminDashboard() {
                 <div className="p-4 sm:p-8 bg-brand-teal rounded-sm border border-brand-gold/40 text-white space-y-6 animate-fade-in shadow-xl">
                   <div className="flex items-center justify-between pb-4 border-b border-brand-teal-light/50">
                     <div>
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-brand-gold block font-semibold">
+                      <span className="text-[11px] font-mono uppercase tracking-widest text-brand-gold block font-semibold">
                         Detail Drawer // ID: {selectedEnquiry.id}
                       </span>
                       <h3 className="text-lg sm:text-xl font-display font-medium text-white mt-1 break-words">
@@ -1135,10 +1120,7 @@ export default function AdminDashboard() {
           {activeTab === "settings" && (
             <div className="space-y-6 animate-fade-in max-w-4xl">
               <div className="pb-6 border-b border-brand-teal/15">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold">
-                  System Configuration
-                </span>
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal mt-1">
+                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
                   Site Settings & Tokens
                 </h1>
                 <p className="text-xs text-brand-teal/70 mt-1 font-mono">
@@ -1213,24 +1195,24 @@ export default function AdminDashboard() {
 
                 {/* Brand Colors Definition */}
                 <div className="p-6 bg-white border border-brand-teal/15 rounded-sm space-y-4 shadow-sm">
-                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block font-semibold">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--gold-deep)] block font-semibold">
                     Brand Colour Tokens
                   </span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
                     <div className="p-3 bg-brand-black border border-brand-black rounded text-white shadow-sm">
-                      <span className="block text-white/70 text-[10px]">Midnight Navy</span>
+                      <span className="block text-white/70 text-[11px]">Midnight Navy</span>
                       <span className="text-white font-semibold">#0B1320</span>
                     </div>
                     <div className="p-3 bg-brand-teal border border-brand-teal rounded text-white shadow-sm">
-                      <span className="block text-brand-teal-light text-[10px]">Deep Blue / Teal</span>
+                      <span className="block text-brand-teal-light text-[11px]">Deep Blue / Teal</span>
                       <span className="text-white font-semibold">{settingsForm.brandTeal}</span>
                     </div>
                     <div className="p-3 bg-brand-gold text-white rounded font-medium shadow-sm">
-                      <span className="block text-white/80 text-[10px]">Warm Gold</span>
+                      <span className="block text-white/80 text-[11px]">Warm Gold</span>
                       <span className="font-semibold">{settingsForm.brandGold}</span>
                     </div>
                     <div className="p-3 bg-white text-brand-teal rounded font-medium border border-brand-teal/20 shadow-sm">
-                      <span className="block text-brand-teal/70 text-[10px]">Pure White</span>
+                      <span className="block text-brand-teal/70 text-[11px]">Pure White</span>
                       <span className="font-semibold">#FFFFFF</span>
                     </div>
                   </div>

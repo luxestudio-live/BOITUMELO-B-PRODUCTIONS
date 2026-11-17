@@ -85,14 +85,12 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       {/* 02: Full-Width Cinematic Video Player Feature with Viewfinder Overlay */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-3">
-          <div className="relative rounded-sm overflow-hidden border border-brand-gold/60 shadow-2xl">
-            <VideoPlayer
-              src={project.fullVideoUrl}
-              poster={project.heroPoster}
-              title={project.title}
-              aspectRatio="aspect-[16/9]"
-            />
-          </div>
+          <VideoPlayer
+            src={project.fullVideoUrl}
+            poster={project.heroPoster}
+            title={project.title}
+            aspectRatio="aspect-[16/9]"
+          />
           <div className="flex items-center justify-between text-xs font-mono text-brand-teal/70 px-1">
             <span>DCI 4K Exhibition Master</span>
             <span>Ambisonic 5.1 Surround Mastering</span>
@@ -104,7 +102,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-white border border-brand-teal/15 rounded-sm shadow-sm">
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-[var(--gold-deep)] font-semibold block">
               Client / Commissioner
             </span>
             <p className="text-sm font-medium text-brand-teal mt-1">
@@ -112,7 +110,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-[var(--gold-deep)] font-semibold block">
               Filming Location
             </span>
             <p className="text-sm font-medium text-brand-teal mt-1">
@@ -120,7 +118,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-[var(--gold-deep)] font-semibold block">
               Aspect Ratio & Glass
             </span>
             <p className="text-sm font-medium text-brand-teal mt-1">
@@ -128,7 +126,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <div>
-            <span className="text-xs uppercase font-mono tracking-wider text-brand-gold font-semibold block">
+            <span className="text-xs uppercase font-mono tracking-wider text-[var(--gold-deep)] font-semibold block">
               Camera System
             </span>
             <p className="text-sm font-medium text-brand-teal mt-1">
@@ -190,7 +188,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-brand-teal/15">
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold block">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[var(--gold-deep)] font-semibold block">
                   The Creative Challenge
                 </span>
                 <p className="text-sm leading-relaxed">
@@ -199,7 +197,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               </div>
 
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold font-semibold block">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[var(--gold-deep)] font-semibold block">
                   Cinematic Direction
                 </span>
                 <p className="text-sm leading-relaxed">
@@ -216,7 +214,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               <ul className="space-y-2.5">
                 {project.productionNotes.map((note, idx) => (
                   <li key={idx} className="flex items-start space-x-3 text-sm text-brand-teal/80">
-                    <span className="text-brand-gold font-mono text-xs mt-0.5">•</span>
+                    <span className="text-[var(--gold-deep)] font-mono text-xs mt-0.5 font-bold">•</span>
                     <span>{note}</span>
                   </li>
                 ))}

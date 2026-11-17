@@ -98,7 +98,7 @@ export default function ProjectCard({
 
           {/* Year Badge */}
           <div className="absolute top-4 left-4 z-10 flex items-center space-x-2">
-            <span className="px-2.5 py-1 bg-[#0B1320]/80 backdrop-blur-md text-[10px] font-mono text-[var(--gold)] border border-[rgba(255,255,255,0.2)] rounded-[2px]">
+            <span className="px-2.5 py-1 bg-[#0B1320]/80 backdrop-blur-md text-[11px] font-mono text-[var(--gold)] border border-[rgba(255,255,255,0.2)] rounded-[2px]">
               {project.year}
             </span>
           </div>

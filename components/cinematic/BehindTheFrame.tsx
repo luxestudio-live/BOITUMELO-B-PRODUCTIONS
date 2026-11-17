@@ -12,10 +12,7 @@ export default function BehindTheFrame() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 space-y-16">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[var(--line)]">
-          <div className="space-y-3">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-              Studio Background & Philosophy
-            </span>
+          <div>
             <h2 className="text-3xl sm:text-5xl font-display font-medium text-[var(--ink)] leading-tight">
               Why Trust Us.{" "}
               <span className="text-[var(--gold-deep)] block sm:inline font-normal">

@@ -81,9 +81,6 @@ export default function ServiceDetailView({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 bg-[var(--bg)] border border-[var(--line)] rounded-[2px] shadow-subtle">
-              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium block mb-2">
-                Visual Standards
-              </span>
               <h2 className="text-2xl font-display font-medium text-[var(--ink)]">
                 {service.visualDirection.title}
               </h2>
@@ -150,10 +147,7 @@ export default function ServiceDetailView({
       <section className="bg-[var(--bg-soft)] py-16 sm:py-24 border-y border-[var(--line)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="border-b border-[var(--line)] pb-6">
-            <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-              3-Step Framework
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] mt-2">
+            <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
               How does the process work?
             </h2>
           </div>
@@ -190,10 +184,7 @@ export default function ServiceDetailView({
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-6 border-b border-[var(--line)]">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-                Portfolio Preview
-              </span>
-              <h2 className="text-3xl font-display font-medium text-[var(--ink)] mt-2">
+              <h2 className="text-3xl font-display font-medium text-[var(--ink)]">
                 Related Work
               </h2>
             </div>
@@ -217,10 +208,7 @@ export default function ServiceDetailView({
       {/* 05: Questions & Clarity */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="border-b border-[var(--line)] pb-6">
-          <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold-deep)] font-medium">
-            Clarity & FAQs
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)] mt-2">
+          <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--ink)]">
             Questions about {service.title}
           </h2>
         </div>

@@ -125,7 +125,7 @@ export default function HeroShowreel() {
                 </span>
               </div>
             )}
-            <span className="uppercase tracking-[0.2em] text-[10px]">
+            <span className="uppercase tracking-[0.2em] text-[11px]">
               {isMuted ? "Audio: Muted" : "Audio: Active"}
             </span>
           </button>

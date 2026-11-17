@@ -26,9 +26,6 @@ export default function GlobalError({
       </div>
 
       <div className="space-y-3 max-w-lg">
-        <span className="text-xs font-mono uppercase tracking-[0.25em] text-brand-gold">
-          Playback Interrupted
-        </span>
         <h1 className="text-3xl sm:text-5xl font-display font-medium text-brand-white leading-tight">
           Visual Stream Paused.
         </h1>
