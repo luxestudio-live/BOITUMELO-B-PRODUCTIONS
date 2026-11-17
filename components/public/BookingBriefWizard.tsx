@@ -255,8 +255,8 @@ STUDIO        : Melbourne & Sydney • Australia
               onClick={handleCopySlate}
               className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded text-xs uppercase tracking-wider font-semibold transition-all ${
                 hasCopied
-                  ? "bg-brand-gold text-white"
-                  : "bg-brand-teal text-brand-gold hover:bg-brand-gold hover:text-white border border-brand-gold/40"
+                  ? "bg-brand-gold text-brand-black font-semibold"
+                  : "bg-brand-teal text-brand-gold hover:bg-brand-gold hover:text-brand-black border border-brand-gold/40"
               }`}
               aria-label="Copy production brief slate to clipboard"
             >
@@ -282,7 +282,7 @@ STUDIO        : Melbourne & Sydney • Australia
         <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/work"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+            className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-semibold bg-brand-gold text-brand-black px-6 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
           >
             <span>Return to Portfolio</span>
             <ArrowRight className="w-4 h-4" />
@@ -709,7 +709,7 @@ STUDIO        : Melbourne & Sydney • Australia
                             onClick={() => setFormData({ ...formData, selectedDate: date })}
                             className={`p-2.5 text-center text-xs font-mono rounded-sm border transition-colors ${
                               isSelected
-                                ? "bg-brand-gold text-white font-semibold border-brand-gold shadow-sm"
+                                ? "bg-brand-gold text-brand-black font-semibold border-brand-gold shadow-sm"
                                 : "bg-white border-brand-teal/20 text-brand-teal hover:border-brand-gold/50"
                             }`}
                           >
@@ -736,7 +736,7 @@ STUDIO        : Melbourne & Sydney • Australia
                             onClick={() => setFormData({ ...formData, selectedTimeSlot: slot })}
                             className={`p-2.5 text-center text-xs font-mono rounded-sm border transition-colors ${
                               isSelected
-                                ? "bg-brand-gold text-white font-semibold border-brand-gold shadow-sm"
+                                ? "bg-brand-gold text-brand-black font-semibold border-brand-gold shadow-sm"
                                 : "bg-white border-brand-teal/20 text-brand-teal hover:border-brand-gold/50"
                             }`}
                           >
@@ -775,7 +775,7 @@ STUDIO        : Melbourne & Sydney • Australia
             <button
               type="button"
               onClick={handleNext}
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-semibold bg-brand-gold text-brand-black px-7 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-md"
             >
               <span>Continue</span>
               <ArrowRight className="w-4 h-4" />
@@ -785,7 +785,7 @@ STUDIO        : Melbourne & Sydney • Australia
               type="button"
               disabled={isSubmitting}
               onClick={handleSubmit}
-              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-8 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl disabled:opacity-60"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.2em] font-semibold bg-brand-gold text-brand-black px-8 py-3.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-xl disabled:opacity-60"
             >
               {isSubmitting ? (
                 <>

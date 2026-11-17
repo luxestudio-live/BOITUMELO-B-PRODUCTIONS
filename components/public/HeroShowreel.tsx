@@ -88,7 +88,7 @@ export default function HeroShowreel() {
           <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6">
             <Link
               href="/work"
-              className="inline-flex items-center space-x-3 text-xs uppercase tracking-[0.2em] font-medium bg-brand-gold text-white px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl"
+              className="inline-flex items-center space-x-3 text-xs uppercase tracking-[0.2em] font-semibold bg-brand-gold text-brand-black px-7 py-4 rounded-sm hover:bg-brand-gold-light transition-all duration-300 shadow-xl"
             >
               <span>Explore Our Work</span>
               <ArrowUpRight className="w-4 h-4" />

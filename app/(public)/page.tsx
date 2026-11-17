@@ -17,7 +17,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <div className="relative w-full overflow-hidden bg-white text-[var(--ink)]">
+    <div className="relative w-full overflow-hidden text-[var(--ink)]">
       {/* 1. HERO BANNER: Professional videos. Clear process. */}
       <CinematicHero />
 

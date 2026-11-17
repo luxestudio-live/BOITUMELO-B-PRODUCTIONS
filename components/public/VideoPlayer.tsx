@@ -19,7 +19,7 @@ type FramingMode = "2.39" | "1.85" | "16:9";
 export default function VideoPlayer({
   src,
   poster,
-  aspectRatio = "aspect-video",
+  aspectRatio = "aspect-[16/9]",
   title = "Film Preview",
   autoPlay = false,
   loop = false,
@@ -34,13 +34,13 @@ export default function VideoPlayer({
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showControls, setShowControls] = useState(true);
-  const [framingMode, setFramingMode] = useState<FramingMode>("2.39");
+  const [framingMode, setFramingMode] = useState<FramingMode>("16:9");
   const [showCrosshairs, setShowCrosshairs] = useState(false);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Cycle through optical framing formats
   const cycleFraming = () => {
-    setFramingMode((prev) => (prev === "2.39" ? "1.85" : prev === "1.85" ? "16:9" : "2.39"));
+    setFramingMode((prev) => (prev === "16:9" ? "2.39" : prev === "2.39" ? "1.85" : "16:9"));
   };
 
   // Sync state with HTML video element

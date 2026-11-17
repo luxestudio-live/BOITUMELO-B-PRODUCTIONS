@@ -21,7 +21,7 @@ export default function FinalFrameCTA() {
             Ready to make your video?
           </h2>
 
-          <p className="max-w-xl mx-auto text-sm sm:text-base text-[var(--text-on-dark)] font-light leading-relaxed [text-wrap:pretty]">
+          <p className="max-w-xl mx-auto text-sm sm:text-base text-[var(--white-on-dark)]/90 font-light leading-relaxed [text-wrap:pretty]">
             Tell us what you need, discuss the project and build the right plan before filming begins.
           </p>
 
@@ -44,19 +44,19 @@ export default function FinalFrameCTA() {
           </div>
 
           {/* Direct channels sub-strip */}
-          <div className="pt-8 border-t border-[rgba(255,255,255,0.12)] flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-mono text-[var(--text-on-dark)]">
+          <div className="pt-8 border-t border-[rgba(255,255,255,0.12)] flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-mono text-[var(--white-on-dark)]/90">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex items-center space-x-2 hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+              className="flex items-center space-x-2 hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
             >
-              <Mail className="w-3.5 h-3.5 text-[var(--gold)]" />
+              <Mail className="w-3.5 h-3.5 text-[var(--gold-light)]" />
               <span>{siteConfig.email}</span>
             </a>
             <a
               href={`https://wa.me/${siteConfig.whatsapp}`}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center space-x-2 hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+              className="flex items-center space-x-2 hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
             >
               <MessageSquare className="w-3.5 h-3.5 text-[var(--gold)]" />
               <span>WhatsApp Direct</span>

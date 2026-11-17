@@ -142,7 +142,7 @@ export default function AboutPage() {
         <div className="bg-[var(--ink)] text-[var(--white-on-dark)] p-8 sm:p-14 lg:p-16 rounded-[2px] border border-[rgba(255,255,255,0.12)] shadow-subtle">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/5] relative rounded-[2px] overflow-hidden border border-[var(--gold)]/40 shadow-sm bg-[#0B1320]">
+              <div className="aspect-[4/5] relative rounded-[2px] overflow-hidden shadow-sm bg-[#0B1320]">
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=85"
                   alt="Boitumelo B. videographer portrait"

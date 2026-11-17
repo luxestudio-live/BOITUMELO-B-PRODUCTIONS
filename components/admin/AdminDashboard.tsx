@@ -181,7 +181,7 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8F9FA] text-brand-teal">
+    <div className="flex flex-col min-h-screen text-brand-teal">
       {/* Top Security & Demo Disclaimer Warning Bar */}
       <aside
         aria-label="Admin Security Notice"
@@ -353,7 +353,7 @@ export default function AdminDashboard() {
             <Link
               href="/"
               onClick={() => setIsMobileNavOpen(false)}
-              className="w-full min-h-[44px] flex items-center justify-center space-x-2 p-3 bg-brand-gold text-white rounded-sm text-xs font-mono uppercase tracking-wider font-semibold hover:bg-brand-gold-light transition-all shadow-md"
+              className="w-full min-h-[44px] flex items-center justify-center space-x-2 p-3 bg-brand-gold text-brand-black font-semibold rounded-sm text-xs font-mono uppercase tracking-wider hover:bg-brand-gold-light transition-all shadow-md"
             >
               <span>Exit to Public Website</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -452,7 +452,7 @@ export default function AdminDashboard() {
                       setEditingProject({});
                       setIsProjectModalOpen(true);
                     }}
-                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
+                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-semibold"
                   >
                     <Plus className="w-3.5 h-3.5" />
                     <span>Add Project</span>
@@ -585,7 +585,7 @@ export default function AdminDashboard() {
                     setEditingProject({});
                     setIsProjectModalOpen(true);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-semibold"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>New Project</span>
@@ -677,7 +677,7 @@ export default function AdminDashboard() {
                               aria-label={p.featured ? `Remove ${p.title} from featured projects` : `Mark ${p.title} as featured project`}
                               className={`text-xs uppercase font-mono tracking-wider px-2.5 py-1 rounded border transition-colors ${
                                 p.featured
-                                  ? "bg-brand-gold text-white border-brand-gold font-semibold shadow-sm"
+                                  ? "bg-brand-gold text-brand-black border-brand-gold font-semibold shadow-sm"
                                   : "bg-[#F8F9FA] border-brand-teal/20 text-brand-teal hover:border-brand-gold/50"
                               }`}
                             >
@@ -820,7 +820,7 @@ export default function AdminDashboard() {
                     };
                     setTestimonialsList([newTestimonial, ...testimonialsList]);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-semibold"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Testimonial</span>
@@ -898,7 +898,7 @@ export default function AdminDashboard() {
                     };
                     setMediaList([newItem, ...mediaList]);
                   }}
-                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-medium"
+                  className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-semibold"
                 >
                   <Upload className="w-3.5 h-3.5" />
                   <span>Upload Asset</span>
@@ -1005,7 +1005,7 @@ export default function AdminDashboard() {
                         <span
                           className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
-                              ? "bg-brand-gold text-white font-semibold shadow-sm"
+                              ? "bg-brand-gold text-brand-black font-semibold shadow-sm"
                               : enq.status === "In Review"
                               ? "bg-brand-teal/10 text-brand-teal border border-brand-teal/30 font-medium"
                               : "bg-[#F8F9FA] text-brand-teal/70"
@@ -1088,7 +1088,7 @@ export default function AdminDashboard() {
                           status: "Consultation Scheduled",
                         });
                       }}
-                      className="text-xs font-mono uppercase tracking-wider bg-brand-gold text-white px-4 py-2 rounded-sm font-semibold hover:bg-brand-gold-light shadow-sm"
+                      className="text-xs font-mono uppercase tracking-wider bg-brand-gold text-brand-black px-4 py-2 rounded-sm font-semibold hover:bg-brand-gold-light shadow-sm"
                     >
                       Schedule Consultation
                     </button>
@@ -1205,8 +1205,8 @@ export default function AdminDashboard() {
                       <span className="block text-brand-teal-light text-[11px]">Deep Blue / Teal</span>
                       <span className="text-white font-semibold">{settingsForm.brandTeal}</span>
                     </div>
-                    <div className="p-3 bg-brand-gold text-white rounded font-medium shadow-sm">
-                      <span className="block text-white/80 text-[11px]">Warm Gold</span>
+                    <div className="p-3 bg-brand-gold text-brand-black rounded font-medium shadow-sm">
+                      <span className="block text-brand-black/80 text-[11px] font-mono">Warm Gold</span>
                       <span className="font-semibold">{settingsForm.brandGold}</span>
                     </div>
                     <div className="p-3 bg-white text-brand-teal rounded font-medium border border-brand-teal/20 shadow-sm">
@@ -1231,7 +1231,7 @@ export default function AdminDashboard() {
                 <div className="flex items-center space-x-4">
                   <button
                     type="submit"
-                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-white px-6 py-3 rounded-sm font-semibold hover:bg-brand-gold-light transition-all shadow-md"
+                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-6 py-3 rounded-sm font-semibold hover:bg-brand-gold-light transition-all shadow-md"
                   >
                     <Save className="w-4 h-4" />
                     <span>Save Site Settings</span>
@@ -1413,7 +1413,7 @@ export default function AdminDashboard() {
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-brand-gold text-white font-semibold rounded hover:bg-brand-gold-light shadow-md"
+                  className="px-6 py-2 bg-brand-gold text-brand-black font-semibold rounded hover:bg-brand-gold-light shadow-md"
                 >
                   Save Project Record
                 </button>

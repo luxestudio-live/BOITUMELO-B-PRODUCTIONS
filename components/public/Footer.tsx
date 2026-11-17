@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase font-mono tracking-[0.15em] text-[var(--gold)] font-medium">
+            <h4 className="text-xs uppercase font-mono tracking-wider text-[var(--gold-light)] font-medium">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -83,7 +83,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--text-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                    className="text-[var(--text-on-dark)] hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
                   >
                     {item.label}
                   </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/book"
-                  className="text-[var(--gold)] hover:text-[var(--gold-light)] transition-colors duration-250 ease-out flex items-center space-x-1 font-medium"
+                  className="text-[var(--gold-light)] hover:text-white transition-colors duration-250 ease-out flex items-center space-x-1 font-medium"
                 >
                   <span>Project Enquiry</span>
                   <ArrowUpRight className="w-3 h-3" />
@@ -103,7 +103,7 @@ export default function Footer() {
 
           {/* Services Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase font-mono tracking-[0.15em] text-[var(--gold)] font-medium">
+            <h4 className="text-xs uppercase font-mono tracking-wider text-[var(--gold-light)] font-medium">
               Capabilities
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -111,7 +111,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-[var(--text-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out block"
+                    className="text-[var(--text-on-dark)] hover:text-[var(--gold-light)] transition-colors duration-250 ease-out block"
                   >
                     {s.label}
                   </Link>
@@ -122,22 +122,22 @@ export default function Footer() {
 
           {/* Direct Contact & Social */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase font-mono tracking-[0.15em] text-[var(--gold)] font-medium">
+            <h4 className="text-xs uppercase font-mono tracking-wider text-[var(--gold-light)] font-medium">
               Connect
             </h4>
             <div className="space-y-2 text-sm text-[var(--text-on-dark)]">
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="flex items-center space-x-2 hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                className="flex items-center space-x-2 hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
               >
-                <Mail className="w-3.5 h-3.5 text-[var(--gold)]" />
+                <Mail className="w-3.5 h-3.5 text-[var(--gold-light)]" />
                 <span className="font-mono text-xs truncate">{siteConfig.email}</span>
               </a>
               <a
                 href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
-                className="flex items-center space-x-2 hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                className="flex items-center space-x-2 hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
               >
-                <Phone className="w-3.5 h-3.5 text-[var(--gold)]" />
+                <Phone className="w-3.5 h-3.5 text-[var(--gold-light)]" />
                 <span className="font-mono text-xs">{siteConfig.phone}</span>
               </a>
             </div>

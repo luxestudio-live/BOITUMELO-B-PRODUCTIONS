@@ -89,7 +89,7 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
             <button
               type="button"
               onClick={() => setActiveFilter("all")}
-              className="min-h-[44px] px-6 py-2.5 text-xs uppercase font-mono tracking-widest text-white bg-brand-gold hover:bg-brand-gold-light rounded-sm transition-colors inline-flex items-center"
+              className="min-h-[44px] px-6 py-2.5 text-xs uppercase font-mono tracking-widest text-brand-black bg-brand-gold hover:bg-brand-gold-light rounded-sm transition-colors inline-flex items-center font-semibold"
             >
               Reset Filters
             </button>

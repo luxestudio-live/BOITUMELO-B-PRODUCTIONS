@@ -45,9 +45,9 @@ export default function ContactPage() {
               <Calendar className="w-4 h-4 text-[var(--gold)]" />
               <span>What happens when I contact you?</span>
             </div>
-            <h3 className="font-display font-medium text-lg text-[var(--ink)]">
+            <h2 className="font-display font-medium text-lg text-[var(--ink)]">
               The first step is a booking.
-            </h3>
+            </h2>
             <p className="text-sm text-[var(--ink-soft)] leading-relaxed font-light">
               You book a date and time to discuss the project. The consultation covers
               expectations, payments, planning, filming, editing and revisions.
@@ -59,9 +59,9 @@ export default function ContactPage() {
               <FileText className="w-4 h-4 text-[var(--gold)]" />
               <span>What should I bring?</span>
             </div>
-            <h3 className="font-display font-medium text-lg text-[var(--ink)]">
+            <h2 className="font-display font-medium text-lg text-[var(--ink)]">
               Whatever information you have.
-            </h3>
+            </h2>
             <p className="text-sm text-[var(--ink-soft)] leading-relaxed font-light">
               A project brief or pre-production details help establish what needs to
               happen before filming starts. If you are not sure what you need, explain
@@ -74,9 +74,9 @@ export default function ContactPage() {
               <MapPin className="w-4 h-4 text-[var(--gold)]" />
               <span>Where do you work?</span>
             </div>
-            <h3 className="font-display font-medium text-lg text-[var(--ink)]">
+            <h2 className="font-display font-medium text-lg text-[var(--ink)]">
               Northern Adelaide base.
-            </h3>
+            </h2>
             <p className="text-sm text-[var(--ink-soft)] leading-relaxed font-light">
               The business is based in Northern Adelaide, South Australia. Shorter
               travel makes it easier to manage jobs efficiently as a one-person crew.
@@ -106,12 +106,9 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-8">
             {/* Ready to talk? Consultation Card */}
             <div className="p-8 bg-[var(--ink)] text-[var(--white-on-dark)] rounded-[2px] border border-[rgba(255,255,255,0.12)] space-y-4 shadow-subtle">
-              <span className="text-xs font-mono uppercase tracking-[0.15em] text-[var(--gold)] font-medium block">
-                Direct Booking
-              </span>
-              <h3 className="text-2xl font-display font-medium text-[var(--white-on-dark)]">
+              <h2 className="text-2xl font-display font-medium text-[var(--white-on-dark)]">
                 Ready to talk?
-              </h3>
+              </h2>
               <p className="text-sm text-[var(--text-on-dark)] leading-relaxed font-light">
                 Tell us what you need and book a project consultation to establish
                 expectations and planning before filming begins.

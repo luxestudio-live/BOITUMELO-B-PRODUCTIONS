@@ -83,7 +83,7 @@ export default function ViewfinderHUD({
     <div
       ref={containerRef}
       aria-hidden="true"
-      className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-[11px] tracking-[0.1em] text-[var(--white-on-dark)] select-none ${className}`}
+      className={`absolute inset-0 pointer-events-none z-20 flex flex-col justify-between p-4 sm:p-8 font-mono text-xs tracking-wider text-[var(--white-on-dark)] select-none ${className}`}
     >
       {/* 4 Corner Frameline Brackets */}
       <svg className="absolute top-4 left-4 sm:top-8 sm:left-8 w-6 h-6 text-[var(--gold)]/60 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 23V1h22" /></svg>
@@ -96,7 +96,7 @@ export default function ViewfinderHUD({
         <div className={`${paddedForNav ? "pt-20 sm:pt-24" : "pt-0 sm:pt-1"} flex items-center justify-between tracking-widest uppercase`}>
           <div className="flex items-center space-x-3">
             <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
-              <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[var(--gold)]" />
               <span>REC</span>
             </span>
             <span
@@ -131,17 +131,17 @@ export default function ViewfinderHUD({
       {showBottomBar && (
         <div className="mt-auto flex items-center justify-between tracking-widest uppercase">
           <div className="flex items-center space-x-2">
-            <span className="px-2.5 py-1 bg-[#0B1320]/85 border border-[var(--gold)]/40 text-[var(--gold)] rounded-[2px] text-[11px]">
+            <span className="px-2.5 py-1 bg-[#0B1320]/85 border border-[var(--gold)]/40 text-[var(--gold-light)] rounded-[2px] text-xs font-mono">
               {aspectRatioLabel}
             </span>
-            <span className="hidden md:inline text-[var(--text-on-dark)] bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px] text-[11px]">
+            <span className="hidden md:inline text-[var(--white-on-dark)]/90 bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px] text-xs font-mono">
               {lensLabel}
             </span>
           </div>
 
-          <div className="flex items-center space-x-3 text-[11px] text-[var(--text-on-dark)] bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
+          <div className="flex items-center space-x-3 text-xs font-mono text-[var(--white-on-dark)]/90 bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
             <span className="hidden sm:inline">BAT 14.8V</span>
-            <span className="text-[var(--gold)] font-medium">CALIBRATED</span>
+            <span className="text-[var(--gold-light)] font-medium">CALIBRATED</span>
           </div>
         </div>
       )}

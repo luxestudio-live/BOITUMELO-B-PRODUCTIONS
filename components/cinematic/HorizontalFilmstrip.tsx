@@ -92,7 +92,7 @@ export default function HorizontalFilmstrip() {
             Selected Works <span className="text-[var(--gold-deep)] font-normal">/ 35mm & Large Format</span>
           </h2>
         </div>
-        <span className="md:hidden text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold-deep)] bg-[var(--bg-soft)] px-2.5 py-1 rounded-[2px] border border-[var(--line)] mr-1 sm:mr-4">
+        <span className="md:hidden text-xs font-mono uppercase tracking-wider text-[var(--gold-deep)] bg-[var(--bg-soft)] px-2.5 py-1 rounded-[2px] border border-[var(--line)] mr-1 sm:mr-4 font-medium">
           Archive 01–05
         </span>
       </div>
@@ -166,7 +166,7 @@ export default function HorizontalFilmstrip() {
 
                 {/* Editorial Metadata Below Frame on White Background */}
                 <div className="mt-3.5 space-y-1.5 px-0.5">
-                  <div className="flex items-center justify-between text-[11px] font-mono tracking-[0.1em]">
+                  <div className="flex items-center justify-between text-xs font-mono tracking-wider">
                     <span className="text-[var(--gold-deep)] uppercase font-medium truncate">
                       REEL 0{idx + 1} <span className="hidden sm:inline">// {p.categoryLabel}</span>
                     </span>
@@ -192,11 +192,11 @@ export default function HorizontalFilmstrip() {
                     </Link>
                   </div>
 
-                  <p className="text-[12px] text-[var(--ink-soft)] font-light line-clamp-1">
+                  <p className="text-xs sm:text-sm text-[var(--ink-soft)] font-light line-clamp-1">
                     {p.subtitle}
                   </p>
 
-                  <div className="pt-0.5 flex items-center justify-between text-[11px] font-mono text-[var(--ink-soft)]">
+                  <div className="pt-0.5 flex items-center justify-between text-xs font-mono text-[var(--ink-soft)]">
                     <span className="truncate mr-2">{p.location}</span>
                     <span className="shrink-0">{p.cameraFormat}</span>
                   </div>
@@ -209,7 +209,7 @@ export default function HorizontalFilmstrip() {
 
       {/* Mobile Swipe Cue */}
       <div className="md:hidden mt-5 flex items-center justify-center">
-        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-[2px] bg-[var(--bg-soft)] text-[var(--gold-deep)] border border-[var(--line)] text-[11px] font-mono uppercase tracking-[0.1em] shadow-subtle">
+        <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-[2px] bg-[var(--bg-soft)] text-[var(--gold-deep)] border border-[var(--line)] text-xs font-mono uppercase tracking-wider shadow-subtle">
           <span>◄ Swipe Reel to Pan 01–06 ►</span>
         </div>
       </div>

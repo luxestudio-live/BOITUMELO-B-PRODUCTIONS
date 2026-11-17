@@ -77,8 +77,8 @@ export default function CinematicHero() {
         {
           scale: 0.86,
           borderRadius: "2px",
-          borderColor: "#CB8D44",
-          boxShadow: "0 25px 70px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(203, 141, 68, 0.15)",
+          borderColor: "#B08D57",
+          boxShadow: "0 25px 70px -15px rgba(7, 13, 22, 0.9), 0 0 40px rgba(176, 141, 87, 0.2)",
           ease: "power2.inOut",
         },
         0
@@ -131,12 +131,12 @@ export default function CinematicHero() {
     <section
       ref={containerRef}
       aria-label="Flagship Cinematic Showreel"
-      className="relative w-full h-[100svh] min-h-[600px] sm:min-h-[680px] overflow-hidden bg-white flex items-center justify-center"
+      className="relative w-full h-[100svh] min-h-[600px] sm:min-h-[680px] overflow-hidden bg-[#0B1320] p-3 sm:p-4 flex items-center justify-center"
     >
       {/* Contractable Hero Film Frame */}
       <div
         ref={frameRef}
-        className="relative w-full h-full overflow-hidden border border-transparent transition-[border-color,border-radius] duration-300"
+        className="relative w-full h-full overflow-hidden rounded-[2px] border border-transparent transition-[border-color,border-radius] duration-300"
       >
         {/* Background Video Showreel */}
         <video
@@ -169,15 +169,15 @@ export default function CinematicHero() {
           <div className="flex items-start justify-between w-full pointer-events-auto">
             {/* Top Left: REC + Timecode on Row 1, Live Showreel indented on Row 2 */}
             <div className="flex flex-col items-start space-y-2">
-              <div className="flex items-center space-x-2 sm:space-x-3 text-[11px] font-mono tracking-[0.1em] uppercase">
-                <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-[0.1em] bg-[#0B1320]/80 px-2.5 py-1 rounded-[2px]">
-                  <span className="w-2 h-2 rounded-full bg-[var(--gold)] animate-pulse" />
+              <div className="flex items-center space-x-2 sm:space-x-3 text-xs font-mono tracking-wider uppercase">
+                <span className="flex items-center space-x-1.5 text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/80 px-2.5 py-1 rounded-[2px]">
+                  <span className="w-2 h-2 rounded-full bg-[var(--gold)]" />
                   <span>REC</span>
                 </span>
                 <span
                   ref={timecodeRef}
                   suppressHydrationWarning
-                  className="text-[var(--white-on-dark)] font-medium tracking-[0.1em] bg-[#0B1320]/80 px-2.5 py-1 rounded-[2px]"
+                  className="text-[var(--white-on-dark)] font-medium tracking-wider bg-[#0B1320]/80 px-2.5 py-1 rounded-[2px]"
                 >
                   00:14:28:01
                 </span>
@@ -185,8 +185,8 @@ export default function CinematicHero() {
 
               {/* Row 2: Live Showreel Badge indented under timecode on desktop */}
               <div className="sm:ml-16 inline-flex items-center space-x-2 px-3 py-1 bg-[#0B1320]/80 backdrop-blur-md border border-[var(--gold)]/40 rounded-[2px]">
-                <Clapperboard className="w-3.5 h-3.5 text-[var(--gold)] shrink-0" />
-                <span className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] font-medium whitespace-nowrap">
+                <Clapperboard className="w-3.5 h-3.5 text-[var(--gold-light)] shrink-0" />
+                <span className="text-xs font-mono uppercase tracking-wider text-[var(--gold-light)] font-medium whitespace-nowrap">
                   Northern Adelaide • Videography
                 </span>
               </div>
@@ -195,11 +195,11 @@ export default function CinematicHero() {
             {/* Top Right: Telemetry on Row 1, Audio toggle on Row 2 */}
             <div className="flex flex-col items-end space-y-2">
               {/* Row 1: Telemetry (hidden on ultra-small mobile to prevent collision) */}
-              <div className="hidden sm:flex items-center space-x-4 md:space-x-6 text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--white-on-dark)] bg-[#0B1320]/80 px-3 py-1 rounded-[2px]">
+              <div className="hidden sm:flex items-center space-x-4 md:space-x-6 text-xs font-mono uppercase tracking-wider text-[var(--white-on-dark)] bg-[#0B1320]/80 px-3 py-1 rounded-[2px]">
                 <span>24.000 FPS</span>
-                <span className="text-[var(--gold)]">•</span>
+                <span className="text-[var(--gold-light)]">•</span>
                 <span>ISO 800</span>
-                <span className="text-[var(--gold)]">•</span>
+                <span className="text-[var(--gold-light)]">•</span>
                 <span>SHUTTER 180.0°</span>
               </div>
 
@@ -207,7 +207,7 @@ export default function CinematicHero() {
               <button
                 type="button"
                 onClick={toggleSound}
-                className="min-h-[36px] sm:min-h-[32px] inline-flex items-center space-x-2 text-[11px] uppercase font-mono tracking-[0.1em] text-[var(--white-on-dark)] hover:text-[var(--gold)] px-3 py-1 rounded-[2px] border border-white/20 hover:border-[var(--gold)] transition-colors duration-250 ease-out bg-[#0B1320]/80 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] group shrink-0"
+                className="min-h-[36px] sm:min-h-[32px] inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider text-[var(--white-on-dark)] hover:text-[var(--gold-light)] px-3 py-1 rounded-[2px] border border-white/20 hover:border-[var(--gold)] transition-colors duration-250 ease-out bg-[#0B1320]/80 backdrop-blur-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] group shrink-0"
                 aria-label={isMuted ? "Unmute showreel sound" : "Mute showreel sound"}
               >
                 {isMuted ? (
@@ -234,7 +234,7 @@ export default function CinematicHero() {
               <span className="text-[var(--gold-light)] font-normal">Clear process.</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-[var(--text-on-dark)] font-light max-w-2xl leading-relaxed [text-wrap:pretty]">
+            <p className="text-base sm:text-lg md:text-xl text-[var(--white-on-dark)]/90 font-light max-w-2xl leading-relaxed [text-wrap:pretty]">
               Get professional video content without having to handle the filming and editing yourself.
             </p>
 
@@ -267,10 +267,10 @@ export default function CinematicHero() {
         aria-hidden="true"
         className="absolute inset-x-0 bottom-6 z-10 pointer-events-none flex items-center justify-between px-4 sm:px-12 opacity-0"
       >
-        <div className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] bg-[#0B1320]/90 px-3 py-1 rounded-[2px] border border-[var(--gold)]/30 shadow-subtle">
+        <div className="text-xs font-mono uppercase tracking-wider text-[var(--gold-light)] bg-[#0B1320]/90 px-3 py-1 rounded-[2px] border border-[var(--gold)]/30 shadow-subtle">
           ◄ Reel 01: The Last Echo
         </div>
-        <div className="text-[11px] font-mono uppercase tracking-[0.1em] text-[var(--gold)] bg-[#0B1320]/90 px-3 py-1 rounded-[2px] border border-[var(--gold)]/30 shadow-subtle">
+        <div className="text-xs font-mono uppercase tracking-wider text-[var(--gold-light)] bg-[#0B1320]/90 px-3 py-1 rounded-[2px] border border-[var(--gold)]/30 shadow-subtle">
           Reel 02: Neon Solitude ►
         </div>
       </div>

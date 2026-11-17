@@ -87,7 +87,7 @@ export default function InteractiveServices() {
                   {/* Expandable Info for active state */}
                   {isSelected && (
                     <div className="mt-4 pt-4 border-t border-[rgba(255,255,255,0.12)] space-y-3 animate-fade-in">
-                      <p className="text-xs sm:text-sm text-[var(--text-on-dark)] leading-relaxed font-light">
+                      <p className="text-sm text-[var(--white-on-dark)]/90 leading-relaxed font-light">
                         {service.tagline}
                       </p>
 
@@ -95,7 +95,7 @@ export default function InteractiveServices() {
                         {service.visualDirection.aestheticTokens.slice(0, 3).map((token) => (
                           <span
                             key={token}
-                            className="text-[11px] font-mono uppercase tracking-[0.1em] px-2.5 py-1 bg-[#0B1320]/40 text-[var(--gold-light)] rounded-[2px] border border-[var(--gold)]/30"
+                            className="text-xs font-mono uppercase tracking-wider px-2.5 py-1 bg-[#0B1320]/40 text-[var(--gold-light)] rounded-[2px] border border-[var(--gold)]/30"
                           >
                             {token}
                           </span>
@@ -105,7 +105,7 @@ export default function InteractiveServices() {
                       <div className="pt-2">
                         <Link
                           href={`/services/${service.slug}`}
-                          className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.12em] text-[var(--gold)] hover:text-[var(--gold-light)] py-1 font-medium transition-colors duration-250 ease-out"
+                          className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider text-[var(--gold-light)] hover:text-white py-1 font-medium transition-colors duration-250 ease-out"
                         >
                           <span>Explore Full Specification</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -122,7 +122,7 @@ export default function InteractiveServices() {
           <div className="lg:col-span-6">
             <div
               key={activeService.slug}
-              className="relative aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] animate-fade-in"
+              className="relative aspect-[16/9] rounded-[2px] overflow-hidden border border-[var(--gold)]/60 shadow-[0_10px_30px_rgba(11,19,32,0.07)] animate-fade-in"
             >
               {/* Dynamic Image / Footage */}
               <Image
@@ -150,7 +150,7 @@ export default function InteractiveServices() {
                 </span>
                 <Link
                   href={`/services/${activeService.slug}`}
-                  className="bg-[var(--gold)] text-[var(--ink)] font-medium px-3.5 py-1.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out uppercase tracking-[0.12em] text-[11px] shadow-sm"
+                  className="bg-[var(--gold)] text-[var(--ink)] font-semibold px-3.5 py-1.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out uppercase tracking-wider text-xs shadow-sm"
                 >
                   View Specs
                 </Link>

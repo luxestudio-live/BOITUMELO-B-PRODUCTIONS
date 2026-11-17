@@ -87,8 +87,8 @@ export default function ProjectTakeover() {
       className="relative bg-[var(--bg-soft)] overflow-hidden py-16 sm:py-24 flex flex-col items-center border-b border-[var(--line)]"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
-        {/* White Card with Gold Hairline Border */}
-        <div className="bg-[var(--bg)] border border-[var(--gold)]/40 rounded-[2px] p-4 sm:p-8 lg:p-10 shadow-[0_10px_30px_rgba(11,19,32,0.07)] space-y-6 sm:space-y-8">
+        {/* Featured Production Feature Frame */}
+        <div className="space-y-6 sm:space-y-8">
           {/* Card Header */}
           <div className="flex items-center justify-between border-b border-[var(--line)] pb-4">
             <div className="flex items-center space-x-3">
@@ -97,7 +97,7 @@ export default function ProjectTakeover() {
                 Featured Production
               </h2>
             </div>
-            <span className="text-xs font-mono text-[var(--ink-soft)] tracking-[0.1em] hidden sm:inline">
+            <span className="text-xs font-mono text-[var(--ink-soft)] hidden sm:inline">
               {project.location} • {project.year}
             </span>
           </div>
@@ -105,7 +105,7 @@ export default function ProjectTakeover() {
           {/* Expanding Takeover Media Frame */}
           <div
             ref={mediaContainerRef}
-            className="relative w-full aspect-[16/9] min-h-[380px] sm:min-h-[480px] max-h-[85vh] overflow-hidden rounded-[2px] border border-[#0B1320]/20 shadow-md bg-[#0B1320]"
+            className="relative w-full aspect-[16/9] overflow-hidden rounded-[2px] border border-[#0B1320]/20 shadow-md"
           >
             {/* Poster Image */}
             <Image
@@ -132,8 +132,8 @@ export default function ProjectTakeover() {
               onEnded={() => setIsPlaying(false)}
             />
 
-            {/* Cinematic Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-[#0B1320]/40 to-transparent pointer-events-none" />
+            {/* Subtle Vignette */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/60 via-transparent to-transparent pointer-events-none" />
 
             {/* Camera HUD Overlaid on Takeover */}
             <ViewfinderHUD
@@ -154,7 +154,7 @@ export default function ProjectTakeover() {
               </button>
             )}
 
-            {/* Bottom Left Control Strip when Playing */}
+            {/* Bottom Control Strip when Playing */}
             {isPlaying && (
               <div className="absolute bottom-6 right-6 z-30 flex items-center space-x-3">
                 <button
@@ -168,48 +168,46 @@ export default function ProjectTakeover() {
                 <button
                   type="button"
                   onClick={toggleVideoPlayback}
-                  className="text-[12px] uppercase font-mono tracking-[0.12em] px-3.5 py-2.5 rounded-[2px] bg-[#0B1320]/85 backdrop-blur-md border border-[var(--gold)]/40 text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                  className="text-xs uppercase font-mono tracking-wider px-3.5 py-2.5 rounded-[2px] bg-[#0B1320]/85 backdrop-blur-md border border-[var(--gold)]/40 text-[var(--white-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out font-medium"
                 >
                   Pause
                 </button>
               </div>
             )}
+          </div>
 
-            {/* Lower Third Narrative inside film overlay */}
-            <div
-              ref={textContentRef}
-              className="absolute inset-x-0 bottom-0 z-20 p-4 sm:p-8 lg:p-10 max-w-4xl space-y-2 pointer-events-none"
-            >
+          {/* Production Narrative & Metadata Row */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pt-2">
+            <div className="space-y-3 max-w-3xl">
               {project.awardNote && (
-                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[#0B1320]/85 backdrop-blur-md border border-[var(--gold)]/50 rounded-[2px] text-[11px] font-mono text-[var(--gold)] pointer-events-auto">
-                  <Award className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center space-x-2 px-3 py-1 bg-[var(--bg)] border border-[var(--gold)]/40 rounded-[2px] text-xs font-mono text-[var(--gold-deep)] font-medium shadow-subtle">
+                  <Award className="w-3.5 h-3.5 text-[var(--gold-deep)]" />
                   <span>{project.awardNote}</span>
                 </div>
               )}
 
-              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-display font-medium text-[var(--white-on-dark)] tracking-wide">
+              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-display font-medium text-[var(--ink)] tracking-wide">
                 {project.title}
               </h3>
 
-              <p className="text-xs sm:text-sm text-[var(--text-on-dark)] font-serif italic max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base text-[var(--ink-soft)] font-serif italic max-w-2xl leading-relaxed">
                 &ldquo;{project.logline}&rdquo;
               </p>
             </div>
-          </div>
 
-          {/* Action Row Under Media Box */}
-          <div className="pt-2 flex flex-wrap items-center justify-between gap-4">
-            <Link
-              href={`/work/${project.slug}`}
-              className="inline-flex items-center space-x-2 text-[12px] uppercase font-mono tracking-[0.12em] font-medium bg-[var(--gold)] text-[var(--ink)] px-7 py-3 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-[0_10px_30px_rgba(11,19,32,0.07)]"
-            >
-              <span>View Film Case Study</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-4 flex-shrink-0">
+              <Link
+                href={`/work/${project.slug}`}
+                className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider font-semibold bg-[var(--gold)] text-[var(--ink)] px-7 py-3.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out shadow-sm"
+              >
+                <span>View Film Case Study</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
 
-            <span className="text-xs font-mono text-[var(--ink-soft)] tracking-[0.1em] hidden sm:inline">
-              Client: {project.client} • Format: {project.cameraFormat}
-            </span>
+              <span className="text-xs font-mono text-[var(--ink-soft)]">
+                Client: {project.client} • Format: {project.cameraFormat}
+              </span>
+            </div>
           </div>
         </div>
       </div>

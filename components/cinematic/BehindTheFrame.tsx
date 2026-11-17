@@ -33,7 +33,7 @@ export default function BehindTheFrame() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Layered Image Frame */}
           <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[4/5] rounded-[2px] overflow-hidden border border-[#0B1320]/15 shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320]">
+            <div className="relative aspect-[16/9] rounded-[2px] overflow-hidden shadow-[0_10px_30px_rgba(11,19,32,0.07)]">
               <Image
                 src={getAssetPath("/images/posters/hero-showreel.png")}
                 alt="Filming and camera setup on location"
@@ -41,19 +41,19 @@ export default function BehindTheFrame() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-transparent to-transparent opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/95 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
-                <span className="text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold)] block">
+                <span className="text-xs font-mono uppercase tracking-wider text-[var(--gold-light)] block font-medium">
                   Studio Craft • Northern Adelaide
                 </span>
-                <p className="text-xs text-[var(--text-on-dark)] mt-1 font-light [text-wrap:pretty]">
+                <p className="text-sm text-[var(--white-on-dark)]/90 mt-1 font-light [text-wrap:pretty]">
                   Pre-production, filming and editing handled as a dedicated solo operator.
                 </p>
               </div>
             </div>
 
             {/* Overlapping Floating Secondary Frame */}
-            <div className="hidden sm:block absolute -bottom-10 -right-8 w-60 aspect-[16/9] rounded-[2px] overflow-hidden border-2 border-[var(--gold)] shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] hover:scale-[1.03] transition-transform duration-250 ease-out">
+            <div className="hidden sm:block absolute -bottom-6 -right-6 w-52 sm:w-60 aspect-[16/9] rounded-[2px] overflow-hidden border-2 border-[var(--gold)] shadow-[0_10px_30px_rgba(11,19,32,0.07)] bg-[#0B1320] hover:scale-[1.03] transition-transform duration-250 ease-out">
               <Image
                 src={getAssetPath("/images/posters/andrews-music-video.png")}
                 alt="Studio editing and sound design monitor"

@@ -74,7 +74,7 @@ export default function CinematicTestimonials() {
           className="bg-[var(--bg)] border border-[var(--line)] rounded-[2px] p-6 sm:p-12 shadow-[0_10px_30px_rgba(11,19,32,0.07)] space-y-8 animate-fade-in"
         >
           <div className="flex items-center justify-between">
-            <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-[var(--bg-soft)] rounded-[2px] text-[11px] sm:text-xs font-mono uppercase tracking-[0.12em] text-[var(--gold-deep)] font-medium border border-[var(--line)] max-w-full">
+            <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-[var(--bg-soft)] rounded-[2px] text-xs font-mono uppercase tracking-wider text-[var(--gold-deep)] font-medium border border-[var(--line)] max-w-full">
               <span className="truncate">Project: {current.projectTitle} // {current.serviceCategory}</span>
             </div>
             <Quote className="w-6 h-6 text-[var(--gold)] shrink-0 hidden sm:block" />

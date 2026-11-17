@@ -53,11 +53,11 @@ export default function ProjectCard({
         aria-label={`View film project: ${project.title}`}
       >
         {/* Physical 35mm Perforation Header Strip */}
-        <div className="flex items-center justify-between px-3.5 py-1.5 bg-[var(--ink)] text-[11px] font-mono text-[var(--white-on-dark)] border-b border-[rgba(255,255,255,0.12)]">
-          <span className="text-[var(--gold)] font-medium uppercase tracking-[0.12em]">
+        <div className="flex items-center justify-between px-3.5 py-1.5 bg-[var(--ink)] text-xs font-mono text-[var(--white-on-dark)] border-b border-[rgba(255,255,255,0.12)]">
+          <span className="text-[var(--gold-light)] font-medium uppercase tracking-wider">
             {project.categoryLabel}
           </span>
-          <span className="text-[var(--text-on-dark)]">{project.aspectRatio}</span>
+          <span className="text-[var(--white-on-dark)]/90">{project.aspectRatio}</span>
         </div>
 
         <div className={`relative w-full ${aspectClass} overflow-hidden bg-[#0B1320]`}>
@@ -98,7 +98,7 @@ export default function ProjectCard({
 
           {/* Year Badge */}
           <div className="absolute top-4 left-4 z-10 flex items-center space-x-2">
-            <span className="px-2.5 py-1 bg-[#0B1320]/80 backdrop-blur-md text-[11px] font-mono text-[var(--gold)] border border-[rgba(255,255,255,0.2)] rounded-[2px]">
+            <span className="px-2.5 py-1 bg-[#0B1320]/80 backdrop-blur-md text-xs font-mono text-[var(--gold-light)] border border-[rgba(255,255,255,0.2)] rounded-[2px] font-medium">
               {project.year}
             </span>
           </div>

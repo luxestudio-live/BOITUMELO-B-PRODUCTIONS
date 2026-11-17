@@ -155,7 +155,7 @@ export default function CinematicInquiries({
                           setSelectedCategory(cat);
                           setOpenIndex(0);
                         }}
-                        className={`min-h-[44px] text-[11px] font-mono uppercase tracking-[0.12em] px-4 py-2 rounded-[2px] border transition-all duration-250 ease-out flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] ${
+                        className={`min-h-[44px] text-xs font-mono uppercase tracking-wider px-4 py-2 rounded-[2px] border transition-all duration-250 ease-out flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] ${
                           isSelected
                             ? "bg-[var(--gold)] text-[var(--ink)] border-[var(--gold)] font-medium shadow-sm"
                             : "bg-[var(--bg-soft)] text-[var(--ink)] border-[var(--line)] hover:border-[var(--gold)]/60"
@@ -195,14 +195,14 @@ export default function CinematicInquiries({
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center space-x-2 text-[11px] font-mono uppercase tracking-[0.12em] bg-[var(--gold)] text-[var(--ink)] px-4 py-2.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out font-medium shadow-sm"
+                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-[var(--gold)] text-[var(--ink)] px-4 py-2.5 rounded-[2px] hover:bg-[var(--gold-light)] transition-all duration-250 ease-out font-semibold shadow-sm"
                 >
                   <span>Direct Message</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   href="/book"
-                  className="inline-flex items-center justify-center space-x-2 text-[11px] font-mono uppercase tracking-[0.12em] bg-transparent border border-[rgba(255,255,255,0.2)] text-[var(--white-on-dark)] hover:border-[var(--gold)] hover:text-[var(--gold)] px-4 py-2.5 rounded-[2px] transition-all duration-250 ease-out"
+                  className="inline-flex items-center justify-center space-x-2 text-xs font-mono uppercase tracking-wider bg-transparent border border-[rgba(255,255,255,0.2)] text-[var(--white-on-dark)] hover:border-[var(--gold)] hover:text-[var(--gold-light)] px-4 py-2.5 rounded-[2px] transition-all duration-250 ease-out font-medium"
                 >
                   <span>Build Brief</span>
                 </Link>
@@ -252,7 +252,7 @@ export default function CinematicInquiries({
                         {item.category && (
                           <span className="inline-flex items-center space-x-1.5 text-[var(--ink)] bg-[var(--bg)] px-2.5 py-1 rounded-[2px] border border-[var(--line)]">
                             {getCategoryIcon(item.category)}
-                            <span className="uppercase tracking-wider text-[11px] font-mono font-medium">
+                            <span className="uppercase tracking-wider text-xs font-mono font-medium">
                               {item.category}
                             </span>
                           </span>
