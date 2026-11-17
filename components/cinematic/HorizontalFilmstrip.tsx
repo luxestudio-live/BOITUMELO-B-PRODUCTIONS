@@ -19,8 +19,8 @@ export default function HorizontalFilmstrip() {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
 
-  // 6 Curated films across all 4 disciplines
-  const stripProjects = sampleProjects.slice(0, 6);
+  // 5 Curated films across all production disciplines
+  const stripProjects = sampleProjects.slice(0, 5);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -93,7 +93,7 @@ export default function HorizontalFilmstrip() {
           </h2>
         </div>
         <span className="md:hidden text-[10px] font-mono uppercase tracking-[0.1em] text-[var(--gold-deep)] bg-[var(--bg-soft)] px-2.5 py-1 rounded-[2px] border border-[var(--line)] mr-1 sm:mr-4">
-          Archive 01–06
+          Archive 01–05
         </span>
       </div>
 

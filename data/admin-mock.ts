@@ -116,7 +116,7 @@ export const initialMockMedia: MockMediaItem[] = [
   },
   {
     id: "med-4",
-    title: "Final Cut — Short Film",
+    title: "Threshold — Short Film",
     category: "Showreel",
     format: "MP4",
     size: "161.9 MB",
@@ -126,7 +126,7 @@ export const initialMockMedia: MockMediaItem[] = [
   },
   {
     id: "med-5",
-    title: "Mama Veronica's 70th Birthday Celebration",
+    title: "Mama Veronica — Seven Decades of Grace",
     category: "Showreel",
     format: "MP4",
     size: "201.9 MB",

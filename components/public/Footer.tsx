@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/data/site-config";
 import { ArrowUp, ArrowUpRight, Mail, Phone, MapPin, Instagram, Video, Youtube, Linkedin, Shield } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -41,9 +43,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-16 border-b border-[rgba(255,255,255,0.12)]">
           {/* Brand Signature Column */}
           <div className="lg:col-span-2 space-y-4">
-            <h3 className="font-display font-bold tracking-[0.22em] text-xl text-[var(--white-on-dark)]">
-              BOITUMELO B
-            </h3>
+            <Link
+              href="/"
+              className="inline-block group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
+              aria-label="BOITUMELO B PRODUCTIONS Home"
+            >
+              <Image
+                src={getAssetPath("/images/logo-dark.png")}
+                alt="BOITUMELO B PRODUCTIONS"
+                width={220}
+                height={48}
+                className="h-9 sm:h-10 w-auto object-contain transition-opacity duration-250 ease-out group-hover:opacity-85"
+              />
+              <span className="sr-only">BOITUMELO B PRODUCTIONS</span>
+            </Link>
             <p className="text-xs uppercase font-mono tracking-[0.2em] text-[var(--gold)] font-medium">
               Productions • Northern Adelaide
             </p>

@@ -106,7 +106,7 @@ const jsonLd = {
   description:
     "Australian creative production studio specialising in cinematic documentary filmmaking, visionary music videos, corporate narratives, and commercial films.",
   url: "https://boitumelo-b-productions.theluxestudio.in",
-  logo: "https://boitumelo-b-productions.theluxestudio.in/icon-512.png",
+  logo: "https://boitumelo-b-productions.theluxestudio.in/images/logo.png",
   image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&h=630&q=85",
   email: "hello@boitumelobproductions.com.au",
   address: {

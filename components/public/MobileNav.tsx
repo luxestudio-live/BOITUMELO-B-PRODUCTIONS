@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/data/site-config";
 import { X, ArrowRight, Instagram, Video, Mail, Phone } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -50,9 +52,17 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="font-display font-medium tracking-[0.2em] text-lg text-[var(--ink)]"
+          className="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
+          aria-label="BOITUMELO B PRODUCTIONS Home"
         >
-          BOITUMELO B
+          <Image
+            src={getAssetPath("/images/logo.png")}
+            alt="BOITUMELO B PRODUCTIONS"
+            width={170}
+            height={38}
+            className="h-8 w-auto object-contain"
+          />
+          <span className="sr-only">BOITUMELO B PRODUCTIONS</span>
         </Link>
         <button
           ref={closeButtonRef}

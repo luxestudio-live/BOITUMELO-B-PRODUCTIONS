@@ -12,7 +12,7 @@ export default function PublicLayout({
     "@type": "Organization",
     name: siteConfig.name,
     url: "https://boitumelobproductions.com.au",
-    logo: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=400&q=80",
+    logo: "https://boitumelo-b-productions.theluxestudio.in/images/logo.png",
     description:
       "Australian creative production studio specialising in documentary cinema, music video direction, corporate film, and commercial productions.",
     email: siteConfig.email,

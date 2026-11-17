@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/data/site-config";
 import { Menu, ArrowUpRight } from "lucide-react";
+import { getAssetPath } from "@/lib/asset-path";
 import MobileNav from "./MobileNav";
 
 export default function Header() {
@@ -40,15 +42,18 @@ export default function Header() {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="group flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
+            className="group flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold)] rounded-[2px]"
             aria-label="BOITUMELO B PRODUCTIONS Home"
           >
-            <span className="font-display font-medium tracking-[0.2em] text-base sm:text-lg text-[var(--ink)] group-hover:text-[var(--gold)] transition-colors duration-250 ease-out">
-              BOITUMELO B
-            </span>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-[var(--ink-soft)] group-hover:text-[var(--ink)] transition-colors duration-250 ease-out">
-              Productions • Northern Adelaide
-            </span>
+            <Image
+              src={getAssetPath("/images/logo.png")}
+              alt="BOITUMELO B PRODUCTIONS"
+              width={200}
+              height={44}
+              priority
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain transition-opacity duration-250 ease-out group-hover:opacity-85"
+            />
+            <span className="sr-only">BOITUMELO B PRODUCTIONS — Film & Video Production Northern Adelaide</span>
           </Link>
 
           {/* Desktop Navigation */}

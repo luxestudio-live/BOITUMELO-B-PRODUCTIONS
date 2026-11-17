@@ -41,6 +41,7 @@ import {
   MockMediaItem,
 } from "@/data/admin-mock";
 import { siteConfig } from "@/data/site-config";
+import { getAssetPath } from "@/lib/asset-path";
 
 type AdminTab =
   | "dashboard"
@@ -209,17 +210,16 @@ export default function AdminDashboard() {
       <header className="md:hidden sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-teal/20 px-3.5 py-2.5 flex items-center justify-between shadow-sm text-brand-teal">
         {/* Brand identity */}
         <div className="flex items-center space-x-2.5">
-          <div className="w-7 h-7 rounded bg-brand-teal flex items-center justify-center border border-brand-gold/60 text-brand-gold font-display font-bold text-xs shadow-sm">
-            BB
-          </div>
-          <div>
-            <span className="font-display font-bold tracking-[0.16em] text-xs text-brand-teal block leading-tight">
-              BOITUMELO B
-            </span>
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
-              Studio Portal
-            </span>
-          </div>
+          <Image
+            src={getAssetPath("/images/logo.png")}
+            alt="BOITUMELO B PRODUCTIONS"
+            width={140}
+            height={30}
+            className="h-6 w-auto object-contain"
+          />
+          <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold font-medium border-l border-brand-teal/20 pl-2">
+            Portal
+          </span>
         </div>
 
         {/* Right Action Icons: Public Site Link + Menu Trigger */}
@@ -375,11 +375,17 @@ export default function AdminDashboard() {
         <aside className="w-64 bg-white border-r border-brand-teal/15 p-6 flex flex-col justify-between hidden md:flex flex-shrink-0 text-brand-teal">
           <div className="space-y-8">
             {/* Admin Brand Signature */}
-            <div className="space-y-1">
-              <span className="font-display font-bold tracking-[0.2em] text-base text-brand-teal block">
-                BOITUMELO B
-              </span>
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
+            <div className="space-y-2">
+              <Link href="/" title="View live site">
+                <Image
+                  src={getAssetPath("/images/logo.png")}
+                  alt="BOITUMELO B PRODUCTIONS"
+                  width={180}
+                  height={40}
+                  className="h-7 w-auto object-contain"
+                />
+              </Link>
+              <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-gold block font-medium">
                 Studio CMS Portal
               </span>
             </div>
