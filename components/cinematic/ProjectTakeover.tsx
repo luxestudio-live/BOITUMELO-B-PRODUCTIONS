@@ -36,18 +36,16 @@ export default function ProjectTakeover() {
     }
 
     const ctx = gsap.context(() => {
-      // Scene 05: Image expands from framed inset (80vw) into a dramatic full-viewport takeover (100vw)
+      // Scene 05: Smooth cinematic scale within frame boundaries on scroll
       gsap.fromTo(
         mediaContainerRef.current,
         {
-          width: "82vw",
-          borderRadius: "2px",
-          scale: 0.94,
+          scale: 0.96,
+          borderRadius: "4px",
         },
         {
-          width: "100vw",
-          borderRadius: "0px",
           scale: 1,
+          borderRadius: "2px",
           ease: "power2.inOut",
           scrollTrigger: {
             trigger: containerRef.current,
@@ -113,9 +111,7 @@ export default function ProjectTakeover() {
               alt={project.title}
               fill
               sizes="100vw"
-              className={`object-cover transition-opacity duration-700 ${
-                isPlaying ? "opacity-0" : "opacity-100"
-              }`}
+              className="object-cover transition-opacity duration-700"
             />
 
             {/* Video Player Element */}
@@ -127,7 +123,7 @@ export default function ProjectTakeover() {
               loop
               muted={isMuted}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-                isPlaying ? "opacity-100" : "opacity-0"
+                isPlaying ? "opacity-100" : "opacity-0 pointer-events-none"
               }`}
               onEnded={() => setIsPlaying(false)}
             />

@@ -68,9 +68,7 @@ export default function ProjectCard({
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={priority}
-            className={`object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 ${
-              isHovered ? "opacity-0" : "opacity-100"
-            }`}
+            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105 opacity-100"
           />
 
           {/* Video Preview on Hover (Capable devices only) */}

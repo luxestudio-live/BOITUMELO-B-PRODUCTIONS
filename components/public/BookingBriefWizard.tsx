@@ -196,60 +196,60 @@ STUDIO        : Melbourne & Sydney • Australia
           </div>
 
           {/* Slate Telemetry Header */}
-          <div className="grid grid-cols-4 border-b border-brand-gold/30 bg-brand-teal-deep text-center font-mono text-[11px] py-2 text-brand-teal-light divide-x divide-brand-gold/30">
+          <div className="grid grid-cols-4 border-b border-brand-gold/30 bg-brand-teal-deep text-center font-mono text-[11px] py-2 text-slate-300 divide-x divide-brand-gold/30">
             <div>
-              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">PROD NO.</span>
+              <span className="block text-[11px] uppercase tracking-wider text-slate-300/80">PROD NO.</span>
               <span className="font-semibold text-brand-gold">#BB-2026-X9</span>
             </div>
             <div>
-              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">SCENE</span>
+              <span className="block text-[11px] uppercase tracking-wider text-slate-300/80">SCENE</span>
               <span className="font-semibold text-white">BRIEF</span>
             </div>
             <div>
-              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">TAKE</span>
+              <span className="block text-[11px] uppercase tracking-wider text-slate-300/80">TAKE</span>
               <span className="font-semibold text-white">01</span>
             </div>
             <div>
-              <span className="block text-[11px] uppercase tracking-wider text-brand-teal-light/70">SOUND</span>
+              <span className="block text-[11px] uppercase tracking-wider text-slate-300/80">SOUND</span>
               <span className="font-semibold text-brand-gold">SYNC</span>
             </div>
           </div>
 
           {/* Slate Body Fields */}
-          <div className="p-6 space-y-3 font-mono text-xs bg-brand-teal divide-y divide-brand-teal-light/20">
+          <div className="p-6 space-y-3 font-mono text-xs bg-brand-teal divide-y divide-white/10">
             <div className="flex justify-between items-baseline pt-1">
-              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">PRODUCTION:</span>
+              <span className="text-slate-300 uppercase tracking-wider text-[11px]">PRODUCTION:</span>
               <span className="text-white font-medium text-right">{formData.discipline}</span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">COLLABORATOR:</span>
+              <span className="text-slate-300 uppercase tracking-wider text-[11px]">COLLABORATOR:</span>
               <span className="text-white font-medium text-right">
                 {formData.name} {formData.company ? `• ${formData.company}` : ""}
               </span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">DISCOVERY SESSION:</span>
+              <span className="text-slate-300 uppercase tracking-wider text-[11px]">DISCOVERY SESSION:</span>
               <span className="text-brand-gold font-semibold text-right">
                 {formData.selectedDate} at {formData.selectedTimeSlot}
               </span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">LOCATION / BASE:</span>
-              <span className="text-white/80 text-right">{formData.location}</span>
+              <span className="text-slate-300 uppercase tracking-wider text-[11px]">LOCATION / BASE:</span>
+              <span className="text-white/90 text-right">{formData.location}</span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">BUDGET TIER:</span>
-              <span className="text-white/80 text-right">{formData.budget}</span>
+              <span className="text-slate-300 uppercase tracking-wider text-[11px]">BUDGET TIER:</span>
+              <span className="text-white/90 text-right">{formData.budget}</span>
             </div>
             <div className="flex justify-between items-baseline pt-2">
-              <span className="text-brand-teal-light/80 uppercase tracking-wider text-[11px]">STATUS:</span>
+              <span className="text-slate-300 uppercase tracking-wider text-[11px]">STATUS:</span>
               <span className="text-brand-gold font-bold text-right tracking-wider uppercase">SLATED FOR REVIEW</span>
             </div>
           </div>
 
           {/* Action Ribbon inside Slate */}
           <div className="p-3 bg-brand-teal-deep border-t border-brand-gold/30 flex items-center justify-between text-xs font-mono">
-            <span className="text-[11px] text-brand-teal-light/80">Save this slate to your records:</span>
+            <span className="text-[11px] text-slate-300">Save this slate to your records:</span>
             <button
               type="button"
               onClick={handleCopySlate}

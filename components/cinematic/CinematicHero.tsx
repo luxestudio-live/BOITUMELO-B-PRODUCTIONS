@@ -154,8 +154,8 @@ export default function CinematicHero() {
           <source src={getAssetPath("/videos/hero-showreel.mp4")} type="video/mp4" />
         </video>
 
-        {/* Cinematic Lighting Overlays with Specified Midnight Navy Overlay */}
-        <div className="absolute inset-0 bg-[#0B1320]/45 pointer-events-none" />
+        {/* Cinematic Lighting Overlays with Directional Gradient to Guarantee Text Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/90 via-[#0B1320]/55 to-[#0B1320]/40 pointer-events-none" />
         <div className="absolute inset-0 film-grain pointer-events-none" />
 
         {/* Viewfinder Camera HUD */}

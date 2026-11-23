@@ -36,7 +36,16 @@ export default function VideoPlayer({
   const [showControls, setShowControls] = useState(true);
   const [framingMode, setFramingMode] = useState<FramingMode>("16:9");
   const [showCrosshairs, setShowCrosshairs] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const controlsTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  }, []);
 
   // Cycle through optical framing formats
   const cycleFraming = () => {
@@ -151,7 +160,9 @@ export default function VideoPlayer({
       tabIndex={0}
       role="region"
       aria-label={`${title} video player`}
-      className={`relative group bg-brand-black-elevated overflow-hidden rounded-sm border border-brand-teal/40 ${aspectRatio} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold`}
+      className={`relative group bg-[#070D16] overflow-hidden rounded-sm border border-brand-teal/40 ${
+        isFullscreen ? "w-full h-full" : aspectRatio
+      } focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold`}
     >
       <video
         ref={videoRef}
@@ -169,7 +180,7 @@ export default function VideoPlayer({
           setIsPlaying(false);
         }}
         onClick={togglePlay}
-        className="w-full h-full object-cover cursor-pointer"
+        className={`w-full h-full ${isFullscreen ? "object-contain" : "object-cover"} cursor-pointer`}
         aria-label={title}
       />
 

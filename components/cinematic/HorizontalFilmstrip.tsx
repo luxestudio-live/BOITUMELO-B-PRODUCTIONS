@@ -133,9 +133,7 @@ export default function HorizontalFilmstrip() {
                     alt={p.title}
                     fill
                     sizes="(max-width: 768px) 85vw, 600px"
-                    className={`object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
-                      isHovered ? "opacity-0" : "opacity-100"
-                    }`}
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-100"
                   />
 
                   {/* Silent Hover Video Loop */}

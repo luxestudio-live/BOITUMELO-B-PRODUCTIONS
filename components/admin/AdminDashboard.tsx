@@ -1046,19 +1046,19 @@ export default function AdminDashboard() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono break-all">
                     <div>
-                      <span className="text-brand-teal-light/80 block">Email:</span>
+                      <span className="text-slate-300 block">Email:</span>
                       <span className="text-white font-medium">{selectedEnquiry.email}</span>
                     </div>
                     <div>
-                      <span className="text-brand-teal-light/80 block">Service:</span>
+                      <span className="text-slate-300 block">Service:</span>
                       <span className="text-white font-medium">{selectedEnquiry.service}</span>
                     </div>
                     <div>
-                      <span className="text-brand-teal-light/80 block">Budget:</span>
+                      <span className="text-slate-300 block">Budget:</span>
                       <span className="text-white font-medium">{selectedEnquiry.budget}</span>
                     </div>
                     <div>
-                      <span className="text-brand-teal-light/80 block">Timeline:</span>
+                      <span className="text-slate-300 block">Timeline:</span>
                       <span className="text-white font-medium">{selectedEnquiry.timeline}</span>
                     </div>
                   </div>
@@ -1202,7 +1202,7 @@ export default function AdminDashboard() {
                       <span className="text-white font-semibold">#0B1320</span>
                     </div>
                     <div className="p-3 bg-brand-teal border border-brand-teal rounded text-white shadow-sm">
-                      <span className="block text-brand-teal-light text-[11px]">Deep Blue / Teal</span>
+                      <span className="block text-slate-300 text-[11px]">Deep Blue / Teal</span>
                       <span className="text-white font-semibold">{settingsForm.brandTeal}</span>
                     </div>
                     <div className="p-3 bg-brand-gold text-brand-black rounded font-medium shadow-sm">
