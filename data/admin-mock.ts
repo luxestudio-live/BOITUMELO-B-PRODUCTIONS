@@ -3,12 +3,25 @@ export interface MockEnquiry {
   name: string;
   email: string;
   company: string;
+  phone?: string;
   service: string;
   budget: string;
   timeline: string;
   date: string;
   status: "New" | "In Review" | "Consultation Scheduled" | "Archived";
   message: string;
+  type?: "contact" | "booking-brief";
+  location?: string;
+  preferredContact?: string;
+  briefDetails?: {
+    creativeGoals?: string;
+    audience?: string;
+    referenceLinks?: string;
+    specialRequirements?: string;
+    consultationType?: string;
+    selectedDate?: string;
+    selectedTimeSlot?: string;
+  };
 }
 
 export interface MockMediaItem {

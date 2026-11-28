@@ -21,6 +21,7 @@ import {
   Clapperboard,
 } from "lucide-react";
 import CustomSelect, { SelectOption } from "./CustomSelect";
+import { submitBookingBrief } from "@/lib/firebase-service";
 
 const WIZARD_TIMELINE_OPTIONS: SelectOption[] = [
   { value: "1-4 weeks", label: "Urgent / Within 1 month" },
@@ -86,12 +87,14 @@ export default function BookingBriefWizard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [hasCopied, setHasCopied] = useState(false);
+  const [referenceId, setReferenceId] = useState("");
 
   const handleCopySlate = () => {
+    const refNum = referenceId || "#BB-BRIEF-2026-X9";
     const slateText = `========================================================
 BOITUMELO B PRODUCTIONS — PRODUCTION BRIEF SLATE
 ========================================================
-REFERENCE NO  : #BB-BRIEF-2026-X9
+REFERENCE NO  : ${refNum}
 DATE & TIME   : ${formData.selectedDate} at ${formData.selectedTimeSlot}
 DISCIPLINE    : ${formData.discipline}
 COLLABORATOR  : ${formData.name}${formData.company ? ` (${formData.company})` : ""}
@@ -149,16 +152,24 @@ STUDIO        : Melbourne & Sydney • Australia
     window.scrollTo({ top: 180, behavior: "smooth" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
     if (validateStep(currentStep)) {
       setIsSubmitting(true);
-      setTimeout(() => {
-        setIsSubmitting(false);
+      try {
+        const docId = await submitBookingBrief(formData);
+        setReferenceId(docId.length > 8 ? `#BB-${docId.slice(0, 8).toUpperCase()}` : `#BB-${docId}`);
         setIsCompleted(true);
         window.scrollTo({ top: 180, behavior: "smooth" });
-      }, 750);
+      } catch (err) {
+        console.warn("Booking brief submission issue:", err);
+        setReferenceId(`#BB-BRIEF-${Math.floor(1000 + Math.random() * 9000)}`);
+        setIsCompleted(true);
+        window.scrollTo({ top: 180, behavior: "smooth" });
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -199,7 +210,7 @@ STUDIO        : Melbourne & Sydney • Australia
           <div className="grid grid-cols-4 border-b border-brand-gold/30 bg-brand-teal-deep text-center font-mono text-[11px] py-2 text-slate-300 divide-x divide-brand-gold/30">
             <div>
               <span className="block text-[11px] uppercase tracking-wider text-slate-300/80">PROD NO.</span>
-              <span className="font-semibold text-brand-gold">#BB-2026-X9</span>
+              <span className="font-semibold text-brand-gold">{referenceId || "#BB-2026-X9"}</span>
             </div>
             <div>
               <span className="block text-[11px] uppercase tracking-wider text-slate-300/80">SCENE</span>

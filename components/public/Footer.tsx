@@ -1,12 +1,40 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/data/site-config";
-import { ArrowUp, ArrowUpRight, Mail, Phone, MapPin, Instagram, Video, Youtube, Linkedin, Shield } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Mail, Phone, MapPin, Instagram, Facebook, Video, Youtube, Linkedin, Shield } from "lucide-react";
 import { getAssetPath } from "@/lib/asset-path";
+import { subscribeSettings } from "@/lib/firebase-service";
 
 export default function Footer() {
+  const [settings, setSettings] = useState({
+    email: siteConfig.email,
+    phone: siteConfig.phone,
+    tiktok: siteConfig.tiktok,
+    instagram: siteConfig.instagram,
+    facebook: siteConfig.facebook,
+    vimeo: siteConfig.vimeo,
+  });
+
+  useEffect(() => {
+    const unsub = subscribeSettings((data) => {
+      if (data) {
+        setSettings((prev) => ({
+          ...prev,
+          email: data.email || prev.email,
+          phone: data.phone || prev.phone,
+          tiktok: data.tiktok || prev.tiktok,
+          instagram: data.instagram || prev.instagram,
+          facebook: data.facebook || prev.facebook,
+          vimeo: data.vimeo || prev.vimeo,
+        }));
+      }
+    });
+    return () => unsub();
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -67,7 +95,7 @@ export default function Footer() {
             <p className="text-sm text-[var(--text-on-dark)] leading-relaxed max-w-sm pt-2 font-light">
               Video filming and editing in Northern Adelaide, South Australia, covering business, real estate, parties and events through a clear process.
             </p>
-            <div className="pt-2 flex items-center space-x-2 text-xs text-[var(--text-on-dark)]/80">
+            <div className="pt-2 flex items-center space-x-2 text-xs text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-[var(--gold)] flex-shrink-0" />
               <span>{siteConfig.serviceRegion}</span>
             </div>
@@ -127,64 +155,70 @@ export default function Footer() {
             </h4>
             <div className="space-y-2 text-sm text-[var(--text-on-dark)]">
               <a
-                href={`mailto:${siteConfig.email}`}
+                href={`mailto:${settings.email}`}
                 className="flex items-center space-x-2 hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
               >
                 <Mail className="w-3.5 h-3.5 text-[var(--gold-light)]" />
-                <span className="font-mono text-xs truncate">{siteConfig.email}</span>
+                <span className="font-mono text-xs truncate">{settings.email}</span>
               </a>
               <a
-                href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, "")}`}
+                href={`tel:${settings.phone.replace(/[^0-9+]/g, "")}`}
                 className="flex items-center space-x-2 hover:text-[var(--gold-light)] transition-colors duration-250 ease-out"
               >
                 <Phone className="w-3.5 h-3.5 text-[var(--gold-light)]" />
-                <span className="font-mono text-xs">{siteConfig.phone}</span>
+                <span className="font-mono text-xs">{settings.phone}</span>
               </a>
             </div>
 
-            <div className="pt-2 flex items-center space-x-1 text-[var(--text-on-dark)]">
+            <div className="pt-2 flex items-center space-x-1 text-slate-300">
               <a
-                href={siteConfig.instagram}
+                href={settings.tiktok}
                 target="_blank"
                 rel="noreferrer"
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                aria-label="TikTok"
+                title="Follow on TikTok"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+                </svg>
+              </a>
+              <a
+                href={settings.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
                 aria-label="Instagram"
+                title="Follow on Instagram"
               >
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href={siteConfig.vimeo}
+                href={settings.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
-                aria-label="Vimeo"
+                className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                aria-label="Facebook"
+                title="Follow on Facebook"
               >
-                <Video className="w-4 h-4" />
+                <Facebook className="w-4 h-4" />
               </a>
               <a
                 href={siteConfig.youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
+                className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
                 aria-label="YouTube"
+                title="Subscribe on YouTube"
               >
                 <Youtube className="w-4 h-4" />
-              </a>
-              <a
-                href={siteConfig.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded hover:text-[var(--gold)] transition-colors duration-250 ease-out"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Sub-bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-on-dark)]/80">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <span>© {new Date().getFullYear()} BOITUMELO B PRODUCTIONS. All rights reserved.</span>
             <span className="hidden sm:inline">•</span>
@@ -199,7 +233,7 @@ export default function Footer() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="min-h-[44px] flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.12em] text-[var(--text-on-dark)] hover:text-[var(--gold)] transition-colors duration-250 ease-out focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--gold)] rounded py-1 px-3"
+            className="min-h-[44px] flex items-center space-x-2 text-xs uppercase font-mono tracking-[0.12em] text-slate-300 hover:text-[var(--gold)] transition-colors duration-250 ease-out focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--gold)] rounded py-1 px-3"
             aria-label="Back to top of page"
           >
             <span>Back to Top</span>

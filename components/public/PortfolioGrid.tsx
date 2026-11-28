@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import ProjectCard from "@/components/public/ProjectCard";
 import { ProjectItem, ProjectCategory } from "@/data/projects";
 import { Film, Filter } from "lucide-react";
+import { subscribeProjects } from "@/lib/firebase-service";
 
 interface PortfolioGridProps {
   initialProjects: ProjectItem[];
@@ -19,17 +20,27 @@ const filterTabs: { label: string; value: FilterOption }[] = [
 ];
 
 export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
+  const [projects, setProjects] = useState<ProjectItem[]>(initialProjects);
   const [activeFilter, setActiveFilter] = useState<FilterOption>("all");
 
+  useEffect(() => {
+    const unsub = subscribeProjects((items) => {
+      if (items && items.length > 0) {
+        setProjects(items);
+      }
+    });
+    return () => unsub();
+  }, []);
+
   const filteredProjects = useMemo(() => {
-    if (activeFilter === "all") return initialProjects;
+    if (activeFilter === "all") return projects;
     if (activeFilter === "business-videos") {
-      return initialProjects.filter(
+      return projects.filter(
         (p) => p.category === "corporate-video" || p.category === "brand-commercials"
       );
     }
     if (activeFilter === "real-estate") {
-      return initialProjects.filter(
+      return projects.filter(
         (p) =>
           p.slug === "commercial-facility-showcase" ||
           p.slug === "the-last-echo" ||
@@ -37,12 +48,12 @@ export default function PortfolioGrid({ initialProjects }: PortfolioGridProps) {
       );
     }
     if (activeFilter === "events-parties") {
-      return initialProjects.filter(
+      return projects.filter(
         (p) => p.category === "music-videos" || p.category === "documentary-film"
       );
     }
-    return initialProjects;
-  }, [activeFilter, initialProjects]);
+    return projects;
+  }, [activeFilter, projects]);
 
   return (
     <div className="space-y-12">

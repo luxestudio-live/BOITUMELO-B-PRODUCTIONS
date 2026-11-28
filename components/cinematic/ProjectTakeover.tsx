@@ -5,10 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { sampleProjects } from "@/data/projects";
+import { sampleProjects, ProjectItem } from "@/data/projects";
 import { ArrowUpRight, Play, Film, Award, Volume2, VolumeX } from "lucide-react";
 import ViewfinderHUD from "./ViewfinderHUD";
 import { getAssetPath } from "@/lib/asset-path";
+import { subscribeProjects } from "@/lib/firebase-service";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -21,9 +22,20 @@ export default function ProjectTakeover() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [projects, setProjects] = useState<ProjectItem[]>(sampleProjects);
 
-  // Flagship project: The Last Echo
-  const project = sampleProjects[0];
+  // Subscribe to live Firestore project updates
+  useEffect(() => {
+    const unsub = subscribeProjects((items) => {
+      if (items && items.length > 0) {
+        setProjects(items);
+      }
+    });
+    return () => unsub();
+  }, []);
+
+  // Pick the first featured project or fallback to first project
+  const project = projects.find((p) => p.featured) || projects[0] || sampleProjects[0];
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;

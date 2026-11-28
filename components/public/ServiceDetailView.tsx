@@ -86,11 +86,11 @@ export default function ServiceDetailView({
               </p>
             </div>
 
-            <div className="p-8 bg-[var(--ink)] rounded-[2px] border border-[rgba(255,255,255,0.12)] shadow-subtle text-[var(--white-on-dark)]">
-              <h3 className="text-xl font-display font-medium text-[var(--white-on-dark)]">
+            <div className="p-8 bg-[var(--ink)] rounded-[2px] border border-white/15 shadow-subtle text-white">
+              <h3 className="text-xl font-display font-medium text-white">
                 Book a Project Consultation
               </h3>
-              <p className="mt-2 text-xs text-[var(--text-on-dark)] leading-relaxed font-light">
+              <p className="mt-2 text-xs text-slate-200 leading-relaxed font-light">
                 Discuss your project, expectations, planning, payments, filming, editing and revisions before filming begins.
               </p>
               <Link
@@ -232,11 +232,11 @@ export default function ServiceDetailView({
 
       {/* 06: Service Page Closing Call to Action */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 pt-8">
-        <div className="p-10 sm:p-16 rounded-[2px] border border-[var(--gold)]/40 bg-[var(--ink)] text-[var(--white-on-dark)] space-y-6 shadow-subtle">
-          <h2 className="text-3xl sm:text-5xl font-display font-medium text-[var(--white-on-dark)] leading-tight">
+        <div className="p-10 sm:p-16 rounded-[2px] border border-[var(--gold)]/40 bg-[var(--ink)] text-white space-y-6 shadow-subtle">
+          <h2 className="text-3xl sm:text-5xl font-display font-medium text-white leading-tight">
             Ready to discuss your {service.shortTitle.toLowerCase()}?
           </h2>
-          <p className="text-[var(--text-on-dark)] max-w-xl mx-auto text-base font-light">
+          <p className="text-slate-200 max-w-xl mx-auto text-base font-light">
             Book a project consultation and explain what you need filmed.
           </p>
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">

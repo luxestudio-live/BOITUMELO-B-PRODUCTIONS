@@ -134,12 +134,12 @@ export default function ViewfinderHUD({
             <span className="px-2.5 py-1 bg-[#0B1320]/85 border border-[var(--gold)]/40 text-[var(--gold-light)] rounded-[2px] text-xs font-mono">
               {aspectRatioLabel}
             </span>
-            <span className="hidden md:inline text-[var(--white-on-dark)]/90 bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px] text-xs font-mono">
+            <span className="hidden md:inline text-white/95 bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px] text-xs font-mono">
               {lensLabel}
             </span>
           </div>
 
-          <div className="flex items-center space-x-3 text-xs font-mono text-[var(--white-on-dark)]/90 bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
+          <div className="flex items-center space-x-3 text-xs font-mono text-white/95 bg-[#0B1320]/85 px-2.5 py-1 rounded-[2px]">
             <span className="hidden sm:inline">BAT 14.8V</span>
             <span className="text-[var(--gold-light)] font-medium">CALIBRATED</span>
           </div>

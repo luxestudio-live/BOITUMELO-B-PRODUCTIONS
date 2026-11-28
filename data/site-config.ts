@@ -16,7 +16,9 @@ export interface SiteConfig {
   phone: string;
   whatsapp: string;
   whatsappDisplay: string;
+  tiktok: string;
   instagram: string;
+  facebook: string;
   vimeo: string;
   youtube: string;
   linkedin: string;
@@ -37,7 +39,9 @@ export const siteConfig: SiteConfig = {
   phone: "+61 (0) 400 000 000",
   whatsapp: "+61400000000",
   whatsappDisplay: "+61 400 000 000",
-  instagram: "https://instagram.com",
+  tiktok: "https://www.tiktok.com/@boitumelobproductions?_r=1&_t=ZS-9BmP75nvpUS",
+  instagram: "https://www.instagram.com/boitumelobproductions?jplx=MW81ZnRuNWZoemZ6dw%3D%3D&utm_source=qr",
+  facebook: "https://www.facebook.com/share/1N3gjveyUm/?mibextid=wwXIfr",
   vimeo: "https://vimeo.com",
   youtube: "https://youtube.com",
   linkedin: "https://linkedin.com",

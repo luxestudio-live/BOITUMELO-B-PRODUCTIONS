@@ -144,7 +144,7 @@ export default function StudioStatement() {
         {/* Supporting Narrative */}
         <p
           ref={subtextRef}
-          className="max-w-2xl mx-auto text-base sm:text-xl text-[var(--white-on-dark)]/90 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
+          className="max-w-2xl mx-auto text-base sm:text-xl text-white/95 font-light leading-relaxed pt-2 sm:pt-4 [text-wrap:pretty]"
         >
           Good footage starts with good preparation. We build the brief, plan every frame, and handle filming and editing with clear expectations from day one.
         </p>
@@ -152,7 +152,7 @@ export default function StudioStatement() {
         {/* Geographic Hubs */}
         <div
           ref={footerRef}
-          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-[var(--white-on-dark)]/90 tracking-wider uppercase"
+          className="pt-2 sm:pt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs font-mono text-slate-300 tracking-wider uppercase"
         >
           <span>NORTHERN ADELAIDE</span>
           <span className="text-[var(--gold-light)]">•</span>

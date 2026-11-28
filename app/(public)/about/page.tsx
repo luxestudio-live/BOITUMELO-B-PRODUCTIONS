@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/asset-path";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -51,7 +52,7 @@ export default function AboutPage() {
               <span className="text-[var(--gold)] uppercase tracking-[0.12em]">
                 Northern Adelaide • Local Filming Operations
               </span>
-              <span className="hidden sm:inline text-[var(--text-on-dark)]">
+              <span className="hidden sm:inline text-slate-300">
                 One-Person Crew • Practical & Direct
               </span>
             </div>
@@ -142,31 +143,36 @@ export default function AboutPage() {
         <div className="bg-[var(--ink)] text-[var(--white-on-dark)] p-8 sm:p-14 lg:p-16 rounded-[2px] border border-[rgba(255,255,255,0.12)] shadow-subtle">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 relative">
-              <div className="aspect-[4/5] relative rounded-[2px] overflow-hidden shadow-sm bg-[#0B1320]">
+              <div className="aspect-[3/4] sm:aspect-[4/5] relative rounded-[2px] overflow-hidden shadow-sm bg-[#0B1320] border border-[var(--gold)]/30">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=85"
-                  alt="Boitumelo B. videographer portrait"
+                  src={getAssetPath("/images/boitumelo-owner.jpg")}
+                  alt="Boitumelo B. — Owner & Director, Boitumelo B Productions"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="object-cover object-top"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/90 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <h3 className="text-2xl font-display font-medium text-[var(--white-on-dark)]">
-                    Boitumelo B.
-                  </h3>
-                  <p className="text-xs text-[var(--gold)] font-mono uppercase tracking-[0.12em] mt-1">
-                    Owner & Videographer • Northern Adelaide
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                  <div className="bg-[#0B1320]/90 backdrop-blur-md p-4 sm:p-5 rounded-[4px] border border-[var(--gold)]/40 shadow-2xl inline-block max-w-full">
+                    <h3 className="text-xl sm:text-2xl font-display font-medium text-white drop-shadow-sm">
+                      Boitumelo B.
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-[var(--gold-light)] font-mono uppercase tracking-[0.14em] mt-1.5 font-semibold flex items-center gap-2 flex-wrap">
+                      <span>Owner & Videographer</span>
+                      <span className="text-[var(--gold)]">•</span>
+                      <span>Northern Adelaide</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-7 space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-display font-medium text-[var(--white-on-dark)] leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-medium text-white leading-tight">
                 Directing & Producing Since Age 12
               </h2>
-              <div className="space-y-4 text-[var(--text-on-dark)] text-base leading-relaxed font-light">
+              <div className="space-y-4 text-slate-200 text-base leading-relaxed font-light">
                 <p>
                   The owner&apos;s interest in video production began around age 12, inspired by a YouTube trend where creators produced full shows using Bratz dolls. That early hands-on experimentation sparked a lasting dedication to visual storytelling, camera angles, pacing, and post-production polish.
                 </p>

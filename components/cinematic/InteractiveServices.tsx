@@ -87,7 +87,7 @@ export default function InteractiveServices() {
                   {/* Expandable Info for active state */}
                   {isSelected && (
                     <div className="mt-4 pt-4 border-t border-[rgba(255,255,255,0.12)] space-y-3 animate-fade-in">
-                      <p className="text-sm text-[var(--white-on-dark)]/90 leading-relaxed font-light">
+                      <p className="text-sm text-white/95 leading-relaxed font-light">
                         {service.tagline}
                       </p>
 

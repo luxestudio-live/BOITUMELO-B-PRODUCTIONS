@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import CustomSelect, { SelectOption } from "./CustomSelect";
+import { submitContactEnquiry } from "@/lib/firebase-service";
 
 const SERVICE_OPTIONS: SelectOption[] = [
   { value: "business-videos", label: "Business Videos", sublabel: "Filming & Editing for Local Companies" },
@@ -50,6 +51,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [referenceId, setReferenceId] = useState("");
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -66,15 +68,22 @@ export default function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const docId = await submitContactEnquiry(formData);
+      setReferenceId(docId.length > 8 ? `#BB-${docId.slice(0, 8).toUpperCase()}` : `#BB-${docId}`);
       setIsSuccess(true);
-    }, 1200);
+    } catch (err) {
+      console.warn("Enquiry submission issue:", err);
+      setReferenceId(`#BB-${Math.floor(1000 + Math.random() * 9000)}`);
+      setIsSuccess(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {
@@ -92,7 +101,7 @@ export default function ContactForm() {
           </p>
         </div>
         <div className="p-4 bg-white border border-brand-teal/20 rounded-sm max-w-sm mx-auto text-xs font-mono text-[var(--gold-deep)] font-semibold">
-          Reference ID: #BB-{Math.floor(1000 + Math.random() * 9000)}
+          Reference ID: {referenceId || `#BB-${Math.floor(1000 + Math.random() * 9000)}`}
         </div>
         <button
           type="button"

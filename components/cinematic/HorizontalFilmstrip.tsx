@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { sampleProjects, ProjectItem } from "@/data/projects";
 import { ArrowUpRight, Play, Film, SlidersHorizontal } from "lucide-react";
 import { getAssetPath } from "@/lib/asset-path";
+import { subscribeProjects } from "@/lib/firebase-service";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -18,9 +19,20 @@ export default function HorizontalFilmstrip() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+  const [projects, setProjects] = useState<ProjectItem[]>(sampleProjects);
+
+  // Subscribe to live Firestore project updates
+  useEffect(() => {
+    const unsub = subscribeProjects((items) => {
+      if (items && items.length > 0) {
+        setProjects(items);
+      }
+    });
+    return () => unsub();
+  }, []);
 
   // 5 Curated films across all production disciplines
-  const stripProjects = sampleProjects.slice(0, 5);
+  const stripProjects = projects.slice(0, 5);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;

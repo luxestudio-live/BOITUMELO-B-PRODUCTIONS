@@ -1,22 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { sampleTestimonials } from "@/data/testimonials";
+import { sampleTestimonials, Testimonial } from "@/data/testimonials";
 import { Quote, ArrowLeft, ArrowRight, Film } from "lucide-react";
+import { subscribeTestimonials } from "@/lib/firebase-service";
 
 export default function CinematicTestimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(sampleTestimonials);
   const [activeIndex, setActiveIndex] = useState(0);
-  const current = sampleTestimonials[activeIndex];
+
+  useEffect(() => {
+    const unsub = subscribeTestimonials((items) => {
+      if (items && items.length > 0) {
+        setTestimonials(items);
+      }
+    });
+    return () => unsub();
+  }, []);
+
+  const safeIndex = activeIndex >= testimonials.length ? 0 : activeIndex;
+  const current = testimonials[safeIndex] || sampleTestimonials[0];
 
   const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % sampleTestimonials.length);
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const handlePrev = () => {
     setActiveIndex((prev) =>
-      prev === 0 ? sampleTestimonials.length - 1 : prev - 1
+      prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
 

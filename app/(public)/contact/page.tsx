@@ -105,11 +105,11 @@ export default function ContactPage() {
           {/* Right Direct Info Column */}
           <div className="lg:col-span-5 space-y-8">
             {/* Ready to talk? Consultation Card */}
-            <div className="p-8 bg-[var(--ink)] text-[var(--white-on-dark)] rounded-[2px] border border-[rgba(255,255,255,0.12)] space-y-4 shadow-subtle">
-              <h2 className="text-2xl font-display font-medium text-[var(--white-on-dark)]">
+            <div className="p-8 bg-[var(--ink)] text-white rounded-[2px] border border-white/15 space-y-4 shadow-subtle">
+              <h2 className="text-2xl font-display font-medium text-white">
                 Ready to talk?
               </h2>
-              <p className="text-sm text-[var(--text-on-dark)] leading-relaxed font-light">
+              <p className="text-sm text-slate-200 leading-relaxed font-light">
                 Tell us what you need and book a project consultation to establish
                 expectations and planning before filming begins.
               </p>

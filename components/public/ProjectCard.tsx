@@ -57,7 +57,7 @@ export default function ProjectCard({
           <span className="text-[var(--gold-light)] font-medium uppercase tracking-wider">
             {project.categoryLabel}
           </span>
-          <span className="text-[var(--white-on-dark)]/90">{project.aspectRatio}</span>
+          <span className="text-white/95">{project.aspectRatio}</span>
         </div>
 
         <div className={`relative w-full ${aspectClass} overflow-hidden bg-[#0B1320]`}>

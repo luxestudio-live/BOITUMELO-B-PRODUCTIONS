@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -27,6 +28,8 @@ import {
   ShieldAlert,
   FolderArchive,
   Menu,
+  LogOut,
+  UserCheck,
 } from "lucide-react";
 import { sampleProjects, ProjectItem } from "@/data/projects";
 import { servicesData } from "@/data/services";
@@ -40,6 +43,22 @@ import {
 } from "@/data/admin-mock";
 import { siteConfig } from "@/data/site-config";
 import { getAssetPath } from "@/lib/asset-path";
+import {
+  subscribeEnquiries,
+  updateEnquiryStatus,
+  deleteEnquiry,
+  subscribeProjects,
+  saveProjectToFirestore,
+  deleteProjectFromFirestore,
+  subscribeTestimonials,
+  saveTestimonialToFirestore,
+  deleteTestimonialFromFirestore,
+  subscribeSettings,
+  saveSettingsToFirestore,
+  seedFirestoreWithDefaults,
+} from "@/lib/firebase-service";
+import { getStoredAdminUser, logoutAdmin, AdminUser } from "@/lib/admin-auth";
+import AdminLoginForm from "./AdminLoginForm";
 
 type AdminTab =
   | "dashboard"
@@ -51,11 +70,27 @@ type AdminTab =
   | "settings";
 
 export default function AdminDashboard() {
+  const router = useRouter();
+  const [currentUser, setCurrentUser] = useState<AdminUser | null>(null);
+  const [isAuthChecking, setIsAuthChecking] = useState(true);
+
   const [activeTab, setActiveTab] = useState<AdminTab>("dashboard");
   const [projectsList, setProjectsList] = useState<ProjectItem[]>(sampleProjects);
   const [testimonialsList, setTestimonialsList] = useState<Testimonial[]>(sampleTestimonials);
   const [enquiriesList, setEnquiriesList] = useState<MockEnquiry[]>(initialMockEnquiries);
   const [mediaList, setMediaList] = useState<MockMediaItem[]>(initialMockMedia);
+
+  // Check authentication session
+  useEffect(() => {
+    const user = getStoredAdminUser();
+    setCurrentUser(user);
+    setIsAuthChecking(false);
+  }, []);
+
+  const handleSignOut = async () => {
+    await logoutAdmin();
+    setCurrentUser(null);
+  };
 
   // Search & Filter State for Projects
   const [projectSearch, setProjectSearch] = useState("");
@@ -63,6 +98,7 @@ export default function AdminDashboard() {
 
   // Selected Enquiry Drawer
   const [selectedEnquiry, setSelectedEnquiry] = useState<MockEnquiry | null>(null);
+  const [enquiryFilter, setEnquiryFilter] = useState<"all" | "contact" | "booking-brief">("all");
 
   // Edit / Add Project Modal State
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
@@ -70,6 +106,79 @@ export default function AdminDashboard() {
 
   // Mobile Navigation Drawer State
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  // Settings State
+  const [settingsForm, setSettingsForm] = useState({
+    studioName: siteConfig.name,
+    tagline: siteConfig.tagline,
+    supportingCopy: siteConfig.supportingCopy,
+    email: siteConfig.email,
+    phone: siteConfig.phone,
+    whatsapp: siteConfig.whatsappDisplay,
+    instagram: siteConfig.instagram,
+    tiktok: siteConfig.tiktok,
+    facebook: siteConfig.facebook,
+    vimeo: siteConfig.vimeo,
+    brandGold: "#B08D57",
+    brandTeal: "#0B1320",
+    seoDescription:
+      "Australian creative production studio specialising in cinematic documentary filmmaking, visionary music videos, corporate narratives, and commercial films.",
+  });
+  const [settingsSaved, setSettingsSaved] = useState(false);
+  const [isSavingSettings, setIsSavingSettings] = useState(false);
+
+  // Firestore Seed State
+  const [isSeeding, setIsSeeding] = useState(false);
+  const [seedMessage, setSeedMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  const handleSeedFirestore = async () => {
+    setIsSeeding(true);
+    setSeedMessage(null);
+    const res = await seedFirestoreWithDefaults();
+    setIsSeeding(false);
+    if (res.success) {
+      setSeedMessage({
+        type: "success",
+        text: "Success! All collections (projects, testimonials, settings, enquiries) have been written to Firebase Firestore. Refresh your Firebase Console now!",
+      });
+    } else {
+      setSeedMessage({
+        type: "error",
+        text: `Firestore error: ${res.error}. Go to Firebase Console > Firestore > Rules tab and set 'allow read, write: if true;' then click Publish.`,
+      });
+    }
+  };
+
+  // Subscribe to live Firebase Firestore updates
+  useEffect(() => {
+    const unsubEnquiries = subscribeEnquiries((items) => {
+      setEnquiriesList(items);
+    });
+
+    const unsubProjects = subscribeProjects((items) => {
+      setProjectsList(items);
+    });
+
+    const unsubTestimonials = subscribeTestimonials((items) => {
+      setTestimonialsList(items);
+    });
+
+    const unsubSettings = subscribeSettings((data) => {
+      if (data) {
+        setSettingsForm((prev) => ({
+          ...prev,
+          ...data,
+        }));
+      }
+    });
+
+    return () => {
+      unsubEnquiries();
+      unsubProjects();
+      unsubTestimonials();
+      unsubSettings();
+    };
+  }, []);
 
   // Shared Admin Navigation Items with Live Counts & Icons
   const adminNavTabs = [
@@ -82,23 +191,6 @@ export default function AdminDashboard() {
     { id: "settings" as AdminTab, label: "Site Settings", icon: Settings },
   ];
 
-  // Settings State
-  const [settingsForm, setSettingsForm] = useState({
-    studioName: siteConfig.name,
-    tagline: siteConfig.tagline,
-    supportingCopy: siteConfig.supportingCopy,
-    email: siteConfig.email,
-    phone: siteConfig.phone,
-    whatsapp: siteConfig.whatsappDisplay,
-    instagram: siteConfig.instagram,
-    vimeo: siteConfig.vimeo,
-    brandGold: "#B08D57",
-    brandTeal: "#0B1320",
-    seoDescription:
-      "Australian creative production studio specialising in cinematic documentary filmmaking, visionary music videos, corporate narratives, and commercial films.",
-  });
-  const [settingsSaved, setSettingsSaved] = useState(false);
-
   // Filtered projects
   const filteredProjects = projectsList.filter((p) => {
     const matchesSearch =
@@ -109,21 +201,23 @@ export default function AdminDashboard() {
     return matchesSearch && matchesCategory;
   });
 
-  // Handle Save Project (Create or Edit)
-  const handleSaveProject = (e: React.FormEvent) => {
+  // Handle Save Project (Create or Edit in Firestore)
+  const handleSaveProject = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingProject?.title || !editingProject?.slug) return;
 
+    let projectToSave: ProjectItem;
+
     if (editingProject.id) {
       // Update
-      setProjectsList((prev) =>
-        prev.map((item) =>
-          item.id === editingProject.id ? ({ ...item, ...editingProject } as ProjectItem) : item
-        )
-      );
+      const existing = projectsList.find((item) => item.id === editingProject.id);
+      projectToSave = {
+        ...(existing || {}),
+        ...editingProject,
+      } as ProjectItem;
     } else {
       // Add new
-      const newItem: ProjectItem = {
+      projectToSave = {
         id: `proj-${Date.now()}`,
         slug: editingProject.slug,
         title: editingProject.title,
@@ -155,30 +249,118 @@ export default function AdminDashboard() {
         behindTheFrames: [],
         featured: !!editingProject.featured,
       };
-      setProjectsList((prev) => [newItem, ...prev]);
     }
+
+    // Persist to Firestore
+    await saveProjectToFirestore(projectToSave);
+
+    // Optimistic local update
+    setProjectsList((prev) => {
+      const idx = prev.findIndex((p) => p.id === projectToSave.id);
+      if (idx >= 0) {
+        const copy = [...prev];
+        copy[idx] = projectToSave;
+        return copy;
+      }
+      return [projectToSave, ...prev];
+    });
 
     setIsProjectModalOpen(false);
     setEditingProject(null);
   };
 
-  const handleDeleteProject = (id: string) => {
+  const handleDeleteProject = async (id: string) => {
     if (confirm("Are you sure you want to remove this project?")) {
+      await deleteProjectFromFirestore(id);
       setProjectsList((prev) => prev.filter((p) => p.id !== id));
     }
   };
 
-  const handleToggleFeatured = (id: string) => {
+  const handleToggleFeatured = async (id: string) => {
+    const proj = projectsList.find((p) => p.id === id);
+    if (!proj) return;
+    const updated = { ...proj, featured: !proj.featured };
+    await saveProjectToFirestore(updated);
     setProjectsList((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, featured: !p.featured } : p))
+      prev.map((p) => (p.id === id ? updated : p))
     );
   };
 
-  const handleSaveSettings = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSettingsSaved(true);
-    setTimeout(() => setSettingsSaved(false), 2500);
+  const handleAddTestimonial = async () => {
+    const author = prompt("Client Name:");
+    if (!author) return;
+    const company = prompt("Organisation / Artist:") || "Arts Agency";
+    const quote = prompt("Quotation:") || "Exceptional craft and storytelling.";
+    const newTestimonial: Testimonial = {
+      id: `test-${Date.now()}`,
+      author,
+      role: "Director",
+      company,
+      projectTitle: "Independent Film",
+      serviceCategory: "Documentary & Film",
+      year: "2026",
+      portraitUrl:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      quote,
+    };
+    await saveTestimonialToFirestore(newTestimonial);
+    setTestimonialsList((prev) => [newTestimonial, ...prev]);
   };
+
+  const handleDeleteTestimonial = async (id: string) => {
+    if (confirm("Delete this testimonial record?")) {
+      await deleteTestimonialFromFirestore(id);
+      setTestimonialsList((prev) => prev.filter((item) => item.id !== id));
+    }
+  };
+
+  const handleUpdateEnquiryStatus = async (
+    enquiryId: string,
+    newStatus: MockEnquiry["status"]
+  ) => {
+    await updateEnquiryStatus(enquiryId, newStatus);
+    setEnquiriesList((prev) =>
+      prev.map((item) => (item.id === enquiryId ? { ...item, status: newStatus } : item))
+    );
+    if (selectedEnquiry && selectedEnquiry.id === enquiryId) {
+      setSelectedEnquiry((prev) => (prev ? { ...prev, status: newStatus } : null));
+    }
+  };
+
+  const handleDeleteEnquiry = async (enquiryId: string) => {
+    if (confirm("Permanently remove this enquiry?")) {
+      await deleteEnquiry(enquiryId);
+      setEnquiriesList((prev) => prev.filter((item) => item.id !== enquiryId));
+      if (selectedEnquiry?.id === enquiryId) {
+        setSelectedEnquiry(null);
+      }
+    }
+  };
+
+  const handleSaveSettings = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSavingSettings(true);
+    await saveSettingsToFirestore(settingsForm);
+    setIsSavingSettings(false);
+    setSettingsSaved(true);
+    setTimeout(() => setSettingsSaved(false), 3000);
+  };
+
+  if (isAuthChecking) {
+    return (
+      <div className="min-h-screen bg-[#070D16] flex items-center justify-center font-mono text-xs text-brand-gold">
+        <div className="space-y-3 text-center">
+          <div className="w-8 h-8 border-2 border-brand-gold border-t-transparent rounded-full animate-spin mx-auto" />
+          <p className="tracking-widest uppercase text-[11px]">Loading Studio Portal...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // If not logged in, render the login form immediately
+  if (!currentUser) {
+    return <AdminLoginForm onSuccess={(user) => setCurrentUser(user)} />;
+  }
 
   return (
     <div className="flex flex-col min-h-screen text-brand-teal">
@@ -194,13 +376,34 @@ export default function AdminDashboard() {
               <strong className="text-brand-gold">STUDIO PORTAL:</strong> Active production dashboard for project catalog, client enquiries, and media assets.
             </span>
           </div>
-          <Link
-            href="/"
-            className="hidden sm:flex text-[11px] uppercase tracking-wider text-brand-gold hover:underline items-center space-x-1"
-          >
-            <span>Exit to Public Site</span>
-            <ExternalLink className="w-3 h-3" />
-          </Link>
+
+          <div className="flex items-center space-x-4">
+            {currentUser && (
+              <div className="hidden md:flex items-center space-x-2 text-slate-300">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="truncate max-w-[200px]">{currentUser.email}</span>
+                <span className="bg-brand-gold/20 text-brand-gold text-[10px] px-1.5 py-0.5 rounded uppercase font-semibold">
+                  Superadmin
+                </span>
+              </div>
+            )}
+            <Link
+              href="/"
+              className="hidden sm:flex text-[11px] uppercase tracking-wider text-brand-gold hover:underline items-center space-x-1"
+            >
+              <span>Exit to Site</span>
+              <ExternalLink className="w-3 h-3" />
+            </Link>
+            <button
+              type="button"
+              onClick={handleSignOut}
+              className="flex items-center space-x-1 text-[11px] uppercase tracking-wider text-red-300 hover:text-white bg-red-950/60 hover:bg-red-900/80 px-2.5 py-1 rounded transition-colors"
+              title="Sign Out of Studio Portal"
+            >
+              <LogOut className="w-3 h-3" />
+              <span>Sign Out</span>
+            </button>
+          </div>
         </div>
       </aside>
 
@@ -350,6 +553,23 @@ export default function AdminDashboard() {
           </div>
 
           <div className="pt-6 mt-6 border-t border-brand-teal/20 space-y-3">
+            {currentUser && (
+              <div className="p-3 bg-[#F0F4F5] rounded text-xs font-mono text-brand-teal flex items-center justify-between">
+                <div>
+                  <span className="block font-semibold text-[11px] text-[var(--gold-deep)] uppercase">Logged in as</span>
+                  <span className="truncate block font-medium">{currentUser.email}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="px-2.5 py-1 bg-red-100 hover:bg-red-200 text-red-800 rounded font-semibold text-[11px] uppercase flex items-center space-x-1"
+                >
+                  <LogOut className="w-3 h-3" />
+                  <span>Logout</span>
+                </button>
+              </div>
+            )}
+
             <Link
               href="/"
               onClick={() => setIsMobileNavOpen(false)}
@@ -424,9 +644,28 @@ export default function AdminDashboard() {
             </nav>
           </div>
 
-          <div className="pt-6 border-t border-brand-teal/15 space-y-2 text-xs font-mono text-brand-teal/60">
-            <p>Production Suite // Melbourne & Sydney</p>
-            <p>Region: Australia (AEDT)</p>
+          <div className="pt-6 border-t border-brand-teal/15 space-y-3 text-xs font-mono">
+            {currentUser && (
+              <div className="p-3 bg-[#F0F4F5] rounded border border-brand-teal/15 space-y-2">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-[11px] font-semibold uppercase text-brand-teal">Superadmin Active</span>
+                </div>
+                <p className="text-[11px] text-brand-teal/80 truncate font-mono">{currentUser.email}</p>
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="w-full flex items-center justify-center space-x-1 py-1.5 px-2 bg-red-100 hover:bg-red-200 text-red-800 rounded font-semibold text-[11px] uppercase transition-colors"
+                >
+                  <LogOut className="w-3 h-3" />
+                  <span>Sign Out</span>
+                </button>
+              </div>
+            )}
+            <div className="text-brand-teal/60 text-[11px] space-y-0.5">
+              <p>Production Suite // Adelaide</p>
+              <p>Region: South Australia (ACDT)</p>
+            </div>
           </div>
         </aside>
 
@@ -442,10 +681,20 @@ export default function AdminDashboard() {
                     Studio Dashboard Overview
                   </h1>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-xs font-mono text-brand-teal/70">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-mono text-brand-teal/70 hidden sm:inline">
                     Last sync: {mockAdminStats.lastUpdated}
                   </span>
+                  <button
+                    type="button"
+                    onClick={handleSeedFirestore}
+                    disabled={isSeeding}
+                    className="inline-flex items-center space-x-1.5 text-xs uppercase font-mono tracking-wider bg-white border border-brand-teal/20 text-brand-teal px-3.5 py-2.5 rounded-sm hover:border-brand-gold hover:text-brand-gold transition-all shadow-sm font-semibold disabled:opacity-50"
+                    title="Push initial studio projects, testimonials, and settings into Firestore"
+                  >
+                    <Upload className="w-3.5 h-3.5 text-brand-gold" />
+                    <span>{isSeeding ? "Writing..." : "Sync All Data to Firestore"}</span>
+                  </button>
                   <button
                     type="button"
                     onClick={() => {
@@ -459,6 +708,31 @@ export default function AdminDashboard() {
                   </button>
                 </div>
               </div>
+
+              {/* Firestore Seed Feedback Notification */}
+              {seedMessage && (
+                <div
+                  className={`p-4 rounded text-xs font-mono border flex items-start space-x-3 animate-fade-in ${
+                    seedMessage.type === "success"
+                      ? "bg-emerald-50 border-emerald-300 text-emerald-900"
+                      : "bg-red-50 border-red-300 text-red-900"
+                  }`}
+                >
+                  {seedMessage.type === "success" ? (
+                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                  ) : (
+                    <ShieldAlert className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                  )}
+                  <div className="space-y-1">
+                    <p className="font-semibold">{seedMessage.text}</p>
+                    {seedMessage.type === "error" && (
+                      <p className="text-[11px] text-red-700">
+                        In Firebase Console, go to <strong>Firestore Database &gt; Rules</strong>, set <code>allow read, write: if true;</code>, click <strong>Publish</strong>, and click this button again.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
 
               {/* Key Metrics Grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -801,25 +1075,7 @@ export default function AdminDashboard() {
 
                 <button
                   type="button"
-                  onClick={() => {
-                    const author = prompt("Client Name:");
-                    if (!author) return;
-                    const company = prompt("Organisation / Artist:") || "Arts Agency";
-                    const quote = prompt("Quotation:") || "Exceptional craft and storytelling.";
-                    const newTestimonial: Testimonial = {
-                      id: `test-${Date.now()}`,
-                      author,
-                      role: "Director",
-                      company,
-                      projectTitle: "Independent Film",
-                      serviceCategory: "Documentary & Film",
-                      year: "2026",
-                      portraitUrl:
-                        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-                      quote,
-                    };
-                    setTestimonialsList([newTestimonial, ...testimonialsList]);
-                  }}
+                  onClick={handleAddTestimonial}
                   className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-4 py-2.5 rounded-sm hover:bg-brand-gold-light transition-all shadow-sm font-semibold"
                 >
                   <Plus className="w-3.5 h-3.5" />
@@ -856,9 +1112,7 @@ export default function AdminDashboard() {
 
                       <button
                         type="button"
-                        onClick={() =>
-                          setTestimonialsList(testimonialsList.filter((item) => item.id !== t.id))
-                        }
+                        onClick={() => handleDeleteTestimonial(t.id)}
                         className="p-1 text-brand-teal/60 hover:text-red-600"
                         title="Delete record"
                       >
@@ -949,25 +1203,76 @@ export default function AdminDashboard() {
           {/* TAB 06: ENQUIRIES INBOX */}
           {activeTab === "enquiries" && (
             <div className="space-y-6 animate-fade-in">
-              <div className="pb-6 border-b border-brand-teal/15">
-                <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
-                  Enquiries Inbox
-                </h1>
-                <p className="text-xs text-brand-teal/70 mt-1 font-mono">
-                  Review project commissions, budget scopes, and customer contact requests.
-                </p>
+              <div className="pb-6 border-b border-brand-teal/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-display font-medium text-brand-teal">
+                    Enquiries & Bookings Inbox
+                  </h1>
+                  <p className="text-xs text-brand-teal/70 mt-1 font-mono">
+                    Direct messages from /contact and comprehensive production briefs from /book.
+                  </p>
+                </div>
+
+                {/* Filter Pills for Forms */}
+                <div className="flex items-center space-x-1.5 p-1 bg-[#F0F4F5] rounded text-xs font-mono">
+                  <button
+                    type="button"
+                    onClick={() => setEnquiryFilter("all")}
+                    className={`px-3 py-1.5 rounded transition-all ${
+                      enquiryFilter === "all"
+                        ? "bg-brand-teal text-white font-semibold shadow-sm"
+                        : "text-brand-teal/70 hover:text-brand-teal"
+                    }`}
+                  >
+                    All ({enquiriesList.length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setEnquiryFilter("contact")}
+                    className={`px-3 py-1.5 rounded transition-all ${
+                      enquiryFilter === "contact"
+                        ? "bg-brand-teal text-white font-semibold shadow-sm"
+                        : "text-brand-teal/70 hover:text-brand-teal"
+                    }`}
+                  >
+                    Contact Forms ({enquiriesList.filter((e) => e.type === "contact" || !e.type).length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setEnquiryFilter("booking-brief")}
+                    className={`px-3 py-1.5 rounded transition-all ${
+                      enquiryFilter === "booking-brief"
+                        ? "bg-brand-teal text-white font-semibold shadow-sm"
+                        : "text-brand-teal/70 hover:text-brand-teal"
+                    }`}
+                  >
+                    Booking Briefs ({enquiriesList.filter((e) => e.type === "booking-brief").length})
+                  </button>
+                </div>
               </div>
 
               <div className="bg-white border border-brand-teal/15 rounded-sm overflow-hidden shadow-sm">
                 <div className="divide-y divide-brand-teal/15">
-                  {enquiriesList.length === 0 ? (
+                  {enquiriesList.filter((e) => {
+                    if (enquiryFilter === "all") return true;
+                    if (enquiryFilter === "contact") return e.type === "contact" || !e.type;
+                    if (enquiryFilter === "booking-brief") return e.type === "booking-brief";
+                    return true;
+                  }).length === 0 ? (
                     <div className="p-12 text-center text-brand-teal/70 space-y-3">
                       <Inbox className="w-8 h-8 text-brand-gold mx-auto" />
-                      <p className="text-sm font-sans text-brand-teal font-medium">No production enquiries logged yet.</p>
-                      <p className="text-xs font-mono text-brand-teal/60">Inbound project briefs submitted via /contact or /book will appear in this registry.</p>
+                      <p className="text-sm font-sans text-brand-teal font-medium">No production enquiries in this view.</p>
+                      <p className="text-xs font-mono text-brand-teal/60">Submissions from /contact and /book appear in this registry in real time.</p>
                     </div>
                   ) : (
-                    enquiriesList.map((enq) => (
+                    enquiriesList
+                      .filter((e) => {
+                        if (enquiryFilter === "all") return true;
+                        if (enquiryFilter === "contact") return e.type === "contact" || !e.type;
+                        if (enquiryFilter === "booking-brief") return e.type === "booking-brief";
+                        return true;
+                      })
+                      .map((enq) => (
                     <div
                       key={enq.id}
                       role="button"
@@ -984,24 +1289,35 @@ export default function AdminDashboard() {
                         selectedEnquiry?.id === enq.id ? "bg-brand-teal/10 ring-1 ring-inset ring-brand-gold" : ""
                       }`}
                     >
-                      <div className="space-y-1">
-                        <div className="flex items-center space-x-3">
+                      <div className="space-y-1.5">
+                        <div className="flex items-center space-x-2.5 flex-wrap">
                           <h3 className="text-sm font-medium text-brand-teal font-sans">
                             {enq.name}
                           </h3>
-                          <span className="text-xs font-mono text-brand-teal/70">
-                            ({enq.company})
+                          {enq.company && (
+                            <span className="text-xs font-mono text-brand-teal/70">
+                              ({enq.company})
+                            </span>
+                          )}
+                          <span
+                            className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded font-semibold ${
+                              enq.type === "booking-brief"
+                                ? "bg-amber-100 text-amber-800 border border-amber-300"
+                                : "bg-sky-100 text-sky-800 border border-sky-300"
+                            }`}
+                          >
+                            {enq.type === "booking-brief" ? "Booking Brief (/book)" : "Contact Form (/contact)"}
                           </span>
                         </div>
                         <p className="text-xs text-brand-teal/80 font-mono">
-                          {enq.service} • Budget: {enq.budget}
+                          {enq.service} • Budget: {enq.budget} {enq.phone && `• Tel: ${enq.phone}`}
                         </p>
-                        <p className="text-xs text-brand-teal/70 line-clamp-1 font-light pt-1">
+                        <p className="text-xs text-brand-teal/70 line-clamp-1 font-light pt-0.5">
                           {enq.message}
                         </p>
                       </div>
 
-                      <div className="flex sm:flex-col items-center sm:items-end justify-between gap-2">
+                      <div className="flex sm:flex-col items-center sm:items-end justify-between gap-2 shrink-0">
                         <span
                           className={`text-xs font-mono uppercase tracking-wider px-2.5 py-1 rounded ${
                             enq.status === "New"
@@ -1027,11 +1343,22 @@ export default function AdminDashboard() {
                 <div className="p-4 sm:p-8 bg-brand-teal rounded-sm border border-brand-gold/40 text-white space-y-6 animate-fade-in shadow-xl">
                   <div className="flex items-center justify-between pb-4 border-b border-brand-teal-light/50">
                     <div>
-                      <span className="text-[11px] font-mono uppercase tracking-widest text-brand-gold block font-semibold">
-                        Detail Drawer // ID: {selectedEnquiry.id}
-                      </span>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-[11px] font-mono uppercase tracking-widest text-brand-gold font-semibold">
+                          Detail Drawer // ID: {selectedEnquiry.id}
+                        </span>
+                        <span
+                          className={`text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded font-semibold ${
+                            selectedEnquiry.type === "booking-brief"
+                              ? "bg-amber-400 text-brand-black"
+                              : "bg-sky-400 text-brand-black"
+                          }`}
+                        >
+                          {selectedEnquiry.type === "booking-brief" ? "Booking Brief & Consultation" : "Direct Contact Form"}
+                        </span>
+                      </div>
                       <h3 className="text-lg sm:text-xl font-display font-medium text-white mt-1 break-words">
-                        {selectedEnquiry.name} — {selectedEnquiry.company}
+                        {selectedEnquiry.name} {selectedEnquiry.company && `— ${selectedEnquiry.company}`}
                       </h3>
                     </div>
                     <button
@@ -1047,10 +1374,16 @@ export default function AdminDashboard() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono break-all">
                     <div>
                       <span className="text-slate-300 block">Email:</span>
-                      <span className="text-white font-medium">{selectedEnquiry.email}</span>
+                      <a href={`mailto:${selectedEnquiry.email}`} className="text-brand-gold hover:underline font-medium">
+                        {selectedEnquiry.email}
+                      </a>
                     </div>
                     <div>
-                      <span className="text-slate-300 block">Service:</span>
+                      <span className="text-slate-300 block">Phone:</span>
+                      <span className="text-white font-medium">{selectedEnquiry.phone || "Not specified"}</span>
+                    </div>
+                    <div>
+                      <span className="text-slate-300 block">Discipline / Service:</span>
                       <span className="text-white font-medium">{selectedEnquiry.service}</span>
                     </div>
                     <div>
@@ -1061,13 +1394,48 @@ export default function AdminDashboard() {
                       <span className="text-slate-300 block">Timeline:</span>
                       <span className="text-white font-medium">{selectedEnquiry.timeline}</span>
                     </div>
+                    {selectedEnquiry.location && (
+                      <div>
+                        <span className="text-slate-300 block">Location:</span>
+                        <span className="text-white font-medium">{selectedEnquiry.location}</span>
+                      </div>
+                    )}
+                    {selectedEnquiry.preferredContact && (
+                      <div>
+                        <span className="text-slate-300 block">Preferred Contact:</span>
+                        <span className="text-white font-medium uppercase">{selectedEnquiry.preferredContact}</span>
+                      </div>
+                    )}
                   </div>
+
+                  {/* Booking Brief Consultation Slot Details */}
+                  {selectedEnquiry.briefDetails && (
+                    <div className="p-4 bg-brand-teal-deep rounded border border-brand-gold/30 space-y-2 text-xs font-mono">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-brand-gold font-semibold block">
+                        Scheduled Consultation Details:
+                      </span>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-white">
+                        <div>
+                          <span className="text-slate-300 block">Requested Date:</span>
+                          <span className="font-semibold">{selectedEnquiry.briefDetails.selectedDate || "TBD"}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-300 block">Time Slot:</span>
+                          <span className="font-semibold">{selectedEnquiry.briefDetails.selectedTimeSlot || "TBD"}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-300 block">Format:</span>
+                          <span className="font-semibold uppercase">{selectedEnquiry.briefDetails.consultationType || "Video Call"}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="space-y-2 pt-2 border-t border-brand-teal-light/40">
                     <span className="text-xs font-mono uppercase tracking-wider text-brand-gold block font-semibold">
-                      Enquiry Narrative:
+                      Full Enquiry & Narrative Scope:
                     </span>
-                    <p className="text-sm text-white/90 font-light leading-relaxed">
+                    <p className="text-sm text-white/90 font-light leading-relaxed whitespace-pre-line">
                       {selectedEnquiry.message}
                     </p>
                   </div>
@@ -1075,38 +1443,31 @@ export default function AdminDashboard() {
                   <div className="pt-4 flex flex-wrap items-center gap-3">
                     <button
                       type="button"
-                      onClick={() => {
-                        setEnquiriesList(
-                          enquiriesList.map((item) =>
-                            item.id === selectedEnquiry.id
-                              ? { ...item, status: "Consultation Scheduled" }
-                              : item
-                          )
-                        );
-                        setSelectedEnquiry({
-                          ...selectedEnquiry,
-                          status: "Consultation Scheduled",
-                        });
-                      }}
+                      onClick={() => handleUpdateEnquiryStatus(selectedEnquiry.id, "Consultation Scheduled")}
                       className="text-xs font-mono uppercase tracking-wider bg-brand-gold text-brand-black px-4 py-2 rounded-sm font-semibold hover:bg-brand-gold-light shadow-sm"
                     >
                       Schedule Consultation
                     </button>
                     <button
                       type="button"
-                      onClick={() => {
-                        setEnquiriesList(
-                          enquiriesList.map((item) =>
-                            item.id === selectedEnquiry.id
-                              ? { ...item, status: "Archived" }
-                              : item
-                          )
-                        );
-                        setSelectedEnquiry(null);
-                      }}
+                      onClick={() => handleUpdateEnquiryStatus(selectedEnquiry.id, "In Review")}
+                      className="text-xs font-mono uppercase tracking-wider bg-white/10 text-white px-4 py-2 rounded-sm font-medium hover:bg-white/20 border border-white/20"
+                    >
+                      Mark In Review
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleUpdateEnquiryStatus(selectedEnquiry.id, "Archived")}
                       className="text-xs font-mono uppercase tracking-wider border border-brand-teal-light text-white/80 hover:text-white px-4 py-2 rounded-sm hover:bg-white/10"
                     >
                       Archive Record
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteEnquiry(selectedEnquiry.id)}
+                      className="text-xs font-mono uppercase tracking-wider border border-red-500/50 text-red-300 hover:text-white hover:bg-red-900/40 px-4 py-2 rounded-sm"
+                    >
+                      Delete
                     </button>
                   </div>
                 </div>
@@ -1191,6 +1552,55 @@ export default function AdminDashboard() {
                   </div>
                 </div>
 
+                {/* Social Media Links Managed with Firebase */}
+                <div className="p-6 bg-white border border-brand-teal/15 rounded-sm space-y-4 shadow-sm">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--gold-deep)] block font-semibold">
+                    Studio Social Channels
+                  </span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-brand-teal font-medium">TikTok URL</label>
+                      <input
+                        type="url"
+                        value={settingsForm.tiktok}
+                        onChange={(e) => setSettingsForm({ ...settingsForm, tiktok: e.target.value })}
+                        className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-xs font-mono text-brand-teal focus:bg-white"
+                        placeholder="https://www.tiktok.com/@..."
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-brand-teal font-medium">Instagram URL</label>
+                      <input
+                        type="url"
+                        value={settingsForm.instagram}
+                        onChange={(e) => setSettingsForm({ ...settingsForm, instagram: e.target.value })}
+                        className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-xs font-mono text-brand-teal focus:bg-white"
+                        placeholder="https://www.instagram.com/..."
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-brand-teal font-medium">Facebook URL</label>
+                      <input
+                        type="url"
+                        value={settingsForm.facebook}
+                        onChange={(e) => setSettingsForm({ ...settingsForm, facebook: e.target.value })}
+                        className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-xs font-mono text-brand-teal focus:bg-white"
+                        placeholder="https://www.facebook.com/..."
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="block text-xs font-mono text-brand-teal font-medium">Vimeo Showreel URL</label>
+                      <input
+                        type="url"
+                        value={settingsForm.vimeo}
+                        onChange={(e) => setSettingsForm({ ...settingsForm, vimeo: e.target.value })}
+                        className="w-full bg-[#F8F9FA] border border-brand-teal/20 p-2.5 rounded text-xs font-mono text-brand-teal focus:bg-white"
+                        placeholder="https://vimeo.com/..."
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 {/* Brand Colors Definition */}
                 <div className="p-6 bg-white border border-brand-teal/15 rounded-sm space-y-4 shadow-sm">
                   <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--gold-deep)] block font-semibold">
@@ -1231,15 +1641,16 @@ export default function AdminDashboard() {
                 <div className="flex items-center space-x-4">
                   <button
                     type="submit"
-                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-6 py-3 rounded-sm font-semibold hover:bg-brand-gold-light transition-all shadow-md"
+                    disabled={isSavingSettings}
+                    className="inline-flex items-center space-x-2 text-xs uppercase font-mono tracking-wider bg-brand-gold text-brand-black px-6 py-3 rounded-sm font-semibold hover:bg-brand-gold-light transition-all shadow-md disabled:opacity-50"
                   >
                     <Save className="w-4 h-4" />
-                    <span>Save Site Settings</span>
+                    <span>{isSavingSettings ? "Saving to Firestore..." : "Save Site Settings"}</span>
                   </button>
                   {settingsSaved && (
                     <span className="text-xs font-mono text-emerald-600 flex items-center space-x-1 animate-fade-in font-medium">
                       <CheckCircle2 className="w-4 h-4" />
-                      <span>Settings staged locally!</span>
+                      <span>Saved to Firebase Firestore & staged!</span>
                     </span>
                   )}
                 </div>

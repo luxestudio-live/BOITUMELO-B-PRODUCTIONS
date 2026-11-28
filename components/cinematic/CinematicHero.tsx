@@ -229,12 +229,12 @@ export default function CinematicHero() {
 
           {/* Lower Hero Section: Oversized Architectural Typography */}
           <div ref={titleRef} className="space-y-6 max-w-5xl animate-fade-in pointer-events-auto">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium text-[var(--white-on-dark)] tracking-[0.03em] leading-[1.02] drop-shadow-[0_4px_16px_rgba(11,19,32,0.8)]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-medium text-white tracking-[0.03em] leading-[1.02] drop-shadow-[0_4px_16px_rgba(11,19,32,0.8)]">
               Professional videos. <br className="hidden sm:inline" />
               <span className="text-[var(--gold-light)] font-normal">Clear process.</span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-[var(--white-on-dark)]/90 font-light max-w-2xl leading-relaxed [text-wrap:pretty]">
+            <p className="text-base sm:text-lg md:text-xl text-white/95 font-light max-w-2xl leading-relaxed [text-wrap:pretty]">
               Get professional video content without having to handle the filming and editing yourself.
             </p>
 
@@ -251,7 +251,7 @@ export default function CinematicHero() {
               <button
                 type="button"
                 onClick={scrollToFilmstrip}
-                className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium text-[var(--white-on-dark)] border border-[var(--white-on-dark)] hover:bg-[var(--white-on-dark)] hover:text-[var(--ink)] px-6 py-3.5 rounded-[2px] transition-all duration-250 ease-out backdrop-blur-sm bg-transparent"
+                className="inline-flex items-center space-x-2.5 text-[12px] uppercase font-mono tracking-[0.12em] font-medium text-white border border-white hover:bg-white hover:text-[var(--ink)] px-6 py-3.5 rounded-[2px] transition-all duration-250 ease-out backdrop-blur-sm bg-transparent"
               >
                 <span>See The Work</span>
                 <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />

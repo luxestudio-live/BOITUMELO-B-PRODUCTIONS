@@ -46,7 +46,7 @@ export default function BehindTheFrame() {
                 <span className="text-xs font-mono uppercase tracking-wider text-[var(--gold-light)] block font-medium">
                   Studio Craft • Northern Adelaide
                 </span>
-                <p className="text-sm text-[var(--white-on-dark)]/90 mt-1 font-light [text-wrap:pretty]">
+                <p className="text-sm text-white/95 mt-1 font-light [text-wrap:pretty]">
                   Pre-production, filming and editing handled as a dedicated solo operator.
                 </p>
               </div>
